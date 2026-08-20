@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "reference.optics-mirror",
+  "title": "Reflection Scene",
+  "titleFa": "صحنه بازتاب نور",
+  "domain": "optics",
+  "simulation": {"dt": 0.001, "timeScale": 1},
+  "parts": [
+    {"instanceId": "ray", "partId": "optics.ray-source", "transform": {"position": {"x": 0, "y": 1}}, "properties": {"directionX": 1, "directionY": -1}},
+    {"instanceId": "mirror", "partId": "optics.plane-mirror", "transform": {"position": {"x": 0, "y": 0}}, "properties": {"length": 20}},
+    {"instanceId": "screen", "partId": "optics.screen", "transform": {"position": {"x": 2, "y": 2}}, "properties": {"height": 5}}
+  ],
+  "connections": [],
+  "probes": [{"id": "ray-path", "quantity": "optical-path"}],
+  "metadata": {"stage": 3}
+}

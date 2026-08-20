@@ -1,0 +1,2044 @@
+{
+  "schemaVersion": "1.0.0",
+  "canonicalPartCount": 203,
+  "paletteEntryCount": 206,
+  "domains": {
+    "circuits": 93,
+    "mechanics": 53,
+    "optics": 21,
+    "presentation": 16,
+    "waves": 20
+  },
+  "parts": [
+    {
+      "id": "circuits.4017",
+      "name": "4017: Decoded (1-of-10) decade counter",
+      "nameFa": "۴۰۱۷: شمارنده ده‌دهی ۱ از ۱۰",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.4026",
+      "name": "4026: Decade counter and 7-segment decoder",
+      "nameFa": "۴۰۲۶: شمارنده ده‌دهی و دیکودر هفت‌قسمتی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.4027",
+      "name": "4027: JK flip-flop (with set)",
+      "nameFa": "۴۰۲۷: فلیپ‌فلاپ JK با Set",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.4028",
+      "name": "4028: BCD to decimal (1-of-10) decoder",
+      "nameFa": "۴۰۲۸: دیکودر BCD به ده‌دهی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.4043-without-enable",
+      "name": "4043: RS flip-flop",
+      "nameFa": "۴۰۴۳: فلیپ‌فلاپ RS",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.4511",
+      "name": "4511: BCD to 7-segment display decoder",
+      "nameFa": "۴۵۱۱: دیکودر BCD به نمایشگر هفت‌قسمتی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.4518",
+      "name": "4518: Decade (÷10) counter",
+      "nameFa": "۴۵۱۸: شمارنده ده‌دهی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.555-timer",
+      "name": "555 Timer",
+      "nameFa": "تایمر ۵۵۵",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 24,
+      "portCount": 8,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7400",
+      "name": "7400: NAND gate",
+      "nameFa": "۷۴۰۰: گیت NAND",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 6,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7402",
+      "name": "7402: NOR gate",
+      "nameFa": "۷۴۰۲: گیت NOR",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7404",
+      "name": "7404: Inverter",
+      "nameFa": "۷۴۰۴: معکوس‌کننده",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7408",
+      "name": "7408: AND gate",
+      "nameFa": "۷۴۰۸: گیت AND",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7410",
+      "name": "7410: 3-input NAND gate",
+      "nameFa": "۷۴۱۰: گیت NAND سه‌ورودی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 4,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7414",
+      "name": "7414: Schmitt inverter",
+      "nameFa": "۷۴۱۴: معکوس‌کننده اشمیت",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7420",
+      "name": "7420: 4-input NAND gate",
+      "nameFa": "۷۴۲۰: گیت NAND چهارورودی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 5,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7432",
+      "name": "7432: OR gate",
+      "nameFa": "۷۴۳۲: گیت OR",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7473",
+      "name": "7473: JK flip-flop (without set)",
+      "nameFa": "۷۴۷۳: فلیپ‌فلاپ JK بدون Set",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7474",
+      "name": "7474: D-type flip-flop",
+      "nameFa": "۷۴۷۴: فلیپ‌فلاپ نوع D",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.7486",
+      "name": "7486: Exclusive-OR gate",
+      "nameFa": "۷۴۸۶: گیت XOR",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 27,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.8-resistors",
+      "name": "8 Resistors",
+      "nameFa": "مجموعه ۸ مقاومت",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 27,
+      "portCount": 16,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.ammeter",
+      "name": "Ammeter",
+      "nameFa": "آمپرمتر",
+      "domain": "circuits",
+      "family": "instrumentation",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.battery",
+      "name": "Battery",
+      "nameFa": "باتری",
+      "domain": "circuits",
+      "family": "source",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.buzzer",
+      "name": "Buzzer",
+      "nameFa": "بازر",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.capacitor",
+      "name": "Capacitor",
+      "nameFa": "خازن",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.clock",
+      "name": "Clock",
+      "nameFa": "کلاک",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 24,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.context-logic-input",
+      "name": "Target logic input",
+      "nameFa": "ورودی منطقی هدف",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 33,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.context-logic-output",
+      "name": "Target logic output",
+      "nameFa": "خروجی منطقی هدف",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 34,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.current",
+      "name": "Constant current source",
+      "nameFa": "منبع جریان ثابت",
+      "domain": "circuits",
+      "family": "source",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.darlington-driver",
+      "name": "Darlington driver",
+      "nameFa": "درایور دارلینگتون",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 27,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.diode",
+      "name": "Diode",
+      "nameFa": "دیود",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.dpdt",
+      "name": "DPDT",
+      "nameFa": "کلید DPDT",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 27,
+      "portCount": 6,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.dpdt-relay",
+      "name": "DPDT relay",
+      "nameFa": "رله DPDT",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 26,
+      "portCount": 8,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.dpst",
+      "name": "DPST",
+      "nameFa": "کلید DPST",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 27,
+      "portCount": 4,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.earth",
+      "name": "Ground",
+      "nameFa": "زمین الکتریکی",
+      "domain": "circuits",
+      "family": "source",
+      "propertyCount": 24,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.ecapacitor",
+      "name": "Electrolytic capacitor",
+      "nameFa": "خازن الکترولیتی",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.filament-lamp",
+      "name": "Filament Lamp",
+      "nameFa": "لامپ رشته‌ای",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 37,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.floatswitch",
+      "name": "Float switch",
+      "nameFa": "کلید شناور",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.fuse",
+      "name": "Fuse",
+      "nameFa": "فیوز",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 35,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.green-led",
+      "name": "Green LED",
+      "nameFa": "LED سبز",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 37,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.half-h-driver",
+      "name": "Half-H driver",
+      "nameFa": "درایور نیم‌پل H",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 28,
+      "portCount": 7,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.inductor",
+      "name": "Inductor",
+      "nameFa": "سلف",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.latching-logic-input",
+      "name": "Latching logic input",
+      "nameFa": "ورودی منطقی قفل‌شونده",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 25,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.ldr",
+      "name": "Light dependent resistor",
+      "nameFa": "مقاومت وابسته به نور",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 35,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.ldr-and-lamp",
+      "name": "LDR and Lamp",
+      "nameFa": "مقاومت نوری و لامپ",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 35,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.ldr-with-lamp",
+      "name": "LDR with Lamp",
+      "nameFa": "مقاومت نوری همراه لامپ",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 40,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.logic-output",
+      "name": "Logic indicator",
+      "nameFa": "نشانگر منطقی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 28,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.loudspeaker",
+      "name": "Loudspeaker",
+      "nameFa": "بلندگو",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.mosfetn",
+      "name": "N-Channel MOSFET",
+      "nameFa": "ماسفت کانال N",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 27,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.mosfetp",
+      "name": "P-Channel MOSFET",
+      "nameFa": "ماسفت کانال P",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 27,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.new-context-logic-input",
+      "name": "Custom logic input",
+      "nameFa": "ورودی منطقی سفارشی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.new-context-logic-output",
+      "name": "Custom logic output",
+      "nameFa": "خروجی منطقی سفارشی",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.npn",
+      "name": "NPN transistor",
+      "nameFa": "ترانزیستور NPN",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 31,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.opamp-324",
+      "name": "324 Op-amp",
+      "nameFa": "تقویت‌کننده عملیاتی ۳۲۴",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 40,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.opamp-741",
+      "name": "741 Op-amp",
+      "nameFa": "تقویت‌کننده عملیاتی ۷۴۱",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 40,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.optoisolator",
+      "name": "Opto-isolator",
+      "nameFa": "اپتوایزولاتور",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 32,
+      "portCount": 4,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.phototransistor",
+      "name": "Photo-transistor with lamp",
+      "nameFa": "فوتوترانزیستور همراه لامپ",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 35,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-battery",
+      "name": "Battery",
+      "nameFa": "باتری",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-battery-9v",
+      "name": "9V battery",
+      "nameFa": "باتری ۹ ولت",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-buzzer",
+      "name": "Buzzer",
+      "nameFa": "بازر",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-filament-lamp",
+      "name": "Filament Lamp",
+      "nameFa": "لامپ رشته‌ای",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-fuse",
+      "name": "1A Fuse",
+      "nameFa": "فیوز ۱ آمپر",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-green-led",
+      "name": "Green LED",
+      "nameFa": "LED سبز",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 37,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-motor",
+      "name": "Motor",
+      "nameFa": "موتور",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 42,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-pushmake",
+      "name": "Push-to-make switch",
+      "nameFa": "کلید فشاری وصل‌شونده",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 38,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-red-led",
+      "name": "Red LED",
+      "nameFa": "LED قرمز",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 37,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-resistor",
+      "name": "Resistor",
+      "nameFa": "مقاومت",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 34,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-spdt",
+      "name": "SPDT",
+      "nameFa": "کلید SPDT",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 30,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-spst",
+      "name": "SPST",
+      "nameFa": "کلید SPST",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 38,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-vresistor",
+      "name": "Variable resistor",
+      "nameFa": "مقاومت متغیر",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 39,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pictorial-yellow-led",
+      "name": "Yellow LED",
+      "nameFa": "LED زرد",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 37,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pnp",
+      "name": "PNP transistor",
+      "nameFa": "ترانزیستور PNP",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 31,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.potentiometer",
+      "name": "Potentiometer",
+      "nameFa": "پتانسیومتر",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 29,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.push-button-logic-input",
+      "name": "Push button logic input",
+      "nameFa": "ورودی منطقی فشاری",
+      "domain": "circuits",
+      "family": "digital-logic",
+      "propertyCount": 25,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pushbreak",
+      "name": "Push-to-break switch",
+      "nameFa": "کلید فشاری قطع‌شونده",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 35,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.pushmake",
+      "name": "Push-to-make switch",
+      "nameFa": "کلید فشاری وصل‌شونده",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 35,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.red-led",
+      "name": "Red LED",
+      "nameFa": "LED قرمز",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 37,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.resistor",
+      "name": "Resistor",
+      "nameFa": "مقاومت",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 37,
+      "portCount": 4,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.seven-segment-display",
+      "name": "Seven segment display",
+      "nameFa": "نمایشگر هفت‌قسمتی",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 39,
+      "portCount": 9,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.signal-lamp",
+      "name": "Signal Lamp",
+      "nameFa": "چراغ سیگنال",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 40,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.spdt",
+      "name": "SPDT",
+      "nameFa": "کلید SPDT",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 27,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.spdt-relay",
+      "name": "SPDT relay",
+      "nameFa": "رله SPDT",
+      "domain": "circuits",
+      "family": "electromechanical-or-load",
+      "propertyCount": 26,
+      "portCount": 5,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.spst",
+      "name": "SPST",
+      "nameFa": "کلید SPST",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 35,
+      "portCount": 4,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.thermistor",
+      "name": "Thermistor",
+      "nameFa": "ترمیستور",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 41,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.thyristor",
+      "name": "Thyristor",
+      "nameFa": "تریستور",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 25,
+      "portCount": 3,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.transformer",
+      "name": "Transformer",
+      "nameFa": "ترانسفورماتور",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 26,
+      "portCount": 4,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.voltmeter",
+      "name": "Voltmeter",
+      "nameFa": "ولت‌متر",
+      "domain": "circuits",
+      "family": "instrumentation",
+      "propertyCount": 36,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.voltrail",
+      "name": "Voltage rail",
+      "nameFa": "خط تغذیه ولتاژ",
+      "domain": "circuits",
+      "family": "source",
+      "propertyCount": 27,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.vpulse",
+      "name": "Signal generator",
+      "nameFa": "مولد سیگنال",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 39,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.vresistor",
+      "name": "Variable resistor",
+      "nameFa": "مقاومت متغیر",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 39,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.vslide",
+      "name": "Variable voltage supply",
+      "nameFa": "منبع ولتاژ متغیر",
+      "domain": "circuits",
+      "family": "source",
+      "propertyCount": 29,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.vzero",
+      "name": "Zero volt rail",
+      "nameFa": "خط صفر ولت",
+      "domain": "circuits",
+      "family": "source",
+      "propertyCount": 25,
+      "portCount": 1,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.yellow-led",
+      "name": "Yellow LED",
+      "nameFa": "LED زرد",
+      "domain": "circuits",
+      "family": "analog-network",
+      "propertyCount": 37,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "circuits.zener",
+      "name": "Zener",
+      "nameFa": "دیود زنر",
+      "domain": "circuits",
+      "family": "nonlinear-or-active-device",
+      "propertyCount": 38,
+      "portCount": 2,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.basketball",
+      "name": "Basketball",
+      "nameFa": "توپ بسکتبال",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.billiard-ball",
+      "name": "Billiard ball",
+      "nameFa": "توپ بیلیارد",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.brick2",
+      "name": "Brick",
+      "nameFa": "آجر",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.cart",
+      "name": "Cart",
+      "nameFa": "گاری آزمایشگاهی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.chain",
+      "name": "Chain",
+      "nameFa": "زنجیر",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.concrete-ball2",
+      "name": "Concrete ball",
+      "nameFa": "توپ بتنی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.concrete-block2",
+      "name": "Concrete block",
+      "nameFa": "بلوک بتنی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.concrete-ground",
+      "name": "Concrete ground",
+      "nameFa": "سطح بتنی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.concrete-slope",
+      "name": "Concrete slope",
+      "nameFa": "شیب بتنی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.connected-electric-motor",
+      "name": "Electric motor",
+      "nameFa": "موتور الکتریکی",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 41,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.connected-generator",
+      "name": "Generator",
+      "nameFa": "ژنراتور",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 43,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.connected-microswitch",
+      "name": "Microswitch",
+      "nameFa": "میکروسوئیچ",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 34,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.connected-solenoid",
+      "name": "Solenoid",
+      "nameFa": "سلونوئید",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 35,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.cricket-ball",
+      "name": "Cricket ball",
+      "nameFa": "توپ کریکت",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.double-gear",
+      "name": "Gear",
+      "nameFa": "چرخ‌دنده",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 40,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.flywheel-and-gear",
+      "name": "Flywheel",
+      "nameFa": "چرخ طیار",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 38,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.glass-ball2",
+      "name": "Glass ball",
+      "nameFa": "توپ شیشه‌ای",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.glass-block2",
+      "name": "Glass block",
+      "nameFa": "بلوک شیشه‌ای",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.glass-ground",
+      "name": "Glass ground",
+      "nameFa": "سطح شیشه‌ای",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.glass-slope",
+      "name": "Glass slope",
+      "nameFa": "شیب شیشه‌ای",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.golf-ball",
+      "name": "Golf ball",
+      "nameFa": "توپ گلف",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ice-ball2",
+      "name": "Ice ball",
+      "nameFa": "توپ یخی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ice-block2",
+      "name": "Ice block",
+      "nameFa": "بلوک یخی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ice-ground",
+      "name": "Ice ground",
+      "nameFa": "سطح یخی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ice-slope",
+      "name": "Ice slope",
+      "nameFa": "شیب یخی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-elastic-ball",
+      "name": "Ideal elastic ball",
+      "nameFa": "توپ کاملاً کشسان",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-elastic-block",
+      "name": "Ideal elastic block",
+      "nameFa": "بلوک کاملاً کشسان",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-elastic-ground",
+      "name": "Ideal elastic ground",
+      "nameFa": "سطح کاملاً کشسان",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-elastic-slope",
+      "name": "Ideal elastic slope",
+      "nameFa": "سطح شیب‌دار کاملاً کشسان",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-inelastic-ball",
+      "name": "Ideal inelastic ball",
+      "nameFa": "توپ کاملاً ناکشسان",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-inelastic-block",
+      "name": "Ideal inelastic block",
+      "nameFa": "بلوک کاملاً ناکشسان",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-inelastic-ground",
+      "name": "Ideal inelastic ground",
+      "nameFa": "سطح کاملاً ناکشسان",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.ideal-inelastic-slope",
+      "name": "Ideal inelastic slope",
+      "nameFa": "سطح شیب‌دار کاملاً ناکشسان",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.metal-ball2",
+      "name": "Metal ball",
+      "nameFa": "توپ فلزی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.metal-block2",
+      "name": "Metal block",
+      "nameFa": "بلوک فلزی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.metal-ground",
+      "name": "Metal ground",
+      "nameFa": "سطح فلزی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.metal-slope",
+      "name": "Metal slope",
+      "nameFa": "شیب فلزی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.motor",
+      "name": "Constant speed motor",
+      "nameFa": "موتور با سرعت ثابت",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 38,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.rack-and-pinion",
+      "name": "Rack and pinion",
+      "nameFa": "دنده شانه‌ای و پینیون",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 41,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.rod",
+      "name": "Rod",
+      "nameFa": "میله",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 27,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.rubber-ball2",
+      "name": "Rubber ball",
+      "nameFa": "توپ لاستیکی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.rubber-block2",
+      "name": "Rubber block",
+      "nameFa": "بلوک لاستیکی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.rubber-ground",
+      "name": "Rubber ground",
+      "nameFa": "سطح لاستیکی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.rubber-slope",
+      "name": "Rubber slope",
+      "nameFa": "شیب لاستیکی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.soccer-ball",
+      "name": "Soccer ball",
+      "nameFa": "توپ فوتبال",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.space2",
+      "name": "Space",
+      "nameFa": "محیط شبیه‌سازی",
+      "domain": "mechanics",
+      "family": "world-environment",
+      "propertyCount": 21,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.spring",
+      "name": "Spring",
+      "nameFa": "فنر",
+      "domain": "mechanics",
+      "family": "constraint-force",
+      "propertyCount": 27,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.tennis-ball",
+      "name": "Tennis ball",
+      "nameFa": "توپ تنیس",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.torque-application",
+      "name": "Torque",
+      "nameFa": "گشتاور",
+      "domain": "mechanics",
+      "family": "mechanism",
+      "propertyCount": 17,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.wood-ball2",
+      "name": "Wooden ball",
+      "nameFa": "توپ چوبی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.wood-block2",
+      "name": "Wooden block",
+      "nameFa": "بلوک چوبی",
+      "domain": "mechanics",
+      "family": "rigid-body",
+      "propertyCount": 82,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.wood-ground",
+      "name": "Wooden ground",
+      "nameFa": "سطح چوبی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "mechanics.wood-slope",
+      "name": "Wooden slope",
+      "nameFa": "شیب چوبی",
+      "domain": "mechanics",
+      "family": "static-collider",
+      "propertyCount": 30,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.adjustableslit",
+      "name": "Adjustable Slit",
+      "nameFa": "شکاف قابل تنظیم",
+      "domain": "optics",
+      "family": "ray-obstacle",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.concavelens",
+      "name": "Concave Lens",
+      "nameFa": "عدسی مقعر",
+      "domain": "optics",
+      "family": "refractive-optic",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.concavemirror",
+      "name": "Concave Mirror",
+      "nameFa": "آینه مقعر",
+      "domain": "optics",
+      "family": "reflective-optic",
+      "propertyCount": 27,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.convexlens",
+      "name": "Convex Lens",
+      "nameFa": "عدسی محدب",
+      "domain": "optics",
+      "family": "refractive-optic",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.convexmirror",
+      "name": "Convex Mirror",
+      "nameFa": "آینه محدب",
+      "domain": "optics",
+      "family": "reflective-optic",
+      "propertyCount": 27,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.eye",
+      "name": "Eye",
+      "nameFa": "چشم",
+      "domain": "optics",
+      "family": "ray-scene-component",
+      "propertyCount": 41,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.faraxisobject",
+      "name": "Far Object Marker",
+      "nameFa": "نشانگر جسم دور",
+      "domain": "optics",
+      "family": "ray-scene-component",
+      "propertyCount": 58,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.lamp",
+      "name": "Diverging beam",
+      "nameFa": "دسته‌پرتو واگرا",
+      "domain": "optics",
+      "family": "ray-source",
+      "propertyCount": 22,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.nearaxisobject",
+      "name": "Near Object Marker",
+      "nameFa": "نشانگر جسم نزدیک",
+      "domain": "optics",
+      "family": "ray-scene-component",
+      "propertyCount": 83,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.opaqueball",
+      "name": "Opaque Ball",
+      "nameFa": "توپ کدر",
+      "domain": "optics",
+      "family": "ray-obstacle",
+      "propertyCount": 23,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.opaqueblock",
+      "name": "Opaque Block",
+      "nameFa": "بلوک کدر",
+      "domain": "optics",
+      "family": "ray-obstacle",
+      "propertyCount": 21,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.opaquetriangle",
+      "name": "Opaque Triangle",
+      "nameFa": "مثلث کدر",
+      "domain": "optics",
+      "family": "ray-obstacle",
+      "propertyCount": 20,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.opticalspace2",
+      "name": "Optical Space",
+      "nameFa": "محیط اپتیکی",
+      "domain": "optics",
+      "family": "ray-scene-component",
+      "propertyCount": 21,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.parabolicmirror",
+      "name": "Parabolic Mirror",
+      "nameFa": "آینه سهموی",
+      "domain": "optics",
+      "family": "reflective-optic",
+      "propertyCount": 27,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.planemirror",
+      "name": "Plane Mirror",
+      "nameFa": "آینه تخت",
+      "domain": "optics",
+      "family": "reflective-optic",
+      "propertyCount": 25,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.prism",
+      "name": "Prism",
+      "nameFa": "منشور",
+      "domain": "optics",
+      "family": "refractive-optic",
+      "propertyCount": 21,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.projection",
+      "name": "Screen",
+      "nameFa": "پرده",
+      "domain": "optics",
+      "family": "ray-scene-component",
+      "propertyCount": 20,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.raybox",
+      "name": "Ray box",
+      "nameFa": "جعبه پرتو",
+      "domain": "optics",
+      "family": "ray-source",
+      "propertyCount": 23,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.semicircularblock",
+      "name": "Semi-circular Block",
+      "nameFa": "بلوک نیم‌دایره",
+      "domain": "optics",
+      "family": "refractive-optic",
+      "propertyCount": 23,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.torch",
+      "name": "Parallel beam",
+      "nameFa": "دسته‌پرتو موازی",
+      "domain": "optics",
+      "family": "ray-source",
+      "propertyCount": 22,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "optics.transparentblock",
+      "name": "Transparent Block",
+      "nameFa": "بلوک شفاف",
+      "domain": "optics",
+      "family": "refractive-optic",
+      "propertyCount": 22,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.advanced-animation",
+      "name": "Animation",
+      "nameFa": "پویانمایی",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 38,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.button",
+      "name": "Button",
+      "nameFa": "دکمه",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.checkbox",
+      "name": "Checkbox",
+      "nameFa": "چک‌باکس",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 22,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.dropdown",
+      "name": "Drop-down list",
+      "nameFa": "فهرست کشویی",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 21,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.editbox",
+      "name": "Edit box",
+      "nameFa": "کادر ویرایش",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 23,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.graph",
+      "name": "Graph",
+      "nameFa": "نمودار",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 38,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.image",
+      "name": "Picture",
+      "nameFa": "تصویر",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 19,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.instructions",
+      "name": "Instructions",
+      "nameFa": "راهنمای مراحل",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 41,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.marker",
+      "name": "Marker",
+      "nameFa": "نشانگر",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 29,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.2d",
+      "name": "Part Tray",
+      "nameFa": "سینی قطعات",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 19,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.pause",
+      "name": "Pause",
+      "nameFa": "مکث",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 26,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.protractor",
+      "name": "Protractor",
+      "nameFa": "نقاله",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 18,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.reload",
+      "name": "Reload",
+      "nameFa": "بازنشانی",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.ruler",
+      "name": "Ruler",
+      "nameFa": "خط‌کش",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.spinbox",
+      "name": "Number",
+      "nameFa": "کنترل عددی",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 29,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "presentation.text",
+      "name": "Text",
+      "nameFa": "متن",
+      "domain": "presentation",
+      "family": "presentation-control",
+      "propertyCount": 31,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.interference",
+      "name": "Wave interference space",
+      "nameFa": "محیط تداخل موج",
+      "domain": "waves",
+      "family": "wave-medium-1d",
+      "propertyCount": 42,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.penetration",
+      "name": "Wave penetration space",
+      "nameFa": "محیط نفوذ موج",
+      "domain": "waves",
+      "family": "wave-medium-1d",
+      "propertyCount": 39,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.pinned",
+      "name": "Wave pinned space",
+      "nameFa": "محیط موج با انتهای ثابت",
+      "domain": "waves",
+      "family": "wave-medium-1d",
+      "propertyCount": 33,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.plucking",
+      "name": "Wave plucking space",
+      "nameFa": "محیط موج کشیده‌شده",
+      "domain": "waves",
+      "family": "wave-medium-1d",
+      "propertyCount": 36,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.propagation",
+      "name": "Wave propagation space",
+      "nameFa": "محیط انتشار موج",
+      "domain": "waves",
+      "family": "wave-medium-1d",
+      "propertyCount": 33,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.reflection",
+      "name": "Wave reflection space",
+      "nameFa": "محیط بازتاب موج",
+      "domain": "waves",
+      "family": "wave-medium-1d",
+      "propertyCount": 33,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.circular-obstacle",
+      "name": "Circle",
+      "nameFa": "دایره",
+      "domain": "waves",
+      "family": "wave-obstacle",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.detector",
+      "name": "Detector",
+      "nameFa": "آشکارساز",
+      "domain": "waves",
+      "family": "wave-detector",
+      "propertyCount": 16,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.double-slit-obstacle",
+      "name": "Double Slit",
+      "nameFa": "دوشکاف",
+      "domain": "waves",
+      "family": "wave-aperture",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.em-wavespace2-holder",
+      "name": "Electromagnetic wavespace",
+      "nameFa": "محیط موج الکترومغناطیسی",
+      "domain": "waves",
+      "family": "wave-medium-2d",
+      "propertyCount": 40,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.line-source",
+      "name": "Line Source",
+      "nameFa": "منبع خطی",
+      "domain": "waves",
+      "family": "wave-source",
+      "propertyCount": 41,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.moving-point-source",
+      "name": "Moving Point Source",
+      "nameFa": "منبع نقطه‌ای متحرک",
+      "domain": "waves",
+      "family": "wave-source",
+      "propertyCount": 38,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.plane-reflector",
+      "name": "Plane Reflector",
+      "nameFa": "بازتاب‌دهنده تخت",
+      "domain": "waves",
+      "family": "wave-reflector",
+      "propertyCount": 24,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.point-source",
+      "name": "Point Source",
+      "nameFa": "منبع نقطه‌ای",
+      "domain": "waves",
+      "family": "wave-source",
+      "propertyCount": 38,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.rect-obstacle",
+      "name": "Block",
+      "nameFa": "بلوک",
+      "domain": "waves",
+      "family": "wave-obstacle",
+      "propertyCount": 24,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.single-slit-obstacle",
+      "name": "Single Slit",
+      "nameFa": "تک‌شکاف",
+      "domain": "waves",
+      "family": "wave-aperture",
+      "propertyCount": 28,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.sloped-block-obstacle",
+      "name": "Sloped block",
+      "nameFa": "بلوک شیب‌دار",
+      "domain": "waves",
+      "family": "wave-obstacle",
+      "propertyCount": 25,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.sound-wavespace2-holder",
+      "name": "Sound wavespace",
+      "nameFa": "محیط موج صوتی",
+      "domain": "waves",
+      "family": "wave-medium-2d",
+      "propertyCount": 40,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.triangular-obstacle",
+      "name": "Triangle",
+      "nameFa": "مثلث",
+      "domain": "waves",
+      "family": "wave-obstacle",
+      "propertyCount": 24,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    },
+    {
+      "id": "waves.water-wavespace2-holder",
+      "name": "Water wavespace",
+      "nameFa": "محیط موج آب",
+      "domain": "waves",
+      "family": "wave-medium-2d",
+      "propertyCount": 41,
+      "portCount": 0,
+      "translationStatus": "verified-dictionary"
+    }
+  ]
+}

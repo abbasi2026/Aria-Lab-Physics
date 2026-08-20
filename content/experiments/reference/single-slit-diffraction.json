@@ -1,0 +1,54 @@
+{
+  "id": "reference.single-slit-diffraction",
+  "version": 1,
+  "title": "Single-Slit Diffraction",
+  "titleFa": "پراش تک‌شکاف",
+  "domain": [
+    "waves"
+  ],
+  "learningObjectives": [
+    "Validate the solver against a sin θ = m λ."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "waves/source"
+      },
+      {
+        "type": "waves/slit"
+      },
+      {
+        "type": "waves/screen"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "a sin θ = m λ"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "a": 0.01,
+          "lambda": 0.001,
+          "m": 1
+        },
+        "expect": {
+          "theta_deg": 5.7391704773
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

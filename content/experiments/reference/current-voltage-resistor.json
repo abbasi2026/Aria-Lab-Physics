@@ -1,0 +1,63 @@
+{
+  "id": "reference.current-voltage-resistor",
+  "version": 1,
+  "title": "Current–Voltage Characteristic",
+  "titleFa": "مشخصه جریان–ولتاژ مقاومت",
+  "domain": [
+    "circuits"
+  ],
+  "learningObjectives": [
+    "Validate the solver against I = V / R."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "electronics/resistor"
+      },
+      {
+        "type": "electronics/voltage-source"
+      },
+      {
+        "type": "measurement/graph"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "I = V / R"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "R": 20,
+          "V": -10
+        },
+        "expect": {
+          "I": -0.5
+        },
+        "tolerance": 1e-06
+      },
+      {
+        "inputs": {
+          "R": 20,
+          "V": 10
+        },
+        "expect": {
+          "I": 0.5
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

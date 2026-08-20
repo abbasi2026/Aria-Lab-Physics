@@ -1,0 +1,460 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "optics.parabolicmirror",
+  "name": "Parabolic Mirror",
+  "nameFa": "آینه سهموی",
+  "translationStatus": "verified-dictionary",
+  "domain": "optics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Mirrors",
+      "pathFa": "اپتیک ← آینه‌ها"
+    }
+  ],
+  "capabilities": [
+    "reflection",
+    "ray-tracing"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "optics-pos",
+      "label": "Optics Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Ang",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "framehalfheight",
+      "label": "Framehalfheight",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 50.0
+    },
+    {
+      "key": "framehalfwidth",
+      "label": "Framehalfwidth",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "58.484"
+    },
+    {
+      "key": "part-outline",
+      "label": "Part Outline",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-outline-flavour",
+      "label": "Part Outline Flavour",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "aa-part-ref",
+      "label": "Aa Part Ref",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "optics/ui/parabolicMirror"
+    },
+    {
+      "key": "mirror-color",
+      "label": "Mirror Color",
+      "kind": "color",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "white"
+    },
+    {
+      "key": "showFocalLength",
+      "label": "Showfocallength",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "length",
+      "default": false
+    },
+    {
+      "key": "normalvisible",
+      "label": "Normalvisible",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "start-pos",
+      "label": "Focal length",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "writable-computed",
+        "user-hidden"
+      ],
+      "default": "(100.0,0.0)"
+    },
+    {
+      "key": "end-pos",
+      "label": "Focal length",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "writable-computed",
+        "user-hidden"
+      ],
+      "default": "(-100.0,0.0)"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "size-top",
+      "label": "Size Top",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "min": 10.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "10.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "10.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "size-bottom",
+      "label": "Size Bottom",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "min": 10.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "10.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "10.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "normal-pos",
+      "label": "Normal Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "toolbar-configuration",
+      "label": "Toolbar Configuration",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed-avoid-clipping"
+    },
+    {
+      "key": "resize-center",
+      "label": "Resize Center",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "radius",
+      "label": "Radius",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "length",
+      "defaultUnit": "centimeter",
+      "default": 0.1,
+      "min": 0.06,
+      "max": 1.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.06 1.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.06"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "focal-length",
+      "label": "Focal Length",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy",
+        "user-hidden"
+      ],
+      "quantity": "length",
+      "default": "../p[@key=radius]"
+    }
+  ],
+  "solver": {
+    "engine": "optics-engine",
+    "family": "reflective-optic",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "showFocalLength",
+      "radius"
+    ],
+    "outputs": [],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "optics/icons/parabolicmirror",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "optics/parabolicMirror",
+    "legacyProto": "optics/mirrorBase",
+    "definitionFile": "optics.domain/parts/optics.xml",
+    "inheritanceChain": [
+      "optics/parabolicMirror",
+      "optics/mirrorBase",
+      "optics/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

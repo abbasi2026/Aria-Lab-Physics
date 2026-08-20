@@ -1,0 +1,373 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "optics.opaqueball",
+  "name": "Opaque Ball",
+  "nameFa": "توپ کدر",
+  "translationStatus": "verified-dictionary",
+  "domain": "optics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Opaque Objects",
+      "pathFa": "اپتیک ← اجسام کدر"
+    }
+  ],
+  "capabilities": [
+    "ray-blocking",
+    "ray-tracing"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "optics-pos",
+      "label": "Optics Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Ang",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "framehalfheight",
+      "label": "Framehalfheight",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 30.0
+    },
+    {
+      "key": "framehalfwidth",
+      "label": "Framehalfwidth",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 30.0
+    },
+    {
+      "key": "part-outline",
+      "label": "Part Outline",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-outline-flavour",
+      "label": "Part Outline Flavour",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "aa-part-ref",
+      "label": "Aa Part Ref",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "part-color",
+      "label": "Part Color",
+      "kind": "color",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [],
+      "default": "#D9752C"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "part-visible",
+      "label": "Part Visible",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": true
+    },
+    {
+      "key": "visible",
+      "label": "Visible",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "pos",
+      "label": "Pos",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "(0.0, 0.0)"
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "optics/ui/opaqueBall"
+    },
+    {
+      "key": "opaqueball-radius",
+      "label": "Opaqueball Radius",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "length",
+      "defaultUnit": "centimeter",
+      "default": 0.03,
+      "min": 0.01,
+      "max": 0.5,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.01 0.50"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.01"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "0.50"
+          }
+        ]
+      }
+    },
+    {
+      "key": "resize-center",
+      "label": "Resize Center",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "fixed-proportion",
+      "label": "Fixed Proportion",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(1,1)"
+    }
+  ],
+  "solver": {
+    "engine": "optics-engine",
+    "family": "ray-obstacle",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "part-color",
+      "part-visible",
+      "opaqueball-radius"
+    ],
+    "outputs": [],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "optics/icons/opaqueball",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "optics/opaqueBall",
+    "legacyProto": "optics/opaqueObjects",
+    "definitionFile": "optics.domain/parts/optics.xml",
+    "inheritanceChain": [
+      "optics/opaqueBall",
+      "optics/opaqueObjects",
+      "optics/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

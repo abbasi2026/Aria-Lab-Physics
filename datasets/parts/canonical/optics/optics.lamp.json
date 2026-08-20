@@ -1,0 +1,440 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "optics.lamp",
+  "name": "Diverging beam",
+  "nameFa": "دسته‌پرتو واگرا",
+  "translationStatus": "verified-dictionary",
+  "domain": "optics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Light Sources",
+      "pathFa": "اپتیک ← منابع نور"
+    }
+  ],
+  "capabilities": [
+    "ray-emission",
+    "wavelength-control"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "optics-pos",
+      "label": "Optics Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Ang",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "framehalfheight",
+      "label": "Framehalfheight",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 10.0
+    },
+    {
+      "key": "framehalfwidth",
+      "label": "Framehalfwidth",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 7.0
+    },
+    {
+      "key": "part-outline",
+      "label": "Part Outline",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-outline-flavour",
+      "label": "Part Outline Flavour",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "aa-part-ref",
+      "label": "Aa Part Ref",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "wavelength",
+      "label": "Wavelength",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "length",
+      "defaultUnit": "nanometer",
+      "default": 5.8e-07,
+      "min": 3.8e-07,
+      "max": 7.8e-07,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "38e-8 78e-8"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "38e-8"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "78e-8"
+          }
+        ]
+      }
+    },
+    {
+      "key": "color",
+      "label": "Color",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Yellow",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "UV Violet Indigo Blue Green Yellow Orange Red Infrared White"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "UV"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Violet"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Indigo"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Blue"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Green"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Yellow"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Orange"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Red"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Infrared"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "White"
+          }
+        ]
+      }
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "free"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "pos",
+      "label": "Pos",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "(0.0, 0.0)"
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "optics/ui/lamp"
+    },
+    {
+      "key": "spread",
+      "label": "Spread",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "angle",
+      "defaultUnit": "degree",
+      "default": "5*PI/18.0",
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "2*PI/360.0 2*PI/3.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "2*PI/360.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "2*PI/3.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "resize-center",
+      "label": "Resize Center",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "size-top",
+      "label": "Size Top",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "size-bottom",
+      "label": "Size Bottom",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    }
+  ],
+  "solver": {
+    "engine": "optics-engine",
+    "family": "ray-source",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "wavelength",
+      "color",
+      "spread"
+    ],
+    "outputs": [],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "optics/icons/divergingbeams",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "optics/lamp",
+    "legacyProto": "optics/lightEmitter",
+    "definitionFile": "optics.domain/parts/optics.xml",
+    "inheritanceChain": [
+      "optics/lamp",
+      "optics/lightEmitter",
+      "optics/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

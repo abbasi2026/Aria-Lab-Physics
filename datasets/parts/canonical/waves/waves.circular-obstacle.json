@@ -1,0 +1,554 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "waves.circular-obstacle",
+  "name": "Circle",
+  "nameFa": "دایره",
+  "translationStatus": "verified-dictionary",
+  "domain": "waves",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Waves > 2D > Obstacles",
+      "pathFa": "موج‌ها ← دوبعدی ← موانع"
+    }
+  ],
+  "capabilities": [
+    "wave-boundary-interaction"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "0"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "hide-part",
+      "label": "Hide part if image attached",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "ignore-click-action",
+      "label": "Ignore Click Action",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "magic-popup-shield",
+      "label": "Magic Popup Shield",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "waves/ui/move-to-wavespace"
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "material",
+      "label": "Material",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "none"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "none"
+          }
+        ]
+      }
+    },
+    {
+      "key": "hide-material",
+      "label": "Hide Material",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "wave-speed-parameter",
+      "label": "Wave Speed Parameter",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "speed"
+    },
+    {
+      "key": "wave-speed-parameter-label",
+      "label": "Wave Speed Parameter Label",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "speed",
+      "default": "Refractive Index"
+    },
+    {
+      "key": "damping-coeff-as-percentage",
+      "label": "Damping",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "min": 0.0,
+      "max": 100.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0 100"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "100"
+          }
+        ]
+      }
+    },
+    {
+      "key": "freq-range-synced-to",
+      "label": "Freq Range Synced To",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Not synced"
+    },
+    {
+      "key": "must-reflect",
+      "label": "Must Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "opaque",
+      "label": "Opaque",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden",
+        " readonly"
+      ],
+      "default": false
+    },
+    {
+      "key": "perimeter-array",
+      "label": "Perimeter Array",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-array",
+      "legacyFlags": [
+        "computed",
+        " user-hidden"
+      ]
+    },
+    {
+      "key": "background-color",
+      "label": "Background Color",
+      "kind": "unknown",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy",
+        " user-hidden"
+      ]
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "default-orientation-constraint",
+      "label": "Default Orientation Constraint",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "radius",
+      "label": "Radius",
+      "kind": "number",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "length",
+      "default": 50.0,
+      "min": 1.0,
+      "max": 500.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "1 500"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "1"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "500"
+          }
+        ]
+      }
+    },
+    {
+      "key": "size-left",
+      "label": "Size Left",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 50.0,
+      "min": -1000.0,
+      "max": 1000.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1000 1000"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-1000"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1000"
+          }
+        ]
+      }
+    },
+    {
+      "key": "size-top",
+      "label": "Size Top",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 50.0,
+      "min": -1000.0,
+      "max": 1000.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1000 1000"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-1000"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1000"
+          }
+        ]
+      }
+    },
+    {
+      "key": "size-right",
+      "label": "Size Right",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 50.0,
+      "min": -1000.0,
+      "max": 1000.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1000 1000"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-1000"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1000"
+          }
+        ]
+      }
+    },
+    {
+      "key": "size-bottom",
+      "label": "Size Bottom",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 50.0,
+      "min": -1000.0,
+      "max": 1000.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1000 1000"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-1000"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1000"
+          }
+        ]
+      }
+    }
+  ],
+  "solver": {
+    "engine": "waves-engine",
+    "family": "wave-obstacle",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [],
+    "outputs": [],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "waves/icons/circle",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "waves/circular-obstacle",
+    "legacyProto": "waves/obstacle",
+    "definitionFile": "waves.domain/parts/waves.xml",
+    "inheritanceChain": [
+      "waves/circular-obstacle",
+      "waves/obstacle",
+      "waves/part-base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

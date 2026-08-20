@@ -1,0 +1,346 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "presentation.dropdown",
+  "name": "Drop-down list",
+  "nameFa": "فهرست کشویی",
+  "translationStatus": "verified-dictionary",
+  "domain": "presentation",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Presentation",
+      "pathFa": "ارائه و کنترل آزمایش"
+    }
+  ],
+  "capabilities": [
+    "experiment-ui"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "toolbar-configuration",
+      "label": "Toolbar Configuration",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "resize-width",
+      "label": "Resize Width",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "resize-origin",
+      "label": "Resize Origin",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "top-left"
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "mode",
+      "label": "Mode",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Association control",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Association control Label Nothing"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Association control"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Label"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Nothing"
+          }
+        ]
+      }
+    },
+    {
+      "key": "label",
+      "label": "Label",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "label"
+    },
+    {
+      "key": "chosen-node",
+      "label": "Chosen Node",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "chosen-property-name",
+      "label": "Chosen Property Name",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ignore-click-action",
+      "label": "Ignore Click Action",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "text-colour",
+      "label": "Text colour",
+      "kind": "color",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "black"
+    },
+    {
+      "key": "meta-group",
+      "label": "Meta Group",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Presentation"
+    },
+    {
+      "key": "meta-label",
+      "label": "Meta Label",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "meta-parttree-order",
+      "label": "Meta Parttree Order",
+      "kind": "integer",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 65
+    },
+    {
+      "key": "meta-icon",
+      "label": "Meta Icon",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/icons/dropDownMenu"
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/ui/dropdownlist"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "value",
+      "label": "Value",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy"
+      ]
+    }
+  ],
+  "solver": {
+    "engine": "experiment-runtime",
+    "family": "presentation-control",
+    "status": "not-applicable",
+    "inputs": [
+      "mode",
+      "label",
+      "text-colour"
+    ],
+    "outputs": [],
+    "contractNotes": "Presentation/control component; no standalone physics solver."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "presentation/icons/dropDownMenu",
+    "interaction": "experiment-authoring-control"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "presentation/dropdown",
+    "legacyProto": "presentation/association-base",
+    "definitionFile": "presentation.domain/parts/10-presentation.xml",
+    "inheritanceChain": [
+      "presentation/dropdown",
+      "presentation/association-base",
+      "presentation/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

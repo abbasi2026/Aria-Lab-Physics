@@ -1,0 +1,427 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "optics.transparentblock",
+  "name": "Transparent Block",
+  "nameFa": "بلوک شفاف",
+  "translationStatus": "verified-dictionary",
+  "domain": "optics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Transparent Objects",
+      "pathFa": "اپتیک ← اجسام شفاف"
+    }
+  ],
+  "capabilities": [
+    "refraction",
+    "ray-tracing"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "optics-pos",
+      "label": "Optics Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Ang",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "framehalfheight",
+      "label": "Framehalfheight",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 40.0
+    },
+    {
+      "key": "framehalfwidth",
+      "label": "Framehalfwidth",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 20.0
+    },
+    {
+      "key": "part-outline",
+      "label": "Part Outline",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-outline-flavour",
+      "label": "Part Outline Flavour",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "aa-part-ref",
+      "label": "Aa Part Ref",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "material",
+      "label": "Material",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Crown Glass",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Air Benzene Water Ice Ethanol Diamond Quartz Glass Crown Glass Flint Glass Custom"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Air"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Benzene"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Water"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Ice"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Ethanol"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Diamond"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Quartz Glass"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Crown Glass"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Flint Glass"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Custom"
+          }
+        ]
+      }
+    },
+    {
+      "key": "refindex",
+      "label": "Refindex",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "min": 1.0,
+      "max": 10.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "1.0 10.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "1.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "10.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "shownormal",
+      "label": "Shownormal",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "free"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "normalvisible",
+      "label": "Normalvisible",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "pos",
+      "label": "Pos",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "(0.0, 0.0)"
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "optics/ui/transparentBlock"
+    },
+    {
+      "key": "showsecreflection",
+      "label": "Showsecreflection",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [],
+      "default": "(40,80)",
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "(10.0,20.0)"
+          },
+          {
+            "key": "min",
+            "type": "point",
+            "value": "(10.0,20.0)"
+          }
+        ]
+      }
+    }
+  ],
+  "solver": {
+    "engine": "optics-engine",
+    "family": "refractive-optic",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "material",
+      "refindex",
+      "shownormal",
+      "showsecreflection"
+    ],
+    "outputs": [],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "optics/icons/transparentblock",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "optics/transparentBlock",
+    "legacyProto": "optics/transparentObject",
+    "definitionFile": "optics.domain/parts/optics.xml",
+    "inheritanceChain": [
+      "optics/transparentBlock",
+      "optics/transparentObject",
+      "optics/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

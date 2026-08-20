@@ -1,0 +1,637 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "circuits.pictorial-spst",
+  "name": "SPST",
+  "nameFa": "کلید SPST",
+  "translationStatus": "verified-dictionary",
+  "domain": "circuits",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Electronics > Pictorial",
+      "pathFa": "الکترونیک ← نمای تصویری"
+    }
+  ],
+  "capabilities": [
+    "connectable",
+    "electrical-simulation"
+  ],
+  "ports": [
+    {
+      "id": "t1",
+      "legacyRole": "terminal,t1",
+      "legacyClass": "electronics/terminal",
+      "kind": "electrical-terminal"
+    },
+    {
+      "id": "t2",
+      "legacyRole": "terminal,t2",
+      "legacyClass": "electronics/terminal",
+      "kind": "electrical-terminal"
+    }
+  ],
+  "properties": [
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "0"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "offset",
+      "label": "Offset",
+      "kind": "vector2",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [],
+      "default": {
+        "x": 48.0,
+        "y": 24.0
+      }
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "fixed"
+    },
+    {
+      "key": "max-i",
+      "label": "Max I",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "15"
+    },
+    {
+      "key": "max-v",
+      "label": "Max V",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "400"
+    },
+    {
+      "key": "max-rv",
+      "label": "Max Rv",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "400"
+    },
+    {
+      "key": "max-p",
+      "label": "Max P",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1e+24
+    },
+    {
+      "key": "pictorial",
+      "label": "Pictorial",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "exploded",
+      "label": "Exploded",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "explosion-type",
+      "label": "Explosion Type",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "explosion-value",
+      "label": "Explosion Value",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "explosion-limit",
+      "label": "Explosion Limit",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "explosion-anim",
+      "label": "Explosion Anim",
+      "kind": "array",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "electronics/explosion/expl0 | electronics/explosion/expl1 | electronics/explosion/expl2 | electronics/explosion/expl3 | electronics/explosion/expl4 | electronics/explosion/expl5 | electronics/explosion/expl6 | electronics/explosion/expl7 | electronics/explosion/expl8 | electronics/explosion/expl9 | electronics/explosion/expl10 | electronics/explosion/expl11 | electronics/explosion/expl12"
+    },
+    {
+      "key": "voltage-formatter",
+      "label": "Voltage Formatter",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "voltage",
+      "defaultUnit": "volts",
+      "allowedUnits": [
+        "picovolts",
+        "nanovolts",
+        "microvolts",
+        "millivolts",
+        "volts",
+        "kilovolts",
+        "megavolts"
+      ]
+    },
+    {
+      "key": "power-formatter",
+      "label": "Power Formatter",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "power",
+      "defaultUnit": "watt",
+      "allowedUnits": [
+        "picowatt",
+        "nanowatt",
+        "microwatt",
+        "milliwatt",
+        "watt",
+        "kilowatt",
+        "megawatt"
+      ]
+    },
+    {
+      "key": "current-formatter",
+      "label": "Current Formatter",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "current",
+      "defaultUnit": "milliampere",
+      "allowedUnits": [
+        "picoampere",
+        "nanoampere",
+        "microampere",
+        "milliampere",
+        "ampere",
+        "kiloampere",
+        "megaampere"
+      ]
+    },
+    {
+      "key": "realpcb-exportable",
+      "label": "Realpcb Exportable",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "export-name",
+      "label": "Export Name",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "export-library",
+      "label": "Export Library",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-id-group-size",
+      "label": "Part Id Group Size",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1
+    },
+    {
+      "key": "two-terminal-current",
+      "label": "Two Terminal Current",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "current",
+      "defaultUnit": "ampere",
+      "allowedUnits": [
+        "picoampere",
+        "nanoampere",
+        "microampere",
+        "milliampere",
+        "ampere",
+        "kiloampere",
+        "megaampere"
+      ]
+    },
+    {
+      "key": "two-terminal-path-dependent-current",
+      "label": "Two Terminal Path Dependent Current",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "current",
+      "defaultUnit": "ampere",
+      "allowedUnits": [
+        "picoampere",
+        "nanoampere",
+        "microampere",
+        "milliampere",
+        "ampere",
+        "kiloampere",
+        "megaampere"
+      ]
+    },
+    {
+      "key": "two-terminal-voltage",
+      "label": "Two Terminal Voltage",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "voltage",
+      "defaultUnit": "volts",
+      "allowedUnits": [
+        "picovolts",
+        "nanovolts",
+        "microvolts",
+        "millivolts",
+        "volts",
+        "kilovolts",
+        "megavolts"
+      ]
+    },
+    {
+      "key": "two-terminal-power",
+      "label": "Two Terminal Power",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "power",
+      "defaultUnit": "watt",
+      "allowedUnits": [
+        "picowatt",
+        "nanowatt",
+        "microwatt",
+        "milliwatt",
+        "watt",
+        "kilowatt",
+        "megawatt"
+      ]
+    },
+    {
+      "key": "user-current",
+      "label": "User Current",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "current",
+      "default": "../p[@key=two-terminal-path-dependent-current]"
+    },
+    {
+      "key": "user-voltage",
+      "label": "User Voltage",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "voltage",
+      "default": "../p[@key=two-terminal-voltage]"
+    },
+    {
+      "key": "user-power",
+      "label": "User Power",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "power",
+      "default": "../p[@key=two-terminal-power]"
+    },
+    {
+      "key": "state",
+      "label": "State",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "action",
+      "label": "Action",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "toggle"
+    },
+    {
+      "key": "nimages",
+      "label": "Nimages",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 2
+    },
+    {
+      "key": "button-pos",
+      "label": "Button Pos",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0,0)"
+    },
+    {
+      "key": "button-on-img",
+      "label": "Button On Img",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "electronics/toggle_on_pict"
+    },
+    {
+      "key": "button-off-img",
+      "label": "Button Off Img",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "electronics/toggle_off_pict"
+    },
+    {
+      "key": "tooltip-current",
+      "label": "Tooltip Current",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "current",
+      "defaultUnit": "ampere",
+      "allowedUnits": [
+        "picoampere",
+        "nanoampere",
+        "microampere",
+        "milliampere",
+        "ampere",
+        "kiloampere",
+        "megaampere"
+      ]
+    },
+    {
+      "key": "img",
+      "label": "Img",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "electronics/spst_pict"
+    }
+  ],
+  "solver": {
+    "engine": "circuits-engine",
+    "family": "analog-network",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [],
+    "outputs": [
+      "user-current",
+      "user-voltage",
+      "user-power"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "electronics/icons/pictorial/spst_switch",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "electronics/pictorial-spst",
+    "legacyProto": "electronics/two-component-pictorial-switch",
+    "definitionFile": "electronics.domain/parts/pictorial.xml",
+    "inheritanceChain": [
+      "electronics/pictorial-spst",
+      "electronics/two-component-pictorial-switch",
+      "electronics/standard-two-terminal-component",
+      "electronics/two-terminal-component-base",
+      "electronics/component"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

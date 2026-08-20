@@ -1,0 +1,202 @@
+﻿source_file,category_path,path,label,tooltip,icon
+Circuits.xml,Circuits,physics_kits/Circuits/Basic circuits,Basic circuits,Basic circuits,physics_kits/icons/contents tree/basicComp
+Circuits.xml,Circuits,physics_kits/Circuits/Current-voltage graphs,Current-voltage graphs,Current-voltage graphs,physics_kits/icons/contents tree/cvpComp
+Circuits.xml,Circuits,physics_kits/Circuits/LDR and thermistor,LDR and thermistor,LDR and thermistor,physics_kits/icons/contents tree/ldrComp
+Circuits.xml,Circuits,physics_kits/Circuits/Ohm's law,Ohm's law,,physics_kits/icons/contents tree/ohmsComp
+Circuits.xml,Circuits,physics_kits/Circuits/Parallel circuits,Parallel circuits,Parallel circuits,physics_kits/icons/contents tree/parallelComp
+Circuits.xml,Circuits,physics_kits/Circuits/Series circuits (resistors),Series circuits (resistors),Series circuits (resistors),physics_kits/icons/contents tree/seriesComp
+Circuits.xml,Circuits,physics_kits/Circuits/Series circuits (lamps),Series circuits (lamps),Series circuits (lamps),physics_kits/icons/contents tree/seriesComp
+Circuits.xml,Circuits,physics_kits/Circuits/Series circuits (batteries),Series circuits (batteries),Series circuits (batteries),physics_kits/icons/contents tree/seriesComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/555 monostable,555 monostable,555 monostable,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/555 oscillator 1,555 oscillator 1,555 oscillator 1,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/555 Oscillator 2,555 Oscillator 2,555 Oscillator 2,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/Counter - 0 to 9,Counter - 0 to 9,Counter - 0 to 9,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/Counter - 0 to 99,Counter - 0 to 99,Counter - 0 to 99,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/Decade Counter,Decade Counter,Decade Counter,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/Noise,Noise,Noise,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/Operational Amplifier,Operational Amplifier,Operational Amplifier,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/Operational Amplifier - Saturation,Operational Amplifier - Saturation,Operational Amplifier - Saturation,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/Overheating Alarm,Overheating Alarm,Overheating Alarm,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/x10 Inverting Amplifier,x10 Inverting Amplifier,x10 Inverting Amplifier,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Op. Amps and ICs,physics_kits/Circuits/x10 Non-Inverting Amplifier,x10 Non-Inverting Amplifier,x10 Non-Inverting Amplifier,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Adder,Adder,Adder,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Electronic Die,Electronic Die,Electronic Die,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Fire Alarm,Fire Alarm,Fire Alarm,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Logic Gates,Logic Gates,Logic Gates,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Pressure Sensing Alarm 1,Pressure Sensing Alarm 1,Pressure Sensing Alarm 1,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Security System,Security System,Security System,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Traffic Lights 1,Traffic Lights 1,Traffic Lights 1,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples > Logic,physics_kits/Circuits/Traffic Lights 2,Traffic Lights 2,Traffic Lights 2,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Fridge,Fridge,Fridge,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/AM Transmitter-Receiver,AM Transmitter-Receiver,AM Transmitter-Receiver,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Beating soundwave,Beating soundwave,Beating soundwave,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Capacitor Discharging,Capacitor Discharging,Capacitor Discharging,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Charge and Voltage,Charge and Voltage,Charge and Voltage,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Darlington Pair,Darlington Pair,Darlington Pair,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Dimmer Switch,Dimmer Switch,Dimmer Switch,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Doorbell,Doorbell,Doorbell,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Landing Light,Landing Light,Landing Light,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Landing light 2,Landing light 2,Landing light 2,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Light Sensor 1,Light Sensor 1,Light Sensor 1,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Light Sensor 2,Light Sensor 2,Light Sensor 2,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Maze,Maze,Maze,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Ohms Law,Ohm's Law,Ohm's Law,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Potential Divider,Potential Divider,Potential Divider,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Pressure Sensing Alarm 2,Pressure Sensing Alarm 2,Pressure Sensing Alarm 2,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Puzzle,Puzzle,Puzzle,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Relay,Relay,Relay,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Thyristor Controlling Motor,Thyristor Controlling Motor,Thyristor Controlling Motor,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Torch - Batteries Correct,Torch - Batteries Correct,Torch - Batteries Correct,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Torch - Batteries Wrong,Torch - Batteries Wrong,Torch - Batteries Wrong,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Transistor,Transistor,Transistor,physics_kits/icons/contents tree/genericComp
+Circuits.xml,Circuits > Other Examples,physics_kits/Circuits/Wheatstone Bridge,Wheatstone Bridge,Wheatstone Bridge,physics_kits/icons/contents tree/genericComp
+Describing Motion.xml,Describing Motion,physics_kits/Describing Motion/Acceleration,Acceleration,Acceleration,physics_kits/icons/contents tree/accelComp
+Describing Motion.xml,Describing Motion,physics_kits/Describing Motion/Distance-time graphs,Distance-time graphs,Distance-time graphs,physics_kits/icons/contents tree/distTimeComp
+Describing Motion.xml,Describing Motion,physics_kits/Describing Motion/Velocity-time graphs,Velocity-time graphs,Velocity-time graphs,physics_kits/icons/contents tree/timeVelComp
+Describing Motion.xml,Describing Motion > Other Examples,physics_kits/Describing Motion/Distance-time graph 1,Distance-time graph 1,Distance-time graph 1,physics_kits/icons/contents tree/genericComp
+Describing Motion.xml,Describing Motion > Other Examples,physics_kits/Describing Motion/Distance-time graph 2,Distance-time graph 2,Distance-time graph 2,physics_kits/icons/contents tree/genericComp
+Describing Motion.xml,Describing Motion > Other Examples,physics_kits/Describing Motion/Distance-time graph 3,Distance-time graph 3,Distance-time graph 3,physics_kits/icons/contents tree/genericComp
+Describing Motion.xml,Describing Motion > Other Examples,physics_kits/Describing Motion/Speed-time graph 1,Speed-time graph 1,Speed-time graph 1,physics_kits/icons/contents tree/genericComp
+Describing Motion.xml,Describing Motion > Other Examples,physics_kits/Describing Motion/Speed-time graph 2,Speed-time graph 2,Speed-time graph 2,physics_kits/icons/contents tree/genericComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/Alternating and direct current,Alternating and direct current,Alternating and direct current,physics_kits/icons/contents tree/acdcComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/Cost of energy,Cost of energy,Cost of energy,physics_kits/icons/contents tree/costComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/Electrical power,Electrical power,Electrical power,physics_kits/icons/contents tree/powerComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/Fuses,Fuses,Fuses,physics_kits/icons/contents tree/fuseComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/High power appliances,High power appliances,High power appliances,physics_kits/icons/contents tree/costComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/Low power appliances,Low power appliances,Low power appliances,physics_kits/icons/contents tree/costComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/Transforming energy,Transforming energy,Transforming energy,physics_kits/icons/contents tree/eetComp
+Electrical Energy.xml,Electrical Energy,physics_kits/Electrical Energy/Transformers,Transformers,Transformers,physics_kits/icons/contents tree/transformComp
+Electrical Energy.xml,Electrical Energy > Other Examples,physics_kits/Electrical Energy/AC Rectifier 1,AC rectifier 1,AC rectifier 1,physics_kits/icons/contents tree/genericComp
+Electrical Energy.xml,Electrical Energy > Other Examples,physics_kits/Electrical Energy/AC Rectifier 2,AC rectifier 2,AC rectifier 2,physics_kits/icons/contents tree/genericComp
+Electrical Energy.xml,Electrical Energy > Other Examples,physics_kits/Electrical Energy/AC Rectifier 3,AC rectifier 3,AC rectifier 3,physics_kits/icons/contents tree/genericComp
+Electrical Energy.xml,Electrical Energy > Other Examples,physics_kits/Electrical Energy/Electromechanics,Electromechanics,Electromechanics,physics_kits/icons/contents tree/genericComp
+Electrical Energy.xml,Electrical Energy > Other Examples,physics_kits/Electrical Energy/Model car design,Model car design,Model car design,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion,physics_kits/Energy and Motion/Definition of momentum,Definition of momentum,Definition of momentum,physics_kits/icons/contents tree/momDefComp
+Energy and Motion.xml,Energy and Motion,physics_kits/Energy and Motion/Conservation of momentum,Conservation of momentum,Conservation of momentum,physics_kits/icons/contents tree/momConComp
+Energy and Motion.xml,Energy and Motion,physics_kits/Energy and Motion/Change in momentum,Change in momentum,Change in momentum,physics_kits/icons/contents tree/changeMomComp
+Energy and Motion.xml,Energy and Motion,physics_kits/Energy and Motion/Elastic potential energy,Elastic potential energy,Elastic potential energy,physics_kits/icons/contents tree/elasticComp
+Energy and Motion.xml,Energy and Motion,physics_kits/Energy and Motion/Kinetic energy (changing mass),Kinetic energy (changing mass),Kinetic energy (changing mass),physics_kits/icons/contents tree/kineticComp
+Energy and Motion.xml,Energy and Motion,physics_kits/Energy and Motion/Kinetic energy (changing speed),Kinetic energy (changing speed),Kinetic energy (changing speed),physics_kits/icons/contents tree/kineticComp
+Energy and Motion.xml,Energy and Motion,physics_kits/Energy and Motion/Work done,Work done,Work done,physics_kits/icons/contents tree/workdoneComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Change in energy 1,Change in energy 1,Change in energy 1,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Change in energy 2,Change in energy 2,Change in energy 2,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Energy changes,Energy changes,Energy changes,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Gravitational potential energy,Gravitational potential energy,Gravitational potential energy,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Hooke's Law,Hooke's Law,Hooke's Law,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Ideal elastic collision,Ideal elastic collision,Ideal elastic collision,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Ideal inelastic collision,Ideal inelastic collision,Ideal inelastic collision,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Momentum in elastic collisions,Momentum in elastic collisions,Momentum in elastic collisions,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Momentum in inelastic collisions,Momentum in inelastic collisions,Momentum in inelastic collisions,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Semi-elastic collision,Semi-elastic collision,Semi-elastic collision,physics_kits/icons/contents tree/genericComp
+Energy and Motion.xml,Energy and Motion > Other Examples,physics_kits/Energy and Motion/Springs - energy,Springs - energy,Springs - energy,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Circular motion (changing mass),Circular motion (changing mass),Circular motion (changing mass),physics_kits/icons/contents tree/circularComp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Circular motion (changing radius),Circular motion (changing radius),Circular motion (changing radius),physics_kits/icons/contents tree/circularComp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Newton's first law,Newton's first law,,physics_kits/icons/contents tree/newton1Comp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Newton's second law,Newton's second law,,physics_kits/icons/contents tree/newton2Comp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Newton's third law,Newton's third law,,physics_kits/icons/contents tree/newton3Comp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Resultant forces,Resultant forces,Resultant forces,physics_kits/icons/contents tree/resultantComp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Toppling tractors,Toppling tractors,Toppling tractors,physics_kits/icons/contents tree/toppleComp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Unequal forces,Unequal forces,Unequal forces,physics_kits/icons/contents tree/unequalComp
+Force and Acceleration.xml,Force and Acceleration,physics_kits/Force and Acceleration/Weight,Weight,Weight,physics_kits/icons/contents tree/weightComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Balanced forces,Balanced forces,Balanced forces,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Defining the Newton,Defining the Newton,Defining the Newton,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Forces on a vehicle,Forces on a vehicle,Forces on a vehicle,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Friction,Friction,Friction,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Measuring g,Measuring g,Measuring g,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Moving sideways and downwards,Moving sideways and downwards,Moving sideways and downwards,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Moving up and down,Moving up and down,Moving up and down,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Pendulums - different amplitudes,Pendulums - different amplitudes,Pendulums - different amplitudes,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Pendulums - different lengths,Pendulums - different lengths,Pendulums - different lengths,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Pendulums - different masses,Pendulums - different masses,Pendulums - different masses,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Pendulums - velocity and displacement,Pendulums - velocity and displacement,Pendulums - velocity and displacement,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/SHM,SHM - horizontal spring,SHM - horizontal spring,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Springs - displacement and velocity,Springs - displacement and velocity,Springs - displacement and velocity,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Springs - forces,Springs - forces,Springs - forces,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Springs - velocity and acceleration,Springs - velocity and acceleration,Springs - velocity and acceleration,physics_kits/icons/contents tree/genericComp
+Force and Acceleration.xml,Force and Acceleration > Other Examples,physics_kits/Force and Acceleration/Velocity changes,Velocity changes,Velocity changes,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics,physics_kits/Optics/Angles of reflection,Angles of reflection,Angles of reflection,physics_kits/icons/contents tree/reflectPlaneComp
+Optics.xml,Optics,physics_kits/Optics/Convex and concave mirrors,Convex and concave mirrors,Convex and concave mirrors,physics_kits/icons/contents tree/convexComp
+Optics.xml,Optics,physics_kits/Optics/Refraction,Refraction,Refraction,physics_kits/icons/contents tree/refractInterfaceComp
+Optics.xml,Optics,physics_kits/Optics/camera,Camera,Camera,physics_kits/icons/contents tree/cameraComp
+Optics.xml,Optics,physics_kits/Optics/Lenses,Lenses,Lenses,physics_kits/icons/contents tree/lensesComp
+Optics.xml,Optics,physics_kits/Optics/Magnifying glass,Magnifying glass,Magnifying glass,physics_kits/icons/contents tree/magGlassComp
+Optics.xml,Optics,physics_kits/Optics/Magnification,Magnification,Magnification,physics_kits/icons/contents tree/magnifyComp
+Optics.xml,Optics,physics_kits/Optics/Mirrors and reflection,Mirrors and reflection,Mirrors and reflection,physics_kits/icons/contents tree/reflectPlaneComp
+Optics.xml,Optics,physics_kits/Optics/Periscopes,Periscopes,Periscopes,physics_kits/icons/contents tree/periscopeComp
+Optics.xml,Optics,physics_kits/Optics/Telescope (simple),Telescope (simple),Telescope (simple),physics_kits/icons/contents tree/telescopeComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Binoculars,Binoculars,Binoculars,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Box of Light,Box of Light,Box of Light,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Caustic Curve,Caustic Curve,Caustic Curve,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Colour Mixing,Colour Mixing,Colour Mixing,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Colours of Light,Colours of Light,Colours of Light,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Converging and Diverging Lenses,Converging and Diverging Lenses,Converging and Diverging Lenses,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Converging Lenses 1,Converging Lenses 1,Converging Lenses 1,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Converging Lenses 2,Converging Lenses 2,Converging Lenses 2,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Convex Mirror,Convex Mirror,Convex Mirror,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Determining f - Mirror Method,Determining f - Mirror Method,Determining f - Mirror Method,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Determining f - Ray Method,Determining f - Ray Method,Determining f - Ray Method,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Distant Object,Distant Object,Distant Object,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Diverging Lenses 1,Diverging Lenses 1,Diverging Lenses 1,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Diverging Lenses 2,Diverging Lenses 2,Diverging Lenses 2,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Eye,Eye,Eye,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Far or Long Sightedness,Far or Long Sightedness,Far or Long Sightedness,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Focal Point - Convering Lens,Focal Point - Converging Lens,Focal Point - Converging Lens,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Focal Point - Diverging Lens,Focal Point - Diverging Lens,Focal Point - Diverging Lens,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Lens Formula,Lens Formula,Lens Formula,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Lenses & Mirrors,Lenses and Mirrors,Lenses and Mirrors,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Light from Distant Objects,Light from Distant Objects,Light from Distant Objects,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Light from Nearby Objects,Light from Nearby Objects,Light from Nearby Objects,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Microscope,Microscope,Microscope,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Near or Short Sightedness,Near or Short Sightedness,Near or Short Sightedness,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Nearby Object,Nearby Object,Nearby Object,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Object - Between F and the Lens,Object - Between F and the Lens,Object - Between F and the Lens,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Object at 2F,Object at 2F,Object at 2F,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Object at F,Object at F,Object at F,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Object between F and 2F,Object between F and 2F,Object between F and 2F,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Object beyond 2F,Object beyond 2F,Object beyond 2F,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Principle of Additivity,Principle of Additivity,Principle of Additivity,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Principle of Reversibility,Principle of Reversibility,Principle of Reversibility,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Satellite Dish,Satellite Dish,Satellite Dish,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Shadows 1,Shadows 1,Shadows 1,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Shadows 2,Shadows 2,Shadows 2,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Solar eclipse,Solar eclipse,Solar eclipse,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Spectrometer,Spectrometer,Spectrometer,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Split Combine Ray,Split Combine Ray,Split Combine Ray,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Total Internal Reflection,Total Internal Reflection,Total Internal Reflection,physics_kits/icons/contents tree/genericComp
+Optics.xml,Optics > Other Examples,physics_kits/Optics/Rainbow,Rainbow,Rainbow,physics_kits/icons/contents tree/genericComp
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Using lesson kits,Using lesson kits,Using lesson kits,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Using parts,Using parts,Using parts,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Setting up a simple circuit,Setting up a simple circuit,Setting up a simple circuit,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Setting up a simple ray diagram,Setting up a simple ray diagram,Setting up a simple ray diagram,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Setting up a motion experiment,Setting up a motion experiment,Setting up a motion experiment,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Setting up a waves experiment,Setting up a waves experiment,Setting up a waves experiment,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Using presentation parts,Using presentation parts,Using presentation parts,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Plotting a graph,Plotting a graph,Plotting a graph,physics_kits/icons/contents tree/tutorial
+Tutorials.xml,Getting Started,physics_kits/Tutorials/Drag and buoyancy,Drag and buoyancy,Drag and buoyancy,physics_kits/icons/contents tree/tutorialNew
+Waves.xml,Waves,physics_kits/Waves/Absorption of radiation,Absorption of radiation,Absorption of radiation,physics_kits/icons/contents tree/absorbComp
+Waves.xml,Waves,physics_kits/Waves/Diffraction,Diffraction,Diffraction,physics_kits/icons/contents tree/diffractionComp
+Waves.xml,Waves,physics_kits/Waves/Doppler shift,Doppler shift,Doppler shift,physics_kits/icons/contents tree/dopplerComp
+Waves.xml,Waves,physics_kits/Waves/Electromagnetic spectrum,Electromagnetic spectrum,Electromagnetic spectrum,physics_kits/icons/contents tree/spectrumComp
+Waves.xml,Waves,physics_kits/Waves/Interference,Interference,Interference,physics_kits/icons/contents tree/interferenceComp
+Waves.xml,Waves,physics_kits/Waves/Loudness and pitch,Loudness and pitch,Loudness and pitch,physics_kits/icons/contents tree/ampFeqComp
+Waves.xml,Waves,physics_kits/Waves/Reflection and refraction,Reflection and refraction,Reflection and refraction,physics_kits/icons/contents tree/refractionComp
+Waves.xml,Waves,physics_kits/Waves/Speed of sound,Speed of sound,Speed of sound,physics_kits/icons/contents tree/speedComp
+Waves.xml,Waves,physics_kits/Waves/Ultrasound,Ultrasound,Ultrasound,physics_kits/icons/contents tree/ultrasoundComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/AM Radio,AM Radio,AM Radio,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Basic Wave Properties,Basic Wave Properties,Basic Wave Properties,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Diffraction around Hill,Diffraction around Hill,Diffraction around Hill,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Harmonic Frequency - Harmonic,Harmonic Frequency - Harmonic,Harmonic Frequency - Harmonic,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Harmonic Frequency - Tension,Harmonic Frequency - Tension,Harmonic Frequency - Tension,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Jet plane sonic wake,Jet plane sonic wake,Jet plane sonic wake,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Measuring Distance,Measuring Distance,Measuring Distance,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Penetration of Gamma Rays,Penetration of Gamma Rays,Penetration of Gamma Rays,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Penetration of X-Rays,Penetration of X-Rays,Penetration of X-Rays,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Pulse Reflection,Pulse Reflection,Pulse Reflection,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Reflection Type,Reflection Type,Reflection Type,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Setting Node Position,Setting Node Position,Setting Node Position,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Simple Harmonic Motion 1,Simple Harmonic Motion 1,Simple Harmonic Motion 1,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Simple Harmonic Motion 2,Simple Harmonic Motion 2,Simple Harmonic Motion 2,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Simple Harmonic Motion 3,Simple Harmonic Motion 3,Simple Harmonic Motion 3,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Sound Waves in a Pipe,Sound Waves in a Pipe,Sound Waves in a Pipe,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/Speed of Water Waves,Speed of Water Waves,Speed of Water Waves,physics_kits/icons/contents tree/genericComp
+Waves.xml,Waves > Other Examples,physics_kits/Waves/String Harmonics,String Harmonics,String Harmonics,physics_kits/icons/contents tree/genericComp

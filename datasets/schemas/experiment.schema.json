@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aria-lab.ir/schemas/experiment.schema.json",
+  "title": "Aria Physics Experiment",
+  "type": "object",
+  "required": ["id", "title", "domain", "scene"],
+  "properties": {
+    "id": {"type": "string"},
+    "version": {"type": "integer", "minimum": 1, "default": 1},
+    "title": {"type": "string"},
+    "titleFa": {"type": "string"},
+    "domain": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "learningObjectives": {"type": "array", "items": {"type": "string"}},
+    "prerequisites": {"type": "array", "items": {"type": "string"}},
+    "scene": {
+      "type": "object",
+      "required": ["parts"],
+      "properties": {
+        "parts": {"type": "array", "items": {"type": "object"}},
+        "connections": {"type": "array", "items": {"type": "object"}},
+        "bindings": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "steps": {"type": "array", "items": {"type": "object"}},
+    "measurements": {"type": "array", "items": {"type": "object"}},
+    "expectedResults": {"type": "array", "items": {"type": "object"}},
+    "assessment": {"type": "object"}
+  }
+}

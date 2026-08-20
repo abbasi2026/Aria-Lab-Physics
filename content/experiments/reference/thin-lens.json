@@ -1,0 +1,53 @@
+{
+  "id": "reference.thin-lens",
+  "version": 1,
+  "title": "Thin Lens Equation",
+  "titleFa": "معادله عدسی نازک",
+  "domain": [
+    "optics"
+  ],
+  "learningObjectives": [
+    "Validate the solver against 1/f = 1/u + 1/v."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "optics/object"
+      },
+      {
+        "type": "optics/convex-lens"
+      },
+      {
+        "type": "optics/screen"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "1/f = 1/u + 1/v"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "f": 10,
+          "u": 30
+        },
+        "expect": {
+          "v": 15
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

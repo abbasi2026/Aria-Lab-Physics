@@ -1,0 +1,68 @@
+{
+  "id": "reference.wave-interference",
+  "version": 1,
+  "title": "Two-Source Interference",
+  "titleFa": "تداخل دو منبع موج",
+  "domain": [
+    "waves"
+  ],
+  "learningObjectives": [
+    "Validate the solver against superposition."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "waves/source"
+      },
+      {
+        "type": "waves/source"
+      },
+      {
+        "type": "waves/space-2d"
+      },
+      {
+        "type": "measurement/probe"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "superposition"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "A1": 1,
+          "A2": 1,
+          "phase_diff_deg": 0
+        },
+        "expect": {
+          "A_resultant": 2
+        },
+        "tolerance": 1e-06
+      },
+      {
+        "inputs": {
+          "A1": 1,
+          "A2": 1,
+          "phase_diff_deg": 180
+        },
+        "expect": {
+          "A_resultant": 0
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

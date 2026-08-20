@@ -1,0 +1,61 @@
+{
+  "id": "reference.reflection-angle",
+  "version": 1,
+  "title": "Law of Reflection",
+  "titleFa": "قانون بازتاب",
+  "domain": [
+    "optics"
+  ],
+  "learningObjectives": [
+    "Validate the solver against θ_i = θ_r."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "optics/ray-source"
+      },
+      {
+        "type": "optics/plane-mirror"
+      },
+      {
+        "type": "measurement/protractor"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "θ_i = θ_r"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "incidence_deg": 35
+        },
+        "expect": {
+          "reflection_deg": 35
+        },
+        "tolerance": 1e-06
+      },
+      {
+        "inputs": {
+          "incidence_deg": 70
+        },
+        "expect": {
+          "reflection_deg": 70
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

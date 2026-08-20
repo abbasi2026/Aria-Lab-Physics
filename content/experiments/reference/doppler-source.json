@@ -1,0 +1,51 @@
+{
+  "id": "reference.doppler-source",
+  "version": 1,
+  "title": "Doppler Effect — Moving Source",
+  "titleFa": "اثر دوپلر برای منبع متحرک",
+  "domain": [
+    "waves"
+  ],
+  "learningObjectives": [
+    "Validate the solver against f_obs = f v/(v-v_s)."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "waves/source"
+      },
+      {
+        "type": "waves/detector"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "f_obs = f v/(v-v_s)"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "f": 500,
+          "v": 340,
+          "vs": 20
+        },
+        "expect": {
+          "f_obs": 531.25
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

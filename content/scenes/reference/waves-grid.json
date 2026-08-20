@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "reference.waves-grid",
+  "title": "2D Wave Field",
+  "titleFa": "میدان موج دوبعدی",
+  "domain": "waves",
+  "simulation": {"dt": 0.25, "timeScale": 1, "waveSpeed": 1},
+  "parts": [
+    {"instanceId": "space", "partId": "waves.space-2d", "transform": {"position": {"x": 0, "y": 0}}, "properties": {"width": 7, "height": 7, "dx": 1}},
+    {"instanceId": "source", "partId": "waves.point-source", "transform": {"position": {"x": 3, "y": 3}}, "properties": {"amplitude": 1}}
+  ],
+  "connections": [],
+  "probes": [{"id": "center", "quantity": "displacement", "x": 3, "y": 3}],
+  "metadata": {"stage": 3}
+}

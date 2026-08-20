@@ -1,0 +1,526 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "circuits.context-logic-output",
+  "name": "Target logic output",
+  "nameFa": "خروجی منطقی هدف",
+  "translationStatus": "verified-dictionary",
+  "domain": "circuits",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Electronics > Digital > Outputs",
+      "pathFa": "الکترونیک ← دیجیتال ← خروجی‌ها"
+    }
+  ],
+  "capabilities": [
+    "connectable",
+    "digital-logic-simulation"
+  ],
+  "ports": [
+    {
+      "id": "port-1",
+      "legacyRole": "terminal",
+      "legacyClass": "electronics/terminal",
+      "kind": "electrical-terminal"
+    }
+  ],
+  "properties": [
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "0"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "offset",
+      "label": "Offset",
+      "kind": "vector2",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [],
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "fixed"
+    },
+    {
+      "key": "max-i",
+      "label": "Max I",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1e+24
+    },
+    {
+      "key": "max-v",
+      "label": "Max V",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1e+24
+    },
+    {
+      "key": "max-rv",
+      "label": "Max Rv",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1e+24
+    },
+    {
+      "key": "max-p",
+      "label": "Max P",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1e+24
+    },
+    {
+      "key": "pictorial",
+      "label": "Pictorial",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "exploded",
+      "label": "Exploded",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "explosion-type",
+      "label": "Explosion Type",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "explosion-value",
+      "label": "Explosion Value",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "explosion-limit",
+      "label": "Explosion Limit",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "explosion-anim",
+      "label": "Explosion Anim",
+      "kind": "array",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "electronics/explosion/expl0 | electronics/explosion/expl1 | electronics/explosion/expl2 | electronics/explosion/expl3 | electronics/explosion/expl4 | electronics/explosion/expl5 | electronics/explosion/expl6 | electronics/explosion/expl7 | electronics/explosion/expl8 | electronics/explosion/expl9 | electronics/explosion/expl10 | electronics/explosion/expl11 | electronics/explosion/expl12"
+    },
+    {
+      "key": "voltage-formatter",
+      "label": "Voltage Formatter",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "voltage",
+      "defaultUnit": "volts",
+      "allowedUnits": [
+        "picovolts",
+        "nanovolts",
+        "microvolts",
+        "millivolts",
+        "volts",
+        "kilovolts",
+        "megavolts"
+      ]
+    },
+    {
+      "key": "power-formatter",
+      "label": "Power Formatter",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "power",
+      "defaultUnit": "watt",
+      "allowedUnits": [
+        "picowatt",
+        "nanowatt",
+        "microwatt",
+        "milliwatt",
+        "watt",
+        "kilowatt",
+        "megawatt"
+      ]
+    },
+    {
+      "key": "current-formatter",
+      "label": "Current Formatter",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "current",
+      "defaultUnit": "milliampere",
+      "allowedUnits": [
+        "picoampere",
+        "nanoampere",
+        "microampere",
+        "milliampere",
+        "ampere",
+        "kiloampere",
+        "megaampere"
+      ]
+    },
+    {
+      "key": "realpcb-exportable",
+      "label": "Realpcb Exportable",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "export-name",
+      "label": "Export Name",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "export-library",
+      "label": "Export Library",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-id-group-size",
+      "label": "Part Id Group Size",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1
+    },
+    {
+      "key": "state",
+      "label": "State",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "0"
+    },
+    {
+      "key": "user-state",
+      "label": "User State",
+      "kind": "boolean",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "terminal-count",
+      "label": "Terminal Count",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 0
+    },
+    {
+      "key": "chosen-node",
+      "label": "Chosen Node",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "hide-association-control",
+      "label": "Hide Association Control",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "value",
+      "label": "Value",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "frame",
+      "label": "Frame",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "play-mode",
+      "label": "Play Mode",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "direction-forwards",
+      "label": "Direction Forwards",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "simulate-click",
+      "label": "Simulate Click",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "electronics/ui/context-logic"
+    }
+  ],
+  "solver": {
+    "engine": "circuits-engine",
+    "family": "digital-logic",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "hide-association-control"
+    ],
+    "outputs": [
+      "user-state"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "electronics/icons/digital/assoc_logic_output",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "electronics/context-logic-output",
+    "legacyProto": "electronics/digital-output-base",
+    "definitionFile": "electronics.domain/parts/x_digital_outputs.xml",
+    "inheritanceChain": [
+      "electronics/context-logic-output",
+      "electronics/digital-output-base",
+      "electronics/component"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

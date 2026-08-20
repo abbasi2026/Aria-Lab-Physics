@@ -1,0 +1,642 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "optics.eye",
+  "name": "Eye",
+  "nameFa": "چشم",
+  "translationStatus": "verified-dictionary",
+  "domain": "optics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Ray Diagrams",
+      "pathFa": "اپتیک ← نمودارهای پرتو"
+    }
+  ],
+  "capabilities": [
+    "ray-tracing"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "optics-pos",
+      "label": "Optics Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Ang",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "framehalfheight",
+      "label": "Framehalfheight",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 20.0
+    },
+    {
+      "key": "framehalfwidth",
+      "label": "Framehalfwidth",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 20.0
+    },
+    {
+      "key": "part-outline",
+      "label": "Part Outline",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-outline-flavour",
+      "label": "Part Outline Flavour",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "aa-part-ref",
+      "label": "Aa Part Ref",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "show-picture",
+      "label": "Show Picture",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": true,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "default": "../subpart[@role=eye-image]/p[@key=visible]"
+    },
+    {
+      "key": "dottedline-start",
+      "label": "Dottedline Start",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0.0, 0.0)"
+    },
+    {
+      "key": "dottedline-end",
+      "label": "Dottedline End",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0.0, 0.0)"
+    },
+    {
+      "key": "dottedline-visible",
+      "label": "Dottedline Visible",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "optics/ui/eye"
+    },
+    {
+      "key": "eye-looksright",
+      "label": "Eye Looksright",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Left",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Left Right"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Left"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Right"
+          }
+        ]
+      }
+    },
+    {
+      "key": "eye-showLineofSight",
+      "label": "Eye Showlineofsight",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "When Selected",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Never When Selected Always"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Never"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "When Selected"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Always"
+          }
+        ]
+      }
+    },
+    {
+      "key": "toppoint-start",
+      "label": "Toppoint Start",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "toppoint-end",
+      "label": "Toppoint End",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "bottompoint-start",
+      "label": "Bottompoint Start",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "bottompoint-end",
+      "label": "Bottompoint End",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "middlepoint-start",
+      "label": "Middlepoint Start",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "middlepoint-end",
+      "label": "Middlepoint End",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "top-handler",
+      "label": "Top Handler",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "writable-computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "bottom-handler",
+      "label": "Bottom Handler",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "writable-computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "eye-regionOfInterest",
+      "label": "Eye Regionofinterest",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 0.23,
+      "min": 0.02,
+      "max": 1.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.02 1.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.02"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "eye-invertImage",
+      "label": "Eye Invertimage",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": true
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "resize-center",
+      "label": "Resize Center",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "fixed-proportion",
+      "label": "Fixed Proportion",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(1,1)"
+    },
+    {
+      "key": "outer-stem",
+      "label": "Outer Stem",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "inner-stem",
+      "label": "Inner Stem",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "cornea",
+      "label": "Cornea",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "iris",
+      "label": "Iris",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ring",
+      "label": "Ring",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "main-inner",
+      "label": "Main Inner",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pupil",
+      "label": "Pupil",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "eye-lens",
+      "label": "Eye Lens",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    }
+  ],
+  "solver": {
+    "engine": "optics-engine",
+    "family": "ray-scene-component",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "eye-looksright",
+      "eye-showLineofSight",
+      "eye-regionOfInterest",
+      "eye-invertImage"
+    ],
+    "outputs": [
+      "show-picture"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "optics/icons/eye",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "optics/eye",
+    "legacyProto": "optics/graphicCarrier",
+    "definitionFile": "optics.domain/parts/optics.xml",
+    "inheritanceChain": [
+      "optics/eye",
+      "optics/graphicCarrier",
+      "optics/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aria-lab.ir/schemas/part.schema.json",
+  "title": "Aria Lab Physics Part Model v1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "name", "nameFa", "domain", "version", "categories", "capabilities", "ports", "properties", "solver", "rendering", "source", "migration"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$"},
+    "name": {"type": "string", "minLength": 1},
+    "nameFa": {"type": "string", "minLength": 1},
+    "translationStatus": {"enum": ["verified-dictionary", "pending"]},
+    "domain": {"enum": ["mechanics", "circuits", "optics", "waves", "presentation", "thermal", "fields", "fluids", "atomic", "core"]},
+    "version": {"type": "integer", "minimum": 1},
+    "categories": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "required": ["path", "pathFa"], "properties": {"path": {"type": "string"}, "pathFa": {"type": "string"}}, "additionalProperties": false}
+    },
+    "capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["id", "kind"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["electrical-terminal", "mechanical-connector", "optical-port", "wave-port", "control-port"]},
+          "legacyRole": {"type": "string"},
+          "legacyClass": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "properties": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["key", "label", "kind", "role", "editable", "observable", "legacyFlags"],
+        "properties": {
+          "key": {"type": "string", "minLength": 1},
+          "label": {"type": "string"},
+          "kind": {"enum": ["number", "integer", "boolean", "string", "vector2", "vector3", "color", "resource", "array", "object", "enum", "unknown"]},
+          "role": {"enum": ["parameter", "state", "observable", "computed", "rendering", "binding", "internal"]},
+          "editable": {"type": "boolean"},
+          "observable": {"type": "boolean"},
+          "legacyType": {"type": ["string", "null"]},
+          "legacyFlags": {"type": "array", "items": {"type": "string"}},
+          "quantity": {"type": "string"},
+          "defaultUnit": {"type": "string"},
+          "allowedUnits": {"type": "array", "items": {"type": "string"}},
+          "default": {},
+          "min": {"type": "number"},
+          "max": {"type": "number"},
+          "legacyValidator": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "solver": {
+      "type": "object", "required": ["engine", "family", "status", "inputs", "outputs", "contractNotes"],
+      "properties": {
+        "engine": {"type": "string"}, "family": {"type": "string"}, "status": {"type": "string"},
+        "inputs": {"type": "array", "items": {"type": "string"}},
+        "outputs": {"type": "array", "items": {"type": "string"}},
+        "contractNotes": {"type": "string"}
+      }, "additionalProperties": false
+    },
+    "rendering": {"type": "object"},
+    "source": {"type": "object"},
+    "migration": {"type": "object"}
+  },
+  "additionalProperties": false
+}

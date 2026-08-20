@@ -1,0 +1,662 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "presentation.advanced-animation",
+  "name": "Animation",
+  "nameFa": "پویانمایی",
+  "translationStatus": "verified-dictionary",
+  "domain": "presentation",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Presentation",
+      "pathFa": "ارائه و کنترل آزمایش"
+    }
+  ],
+  "capabilities": [
+    "experiment-ui"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "toolbar-configuration",
+      "label": "Toolbar Configuration",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "resize-width",
+      "label": "Resize Width",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "resize-origin",
+      "label": "Resize Origin",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "top-left"
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": []
+    },
+    {
+      "key": "mode",
+      "label": "Mode",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Nothing"
+    },
+    {
+      "key": "label",
+      "label": "Label",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "chosen-node",
+      "label": "Chosen Node",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "chosen-property-name",
+      "label": "Chosen Property Name",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ignore-click-action",
+      "label": "Ignore Click Action",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "text-colour",
+      "label": "Text colour",
+      "kind": "color",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "black"
+    },
+    {
+      "key": "action",
+      "label": "Action",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "action",
+      "legacyFlags": [
+        "user-hidden",
+        "always-notify"
+      ]
+    },
+    {
+      "key": "meta-group",
+      "label": "Meta Group",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Presentation"
+    },
+    {
+      "key": "meta-parttree-order",
+      "label": "Meta Parttree Order",
+      "kind": "integer",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 30
+    },
+    {
+      "key": "meta-label",
+      "label": "Meta Label",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "meta-icon",
+      "label": "Meta Icon",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/icons/advanced-animation"
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/ui/advanced-animation"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "orientation-proxy",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy"
+      ]
+    },
+    {
+      "key": "local-value",
+      "label": "Local Value",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1
+    },
+    {
+      "key": "value",
+      "label": "Frame (current)",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy",
+        "user-hidden"
+      ],
+      "default": "../p[@key=\"local-value\"]"
+    },
+    {
+      "key": "frames",
+      "label": "Animation frames",
+      "kind": "array",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "num-frames",
+      "label": "Number of frames",
+      "kind": "integer",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "computed"
+      ],
+      "default": 0
+    },
+    {
+      "key": "frame-rate",
+      "label": "Frame rate",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 5.0,
+      "min": 0.1,
+      "max": 20.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.1 20.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.1"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "20.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "scale",
+      "label": "Scale",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 1.0,
+      "min": 0.01,
+      "max": 10.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.01 10"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.01"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "10"
+          }
+        ]
+      }
+    },
+    {
+      "key": "play-forwards",
+      "label": "Play forwards",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "simulate-click",
+      "label": "Simulate Click",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "play-mode",
+      "label": "Clicking",
+      "kind": "unknown",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "!user-hidden"
+      ],
+      "default": "plays next animation",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "plays next animation does nothing"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "plays next animation"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "does nothing"
+          }
+        ]
+      }
+    },
+    {
+      "key": "click-mode",
+      "label": "Click action",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Play once",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Advance frame Play once"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Advance frame"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Play once"
+          }
+        ]
+      }
+    },
+    {
+      "key": "loop-mode",
+      "label": "Loop mode",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Click to start/stop loop",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Click to start/stop loop Play continuously"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Click to start/stop loop"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Play continuously"
+          }
+        ]
+      }
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "current-sequence-name",
+      "label": "Current animation",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "current"
+    },
+    {
+      "key": "looping",
+      "label": "Looping",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "once only",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "once only in a loop"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "once only"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "in a loop"
+          }
+        ]
+      }
+    },
+    {
+      "key": "set-next-seq-notifier",
+      "label": "Set Next Seq Notifier",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "sequences",
+      "label": "Animations",
+      "kind": "object",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    }
+  ],
+  "solver": {
+    "engine": "experiment-runtime",
+    "family": "presentation-control",
+    "status": "not-applicable",
+    "inputs": [
+      "frame-rate",
+      "play-mode",
+      "looping",
+      "sequences"
+    ],
+    "outputs": [],
+    "contractNotes": "Presentation/control component; no standalone physics solver."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "presentation/icons/animation",
+    "interaction": "experiment-authoring-control"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "presentation/advanced-animation",
+    "legacyProto": "presentation/animation",
+    "definitionFile": "presentation.domain/parts/20-animation.xml",
+    "inheritanceChain": [
+      "presentation/advanced-animation",
+      "presentation/animation",
+      "presentation/action-handler",
+      "presentation/association-base",
+      "presentation/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

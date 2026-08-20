@@ -1,0 +1,122 @@
+[
+  {
+    "id": "reference.ohms-law",
+    "title": "Ohm’s Law",
+    "titleFa": "قانون اهم",
+    "domains": [
+      "circuits"
+    ],
+    "equation": "V = I R",
+    "file": "content/experiments/reference/ohms-law.json"
+  },
+  {
+    "id": "reference.current-voltage-resistor",
+    "title": "Current–Voltage Characteristic",
+    "titleFa": "مشخصه جریان–ولتاژ مقاومت",
+    "domains": [
+      "circuits"
+    ],
+    "equation": "I = V / R",
+    "file": "content/experiments/reference/current-voltage-resistor.json"
+  },
+  {
+    "id": "reference.newtons-second-law",
+    "title": "Newton’s Second Law",
+    "titleFa": "قانون دوم نیوتن",
+    "domains": [
+      "mechanics"
+    ],
+    "equation": "a = F / m",
+    "file": "content/experiments/reference/newtons-second-law.json"
+  },
+  {
+    "id": "reference.conservation-of-momentum",
+    "title": "Conservation of Momentum",
+    "titleFa": "پایستگی تکانه",
+    "domains": [
+      "mechanics"
+    ],
+    "equation": "Σp_before = Σp_after",
+    "file": "content/experiments/reference/conservation-of-momentum.json"
+  },
+  {
+    "id": "reference.distance-time-slope",
+    "title": "Distance–Time Graph",
+    "titleFa": "نمودار مسافت–زمان",
+    "domains": [
+      "mechanics"
+    ],
+    "equation": "v = Δx / Δt",
+    "file": "content/experiments/reference/distance-time-slope.json"
+  },
+  {
+    "id": "reference.reflection-angle",
+    "title": "Law of Reflection",
+    "titleFa": "قانون بازتاب",
+    "domains": [
+      "optics"
+    ],
+    "equation": "θ_i = θ_r",
+    "file": "content/experiments/reference/reflection-angle.json"
+  },
+  {
+    "id": "reference.snells-law",
+    "title": "Refraction / Snell’s Law",
+    "titleFa": "شکست نور و قانون اسنل",
+    "domains": [
+      "optics"
+    ],
+    "equation": "n1 sin θ1 = n2 sin θ2",
+    "file": "content/experiments/reference/snells-law.json"
+  },
+  {
+    "id": "reference.thin-lens",
+    "title": "Thin Lens Equation",
+    "titleFa": "معادله عدسی نازک",
+    "domains": [
+      "optics"
+    ],
+    "equation": "1/f = 1/u + 1/v",
+    "file": "content/experiments/reference/thin-lens.json"
+  },
+  {
+    "id": "reference.wave-interference",
+    "title": "Two-Source Interference",
+    "titleFa": "تداخل دو منبع موج",
+    "domains": [
+      "waves"
+    ],
+    "equation": "superposition",
+    "file": "content/experiments/reference/wave-interference.json"
+  },
+  {
+    "id": "reference.single-slit-diffraction",
+    "title": "Single-Slit Diffraction",
+    "titleFa": "پراش تک‌شکاف",
+    "domains": [
+      "waves"
+    ],
+    "equation": "a sin θ = m λ",
+    "file": "content/experiments/reference/single-slit-diffraction.json"
+  },
+  {
+    "id": "reference.doppler-source",
+    "title": "Doppler Effect — Moving Source",
+    "titleFa": "اثر دوپلر برای منبع متحرک",
+    "domains": [
+      "waves"
+    ],
+    "equation": "f_obs = f v/(v-v_s)",
+    "file": "content/experiments/reference/doppler-source.json"
+  },
+  {
+    "id": "reference.wave-speed",
+    "title": "Wave Speed",
+    "titleFa": "سرعت موج",
+    "domains": [
+      "waves"
+    ],
+    "equation": "v = f λ",
+    "file": "content/experiments/reference/wave-speed.json"
+  }
+]

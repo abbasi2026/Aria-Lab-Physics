@@ -1,0 +1,407 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "presentation.reload",
+  "name": "Reload",
+  "nameFa": "بازنشانی",
+  "translationStatus": "verified-dictionary",
+  "domain": "presentation",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Presentation",
+      "pathFa": "ارائه و کنترل آزمایش"
+    }
+  ],
+  "capabilities": [
+    "experiment-ui"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "toolbar-configuration",
+      "label": "Toolbar Configuration",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "resize-width",
+      "label": "Resize Width",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "resize-origin",
+      "label": "Resize Origin",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "top-left"
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "mode",
+      "label": "Mode",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "label",
+      "label": "Label",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "chosen-node",
+      "label": "Chosen Node",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "chosen-property-name",
+      "label": "Chosen Property Name",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ignore-click-action",
+      "label": "Ignore Click Action",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "text-colour",
+      "label": "Text colour",
+      "kind": "color",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "black"
+    },
+    {
+      "key": "meta-group",
+      "label": "Meta Group",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Presentation"
+    },
+    {
+      "key": "meta-parttree-order",
+      "label": "Meta Parttree Order",
+      "kind": "integer",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 40
+    },
+    {
+      "key": "meta-icon",
+      "label": "Meta Icon",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/icons/reload"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "value",
+      "label": "Value",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy"
+      ],
+      "default": "../p[@key=local-value]"
+    },
+    {
+      "key": "local-value",
+      "label": "Local Value",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/ui/button"
+    },
+    {
+      "key": "up-image",
+      "label": "Up Image",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "presentation/reloadNormal"
+    },
+    {
+      "key": "hover-image",
+      "label": "Hover Image",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "presentation/reloadNormal"
+    },
+    {
+      "key": "down-image",
+      "label": "Down Image",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "presentation/reloadPress"
+    },
+    {
+      "key": "latch-mode",
+      "label": "Latch Mode",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Push"
+    },
+    {
+      "key": "meta-label",
+      "label": "Meta Label",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "toggle-on-push",
+      "label": "Toggle On Push",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "push-undo",
+      "label": "Push Undo",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    }
+  ],
+  "solver": {
+    "engine": "experiment-runtime",
+    "family": "presentation-control",
+    "status": "not-applicable",
+    "inputs": [],
+    "outputs": [],
+    "contractNotes": "Presentation/control component; no standalone physics solver."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "presentation/icons/reload",
+    "interaction": "experiment-authoring-control"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "presentation/reload",
+    "legacyProto": "presentation/button",
+    "definitionFile": "presentation.domain/parts/10-presentation.xml",
+    "inheritanceChain": [
+      "presentation/reload",
+      "presentation/button",
+      "presentation/button-base",
+      "presentation/association-base",
+      "presentation/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

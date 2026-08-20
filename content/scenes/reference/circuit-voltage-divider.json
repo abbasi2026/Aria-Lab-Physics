@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "reference.circuit-voltage-divider",
+  "title": "DC Voltage Divider",
+  "titleFa": "تقسیم‌کننده ولتاژ DC",
+  "domain": "circuits",
+  "simulation": {"dt": 0.001, "timeScale": 1},
+  "parts": [
+    {"instanceId": "v1", "partId": "circuits.voltage-source", "transform": {"position": {"x": 0, "y": 0}}, "properties": {"voltage": 10}},
+    {"instanceId": "r1", "partId": "circuits.resistor", "transform": {"position": {"x": 2, "y": 0}}, "properties": {"resistance": 1000}},
+    {"instanceId": "r2", "partId": "circuits.resistor", "transform": {"position": {"x": 4, "y": 0}}, "properties": {"resistance": 1000}}
+  ],
+  "connections": [],
+  "probes": [{"id": "mid-voltage", "quantity": "voltage", "expected": 5}],
+  "metadata": {"stage": 3}
+}

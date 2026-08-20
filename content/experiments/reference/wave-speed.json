@@ -1,0 +1,50 @@
+{
+  "id": "reference.wave-speed",
+  "version": 1,
+  "title": "Wave Speed",
+  "titleFa": "سرعت موج",
+  "domain": [
+    "waves"
+  ],
+  "learningObjectives": [
+    "Validate the solver against v = f λ."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "waves/source"
+      },
+      {
+        "type": "waves/detector"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "v = f λ"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "f": 170,
+          "lambda": 2
+        },
+        "expect": {
+          "v": 340
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

@@ -1,0 +1,651 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "waves.penetration",
+  "name": "Wave penetration space",
+  "nameFa": "محیط نفوذ موج",
+  "translationStatus": "verified-dictionary",
+  "domain": "waves",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Waves > 1D",
+      "pathFa": "موج‌ها ← یک‌بعدی"
+    }
+  ],
+  "capabilities": [
+    "wave-propagation"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "0"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "hide-part",
+      "label": "Hide part if image attached",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "ignore-click-action",
+      "label": "Ignore Click Action",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "magic-popup-shield",
+      "label": "Magic Popup Shield",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "waves/ui/oned/wavespace-general | waves/ui/oned/source | waves/ui/oned/block | waves/ui/oned/wave-display-prop"
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [],
+      "default": "(400,200)",
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "(180,80) (10000,10000)"
+          },
+          {
+            "key": "min",
+            "type": "point",
+            "value": "(180,80)"
+          },
+          {
+            "key": "max",
+            "type": "point",
+            "value": "(10000,10000)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "outer-size",
+      "label": "Outer Size",
+      "kind": "vector2",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed"
+      ]
+    },
+    {
+      "key": "resize-origin",
+      "label": "Resize Origin",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden",
+        " readonly"
+      ],
+      "default": "top-left"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden",
+        " readonly"
+      ],
+      "default": true
+    },
+    {
+      "key": "physical-width",
+      "label": "Width",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "length",
+      "defaultUnit": "meter",
+      "allowedUnits": [
+        "picometer",
+        "nanometer",
+        "micrometer",
+        "millimeter",
+        "meter",
+        "kilometer"
+      ]
+    },
+    {
+      "key": "freq-range",
+      "label": "Freq Range",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Light",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Light X-rays Gamma Water Sound"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Light"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "X-rays"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Gamma"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Water"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Sound"
+          }
+        ]
+      }
+    },
+    {
+      "key": "wave-time",
+      "label": "Wavespace time",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "time",
+      "defaultUnit": "second",
+      "allowedUnits": [
+        "attosecond",
+        "femtosecond",
+        "picosecond",
+        "nanosecond",
+        "microsecond",
+        "millisecond",
+        "second"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "wave-time-proxy",
+      "label": "Wavespace time",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy",
+        " readonly"
+      ],
+      "quantity": "time"
+    },
+    {
+      "key": "reset-simulation",
+      "label": "Reset simulation",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "button-list",
+      "label": "Button List",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "readonly",
+        " user-hidden"
+      ],
+      "default": "false"
+    },
+    {
+      "key": "minimise-window",
+      "label": "Minimise Window",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "pulse-type",
+      "label": "Pulse type",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ]
+    },
+    {
+      "key": "pulse-length",
+      "label": "Pulse length",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "length"
+    },
+    {
+      "key": "pulse-gap",
+      "label": "Pulse gap",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ]
+    },
+    {
+      "key": "wave-form",
+      "label": "Waveform",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ]
+    },
+    {
+      "key": "period",
+      "label": "Period",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ]
+    },
+    {
+      "key": "frequency",
+      "label": "Frequency",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "frequency"
+    },
+    {
+      "key": "wavelength",
+      "label": "Wavelength",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "wavelength"
+    },
+    {
+      "key": "amplitude",
+      "label": "Amplitude",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ]
+    },
+    {
+      "key": "displacement-at-source",
+      "label": "Source displacement",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ]
+    },
+    {
+      "key": "wave-speed",
+      "label": "Wave speed",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "velocity",
+      "defaultUnit": "metres per second",
+      "allowedUnits": [
+        "metres per second"
+      ],
+      "min": 0.0,
+      "max": 10000000000.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0 1e10"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1e10"
+          }
+        ]
+      }
+    },
+    {
+      "key": "scene-pos-to-meter-ratio",
+      "label": "Scene Pos To Meter Ratio",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "right-wave-speed",
+      "label": "Wave speed in right block",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "speed"
+    },
+    {
+      "key": "right-wavelength",
+      "label": "Wavelength in right block",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "wavelength"
+    },
+    {
+      "key": "left-wave-speed",
+      "label": "Wave speed in left block",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "speed"
+    },
+    {
+      "key": "left-wavelength",
+      "label": "Wavelength in left block",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "wavelength"
+    },
+    {
+      "key": "water-block-regions",
+      "label": "Water Block Regions",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "computed",
+        " user-hidden"
+      ]
+    },
+    {
+      "key": "water-block-tooltips",
+      "label": "Water Block Tooltips",
+      "kind": "array",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "computed",
+        " user-hidden"
+      ]
+    }
+  ],
+  "solver": {
+    "engine": "waves-engine",
+    "family": "wave-medium-1d",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [],
+    "outputs": [
+      "outer-size"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "waves/icons/penetrationSpace",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "waves/1d/wavespace/penetration",
+    "legacyProto": "waves/1d/wavespace",
+    "definitionFile": "waves.domain/parts/waves1D.xml",
+    "inheritanceChain": [
+      "waves/1d/wavespace/penetration",
+      "waves/1d/wavespace",
+      "waves/1d/wavespace-base",
+      "waves/part-base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

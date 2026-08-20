@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "mechanics.space2",
+  "name": "Space",
+  "nameFa": "محیط شبیه‌سازی",
+  "translationStatus": "verified-dictionary",
+  "domain": "mechanics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Motion & Forces > Motion",
+      "pathFa": "حرکت و نیرو ← حرکت"
+    }
+  ],
+  "capabilities": [
+    "simulation-environment"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "0"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "ignore-click-action",
+      "label": "Ignore Click Action",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "display-popup-pane-on-selection",
+      "label": "Display Popup Pane On Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "id-prefix",
+      "label": "Id Prefix",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(458,308)",
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "(208,208) (3008,3008)"
+          },
+          {
+            "key": "min",
+            "type": "point",
+            "value": "(208,208)"
+          },
+          {
+            "key": "max",
+            "type": "point",
+            "value": "(3008,3008)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "width",
+      "label": "Width",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "writable-computed"
+      ]
+    },
+    {
+      "key": "height",
+      "label": "Height",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "writable-computed"
+      ]
+    },
+    {
+      "key": "visible-size",
+      "label": "Visible Size",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "writable-computed"
+      ]
+    },
+    {
+      "key": "visible",
+      "label": "Visible",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "default-min-width",
+      "label": "Default Min Width",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "readonly",
+        "user-hidden"
+      ],
+      "default": 200
+    },
+    {
+      "key": "default-min-height",
+      "label": "Default Min Height",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "readonly",
+        "user-hidden"
+      ],
+      "default": 200
+    },
+    {
+      "key": "default-max-width",
+      "label": "Default Max Width",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "readonly",
+        "user-hidden"
+      ],
+      "default": 3000
+    },
+    {
+      "key": "default-max-height",
+      "label": "Default Max Height",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "readonly",
+        "user-hidden"
+      ],
+      "default": 3000
+    },
+    {
+      "key": "user-hidden",
+      "label": "User Hidden",
+      "kind": "boolean",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    }
+  ],
+  "solver": {
+    "engine": "mechanics-engine",
+    "family": "world-environment",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [],
+    "outputs": [
+      "width",
+      "height",
+      "visible-size",
+      "user-hidden"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "motion/icons/space",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "motion/space2",
+    "legacyProto": "",
+    "definitionFile": "motion.domain/parts/30-freebody.xml",
+    "inheritanceChain": [
+      "motion/space2"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

@@ -1,0 +1,545 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "mechanics.connected-solenoid",
+  "name": "Solenoid",
+  "nameFa": "سلونوئید",
+  "translationStatus": "verified-dictionary",
+  "domain": "mechanics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Motion & Forces > Mechanisms",
+      "pathFa": "حرکت و نیرو ← سازوکارها"
+    }
+  ],
+  "capabilities": [
+    "mechanical-coupling"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "false | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "motion-pos",
+      "label": "Motion Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Angle of rotation",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "vel",
+      "label": "Velocity",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "key": "angvel",
+      "label": "Angular velocity",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angular_speed",
+      "defaultUnit": "revolutions per minute",
+      "allowedUnits": [
+        "revolutions per minute",
+        "radians per second",
+        "degrees per second"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "acc",
+      "label": "Acceleration",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "angacc",
+      "label": "Angular acceleration",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "defaultUnit": "radians per second per second",
+      "allowedUnits": [
+        "radians per second per second",
+        "degrees per second per second"
+      ]
+    },
+    {
+      "key": "mass",
+      "label": "Mass",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "quantity": "mass"
+    },
+    {
+      "key": "moment-of-inertia",
+      "label": "Moment Of Inertia",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "own-mass",
+      "label": "Own Mass",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "mass",
+      "defaultUnit": "kilogram",
+      "allowedUnits": [
+        "gram",
+        "kilogram",
+        "tonne",
+        "ounce",
+        "pound",
+        "stone",
+        "ton"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "own-moment-of-inertia",
+      "label": "Own Moment Of Inertia",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "linearly-fixed",
+      "label": "Linearly Fixed",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "rotationally-fixed",
+      "label": "Rotationally Fixed",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "user-ang",
+      "label": "User Ang",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "user-angvel",
+      "label": "User Angvel",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "user-angacc",
+      "label": "User Angacc",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "user-torque",
+      "label": "User Torque",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "torque"
+    },
+    {
+      "key": "torque-display-radius",
+      "label": "Torque Display Radius",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "length",
+      "default": 0.06
+    },
+    {
+      "key": "display-forces",
+      "label": "Display Forces",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-array",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "force"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "front-facing",
+      "label": "Front Facing",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "previous-edge-orientation",
+      "label": "Previous Edge Orientation",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "PI/2"
+    },
+    {
+      "key": "toolbar-configuration",
+      "label": "Toolbar Configuration",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "top-left"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "current",
+      "label": "Current",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "current",
+      "default": "../popup[@id='connected-solenoid-popup']/part[@id='SOL1']/p[@key='two-terminal-current']"
+    },
+    {
+      "key": "voltage",
+      "label": "Voltage",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "voltage",
+      "default": "../popup[@id='connected-solenoid-popup']/part[@id='SOL1']/p[@key='two-terminal-voltage']"
+    },
+    {
+      "key": "force-from-current",
+      "label": "Force From Current",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden",
+        "proxy"
+      ],
+      "quantity": "current",
+      "default": "../popup[@id='connected-solenoid-popup']/part[@id='SOL1']/p[@key='force']"
+    },
+    {
+      "key": "electronics-core-pos",
+      "label": "Electronics Core Pos",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ]
+    },
+    {
+      "key": "meta-label",
+      "label": "Meta Label",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "Solenoid"
+    },
+    {
+      "key": "meta-parttree-order",
+      "label": "Meta Parttree Order",
+      "kind": "integer",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1000
+    },
+    {
+      "key": "meta-icon",
+      "label": "Meta Icon",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "motion/icons/solenoid"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    }
+  ],
+  "solver": {
+    "engine": "mechanics-engine",
+    "family": "mechanism",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [],
+    "outputs": [
+      "user-ang",
+      "user-angvel",
+      "user-angacc",
+      "user-torque",
+      "current",
+      "voltage"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "motion/icons/solenoid",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "motion/connected-solenoid",
+    "legacyProto": "motion/solenoid",
+    "definitionFile": "motion.domain/parts/35-electromech.xml",
+    "inheritanceChain": [
+      "motion/connected-solenoid",
+      "motion/solenoid",
+      "motion/mech-container-body",
+      "motion/body",
+      "motion/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

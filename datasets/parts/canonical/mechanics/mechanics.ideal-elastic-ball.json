@@ -1,0 +1,1479 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "mechanics.ideal-elastic-ball",
+  "name": "Ideal elastic ball",
+  "nameFa": "توپ کاملاً کشسان",
+  "translationStatus": "verified-dictionary",
+  "domain": "mechanics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Motion & Forces > Motion > Balls",
+      "pathFa": "حرکت و نیرو ← حرکت ← توپ‌ها"
+    }
+  ],
+  "capabilities": [
+    "transformable",
+    "collision",
+    "force-observables"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "false | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "motion-pos",
+      "label": "Motion Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Angle of rotation",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "vel",
+      "label": "Velocity",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "key": "angvel",
+      "label": "Angular velocity",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angular_speed",
+      "defaultUnit": "revolutions per minute",
+      "allowedUnits": [
+        "revolutions per minute",
+        "radians per second",
+        "degrees per second"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "acc",
+      "label": "Acceleration",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "angacc",
+      "label": "Angular acceleration",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "defaultUnit": "radians per second per second",
+      "allowedUnits": [
+        "radians per second per second",
+        "degrees per second per second"
+      ]
+    },
+    {
+      "key": "mass",
+      "label": "Mass",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "mass"
+    },
+    {
+      "key": "moment-of-inertia",
+      "label": "Moment of inertia",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "moment_of_inertia",
+      "defaultUnit": "kilogram metres squared",
+      "allowedUnits": [
+        "gram metres squared",
+        "kilogram metres squared"
+      ]
+    },
+    {
+      "key": "own-mass",
+      "label": "Own Mass",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "quantity": "mass",
+      "default": "1"
+    },
+    {
+      "key": "own-moment-of-inertia",
+      "label": "Own Moment Of Inertia",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "linearly-fixed",
+      "label": "Linearly Fixed",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "rotationally-fixed",
+      "label": "Rotationally Fixed",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "user-ang",
+      "label": "Angle of rotation",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy",
+        "readonly"
+      ],
+      "default": "../p[@key='ang']"
+    },
+    {
+      "key": "user-angvel",
+      "label": "Angular velocity",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy",
+        "readonly"
+      ],
+      "default": "../p[@key='angvel']"
+    },
+    {
+      "key": "user-angacc",
+      "label": "Angular acceleration",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ]
+    },
+    {
+      "key": "user-torque",
+      "label": "Torque",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "torque",
+      "defaultUnit": "newton metre",
+      "allowedUnits": [
+        "newton metre"
+      ]
+    },
+    {
+      "key": "torque-display-radius",
+      "label": "Torque Display Radius",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "length",
+      "default": 0.06
+    },
+    {
+      "key": "display-forces",
+      "label": "Display Forces",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-array",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "force"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "weight",
+      "label": "Weight",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "force",
+      "defaultUnit": "newton",
+      "allowedUnits": [
+        "newton",
+        "kilonewton"
+      ]
+    },
+    {
+      "key": "drag-coefficient",
+      "label": "Drag Coefficient",
+      "kind": "unknown",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "0.0"
+    },
+    {
+      "key": "velocity-control-pos",
+      "label": "Velocity",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "speed"
+    },
+    {
+      "key": "velocity-control-active",
+      "label": "Velocity Control Active",
+      "kind": "boolean",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "speed"
+    },
+    {
+      "key": "user-velocity",
+      "label": "Velocity (magnitude)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "speed",
+      "defaultUnit": "metres per second",
+      "allowedUnits": [
+        "metres per second",
+        "kilometres per second",
+        "kilometres per hour"
+      ],
+      "min": -1000000.0,
+      "max": 1000000.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1e6 1e6"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-1e6"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1e6"
+          }
+        ]
+      }
+    },
+    {
+      "key": "user-velocity-x",
+      "label": "Velocity (x)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "speed",
+      "defaultUnit": "metres per second",
+      "allowedUnits": [
+        "metres per second",
+        "kilometres per second",
+        "kilometres per hour"
+      ],
+      "min": -1000000.0,
+      "max": 1000000.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1e6 1e6"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-1e6"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1e6"
+          }
+        ]
+      }
+    },
+    {
+      "key": "user-velocity-y",
+      "label": "Velocity (y)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "speed",
+      "defaultUnit": "metres per second",
+      "allowedUnits": [
+        "metres per second",
+        "kilometres per second",
+        "kilometres per hour"
+      ],
+      "min": -1000000.0,
+      "max": 1000000.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1e6 1e6"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-1e6"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1e6"
+          }
+        ]
+      }
+    },
+    {
+      "key": "driving-force",
+      "label": "Driving Force",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "force",
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "key": "force-control-pos",
+      "label": "Force Control Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "force",
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-1e100,-1e100 1e100,1e100"
+          },
+          {
+            "key": "min",
+            "type": "point",
+            "value": "-1e100,-1e100"
+          },
+          {
+            "key": "max",
+            "type": "point",
+            "value": "1e100,1e100"
+          }
+        ]
+      }
+    },
+    {
+      "key": "force-control-active",
+      "label": "Force Control Active",
+      "kind": "boolean",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "force"
+    },
+    {
+      "key": "user-force",
+      "label": "Driving force (magnitude)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "force",
+      "defaultUnit": "newton",
+      "allowedUnits": [
+        "newton",
+        "kilonewton"
+      ]
+    },
+    {
+      "key": "user-force-x",
+      "label": "Driving force (x)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "force",
+      "defaultUnit": "newton",
+      "allowedUnits": [
+        "newton",
+        "kilonewton"
+      ]
+    },
+    {
+      "key": "user-force-y",
+      "label": "Driving force (y)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "force",
+      "defaultUnit": "newton",
+      "allowedUnits": [
+        "newton",
+        "kilonewton"
+      ]
+    },
+    {
+      "key": "user-motion-pos-x",
+      "label": "Displacement (x)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "length",
+      "defaultUnit": "meter",
+      "allowedUnits": [
+        "picometer",
+        "nanometer",
+        "micrometer",
+        "millimeter",
+        "centimeter",
+        "meter",
+        "kilometer"
+      ]
+    },
+    {
+      "key": "user-motion-pos-y",
+      "label": "Displacement (y)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "length",
+      "defaultUnit": "meter",
+      "allowedUnits": [
+        "picometer",
+        "nanometer",
+        "micrometer",
+        "millimeter",
+        "centimeter",
+        "meter",
+        "kilometer"
+      ]
+    },
+    {
+      "key": "distance-from-origin",
+      "label": "Distance",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "length",
+      "defaultUnit": "meter",
+      "allowedUnits": [
+        "picometer",
+        "nanometer",
+        "micrometer",
+        "millimeter",
+        "centimeter",
+        "meter",
+        "kilometer"
+      ]
+    },
+    {
+      "key": "user-acc-x",
+      "label": "Acceleration (x)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "acceleration",
+      "defaultUnit": "metres per second per second"
+    },
+    {
+      "key": "user-acc-y",
+      "label": "Acceleration (y)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "acceleration",
+      "defaultUnit": "metres per second per second"
+    },
+    {
+      "key": "user-acc-mag",
+      "label": "Acceleration (magnitude)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "acceleration",
+      "defaultUnit": "metres per second per second"
+    },
+    {
+      "key": "user-net-force-mag",
+      "label": "Net force (translational)",
+      "kind": "number",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "force",
+      "defaultUnit": "newton"
+    },
+    {
+      "key": "speed",
+      "label": "Speed",
+      "kind": "unknown",
+      "role": "binding",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "speed",
+      "default": "../p[@key='user-velocity']"
+    },
+    {
+      "key": "translational-ek",
+      "label": "Kinetic energy (translational)",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "energy",
+      "defaultUnit": "joule",
+      "allowedUnits": [
+        "joule",
+        "kilojoule"
+      ]
+    },
+    {
+      "key": "rotational-ek",
+      "label": "Kinetic energy (rotational)",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "energy",
+      "defaultUnit": "joule",
+      "allowedUnits": [
+        "joule",
+        "kilojoule"
+      ]
+    },
+    {
+      "key": "total-ek",
+      "label": "Kinetic energy (total)",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "energy",
+      "defaultUnit": "joule",
+      "allowedUnits": [
+        "joule",
+        "kilojoule"
+      ]
+    },
+    {
+      "key": "gravitational-ep",
+      "label": "Gravitational potential energy",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "energy",
+      "defaultUnit": "joule",
+      "allowedUnits": [
+        "joule",
+        "kilojoule"
+      ]
+    },
+    {
+      "key": "momentum-x",
+      "label": "Momentum (x)",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "momentum",
+      "defaultUnit": "kilogram metres per second"
+    },
+    {
+      "key": "momentum-y",
+      "label": "Momentum (y)",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "momentum",
+      "defaultUnit": "kilogram metres per second"
+    },
+    {
+      "key": "density",
+      "label": "Density",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "density",
+      "defaultUnit": "kilograms per cubic metre",
+      "allowedUnits": [
+        "grams per cubic centimetre",
+        "kilograms per cubic metre"
+      ],
+      "min": 0.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "volume",
+      "label": "Volume",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "volume",
+      "defaultUnit": "cm3",
+      "allowedUnits": [
+        "cm3",
+        "m3"
+      ],
+      "min": 0.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "forces-shown",
+      "label": "Force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "force-labels-shown",
+      "label": "Force labels shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "gravity-force-shown",
+      "label": "Weight shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "resolved-gravity-force-shown",
+      "label": "Resolved weight shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "net-force-shown",
+      "label": "Net force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "constant-force-shown",
+      "label": "Driving force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "friction-force-shown",
+      "label": "Friction force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "contact-force-shown",
+      "label": "Contact force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "tension-force-shown",
+      "label": "Tension force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "drag-force-shown",
+      "label": "Drag force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "buoyancy-force-shown",
+      "label": "Buoyancy force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "material",
+      "label": "Material",
+      "kind": "unknown",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "static-friction",
+      "label": "Static friction",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 0.0,
+      "min": 0.0,
+      "max": 5.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 5.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "5.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "dynamic-friction",
+      "label": "Kinetic friction",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 0.0,
+      "min": 0.0,
+      "max": 5.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 5.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "5.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "coefficient-of-restitution",
+      "label": "Elasticity",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 1.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "control-mode",
+      "label": "Control mode",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Velocity",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Velocity Force"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Velocity"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Force"
+          }
+        ]
+      }
+    },
+    {
+      "key": "meta-label",
+      "label": "Meta Label",
+      "kind": "string",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "meta-parttree-order",
+      "label": "Meta Parttree Order",
+      "kind": "integer",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1
+    },
+    {
+      "key": "meta-icon",
+      "label": "Meta Icon",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "motion/icons/ball"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "motion/ui/ballMain | motion/ui/bodyGeneral | motion/ui/image | motion/ui/forces"
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "size",
+      "label": "Size",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "(5,5)"
+          },
+          {
+            "key": "min",
+            "type": "point",
+            "value": "(5,5)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "fixed-proportion",
+      "label": "Fixed Proportion",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(1,1)"
+    },
+    {
+      "key": "resize-center",
+      "label": "Resize Center",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "radius",
+      "label": "Radius",
+      "kind": "unknown",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "quantity": "length",
+      "default": "0.05"
+    },
+    {
+      "key": "user-mass",
+      "label": "Mass",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": true,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "quantity": "mass",
+      "default": "../p[@key='own-mass']"
+    },
+    {
+      "key": "image",
+      "label": "Image",
+      "kind": "unknown",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "motion/images/balls/standard"
+    }
+  ],
+  "solver": {
+    "engine": "mechanics-engine",
+    "family": "rigid-body",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "drag-coefficient",
+      "forces-shown",
+      "force-labels-shown",
+      "gravity-force-shown",
+      "resolved-gravity-force-shown",
+      "net-force-shown",
+      "constant-force-shown",
+      "friction-force-shown",
+      "contact-force-shown",
+      "tension-force-shown",
+      "drag-force-shown",
+      "buoyancy-force-shown",
+      "material",
+      "static-friction",
+      "dynamic-friction",
+      "coefficient-of-restitution",
+      "control-mode",
+      "radius",
+      "image"
+    ],
+    "outputs": [
+      "user-ang",
+      "user-angvel",
+      "user-angacc",
+      "user-torque",
+      "user-velocity",
+      "user-velocity-x",
+      "user-velocity-y",
+      "user-force",
+      "user-force-x",
+      "user-force-y",
+      "user-motion-pos-x",
+      "user-motion-pos-y",
+      "user-acc-x",
+      "user-acc-y",
+      "user-acc-mag",
+      "user-net-force-mag",
+      "user-mass"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "motion/icons/standard-ball",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "motion/ideal-elastic-ball",
+    "legacyProto": "motion/ball",
+    "definitionFile": "motion.domain/parts/50-predefinedballs.xml",
+    "inheritanceChain": [
+      "motion/ideal-elastic-ball",
+      "motion/ball",
+      "motion/free-body",
+      "motion/body",
+      "motion/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

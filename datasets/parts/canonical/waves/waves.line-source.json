@@ -1,0 +1,815 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "waves.line-source",
+  "name": "Line Source",
+  "nameFa": "منبع خطی",
+  "translationStatus": "verified-dictionary",
+  "domain": "waves",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Waves > 2D > Sources",
+      "pathFa": "موج‌ها ← دوبعدی ← منابع"
+    }
+  ],
+  "capabilities": [
+    "wave-emission"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "0"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "hide-part",
+      "label": "Hide part if image attached",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "ignore-click-action",
+      "label": "Ignore Click Action",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "magic-popup-shield",
+      "label": "Magic Popup Shield",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "waves/ui/move-to-wavespace"
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "pulse-type",
+      "label": "Source",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Continuous",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Continuous Full pulse"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Continuous"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Full pulse"
+          }
+        ]
+      }
+    },
+    {
+      "key": "pulse-length",
+      "label": "Pulse length",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "length",
+      "defaultUnit": "meter",
+      "allowedUnits": [
+        "nanometer"
+      ]
+    },
+    {
+      "key": "pulse-gap",
+      "label": "Pulse gap",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 1,
+      "min": 0.0,
+      "max": 50.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0 50"
+          },
+          {
+            "key": "min",
+            "type": "int",
+            "value": "0"
+          },
+          {
+            "key": "max",
+            "type": "int",
+            "value": "50"
+          }
+        ]
+      }
+    },
+    {
+      "key": "phase",
+      "label": "Phase",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "angle",
+      "defaultUnit": "degree",
+      "allowedUnits": [
+        "degree"
+      ],
+      "default": 0.0,
+      "min": 0.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 2.0 * PI"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "2.0 * PI"
+          }
+        ]
+      }
+    },
+    {
+      "key": "instantaneous-phase",
+      "label": "Instantaneous phase",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "degree",
+      "allowedUnits": [
+        "degree"
+      ],
+      "min": 0.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 2.0 * PI"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "2.0 * PI"
+          }
+        ]
+      }
+    },
+    {
+      "key": "frequency",
+      "label": "Frequency",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "frequency",
+      "defaultUnit": "hertz",
+      "allowedUnits": [
+        "hertz",
+        "kilohertz",
+        "megahertz",
+        "gigahertz",
+        "terahertz"
+      ],
+      "default": 550000000000000.0
+    },
+    {
+      "key": "wavelength",
+      "label": "Wavelength",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "length",
+      "defaultUnit": "meter",
+      "allowedUnits": [
+        "nanometer"
+      ]
+    },
+    {
+      "key": "color",
+      "label": "Colour",
+      "kind": "color",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "default": "#00ff00",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "#00ff00"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "#00ff00"
+          }
+        ]
+      }
+    },
+    {
+      "key": "displacement",
+      "label": "Displacement",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy"
+      ]
+    },
+    {
+      "key": "amplitude",
+      "label": "Amplitude",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "mutable-proxy"
+      ]
+    },
+    {
+      "key": "amplitude-db",
+      "label": "Amplitude Db",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "pressure",
+      "default": 70.0
+    },
+    {
+      "key": "amplitude-metre",
+      "label": "Amplitude Metre",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "length",
+      "default": 0.001
+    },
+    {
+      "key": "amplitude-volts-per-metre",
+      "label": "Amplitude Volts Per Metre",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "electric field amplitude",
+      "default": 250.0
+    },
+    {
+      "key": "displacement-db",
+      "label": "Displacement Db",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        " user-hidden"
+      ]
+    },
+    {
+      "key": "displacement-metre",
+      "label": "Displacement Metre",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        " user-hidden"
+      ],
+      "quantity": "length",
+      "defaultUnit": "centimeter",
+      "allowedUnits": [
+        "millimeter",
+        "centimeter",
+        "meter"
+      ]
+    },
+    {
+      "key": "displacement-volts-per-metre",
+      "label": "Displacement Volts Per Metre",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        " user-hidden"
+      ],
+      "quantity": "electric field amplitude",
+      "defaultUnit": "volts per metre",
+      "allowedUnits": [
+        "volts per metre",
+        "kilovolts per metre"
+      ]
+    },
+    {
+      "key": "image",
+      "label": "Image",
+      "kind": "resource",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "image-offset",
+      "label": "Image Offset",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "legacyValidator": {
+        "label": "point-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "(-1000,-1000) (1000,1000)"
+          },
+          {
+            "key": "min",
+            "type": "point",
+            "value": "(-1000,-1000)"
+          },
+          {
+            "key": "max",
+            "type": "point",
+            "value": "(1000,1000)"
+          }
+        ]
+      }
+    },
+    {
+      "key": "persisted-wave-type",
+      "label": "Persisted Wave Type",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1
+    },
+    {
+      "key": "persisted-wave-speed",
+      "label": "Persisted Wave Speed",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "speed",
+      "default": 299792458.0
+    },
+    {
+      "key": "persisted-freq-range",
+      "label": "Persisted Freq Range",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(4.0e14, 7.89e14)"
+    },
+    {
+      "key": "auto-move",
+      "label": "Auto Move",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden",
+        " readonly"
+      ],
+      "default": false
+    },
+    {
+      "key": "velocity-control-pos",
+      "label": "Velocity",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "speed",
+      "default": "(0.0,0.0)",
+      "legacyValidator": {
+        "label": "radial-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "(0,0) 200"
+          },
+          {
+            "key": "centre",
+            "type": "point",
+            "value": "(0,0)"
+          },
+          {
+            "key": "radius",
+            "type": "double",
+            "value": "200"
+          }
+        ]
+      }
+    },
+    {
+      "key": "velocity-control-active",
+      "label": "Velocity Control Active",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "speed",
+      "default": false
+    },
+    {
+      "key": "velocity-control-color",
+      "label": "Velocity Control Color",
+      "kind": "color",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "speed",
+      "default": "black"
+    },
+    {
+      "key": "speed",
+      "label": "Source speed",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "velocity",
+      "defaultUnit": "metres per second",
+      "allowedUnits": [
+        "metres per second",
+        "kilometres per second"
+      ],
+      "min": 0.0,
+      "max": 299792458.0,
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 299792458.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "299792458.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "bearing",
+      "label": "Source bearing",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "writable-computed"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "degree",
+      "allowedUnits": [
+        "degree",
+        "radian"
+      ],
+      "legacyValidator": {
+        "label": "double-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "-PI PI"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "-PI"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "PI"
+          }
+        ]
+      }
+    },
+    {
+      "key": "start-pos",
+      "label": "Start Pos",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0,-50)"
+    },
+    {
+      "key": "end-pos",
+      "label": "End Pos",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0,50)"
+    },
+    {
+      "key": "move-start-notifier",
+      "label": "Move Start Notifier",
+      "kind": "boolean",
+      "role": "observable",
+      "editable": false,
+      "observable": true,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "computed",
+        " always-notify"
+      ]
+    }
+  ],
+  "solver": {
+    "engine": "waves-engine",
+    "family": "wave-source",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [],
+    "outputs": [
+      "move-start-notifier"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "waves/icons/line",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "waves/line-source",
+    "legacyProto": "waves/source",
+    "definitionFile": "waves.domain/parts/waves.xml",
+    "inheritanceChain": [
+      "waves/line-source",
+      "waves/source",
+      "waves/part-base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "presentation.protractor",
+  "name": "Protractor",
+  "nameFa": "نقاله",
+  "translationStatus": "verified-dictionary",
+  "domain": "presentation",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Measurement Tools",
+      "pathFa": "اپتیک ← ابزارهای اندازه‌گیری"
+    },
+    {
+      "path": "Presentation > Measurement Tools",
+      "pathFa": "ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری"
+    }
+  ],
+  "capabilities": [
+    "experiment-ui"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "false"
+    },
+    {
+      "key": "toolbar-configuration",
+      "label": "Toolbar Configuration",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/ui/protractor | presentation/ui/colour"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "meta-icon",
+      "label": "Meta Icon",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/icons/protractor"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "arrangeable",
+      "label": "Arrangeable",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "line-width",
+      "label": "Line Width",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 2.0
+    },
+    {
+      "key": "colour",
+      "label": "Display colour",
+      "kind": "color",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "#ff8040"
+    },
+    {
+      "key": "angle",
+      "label": "Angle",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "angle",
+      "defaultUnit": "degree",
+      "min": 0.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 2*PI"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "2*PI"
+          }
+        ]
+      }
+    },
+    {
+      "key": "fix-angle",
+      "label": "Fix angle",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "angle"
+    },
+    {
+      "key": "base-control-point",
+      "label": "Base Control Point",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden",
+        "always-notify"
+      ],
+      "default": "(100.,0.)"
+    },
+    {
+      "key": "upper-control-point",
+      "label": "Upper Control Point",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(71.,-71.)"
+    },
+    {
+      "key": "magic-popup-shield",
+      "label": "Magic Popup Shield",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    }
+  ],
+  "solver": {
+    "engine": "experiment-runtime",
+    "family": "presentation-control",
+    "status": "not-applicable",
+    "inputs": [
+      "colour",
+      "angle",
+      "fix-angle"
+    ],
+    "outputs": [],
+    "contractNotes": "Presentation/control component; no standalone physics solver."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "presentation/icons/protractor",
+    "interaction": "experiment-authoring-control"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "presentation/protractor",
+    "legacyProto": "presentation/base",
+    "definitionFile": "presentation.domain/parts/10-presentation.xml",
+    "inheritanceChain": [
+      "presentation/protractor",
+      "presentation/base"
+    ],
+    "paletteOccurrences": 2
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

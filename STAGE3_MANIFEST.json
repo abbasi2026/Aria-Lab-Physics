@@ -1,0 +1,1522 @@
+{
+  "stage": 3,
+  "name": "Interactive Simulation Engines",
+  "schemaVersion": "1.0.0",
+  "engines": {
+    "circuits": [
+      "DC Modified Nodal Analysis",
+      "resistor",
+      "voltage source",
+      "current source",
+      "switch"
+    ],
+    "mechanics": [
+      "World2D",
+      "circle collision",
+      "AABB collision",
+      "floor contact",
+      "spring",
+      "gravity",
+      "impulse friction"
+    ],
+    "optics": [
+      "ray-segment intersection",
+      "reflection",
+      "Snell refraction",
+      "TIR",
+      "thin lens paraxial",
+      "screen"
+    ],
+    "waves": [
+      "FDTD 1D",
+      "FDTD 2D",
+      "CFL guard",
+      "sources",
+      "obstacles"
+    ]
+  },
+  "tests": {
+    "stage2GoldenExperiments": 12,
+    "stage2GoldenCases": 17,
+    "stage3SimulationTests": 19
+  },
+  "sceneModel": "datasets/schemas/scene.schema.json",
+  "fileCount": 295,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "7a081337998402348c217b0df9adcea69263a66250ec884ebc3ed5131b2917e8",
+      "bytes": 155
+    },
+    {
+      "path": "README.md",
+      "sha256": "39c5ce2ae8cea35d4559d343b5e45ea13a491c098a3facd5c47dc6b8bb119ef6",
+      "bytes": 3118
+    },
+    {
+      "path": "apps/admin/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "apps/web/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "content/experiments/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "content/experiments/reference/conservation-of-momentum.json",
+      "sha256": "ea3b42dcdc458edc798b448735ebe25ee87e934aa89f52b87d194d655f4939ca",
+      "bytes": 1013
+    },
+    {
+      "path": "content/experiments/reference/current-voltage-resistor.json",
+      "sha256": "2fe8a8c63e94d21fb46963b630d4ef8605f9efd5c92bcf9add71d123d1f27ad4",
+      "bytes": 1153
+    },
+    {
+      "path": "content/experiments/reference/distance-time-slope.json",
+      "sha256": "1b286481aa2db1f0340764fb05f2039172cd556f6faf77d11c086b4e3aa48bf0",
+      "bytes": 994
+    },
+    {
+      "path": "content/experiments/reference/doppler-source.json",
+      "sha256": "7e955420d526b6b381f41a57a99031e7dcd785cea175d2e240e6ebd648ecac39",
+      "bytes": 951
+    },
+    {
+      "path": "content/experiments/reference/newtons-second-law.json",
+      "sha256": "aee26d8b74fe0ad7411970e7f8ef20ec32b47b0dbd40a74ff78488da2f43a569",
+      "bytes": 1101
+    },
+    {
+      "path": "content/experiments/reference/ohms-law.json",
+      "sha256": "13c166aa0576ebc7b0f61fe769cc9be5a3526c3ff37e5c5d0dcbaa1fe3f2f8dc",
+      "bytes": 1140
+    },
+    {
+      "path": "content/experiments/reference/reflection-angle.json",
+      "sha256": "a212b137ee1b236fedfbd121437ad4f4b24d59d3da2903b7648722d4698ae156",
+      "bytes": 1111
+    },
+    {
+      "path": "content/experiments/reference/single-slit-diffraction.json",
+      "sha256": "7589b0fca2f2d35cea2ce890fc4e30578b6c1662cdc7c7644d4ff4d8d8eaaa95",
+      "bytes": 981
+    },
+    {
+      "path": "content/experiments/reference/snells-law.json",
+      "sha256": "2b716229e876f538dd51d56c620f9fe18f5cb89fab04630806eaa1855291d488",
+      "bytes": 1027
+    },
+    {
+      "path": "content/experiments/reference/thin-lens.json",
+      "sha256": "36a72cb7ddd691197417bd294f928cc02e11ed018e62c8437966f18e0abdf2f3",
+      "bytes": 933
+    },
+    {
+      "path": "content/experiments/reference/wave-interference.json",
+      "sha256": "a667f18eac794b1281a578e47ddfe0ee326665aeb03303673538006c74ae2d01",
+      "bytes": 1232
+    },
+    {
+      "path": "content/experiments/reference/wave-speed.json",
+      "sha256": "6c6c2428c9374e13202bddea3d8b00f7b297e50acd7cb520cb271d1c46c61ab9",
+      "bytes": 848
+    },
+    {
+      "path": "content/lessons/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "content/scenes/reference/circuit-voltage-divider.json",
+      "sha256": "30e16122d9a045d9d022cb1b8e8d5fbea003d0a2e4333f7c93692406b6c62a07",
+      "bytes": 790
+    },
+    {
+      "path": "content/scenes/reference/mechanics-collision.json",
+      "sha256": "c1a6f0afb19de9f67f52e20625ccd45120f3e00a037d8c8dcf9ed444dd58cf9b",
+      "bytes": 747
+    },
+    {
+      "path": "content/scenes/reference/optics-mirror.json",
+      "sha256": "dcdcd917c64640c6b3c4a5bd94e6eebbb996c70dbfe2d348194225e538acd52a",
+      "bytes": 762
+    },
+    {
+      "path": "content/scenes/reference/waves-grid.json",
+      "sha256": "4499af64a04dcf845da34453b349b7952f76593edab16810b7bca29528b68ad8",
+      "bytes": 654
+    },
+    {
+      "path": "content/tutorials/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/contents_tree.csv",
+      "sha256": "f1f1a917e34dac9a01aa14eebac2af1fc4f35fa04fa0303df780ee133594759f",
+      "bytes": 34066
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/experiments_summary.csv",
+      "sha256": "0dbc1ac8abfc3fa855ddc18a21fa25c52fbd4dd0d8c146164503567c4fa9d6c8",
+      "bytes": 62071
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/inventory_stats.json",
+      "sha256": "cd3befd3794d4e9c8eb0cf420ff0c0af3358a0cd97b5e2bc681cfc5ba0cfab90",
+      "bytes": 10572
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/parts_catalog_compact.csv",
+      "sha256": "ecd700e0637c0e95b9aa57d700547a9d1df1cfeb0f98449d39cfb450491d2e63",
+      "bytes": 104024
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/parts_settings_and_observables.csv",
+      "sha256": "1de5303a89817e518594a21757f91201ccfcf9927ed0430f67b7cbca39c5df7f",
+      "bytes": 640480
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/quantities.csv",
+      "sha256": "376a961c1a50a3394a29c7fe8ad78041f3dc9a34b52847f0eac4180438cb9d3f",
+      "bytes": 1884
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/resource_counts.json",
+      "sha256": "ba3dcb3a13b3fd09177cb9186e7326d4bf0f7aa47ae9f26c47266e92e8e9d9c9",
+      "bytes": 1086
+    },
+    {
+      "path": "datasets/legacy/crocodile-physics-605/units.csv",
+      "sha256": "9201d1819c51ee2f0120e46601094fec0043910659a03729cc68545985d11322",
+      "bytes": 2852
+    },
+    {
+      "path": "datasets/parts/canonical-parts.json",
+      "sha256": "9936f61a8c15855b9c0b1a26cb996b8faa98bdd9f3d04cc1640e9da29f79901a",
+      "bytes": 3340998
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.4017.json",
+      "sha256": "7f10eba0fe4eb10aa20b61e12532f81e1e5101aa84bd2fd5b15c9d079b9a5415",
+      "bytes": 10549
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.4026.json",
+      "sha256": "76a865ee6fe125da3fd8db9a608341899d08baa32b02136edda08c7eee5864f0",
+      "bytes": 10597
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.4027.json",
+      "sha256": "b6e3e1f99f729950aca1bdca1713175b4c5fb62010effc6089223bf7479803dc",
+      "bytes": 10441
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.4028.json",
+      "sha256": "cbf0754c466c593be46b319e5340764ad449c26a63ace928332fafff0c39f113",
+      "bytes": 10566
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.4043-without-enable.json",
+      "sha256": "d712ba344dc21810a90db275497d177bc93b56c2ef19024406ff45aef854ec36",
+      "bytes": 10397
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.4511.json",
+      "sha256": "df60ac52bb10e6166e2c581f72486db3686f2fbf186d0519792aef665a77ba2f",
+      "bytes": 10562
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.4518.json",
+      "sha256": "056bfed76f60ff5940039691a6ea6877a6a10ef84dce5b5671374c069366f8c2",
+      "bytes": 10398
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.555-timer.json",
+      "sha256": "6a1f436ca6a3b340970e36aee07bc19cd7c0c13d35542beb9179a19472dcdd7e",
+      "bytes": 10084
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7400.json",
+      "sha256": "9eaac9f4ba2669f2cdea3bf48a51fc31ef9eb61b8f23c75fbedba558bf8779cb",
+      "bytes": 10776
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7402.json",
+      "sha256": "2d764f61a0f2f9cab0313903c8b0a1729f7b276b12a4802d4040de28384c99b8",
+      "bytes": 10253
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7404.json",
+      "sha256": "43323c2d64f7139f7e870f5f5a98cbf4a844ffb2e68c2f5be3041c2a2b4fd9fb",
+      "bytes": 10692
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7408.json",
+      "sha256": "47acc45273f362842ab1ff5db735d60196115e3ab55c87a450b947dc5ec963c5",
+      "bytes": 10253
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7410.json",
+      "sha256": "dcf5fa33685c66acf0715e52d9c02e269a80f89f7359c0d32ed68476bdde2f6b",
+      "bytes": 10498
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7414.json",
+      "sha256": "5f15b6494559998059d1a2604f7011e8aaccb3b55c1cb3d9397d95ed79a860ed",
+      "bytes": 10214
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7420.json",
+      "sha256": "deb67e4fc04a1107dd65097bd85f7fa60d39480a38d8f30cebece41ab47b8818",
+      "bytes": 10646
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7432.json",
+      "sha256": "5373ad7b175f4392b6a3ff225e5f3e018ffcd080e134f72e899bf1abe75a1d1e",
+      "bytes": 10246
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7473.json",
+      "sha256": "ff14abcd455744c00bf8c77e5a22e183f283badb4b6391712ec866a2cd2d9854",
+      "bytes": 10445
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7474.json",
+      "sha256": "b1ab370f655ca677c5946c564487072e383a75b094f64761ca7d28c088b0f039",
+      "bytes": 10437
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.7486.json",
+      "sha256": "158ba8ebf61cdfd0354b1ea3bf7031649d7c8ceb54c0bb06518bbd2710c1de24",
+      "bytes": 10262
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.8-resistors.json",
+      "sha256": "f1661634577791b20c44e77bb770e46007f008c3fc6b2a475a133c832dde4cab",
+      "bytes": 12796
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.ammeter.json",
+      "sha256": "9312ae160375f798e63288e19d22e453dc535a3fec1d5ba9ec88f7bc5d03c8e8",
+      "bytes": 14625
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.battery.json",
+      "sha256": "8f9df14efc6f4f4a760693f50c1b1a4b70efa91aa11c09519dd2c2e484e72ddf",
+      "bytes": 15114
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.buzzer.json",
+      "sha256": "6e0dc193e293caace32ad79b26f4a70b4fd01207a2a3bbae4a38b94714813458",
+      "bytes": 13823
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.capacitor.json",
+      "sha256": "b53db7b9a4c439f1b411b33079dc6d799886e8fba6d910a146f1f031edb5ac90",
+      "bytes": 15413
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.clock.json",
+      "sha256": "d30b8f5d364c1489ea302e12a16a32d1a9bea409a1bf423926eef9e68d53f0c2",
+      "bytes": 9269
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.context-logic-input.json",
+      "sha256": "48cd3e6d107bb4c5c621542c5a7d20010a14acaa8a52141a64faaebc3f5666cd",
+      "bytes": 12459
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.context-logic-output.json",
+      "sha256": "1d0f91543286cd25bef94dd493d0186a09db7c7518a3a2bbe59e24804ea87827",
+      "bytes": 12194
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.current.json",
+      "sha256": "89095c23aa124982e3d741c1574cb6e996a8d850bcff0f622a9fac8549cd6c83",
+      "bytes": 14597
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.darlington-driver.json",
+      "sha256": "fea7660af63a28b65469025ab2d7cfd3bb9f198e11675e8478b2710d4e4728bc",
+      "bytes": 10320
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.diode.json",
+      "sha256": "308740aef193b761c0ea1b50ddbddedd0d21b2daf147642d8dbdc32f9370eb3c",
+      "bytes": 14422
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.dpdt-relay.json",
+      "sha256": "2ea20c5ea91621baaedacaf881fb9a2d23e29d0f7fa84f8517207fffa33ce314",
+      "bytes": 10825
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.dpdt.json",
+      "sha256": "e19caef37be50e21e140074a2dbfa60b1fb4fdffcd0ed477b249ea17084fe2a6",
+      "bytes": 10801
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.dpst.json",
+      "sha256": "2e6b52520a41bdf54996e8adf18503d2827e0d03a0aa3c8cfc23192a87ca7de3",
+      "bytes": 10483
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.earth.json",
+      "sha256": "a2dc8fd248aabb8f1757091095a2673a05dfcf6feaf7cf947862c31a3d59f02d",
+      "bytes": 9555
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.ecapacitor.json",
+      "sha256": "5b09ddeb65f7a962d55ab5cc7be1c4b84ff5a68e45a0ff8f5dc63561dcf579e0",
+      "bytes": 15421
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.filament-lamp.json",
+      "sha256": "5ca9a87692e33d4ed066295b60084726e044183230ad5052bf4f2fcfda597acd",
+      "bytes": 15663
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.floatswitch.json",
+      "sha256": "0ae43dc85526e027cc48d0f19e1ed4f35126c329b47ed2867300ea3d1eb483b4",
+      "bytes": 14133
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.fuse.json",
+      "sha256": "d38b6b37e80718e484a49e909e4c26d9e716c478730f3ab239f6168b545fb5e2",
+      "bytes": 14873
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.green-led.json",
+      "sha256": "3f4fb5ea008455fb01fc4b7d4fd592e6415de9a8e1cd90828e5cc71d20795301",
+      "bytes": 14721
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.half-h-driver.json",
+      "sha256": "dee987cda295d62225175a0508d600e7d5268eb03bed3509ff6e84eeeac48341",
+      "bytes": 11278
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.inductor.json",
+      "sha256": "7f702622326dc9dcb5526c33900d400a67a74e4a8b8d575ab268494e1f0cb23e",
+      "bytes": 14587
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.latching-logic-input.json",
+      "sha256": "3ea45f9032dc56c6b77bcbeff961a03b417bec3c3fdfb870de20682d986cf9ff",
+      "bytes": 9629
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.ldr-and-lamp.json",
+      "sha256": "70aaedee77256dd9e454e00eaaf2fd86b9d5945eee6d6049c3ddfe9801ab4aab",
+      "bytes": 14160
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.ldr-with-lamp.json",
+      "sha256": "1498a7532b036ef6409acb1f2dc145ac8e09f9498428bcab24119def48b84452",
+      "bytes": 16183
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.ldr.json",
+      "sha256": "2947976722f8c5b41cad314940b0d6e28ad19452b676b8e41903cd0ab41a726b",
+      "bytes": 14313
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.logic-output.json",
+      "sha256": "77ebb5c91f3e78e25439ebb58d372e6d5c67e182656f6041879e9d50d56f0c11",
+      "bytes": 10439
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.loudspeaker.json",
+      "sha256": "4d8211aebd8bbae26c9a8513bd830f233df0e42b0121637d67ecd3af5ae4a7ac",
+      "bytes": 15186
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.mosfetn.json",
+      "sha256": "d720a9a9828b57ad5747091e70e2ac9cba0374430ce7dbf1059a6a0e4b60e1f8",
+      "bytes": 10973
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.mosfetp.json",
+      "sha256": "4ec188454c866c0907c022b661163d4abbd5823e162dc6a28d61371bf68eb012",
+      "bytes": 11033
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.new-context-logic-input.json",
+      "sha256": "404a3d5f156cdbe40504971fa561e3f2c16db9ecf174f0b2b1aed0eea1c196f0",
+      "bytes": 9296
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.new-context-logic-output.json",
+      "sha256": "442abe0cfb2b5a1ba7efd46d71ffd2188e74a7f4f00f71f7ef65f8fb34af9c8c",
+      "bytes": 9280
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.npn.json",
+      "sha256": "beef166c52c0bde730fe1821498152fdadc646fd285491d349ba6e1ce2fd54b0",
+      "bytes": 11911
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.opamp-324.json",
+      "sha256": "b8dbd31c2bd83cc1111b17fe4c23f6f185d622245278aced918596ccdf563864",
+      "bytes": 15269
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.opamp-741.json",
+      "sha256": "ed48527ff5185aae17faa61fd8efead80d37ddbdd4c56af177421919abec7a7d",
+      "bytes": 15310
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.optoisolator.json",
+      "sha256": "ff0c06a315f87651402530d5c2b6990b509b3cdec35e78b1e4a5bcb2055f5955",
+      "bytes": 12019
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.phototransistor.json",
+      "sha256": "0ec293cbb5cce4dd1e6256f5aab3b24d56c97c980c44c117cfa53ab3e8c12d9a",
+      "bytes": 13473
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-battery-9v.json",
+      "sha256": "5e6893fd16d8f3df0f0eacafab2e70d0c0fa82e19f8b7350f5d21d12987c317e",
+      "bytes": 13771
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-battery.json",
+      "sha256": "cd2602b68d12bd78a41224b2a86efe86f4cc63bdaf118ae598778aa172b04cb7",
+      "bytes": 14063
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-buzzer.json",
+      "sha256": "ad29e1ec15220ece570382edcfe39dab779e637158d784f826023a4577bae0ea",
+      "bytes": 13854
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-filament-lamp.json",
+      "sha256": "920274bf001c917e61c19af026c8cc76fa752b15f1accfeaf70f9d20c5b775ed",
+      "bytes": 14609
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-fuse.json",
+      "sha256": "bc14beb78b934b4b73afdf0a104addb7c4bcc68f1f5cdeb13cb12be72a00c574",
+      "bytes": 14515
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-green-led.json",
+      "sha256": "77c5b96a560de90c63c9804f3702ab1ccfd456188c87ac15582fa89264e3e296",
+      "bytes": 14690
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-motor.json",
+      "sha256": "68677c8ca2cda94983e0430a7a8427d53ee3705299255418aba1cbc557e92b95",
+      "bytes": 16418
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-pushmake.json",
+      "sha256": "ba4739f5f9d4e66b56407d999859b8af3ba528e82741356540a4cf63f5eed972",
+      "bytes": 14937
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-red-led.json",
+      "sha256": "135eff712087f26a8202abc5b189ec71898370744e969fe40b1d7319b6d84061",
+      "bytes": 14680
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-resistor.json",
+      "sha256": "23d24832390910f5e9041ed5153522bdba43cd79aafb63cb85094feea6c00fe2",
+      "bytes": 13969
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-spdt.json",
+      "sha256": "2b0299c2af3d62f3cc1602494b7c6691185c12354206b4bf13e0eccd7d499eb3",
+      "bytes": 11141
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-spst.json",
+      "sha256": "194f9d64d8c9c74033ea87297f950da7425c8bbc9235bb68ca1e3c0fb70383ff",
+      "bytes": 14872
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-vresistor.json",
+      "sha256": "c1929fa103a448ed45b8b713d8d9c5b6d500228fd6f8866070d307c3a0a96524",
+      "bytes": 16845
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pictorial-yellow-led.json",
+      "sha256": "2fb9a73cf29b9017cd1a043ba0b3d94efd5832db48a48d22a5cd64ff4b9963ff",
+      "bytes": 14696
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pnp.json",
+      "sha256": "603edf46ffdd49091fdcbc3d575370807fe4f4d6c5ee88e99886522ede464f96",
+      "bytes": 11911
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.potentiometer.json",
+      "sha256": "f541f5744c8302946a7c35b2681c2b9888d94f6cc5fb583bbcbc136a38721721",
+      "bytes": 12141
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.push-button-logic-input.json",
+      "sha256": "c7e80b20cb7b2d680e6129f077eeb5de8eb73ef52fc51b6468fc2547885349fb",
+      "bytes": 9651
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pushbreak.json",
+      "sha256": "b97fe08063267179681db3674419b9378a0fc10a2b197675e29ed167cc193f48",
+      "bytes": 14085
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.pushmake.json",
+      "sha256": "8f6d758d6048b7f5695d52f53580c616022187eb3e419d6c8532ec986ffb3aeb",
+      "bytes": 14040
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.red-led.json",
+      "sha256": "ce6e1e97c816fe7b2b91c9e94ccaa09a0e80394744c85a02965bd6653c9d7cc7",
+      "bytes": 14711
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.resistor.json",
+      "sha256": "e77536e262998c296feafac9f6c6b9985bbe8ea8f3e36b4b18d411ced3948735",
+      "bytes": 15859
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.seven-segment-display.json",
+      "sha256": "91ab8db90c58dcafb71f66b0a579d2b2e26bbcf35189370900a0e2da079bf321",
+      "bytes": 14901
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.signal-lamp.json",
+      "sha256": "970099992a625ffd88adcde7b404d3ce01317d9be45e7e8da856fdf13bc868aa",
+      "bytes": 16012
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.spdt-relay.json",
+      "sha256": "da85c8b694315bc4cd0876186eb235b7cf97b3de657772bfbbd3ec07fbe361d9",
+      "bytes": 10306
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.spdt.json",
+      "sha256": "3f7dc767a81a8c1d4d774d542f48fa5297f49dbcbf5d401731c7553866f19c5a",
+      "bytes": 10228
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.spst.json",
+      "sha256": "d62bf6f59e588e239d698666bf8726ffd9fa9e155b83d96916391ec37376e6df",
+      "bytes": 14278
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.thermistor.json",
+      "sha256": "e6d395cdc18ae42bb2bea94bfb3fbc2832d4b2fb91b9a253769e6af965b76360",
+      "bytes": 17494
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.thyristor.json",
+      "sha256": "85f05191141f0b9e62489a31ccefef44688a856d3d25b4e99a8acdf4d40272df",
+      "bytes": 9836
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.transformer.json",
+      "sha256": "618809b04c86fd41c58353bbfbb74f383c378e11d34f7393876b2e492898a84d",
+      "bytes": 10874
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.voltmeter.json",
+      "sha256": "1817fa3ff5cd513bedd5fbc04f1223924030a8e5586570054e96059de8044519",
+      "bytes": 14630
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.voltrail.json",
+      "sha256": "fcbf4264153f155ab62c59c499bf5182635a850d723b261f623c70d29e7ed22a",
+      "bytes": 10988
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.vpulse.json",
+      "sha256": "4516a49938ab68ad54b7b2360a38061921463407b71daf1e7d66f41da8675039",
+      "bytes": 18234
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.vresistor.json",
+      "sha256": "518a346787279f8d92fdd598d86fb70041a396e0593a26c917a72832793cb402",
+      "bytes": 16919
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.vslide.json",
+      "sha256": "816890dc515310c3542e64f5508c5fd7c808d0900702ee7b45436ec98f7b8476",
+      "bytes": 12035
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.vzero.json",
+      "sha256": "c0c829390e5c496780532dd7b8a87bbb31fd7ff0852d03a6d731dbd26db62714",
+      "bytes": 9574
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.yellow-led.json",
+      "sha256": "1e4e7bf73289ce96355dfdba2da0e8454ccfd64e5a9d2f8ad842c9973947a268",
+      "bytes": 14727
+    },
+    {
+      "path": "datasets/parts/canonical/circuits/circuits.zener.json",
+      "sha256": "7aacbdabeb39bd16f89d3a61195635995dfc790d0a418e682216d0ccaf22f8c1",
+      "bytes": 15627
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.basketball.json",
+      "sha256": "07193899d01d9eea2440ca5e76f33c7a3fe91eea02b75b93b38c87e69638f81f",
+      "bytes": 32210
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.billiard-ball.json",
+      "sha256": "2eaf8c8ed5618944e16a5ae08059ea498b68cbd9962c384cc160116a49efb880",
+      "bytes": 32217
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.brick2.json",
+      "sha256": "4ccb42e3186ea772000ec3ba7ab94a21bdd7e9b449995c44bdf10010d998d668",
+      "bytes": 34041
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.cart.json",
+      "sha256": "da84118f788bba2a148582451a831e9684e2c77311bab47cd786ce79cc2a70aa",
+      "bytes": 38769
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.chain.json",
+      "sha256": "9d9f1806ba30ddd367ca98104b6b4a06b3317a690121fc295193def6bf033c32",
+      "bytes": 8822
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.concrete-ball2.json",
+      "sha256": "df0539bc2495d2130063a57f6bac5d37c2cc22983bcf03d45e211ac8f8b45fcc",
+      "bytes": 33597
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.concrete-block2.json",
+      "sha256": "4ecb8bceebc3b71963d140975a0564f0360adc24c550765199f6ebdd3b7c6d94",
+      "bytes": 35450
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.concrete-ground.json",
+      "sha256": "62d3491bf05606234e939642165abfb79b8b604a1fa20d5857e57f7a97f73dc1",
+      "bytes": 13588
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.concrete-slope.json",
+      "sha256": "e12a2dea3c2781f0431785e24f71b5ba95956e00017ab12beeaf075c59417948",
+      "bytes": 15160
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.connected-electric-motor.json",
+      "sha256": "5b5999f69793f4856efe57a6da0e8d23cbdee3ad3a493122ae70022e74bc19ec",
+      "bytes": 14848
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.connected-generator.json",
+      "sha256": "29a4500b7b708101388d7e912404ab0e9e5bbeca5d36666b0289b9b9e464282c",
+      "bytes": 15360
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.connected-microswitch.json",
+      "sha256": "ade7586aa62eb4c787cd8b3339d80c0062dcc741837467100e23361aab17adc5",
+      "bytes": 11966
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.connected-solenoid.json",
+      "sha256": "4c66116e6617a3269650dbe4fc0cee493b55d5678ffc16ba0b5784128177fbeb",
+      "bytes": 12588
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.cricket-ball.json",
+      "sha256": "180201002c4c1b6328cde114074bc2baf8bc744266386bd2648090914a036114",
+      "bytes": 32216
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.double-gear.json",
+      "sha256": "fb214d624ccfdf42c192e5312b3f090851040b2b227994e7d5068a1b1e7d65c1",
+      "bytes": 14247
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.flywheel-and-gear.json",
+      "sha256": "12b51889c51e53342bbb1e49ee911bca1cb9ef5289b8248626e0e8c1e817244d",
+      "bytes": 13507
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.glass-ball2.json",
+      "sha256": "e805c6e6d7cb6dbbd283a45f7b6dc63858bd139799dcc9d1b1060c0e3ad292fd",
+      "bytes": 33580
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.glass-block2.json",
+      "sha256": "05c79e74eb13bd7c79a449aba34de2598f2dd714216292f7cf01fc8590adad6b",
+      "bytes": 35431
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.glass-ground.json",
+      "sha256": "8d8a6e375213a99871725be27b77b2ba5ee4c239ebd189d049114faa7a425f4b",
+      "bytes": 13580
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.glass-slope.json",
+      "sha256": "b39bf8f81717af540cd734cacacbb3f0e646883c3f46923ee09424fb67aa513b",
+      "bytes": 15152
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.golf-ball.json",
+      "sha256": "b7397604e167c07c834ff70fd9e883fadde8fb4453900efcb5d0882b2594072e",
+      "bytes": 32193
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ice-ball2.json",
+      "sha256": "1eedc3be7299b397a81369ee68469626c5a556c48dc0799914a5ff6f843f3eda",
+      "bytes": 33554
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ice-block2.json",
+      "sha256": "4f04dc2ffb2660b704397365ab4cc9c8b8e657081339083ee20d9bedeb9ccd52",
+      "bytes": 35408
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ice-ground.json",
+      "sha256": "529e461750ebeab877998fc2a1618b737e05da96c4c5cf36e3d79c0839052016",
+      "bytes": 13561
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ice-slope.json",
+      "sha256": "fde148110bb313ff62aa54dfc946ef86657ccc15123fe83cf7c3fc0bf1211332",
+      "bytes": 15133
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-elastic-ball.json",
+      "sha256": "b5f6fd3c474ba65844a591c8c32decd320d8d399718d9f65712ea0ed4c9f47ce",
+      "bytes": 33587
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-elastic-block.json",
+      "sha256": "2322685ee55e084602140f00a741f940db21721c8201c8c1bddb8da9923b371d",
+      "bytes": 35896
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-elastic-ground.json",
+      "sha256": "8dd7cb910e2d7c3ab97cc969b442b4a8b3952304488b5c41a4926d6ce54bd7ff",
+      "bytes": 13614
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-elastic-slope.json",
+      "sha256": "468c5e69d8770ec21166a246cd8d3615f3bae63e6981d44175b840db965c44f2",
+      "bytes": 15202
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-inelastic-ball.json",
+      "sha256": "7267596d835c699b30a07ff7df8ca5d74bfa1dd6248ebc8da78c2b452eb00e4b",
+      "bytes": 33601
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-inelastic-block.json",
+      "sha256": "40a553685e6e7a1543909f87bcfbc7edd276e86185ed1069c1ea326385f832c9",
+      "bytes": 35910
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-inelastic-ground.json",
+      "sha256": "8921fe95aa960a1d1d9c058fd6c4e1989310c140366ee7a79d78ec3ec6ec7edd",
+      "bytes": 13636
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.ideal-inelastic-slope.json",
+      "sha256": "4a28fcce484f25e8f24b81a887d9854f0156daf64874e1b4209a80cdb31f3dec",
+      "bytes": 15224
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.metal-ball2.json",
+      "sha256": "b5d0c3c506e6157d005295b97b02d9742ccf80f8f5b2cb436b801c6de377c76f",
+      "bytes": 33573
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.metal-block2.json",
+      "sha256": "e04b66fda1467428e3650ee79e2a3f70574df39301ad53cc4e1ffbd18227b853",
+      "bytes": 35424
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.metal-ground.json",
+      "sha256": "acc7f67e741543ef17e78c4fc815cd4a00b6ec66a056df6bb450564200f65980",
+      "bytes": 13573
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.metal-slope.json",
+      "sha256": "d32dc1df8591e1c75b719eaa2a643e50217244c279d1911434f470e5f3b793ec",
+      "bytes": 15145
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.motor.json",
+      "sha256": "c4ab7e9d0ab99c31c0e4f0823442f7a8a8275854089927b99ff5b2380562910d",
+      "bytes": 14276
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.rack-and-pinion.json",
+      "sha256": "202c6e2f9ecd8109b149624772fc2f0545311553f92550ba8eaa7cddb267c821",
+      "bytes": 14767
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.rod.json",
+      "sha256": "f47cf0276ab01fba733c9835bbc685c13d540f085a6d304603fbc80bf4aacc62",
+      "bytes": 9602
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.rubber-ball2.json",
+      "sha256": "a08540472ed53090a8a75ac0e0910a48538c8c502e0ffd082f40c1115d31150f",
+      "bytes": 33587
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.rubber-block2.json",
+      "sha256": "0ac73d1a331cb0459b792ec38c2e8e7f3315c314e881f4212055b0c2ee57b1d5",
+      "bytes": 35440
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.rubber-ground.json",
+      "sha256": "0724b093370286ec9b6d628ac8a6ad489c45e731f06fd619253a6f615bca9d40",
+      "bytes": 13584
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.rubber-slope.json",
+      "sha256": "6b0e5bc785c46a32a8d0fbdb63fbe337e21f45488977d06735c01045060ac1cb",
+      "bytes": 15156
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.soccer-ball.json",
+      "sha256": "8d82fb5a1536c9602a39eb18e2ee7ff69cc1ca7dff8e33eb3cc5d1296605e6fc",
+      "bytes": 32212
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.space2.json",
+      "sha256": "4f36e302eff8fdfeb6ac3cc4966ea10da34eb1a0d62653974eb12c36d2884938",
+      "bytes": 7788
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.spring.json",
+      "sha256": "d2df969531d1f9f1638551777a9c97269e89269675e249ddce7e236667b2afc1",
+      "bytes": 10424
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.tennis-ball.json",
+      "sha256": "72dee5d3b269b71c9119841796c9780e8663528dd829276424adc2b48d09a6ad",
+      "bytes": 32208
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.torque-application.json",
+      "sha256": "3b05fe7f65e4f0711fd2cdf8ab8a7f129ffc16d30164c3027092fd04beac6f2e",
+      "bytes": 7298
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.wood-ball2.json",
+      "sha256": "7e2a24ec7abcaf99aabd17064874bfae09d5c0ca59e0e08eb8316206c9bbc2d0",
+      "bytes": 33567
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.wood-block2.json",
+      "sha256": "58fa86a1594350f3f4317146ce978a777bf7fe7f4e638da42dba68f8618ed12d",
+      "bytes": 35420
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.wood-ground.json",
+      "sha256": "59d05df73b36ee9e945400f705f711b6c0fe3bc34ae9978d17f6df913686e5a0",
+      "bytes": 13570
+    },
+    {
+      "path": "datasets/parts/canonical/mechanics/mechanics.wood-slope.json",
+      "sha256": "0d489dff817056d5806761323df272b1375ef454d78957cab283a41f0569919f",
+      "bytes": 15142
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.adjustableslit.json",
+      "sha256": "f846e8a5d8dff4afe46d44851e16025bac139c49421ddfdeb55f9ec26062f35c",
+      "bytes": 9403
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.concavelens.json",
+      "sha256": "c9811e0a4679f0988eeaab777995ac636aa29315bdcc8098acd4b134619882c6",
+      "bytes": 9342
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.concavemirror.json",
+      "sha256": "cfaae71535984a7d9ac46971387c5e1b844fe7c1f319c8238acc7d67d0efa678",
+      "bytes": 10885
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.convexlens.json",
+      "sha256": "eb2c5394012587e742ab570b18ac8f99438d5868630fbb9e4a2fe18f1ea2e494",
+      "bytes": 9334
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.convexmirror.json",
+      "sha256": "a72ef7cd4ba6617094fd043473eeb1fc0fa2ab5ecba537714bb263c9b1f84f18",
+      "bytes": 10911
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.eye.json",
+      "sha256": "6e0f1df961b90d318207de9fb2c2008800d5b8aa302ccf1f063791ecff6907cf",
+      "bytes": 14386
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.faraxisobject.json",
+      "sha256": "1b579762c660521bbe331fb79ff699c5528108600481f1ec0ccf196c7b7a0943",
+      "bytes": 30446
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.lamp.json",
+      "sha256": "6454449a122e774b4bc85430506595a1346c7f77d751762764acdc0739d85f7f",
+      "bytes": 9977
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.nearaxisobject.json",
+      "sha256": "626136826571a12f1e964a58969585b20dea6179c0505c9ce3ace0adaf7f3936",
+      "bytes": 39372
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.opaqueball.json",
+      "sha256": "9d9a1e241b4ea2caad0bedcfb73367e593ab296ef3f7df8399a00c6917af23a8",
+      "bytes": 8482
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.opaqueblock.json",
+      "sha256": "fe411ad9e5873d133d25c62a179d3bcfd16d4a48842eae695e6afd3b8f6b767e",
+      "bytes": 7695
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.opaquetriangle.json",
+      "sha256": "e21296a517efe4185c60914079c3bf29cb60abc2e235f69eb82540e1d1092740",
+      "bytes": 7394
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.opticalspace2.json",
+      "sha256": "961a6334dde2e5584a54fa959c34a3a7b29c8808f7923c96cbc2e01120490ad1",
+      "bytes": 7809
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.parabolicmirror.json",
+      "sha256": "5ca7089f8595d86a1c429e8aeadd5bedc897587bdec1a34c8902a481e1957fbe",
+      "bytes": 10410
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.planemirror.json",
+      "sha256": "445d6502fd60c6c7655fee5f92875aed7e35586d0af2a53cf832e0b563ae65a1",
+      "bytes": 9289
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.prism.json",
+      "sha256": "ca4f555a8f6924fbed065dc5f1c8046d9d540298d8bd7ae383854d63706fbdb7",
+      "bytes": 8056
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.projection.json",
+      "sha256": "65920e280761aff0c13a6d659d986f6a31f67e66b773fd75059932e73388db3b",
+      "bytes": 7084
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.raybox.json",
+      "sha256": "cb7c951257c6b8567e0d242fe704eb590bc7b4b3f97427f23e91e0c7a23458da",
+      "bytes": 10729
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.semicircularblock.json",
+      "sha256": "6d1e319540657f8d6cd655ea3daaee68a479347ff2ca8b6c391941887b57e72b",
+      "bytes": 10089
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.torch.json",
+      "sha256": "9e243fb09e0ef3208cb7b561c2fa3e6c507bdb47dc354721bf29fd94a28c7bf4",
+      "bytes": 10013
+    },
+    {
+      "path": "datasets/parts/canonical/optics/optics.transparentblock.json",
+      "sha256": "d74908853d99430bfb54c84f78ca18e638618ce9457ef4223580d2fcc983164e",
+      "bytes": 9793
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.2d.json",
+      "sha256": "10031757bf2d37b19c91dbf0ccda6b30f6f35b6f6ae8d712033a493b3631d023",
+      "bytes": 7567
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.advanced-animation.json",
+      "sha256": "0c584daf81851d2de8e7dbadb1090d1ce451b25be2f7ab7cc8fd11f18e9e4227",
+      "bytes": 14926
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.button.json",
+      "sha256": "2ca1f61317dd77be3b0cbc0924792ad06cb3226103aea5d043e726a4f06f60d2",
+      "bytes": 9100
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.checkbox.json",
+      "sha256": "64f1ddec6f093c919f2299ad99e9d3f2897e967a718586b02d184a62e0334875",
+      "bytes": 8211
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.dropdown.json",
+      "sha256": "446fc9f2a7c1ec6ec9d99b70fb388d29531f0d444df21fe5bcca38dcf2ff2714",
+      "bytes": 7913
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.editbox.json",
+      "sha256": "f1e4c9943f53d2b8d4f1e0f1042c469be1191907866097821af8761151618883",
+      "bytes": 8876
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.graph.json",
+      "sha256": "00ba3f37cc5480b22bf10dbbd0b5e786f126407376ad941e765f97a738dd5cb5",
+      "bytes": 15341
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.image.json",
+      "sha256": "07c2cf7c69c50ffc645e1e2c4195921e8fa9e600759ded044b364e9680fd79b4",
+      "bytes": 7821
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.instructions.json",
+      "sha256": "e3a4a38ae8f0f9a60853bc5fbaa7ac850127a5830611126652b5b8e4384d35ea",
+      "bytes": 13822
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.marker.json",
+      "sha256": "0dd7513d137fb361959805b048c4ae574e38e1b8ab091e829fbde6ea0070a3ca",
+      "bytes": 10797
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.pause.json",
+      "sha256": "12c884944d5e54e83b7c3840341a87d78e8b708a12234ddefd30f9cbafac1dfa",
+      "bytes": 9089
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.protractor.json",
+      "sha256": "35e4855af23b6941c7b17845bdde5608c0d4231575b5b4faae199f27468955f0",
+      "bytes": 7117
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.reload.json",
+      "sha256": "af2886bb24f49f03fb842135397771bf834baf49343dddd04f30841f95cf1174",
+      "bytes": 9249
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.ruler.json",
+      "sha256": "ab231764544bb23a40845d4e61a6cc5d33b9f2611ad92384b1067210839bd56f",
+      "bytes": 10289
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.spinbox.json",
+      "sha256": "9748ab8e7472a6d38e9855c6a7ada7d9006d0ea0ebddef6a92326e7cf30ac543",
+      "bytes": 13091
+    },
+    {
+      "path": "datasets/parts/canonical/presentation/presentation.text.json",
+      "sha256": "9ddcd534f416aece204a11929228f9935fedd09bcc4d037798fa186493e504ae",
+      "bytes": 12999
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.circular-obstacle.json",
+      "sha256": "62f30c7c71822ee51ec181ba38250a7e7a4f8a9830083c99ef3e2848f6a2f6df",
+      "bytes": 12493
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.detector.json",
+      "sha256": "a9f417d7f48b1533bc6b0934500707db0436cdccacd939becb860d509323b572",
+      "bytes": 6104
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.double-slit-obstacle.json",
+      "sha256": "2a0f5d4bb069fbf349d6cae278f2261aefe6038304f0ef588dadf46683a40d2e",
+      "bytes": 10248
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.em-wavespace2-holder.json",
+      "sha256": "06130773cace12f1392e944b5df8187c2966c62c5d84c6ca4e6b68cb8490af76",
+      "bytes": 15970
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.interference.json",
+      "sha256": "e1550ae8b0726cffa1b9210c800a86bd74f7b5c05ae5fdb5a98b85486321c703",
+      "bytes": 15843
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.line-source.json",
+      "sha256": "1a0bebbf50a6f06cd54737b5824eaee432318bbacb6580016e8b8faaa13e52aa",
+      "bytes": 18332
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.moving-point-source.json",
+      "sha256": "643c7fc823d8675116c16365d929ba676325dbafd5e4be7563baf500d99c394d",
+      "bytes": 19232
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.penetration.json",
+      "sha256": "7f3d04b6f48a58e8296fad0c2ad7774f09c029d338ad81638be637b84a72b7f3",
+      "bytes": 14632
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.pinned.json",
+      "sha256": "257f1d61f7aa0fc132f144d0b5d2a5e299ef89e98a982199c8b4da5e55273468",
+      "bytes": 12489
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.plane-reflector.json",
+      "sha256": "b194256061041726f70ce804c14a89488be89087dae688193ad40540a1af2d8c",
+      "bytes": 9543
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.plucking.json",
+      "sha256": "ae98a0b2824dc7b763e8fd1ed76eb76d93a5937ac46bb374a90fb377a94d7a58",
+      "bytes": 15336
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.point-source.json",
+      "sha256": "6093bc4a0af45ac36f4d91421b71c612e1f9af27b61c3da684bf8039568ef9d0",
+      "bytes": 19209
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.propagation.json",
+      "sha256": "75ec20cf82857ffaaf1bdc095dfb6573704a9d2311029381057464180a60921c",
+      "bytes": 13436
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.rect-obstacle.json",
+      "sha256": "871d36f39ef188662fe7e2991c6f8cea2aa283061ff2e7137c09e1f8a2eafc72",
+      "bytes": 9423
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.reflection.json",
+      "sha256": "9518b52902bf10aec7b7d22bb44ace277c8b70a5c22f39155734ff9ea9eb9405",
+      "bytes": 13431
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.single-slit-obstacle.json",
+      "sha256": "5a405629709d0c996de89e7d514d24bc56223193828b0fe9ad47e16bd758190b",
+      "bytes": 10042
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.sloped-block-obstacle.json",
+      "sha256": "94b3968a4cb25c41e2ee245d76dc1f8f898a22f72ecf0e8546335454e3673873",
+      "bytes": 10303
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.sound-wavespace2-holder.json",
+      "sha256": "e41c36ccca53cd8570a69eaf777e0b68057ded08b45095978112403470138d9a",
+      "bytes": 14418
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.triangular-obstacle.json",
+      "sha256": "e8e9e4ac85b2c433b149b5187d20605e2fa644a61adefccee54b8dc71d02bb42",
+      "bytes": 9447
+    },
+    {
+      "path": "datasets/parts/canonical/waves/waves.water-wavespace2-holder.json",
+      "sha256": "bbf7d323d3de1e9d7d0c624350c2bdfcbc224d51b58ce9be9987da65f3cd5b4a",
+      "bytes": 15241
+    },
+    {
+      "path": "datasets/parts/generation-summary.json",
+      "sha256": "6408308093c01a55053a48692f245262f88efc7b8ab1358a2bebf1e980dfcd08",
+      "bytes": 1587
+    },
+    {
+      "path": "datasets/parts/palette-catalog.csv",
+      "sha256": "096c9a759ca92a61e5eecc61c79864206594e4844bb0d8695244ebd6b0c1eecc",
+      "bytes": 36415
+    },
+    {
+      "path": "datasets/parts/palette.json",
+      "sha256": "141df89e016ac0a75fdcb30e9403e9ffe8ab1a4b7300faf00506b739dbe67057",
+      "bytes": 80885
+    },
+    {
+      "path": "datasets/parts/parts-catalog.csv",
+      "sha256": "55c75cb4b8a9110fccecf30b66870b1f6efd9704dc8c201ab62bf553109123b8",
+      "bytes": 38169
+    },
+    {
+      "path": "datasets/parts/registry.json",
+      "sha256": "f5ce74d7e58bd20ecba54db0ddebba280f04aeafac4f536410f3b41ab41533f3",
+      "bytes": 57718
+    },
+    {
+      "path": "datasets/schemas/experiment.schema.json",
+      "sha256": "29156ac704f2c419d25b185cb7a582ed3d0331c711be58431a0ff357443466e0",
+      "bytes": 1185
+    },
+    {
+      "path": "datasets/schemas/part.schema.json",
+      "sha256": "f55c82dbd1209228e381a1215152c8526ef9655e0a5d18e8ef4dcc1f3c29ff20",
+      "bytes": 3379
+    },
+    {
+      "path": "datasets/schemas/scene.schema.json",
+      "sha256": "45a77ef4b301142a6a9f8b44f4c74d5cea0ec938ab024a763d06895424fdecd0",
+      "bytes": 2577
+    },
+    {
+      "path": "docs/architecture/ARCHITECTURE.md",
+      "sha256": "58ccc4b8219e15c17a62ceb3ff4eac823f2bde6bd6a4d80152cc7ec0996f7127",
+      "bytes": 1409
+    },
+    {
+      "path": "docs/architecture/PART_MODEL_V1_FA.md",
+      "sha256": "61293d68643b30f1ef6aa7fb4be9615e7dd55d9833e0211f559cb9d61cd8d279",
+      "bytes": 2959
+    },
+    {
+      "path": "docs/architecture/SCENE_MODEL_V1_FA.md",
+      "sha256": "fcb5c84fea8ba86abdca5cfe7493257c1a82ca5969c676d006678e3630648c0f",
+      "bytes": 1264
+    },
+    {
+      "path": "docs/architecture/SCIENTIFIC_CORE_V1_FA.md",
+      "sha256": "fcf5d331424aa5a98f6aabfe495e1d279a24bd51dc0264f2bc0febcaf3989acb",
+      "bytes": 2204
+    },
+    {
+      "path": "docs/catalog/PARTS_CATALOG_FA.md",
+      "sha256": "ba134368277023acca078a55c091b1f41e99b70f430fd6668489d3af46cfc9dc",
+      "bytes": 2381
+    },
+    {
+      "path": "docs/research/crocodile-physics-605/README.md",
+      "sha256": "ee437e8def95be2f88e4c5fbf7328934997bcec66e592ce44f12a92588e6e24b",
+      "bytes": 1001
+    },
+    {
+      "path": "docs/research/crocodile-physics-605/Reverse_Engineering_Report_FA.md",
+      "sha256": "1e42f2ea78b821f4b51290f705edc9242e9868be64266773534221073ee0586e",
+      "bytes": 70998
+    },
+    {
+      "path": "docs/roadmap/GOLDEN_EXPERIMENTS.md",
+      "sha256": "566e0e1d68e1728d9662d8510a35553c09428653b5a0edb6a20d73f92b7c3d46",
+      "bytes": 1087
+    },
+    {
+      "path": "docs/roadmap/PHASE_01.md",
+      "sha256": "1d3df64ec780799f3159ab7ae9c3b1275d4a1df24db57c5a3aca81e51ba49707",
+      "bytes": 885
+    },
+    {
+      "path": "docs/roadmap/PHASE_02_SOLVERS.md",
+      "sha256": "c77f1203e4efbd59f91a5538aac97d8dcc7ba40004ac6f55acc0f7e97a4d9383",
+      "bytes": 969
+    },
+    {
+      "path": "docs/roadmap/STAGE_01_SUMMARY_FA.md",
+      "sha256": "448c550832872ff3683f158c7231a752cbebe31aae0c09bb426f3a34ddd20cfa",
+      "bytes": 1652
+    },
+    {
+      "path": "docs/roadmap/STAGE_02_SUMMARY_FA.md",
+      "sha256": "80823b534a2fb49b8d3d67deeb707c4c76f8cfc45c94a08deb401bf110917a57",
+      "bytes": 860
+    },
+    {
+      "path": "docs/roadmap/STAGE_03_SUMMARY_FA.md",
+      "sha256": "65490d625d83975b8858f390f1f83c7f634073c8344c2c31b182a7db3714461e",
+      "bytes": 1657
+    },
+    {
+      "path": "docs/testing/STAGE_02_TEST_REPORT_FA.md",
+      "sha256": "e1210597ed35999b25933ca93871e078fcaa9979f3680e59e230d00831150dba",
+      "bytes": 960
+    },
+    {
+      "path": "docs/testing/STAGE_03_TEST_REPORT_FA.md",
+      "sha256": "6990cd7629440c3d12b077afe409b31a8f3f822c45ebdf8100adbe439cd4b360",
+      "bytes": 513
+    },
+    {
+      "path": "package.json",
+      "sha256": "01618823e1db84b48514a24a8b70bb34255a16970b12f2cc0965ef411d26ba36",
+      "bytes": 576
+    },
+    {
+      "path": "packages/circuits-engine/package.json",
+      "sha256": "6dab2628faf8eeef416dfdf771f98647e4835b1fa325db9c614a12fb686796b0",
+      "bytes": 135
+    },
+    {
+      "path": "packages/circuits-engine/src/index.mjs",
+      "sha256": "af789e4187e38e2aff4534dc93bb5217db3d62a9838da50dac44c2b3e7c56fcc",
+      "bytes": 2115
+    },
+    {
+      "path": "packages/circuits-engine/src/mna.mjs",
+      "sha256": "2df47904a7466f897fcffec1ea903e2446768f04106649106ae5bad31e66c6c5",
+      "bytes": 4484
+    },
+    {
+      "path": "packages/component-library/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "packages/experiment-runtime/package.json",
+      "sha256": "04006e5bd95e957bff9861c4214e21c90f076512a443e511f2154b35b8247f4e",
+      "bytes": 138
+    },
+    {
+      "path": "packages/experiment-runtime/src/index.mjs",
+      "sha256": "e92cf8bcf811c669d925f8847c4dd580d75d069fb1cc51167394acc1dd9fbe8d",
+      "bytes": 649
+    },
+    {
+      "path": "packages/graph-engine/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "packages/measurement-engine/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "packages/mechanics-engine/package.json",
+      "sha256": "f4d13e84b0bd2544ccd53716d3fc80eb79615a84caea9da9287f1f557b726001",
+      "bytes": 136
+    },
+    {
+      "path": "packages/mechanics-engine/src/index.mjs",
+      "sha256": "db79104432a2c2428d299a80ccdaca9e9d2dee58217109323a5d3ab0bbb16a29",
+      "bytes": 1975
+    },
+    {
+      "path": "packages/mechanics-engine/src/world2d.mjs",
+      "sha256": "c99fac79ede5d0220b04c32be1f20c83575143d64136331c2b0e2f1c9a4e6802",
+      "bytes": 5468
+    },
+    {
+      "path": "packages/optics-engine/package.json",
+      "sha256": "4ecdc1816fa357abb82c7219ac8511b3382cb9317d1f75062dabdd9fb41db6fd",
+      "bytes": 133
+    },
+    {
+      "path": "packages/optics-engine/src/index.mjs",
+      "sha256": "fd8a8b70f02e2a38d3995ba3edbdcd2e44065f9f9fe52b4094fe8433aac836c1",
+      "bytes": 1188
+    },
+    {
+      "path": "packages/optics-engine/src/ray-scene.mjs",
+      "sha256": "cbb3ca419bfca634b5d51a8a333561c4791d7acf61eee0e95538098c5812e82e",
+      "bytes": 3714
+    },
+    {
+      "path": "packages/physics-core/package.json",
+      "sha256": "6d97bfb8c6a7b4eba7a15d4af705a16768c19a5826f68807969ed708b54daea7",
+      "bytes": 132
+    },
+    {
+      "path": "packages/physics-core/src/clock.mjs",
+      "sha256": "43e54fe6f516f9610ed3a45caa2558ef741b595e2ca753f332e4017d44ec675b",
+      "bytes": 729
+    },
+    {
+      "path": "packages/physics-core/src/index.mjs",
+      "sha256": "8e3bf381f63b71b87c2e06b063184738f32e5aa092079ec6e9d2f52a6c911c60",
+      "bytes": 86
+    },
+    {
+      "path": "packages/physics-core/src/math.mjs",
+      "sha256": "9777aa52d9a63e7f66118260a1b404ccdd1c0e93c8c4c09aac811da6237ea08b",
+      "bytes": 410
+    },
+    {
+      "path": "packages/physics-core/src/types.ts",
+      "sha256": "6c260bc92da4110aa5f9b482b5867caa197198fd71bdcda3243c6856c7cb3830",
+      "bytes": 1676
+    },
+    {
+      "path": "packages/physics-core/src/units.mjs",
+      "sha256": "d82dffa377f88a6c554096f752025f8e3b0333ef3a1fc012e9a5681467120408",
+      "bytes": 1927
+    },
+    {
+      "path": "packages/ui/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "packages/waves-engine/package.json",
+      "sha256": "dcaf5593a9d5354099a340c1735dcf55e7ad0c22c2e2fd4a9d13f35298b2852d",
+      "bytes": 132
+    },
+    {
+      "path": "packages/waves-engine/src/index.mjs",
+      "sha256": "4565a65e0c5a0b3f1a9ea08b3300e0100bda88513d81e106258415cbb6a351ac",
+      "bytes": 1480
+    },
+    {
+      "path": "packages/waves-engine/src/wave-grid.mjs",
+      "sha256": "afaf90f64f3e553ed5b912c46085cfc671ca76162533a0c1492ccfc37d13a68f",
+      "bytes": 3534
+    },
+    {
+      "path": "tests/experiments/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tests/physics/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tests/physics/golden/reference-experiments.json",
+      "sha256": "6320678fa96e463aff3b28084a043b692224a4e1cae62b25bf20e119ce88b9e2",
+      "bytes": 3311
+    },
+    {
+      "path": "tests/physics/stage2/run-stage2-tests.mjs",
+      "sha256": "9b6fb9160411f9918c9545b8b741e178bb01ebc90c2a4244852bee0efb945c28",
+      "bytes": 6967
+    },
+    {
+      "path": "tests/physics/stage3/run-stage3-tests.mjs",
+      "sha256": "c2138cee0abb49194762af7d6c3b720eee009490b2ea142241488cf2639942b3",
+      "bytes": 6151
+    },
+    {
+      "path": "tests/regression/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tools/crocodile-migration/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tools/dataset-importer/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "tools/experiment-validator/index.mjs",
+      "sha256": "070b402665e33a4ded8fbfdb74d4661bde1a03348869c209c627b011f60b15d4",
+      "bytes": 1354
+    },
+    {
+      "path": "tools/part-model-generator/README.md",
+      "sha256": "45155341f179ffaeabb4a6560883d0e08a6e26eef435211a0d84e05bfdb792d0",
+      "bytes": 795
+    },
+    {
+      "path": "tools/part-model-generator/generate.py",
+      "sha256": "cc3c669604738b2e5427b744181a05bdd7660a1f0973f11ec353414510878042",
+      "bytes": 24610
+    },
+    {
+      "path": "tools/part-validator/validate.py",
+      "sha256": "cd8b98dc48b7427f78c3c3a5477ad8e652d94bb3df87bd785adb3f93985b1535",
+      "bytes": 2160
+    }
+  ]
+}

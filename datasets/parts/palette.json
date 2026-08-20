@@ -1,0 +1,2065 @@
+{
+  "schemaVersion": "1.0.0",
+  "entries": [
+    {
+      "id": "palette.001",
+      "canonicalPartId": "circuits.battery",
+      "name": "Battery",
+      "nameFa": "باتری",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Power Supplies",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← منابع تغذیه",
+      "legacyClass": "electronics/battery"
+    },
+    {
+      "id": "palette.002",
+      "canonicalPartId": "circuits.vslide",
+      "name": "Variable voltage supply",
+      "nameFa": "منبع ولتاژ متغیر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Power Supplies",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← منابع تغذیه",
+      "legacyClass": "electronics/vslide"
+    },
+    {
+      "id": "palette.003",
+      "canonicalPartId": "circuits.voltrail",
+      "name": "Voltage rail",
+      "nameFa": "خط تغذیه ولتاژ",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Power Supplies",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← منابع تغذیه",
+      "legacyClass": "electronics/voltrail"
+    },
+    {
+      "id": "palette.004",
+      "canonicalPartId": "circuits.vzero",
+      "name": "Zero volt rail",
+      "nameFa": "خط صفر ولت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Power Supplies",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← منابع تغذیه",
+      "legacyClass": "electronics/vzero"
+    },
+    {
+      "id": "palette.005",
+      "canonicalPartId": "circuits.earth",
+      "name": "Ground",
+      "nameFa": "زمین الکتریکی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Power Supplies",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← منابع تغذیه",
+      "legacyClass": "electronics/earth"
+    },
+    {
+      "id": "palette.006",
+      "canonicalPartId": "circuits.current",
+      "name": "Constant current source",
+      "nameFa": "منبع جریان ثابت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Power Supplies",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← منابع تغذیه",
+      "legacyClass": "electronics/current"
+    },
+    {
+      "id": "palette.007",
+      "canonicalPartId": "circuits.spst",
+      "name": "SPST",
+      "nameFa": "کلید SPST",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/spst"
+    },
+    {
+      "id": "palette.008",
+      "canonicalPartId": "circuits.pushmake",
+      "name": "Push-to-make switch",
+      "nameFa": "کلید فشاری وصل‌شونده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/pushmake"
+    },
+    {
+      "id": "palette.009",
+      "canonicalPartId": "circuits.pushbreak",
+      "name": "Push-to-break switch",
+      "nameFa": "کلید فشاری قطع‌شونده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/pushbreak"
+    },
+    {
+      "id": "palette.010",
+      "canonicalPartId": "circuits.spdt",
+      "name": "SPDT",
+      "nameFa": "کلید SPDT",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/spdt"
+    },
+    {
+      "id": "palette.011",
+      "canonicalPartId": "circuits.dpst",
+      "name": "DPST",
+      "nameFa": "کلید DPST",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/dpst"
+    },
+    {
+      "id": "palette.012",
+      "canonicalPartId": "circuits.dpdt",
+      "name": "DPDT",
+      "nameFa": "کلید DPDT",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/dpdt"
+    },
+    {
+      "id": "palette.013",
+      "canonicalPartId": "circuits.spdt-relay",
+      "name": "SPDT relay",
+      "nameFa": "رله SPDT",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/spdt-relay"
+    },
+    {
+      "id": "palette.014",
+      "canonicalPartId": "circuits.dpdt-relay",
+      "name": "DPDT relay",
+      "nameFa": "رله DPDT",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Switches",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← کلیدها",
+      "legacyClass": "electronics/dpdt-relay"
+    },
+    {
+      "id": "palette.015",
+      "canonicalPartId": "circuits.floatswitch",
+      "name": "Float switch",
+      "nameFa": "کلید شناور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/floatswitch"
+    },
+    {
+      "id": "palette.016",
+      "canonicalPartId": "circuits.thermistor",
+      "name": "Thermistor",
+      "nameFa": "ترمیستور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/thermistor"
+    },
+    {
+      "id": "palette.017",
+      "canonicalPartId": "circuits.ldr-with-lamp",
+      "name": "LDR with Lamp",
+      "nameFa": "مقاومت نوری همراه لامپ",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/ldr-with-lamp"
+    },
+    {
+      "id": "palette.018",
+      "canonicalPartId": "circuits.ldr-and-lamp",
+      "name": "LDR and Lamp",
+      "nameFa": "مقاومت نوری و لامپ",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/ldr-and-lamp"
+    },
+    {
+      "id": "palette.019",
+      "canonicalPartId": "circuits.ldr",
+      "name": "Light dependent resistor",
+      "nameFa": "مقاومت وابسته به نور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/ldr"
+    },
+    {
+      "id": "palette.020",
+      "canonicalPartId": "circuits.phototransistor",
+      "name": "Photo-transistor with lamp",
+      "nameFa": "فوتوترانزیستور همراه لامپ",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/phototransistor"
+    },
+    {
+      "id": "palette.021",
+      "canonicalPartId": "circuits.optoisolator",
+      "name": "Opto-isolator",
+      "nameFa": "اپتوایزولاتور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/optoisolator"
+    },
+    {
+      "id": "palette.022",
+      "canonicalPartId": "circuits.vresistor",
+      "name": "Variable resistor",
+      "nameFa": "مقاومت متغیر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/vresistor"
+    },
+    {
+      "id": "palette.023",
+      "canonicalPartId": "circuits.potentiometer",
+      "name": "Potentiometer",
+      "nameFa": "پتانسیومتر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/potentiometer"
+    },
+    {
+      "id": "palette.024",
+      "canonicalPartId": "circuits.fuse",
+      "name": "Fuse",
+      "nameFa": "فیوز",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Input Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات ورودی",
+      "legacyClass": "electronics/fuse"
+    },
+    {
+      "id": "palette.025",
+      "canonicalPartId": "circuits.resistor",
+      "name": "Resistor",
+      "nameFa": "مقاومت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Passive Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات غیرفعال",
+      "legacyClass": "electronics/resistor"
+    },
+    {
+      "id": "palette.026",
+      "canonicalPartId": "circuits.8-resistors",
+      "name": "8 Resistors",
+      "nameFa": "مجموعه ۸ مقاومت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Passive Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات غیرفعال",
+      "legacyClass": "electronics/8-resistors"
+    },
+    {
+      "id": "palette.027",
+      "canonicalPartId": "circuits.inductor",
+      "name": "Inductor",
+      "nameFa": "سلف",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Passive Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات غیرفعال",
+      "legacyClass": "electronics/inductor"
+    },
+    {
+      "id": "palette.028",
+      "canonicalPartId": "circuits.capacitor",
+      "name": "Capacitor",
+      "nameFa": "خازن",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Passive Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات غیرفعال",
+      "legacyClass": "electronics/capacitor"
+    },
+    {
+      "id": "palette.029",
+      "canonicalPartId": "circuits.ecapacitor",
+      "name": "Electrolytic capacitor",
+      "nameFa": "خازن الکترولیتی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Passive Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات غیرفعال",
+      "legacyClass": "electronics/ecapacitor"
+    },
+    {
+      "id": "palette.030",
+      "canonicalPartId": "circuits.transformer",
+      "name": "Transformer",
+      "nameFa": "ترانسفورماتور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Passive Components",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← قطعات غیرفعال",
+      "legacyClass": "electronics/transformer"
+    },
+    {
+      "id": "palette.031",
+      "canonicalPartId": "circuits.diode",
+      "name": "Diode",
+      "nameFa": "دیود",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Discrete Semiconductors",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا",
+      "legacyClass": "electronics/diode"
+    },
+    {
+      "id": "palette.032",
+      "canonicalPartId": "circuits.zener",
+      "name": "Zener",
+      "nameFa": "دیود زنر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Discrete Semiconductors",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا",
+      "legacyClass": "electronics/zener"
+    },
+    {
+      "id": "palette.033",
+      "canonicalPartId": "circuits.thyristor",
+      "name": "Thyristor",
+      "nameFa": "تریستور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Discrete Semiconductors",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا",
+      "legacyClass": "electronics/thyristor"
+    },
+    {
+      "id": "palette.034",
+      "canonicalPartId": "circuits.mosfetn",
+      "name": "N-Channel MOSFET",
+      "nameFa": "ماسفت کانال N",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Discrete Semiconductors",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا",
+      "legacyClass": "electronics/mosfetn"
+    },
+    {
+      "id": "palette.035",
+      "canonicalPartId": "circuits.mosfetp",
+      "name": "P-Channel MOSFET",
+      "nameFa": "ماسفت کانال P",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Discrete Semiconductors",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا",
+      "legacyClass": "electronics/mosfetp"
+    },
+    {
+      "id": "palette.036",
+      "canonicalPartId": "circuits.npn",
+      "name": "NPN transistor",
+      "nameFa": "ترانزیستور NPN",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Discrete Semiconductors",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا",
+      "legacyClass": "electronics/npn"
+    },
+    {
+      "id": "palette.037",
+      "canonicalPartId": "circuits.pnp",
+      "name": "PNP transistor",
+      "nameFa": "ترانزیستور PNP",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Discrete Semiconductors",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا",
+      "legacyClass": "electronics/pnp"
+    },
+    {
+      "id": "palette.038",
+      "canonicalPartId": "circuits.555-timer",
+      "name": "555 Timer",
+      "nameFa": "تایمر ۵۵۵",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Integrated Circuits",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مدارهای مجتمع",
+      "legacyClass": "electronics/555-timer"
+    },
+    {
+      "id": "palette.039",
+      "canonicalPartId": "circuits.opamp-324",
+      "name": "324 Op-amp",
+      "nameFa": "تقویت‌کننده عملیاتی ۳۲۴",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Integrated Circuits",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مدارهای مجتمع",
+      "legacyClass": "electronics/opamp-324"
+    },
+    {
+      "id": "palette.040",
+      "canonicalPartId": "circuits.opamp-741",
+      "name": "741 Op-amp",
+      "nameFa": "تقویت‌کننده عملیاتی ۷۴۱",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Integrated Circuits",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مدارهای مجتمع",
+      "legacyClass": "electronics/opamp-741"
+    },
+    {
+      "id": "palette.041",
+      "canonicalPartId": "circuits.darlington-driver",
+      "name": "Darlington driver",
+      "nameFa": "درایور دارلینگتون",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Integrated Circuits",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مدارهای مجتمع",
+      "legacyClass": "electronics/darlington-driver"
+    },
+    {
+      "id": "palette.042",
+      "canonicalPartId": "circuits.half-h-driver",
+      "name": "Half-H driver",
+      "nameFa": "درایور نیم‌پل H",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Integrated Circuits",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مدارهای مجتمع",
+      "legacyClass": "electronics/half-h-driver"
+    },
+    {
+      "id": "palette.043",
+      "canonicalPartId": "circuits.vpulse",
+      "name": "Signal generator",
+      "nameFa": "مولد سیگنال",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Signal Generators & Sound",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مولد سیگنال و صوت",
+      "legacyClass": "electronics/vpulse"
+    },
+    {
+      "id": "palette.044",
+      "canonicalPartId": "circuits.buzzer",
+      "name": "Buzzer",
+      "nameFa": "بازر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Signal Generators & Sound",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مولد سیگنال و صوت",
+      "legacyClass": "electronics/buzzer"
+    },
+    {
+      "id": "palette.045",
+      "canonicalPartId": "circuits.loudspeaker",
+      "name": "Loudspeaker",
+      "nameFa": "بلندگو",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Signal Generators & Sound",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← مولد سیگنال و صوت",
+      "legacyClass": "electronics/loudspeaker"
+    },
+    {
+      "id": "palette.046",
+      "canonicalPartId": "circuits.signal-lamp",
+      "name": "Signal Lamp",
+      "nameFa": "چراغ سیگنال",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Light Outputs",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← خروجی‌های نوری",
+      "legacyClass": "electronics/signal-lamp"
+    },
+    {
+      "id": "palette.047",
+      "canonicalPartId": "circuits.filament-lamp",
+      "name": "Filament Lamp",
+      "nameFa": "لامپ رشته‌ای",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Light Outputs",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← خروجی‌های نوری",
+      "legacyClass": "electronics/filament-lamp"
+    },
+    {
+      "id": "palette.048",
+      "canonicalPartId": "circuits.red-led",
+      "name": "Red LED",
+      "nameFa": "LED قرمز",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Light Outputs",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← خروجی‌های نوری",
+      "legacyClass": "electronics/red-led"
+    },
+    {
+      "id": "palette.049",
+      "canonicalPartId": "circuits.green-led",
+      "name": "Green LED",
+      "nameFa": "LED سبز",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Light Outputs",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← خروجی‌های نوری",
+      "legacyClass": "electronics/green-led"
+    },
+    {
+      "id": "palette.050",
+      "canonicalPartId": "circuits.yellow-led",
+      "name": "Yellow LED",
+      "nameFa": "LED زرد",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Light Outputs",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← خروجی‌های نوری",
+      "legacyClass": "electronics/yellow-led"
+    },
+    {
+      "id": "palette.051",
+      "canonicalPartId": "circuits.seven-segment-display",
+      "name": "Seven segment display",
+      "nameFa": "نمایشگر هفت‌قسمتی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Light Outputs",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← خروجی‌های نوری",
+      "legacyClass": "electronics/seven-segment-display"
+    },
+    {
+      "id": "palette.052",
+      "canonicalPartId": "circuits.ammeter",
+      "name": "Ammeter",
+      "nameFa": "آمپرمتر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Meters",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← اندازه‌گیرها",
+      "legacyClass": "electronics/ammeter"
+    },
+    {
+      "id": "palette.053",
+      "canonicalPartId": "circuits.voltmeter",
+      "name": "Voltmeter",
+      "nameFa": "ولت‌متر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Analog > Meters",
+      "categoryPathFa": "الکترونیک ← آنالوگ ← اندازه‌گیرها",
+      "legacyClass": "electronics/voltmeter"
+    },
+    {
+      "id": "palette.054",
+      "canonicalPartId": "circuits.pictorial-battery",
+      "name": "Battery",
+      "nameFa": "باتری",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-battery"
+    },
+    {
+      "id": "palette.055",
+      "canonicalPartId": "circuits.pictorial-battery-9v",
+      "name": "9V battery",
+      "nameFa": "باتری ۹ ولت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-battery-9v"
+    },
+    {
+      "id": "palette.056",
+      "canonicalPartId": "circuits.pictorial-fuse",
+      "name": "1A Fuse",
+      "nameFa": "فیوز ۱ آمپر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-fuse"
+    },
+    {
+      "id": "palette.057",
+      "canonicalPartId": "circuits.pictorial-spst",
+      "name": "SPST",
+      "nameFa": "کلید SPST",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-spst"
+    },
+    {
+      "id": "palette.058",
+      "canonicalPartId": "circuits.pictorial-spdt",
+      "name": "SPDT",
+      "nameFa": "کلید SPDT",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-spdt"
+    },
+    {
+      "id": "palette.059",
+      "canonicalPartId": "circuits.pictorial-pushmake",
+      "name": "Push-to-make switch",
+      "nameFa": "کلید فشاری وصل‌شونده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-pushmake"
+    },
+    {
+      "id": "palette.060",
+      "canonicalPartId": "circuits.pictorial-vresistor",
+      "name": "Variable resistor",
+      "nameFa": "مقاومت متغیر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-vresistor"
+    },
+    {
+      "id": "palette.061",
+      "canonicalPartId": "circuits.pictorial-resistor",
+      "name": "Resistor",
+      "nameFa": "مقاومت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-resistor"
+    },
+    {
+      "id": "palette.062",
+      "canonicalPartId": "circuits.pictorial-buzzer",
+      "name": "Buzzer",
+      "nameFa": "بازر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-buzzer"
+    },
+    {
+      "id": "palette.063",
+      "canonicalPartId": "circuits.pictorial-filament-lamp",
+      "name": "Filament Lamp",
+      "nameFa": "لامپ رشته‌ای",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-filament-lamp"
+    },
+    {
+      "id": "palette.064",
+      "canonicalPartId": "circuits.pictorial-red-led",
+      "name": "Red LED",
+      "nameFa": "LED قرمز",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-red-led"
+    },
+    {
+      "id": "palette.065",
+      "canonicalPartId": "circuits.pictorial-green-led",
+      "name": "Green LED",
+      "nameFa": "LED سبز",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-green-led"
+    },
+    {
+      "id": "palette.066",
+      "canonicalPartId": "circuits.pictorial-yellow-led",
+      "name": "Yellow LED",
+      "nameFa": "LED زرد",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-yellow-led"
+    },
+    {
+      "id": "palette.067",
+      "canonicalPartId": "circuits.pictorial-motor",
+      "name": "Motor",
+      "nameFa": "موتور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Pictorial",
+      "categoryPathFa": "الکترونیک ← نمای تصویری",
+      "legacyClass": "electronics/pictorial-motor"
+    },
+    {
+      "id": "palette.068",
+      "canonicalPartId": "circuits.7414",
+      "name": "7414: Schmitt inverter",
+      "nameFa": "۷۴۱۴: معکوس‌کننده اشمیت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7414"
+    },
+    {
+      "id": "palette.069",
+      "canonicalPartId": "circuits.7404",
+      "name": "7404: Inverter",
+      "nameFa": "۷۴۰۴: معکوس‌کننده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7404"
+    },
+    {
+      "id": "palette.070",
+      "canonicalPartId": "circuits.7408",
+      "name": "7408: AND gate",
+      "nameFa": "۷۴۰۸: گیت AND",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7408"
+    },
+    {
+      "id": "palette.071",
+      "canonicalPartId": "circuits.7400",
+      "name": "7400: NAND gate",
+      "nameFa": "۷۴۰۰: گیت NAND",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7400"
+    },
+    {
+      "id": "palette.072",
+      "canonicalPartId": "circuits.7410",
+      "name": "7410: 3-input NAND gate",
+      "nameFa": "۷۴۱۰: گیت NAND سه‌ورودی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7410"
+    },
+    {
+      "id": "palette.073",
+      "canonicalPartId": "circuits.7420",
+      "name": "7420: 4-input NAND gate",
+      "nameFa": "۷۴۲۰: گیت NAND چهارورودی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7420"
+    },
+    {
+      "id": "palette.074",
+      "canonicalPartId": "circuits.7432",
+      "name": "7432: OR gate",
+      "nameFa": "۷۴۳۲: گیت OR",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7432"
+    },
+    {
+      "id": "palette.075",
+      "canonicalPartId": "circuits.7402",
+      "name": "7402: NOR gate",
+      "nameFa": "۷۴۰۲: گیت NOR",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7402"
+    },
+    {
+      "id": "palette.076",
+      "canonicalPartId": "circuits.7486",
+      "name": "7486: Exclusive-OR gate",
+      "nameFa": "۷۴۸۶: گیت XOR",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Logic Gates",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← گیت‌های منطقی",
+      "legacyClass": "electronics/7486"
+    },
+    {
+      "id": "palette.077",
+      "canonicalPartId": "circuits.4043-without-enable",
+      "name": "4043: RS flip-flop",
+      "nameFa": "۴۰۴۳: فلیپ‌فلاپ RS",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Flip-flops",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها",
+      "legacyClass": "electronics/4043-without-enable"
+    },
+    {
+      "id": "palette.078",
+      "canonicalPartId": "circuits.7474",
+      "name": "7474: D-type flip-flop",
+      "nameFa": "۷۴۷۴: فلیپ‌فلاپ نوع D",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Flip-flops",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها",
+      "legacyClass": "electronics/7474"
+    },
+    {
+      "id": "palette.079",
+      "canonicalPartId": "circuits.4027",
+      "name": "4027: JK flip-flop (with set)",
+      "nameFa": "۴۰۲۷: فلیپ‌فلاپ JK با Set",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Flip-flops",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها",
+      "legacyClass": "electronics/4027"
+    },
+    {
+      "id": "palette.080",
+      "canonicalPartId": "circuits.7473",
+      "name": "7473: JK flip-flop (without set)",
+      "nameFa": "۷۴۷۳: فلیپ‌فلاپ JK بدون Set",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Flip-flops",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها",
+      "legacyClass": "electronics/7473"
+    },
+    {
+      "id": "palette.081",
+      "canonicalPartId": "circuits.4518",
+      "name": "4518: Decade (÷10) counter",
+      "nameFa": "۴۵۱۸: شمارنده ده‌دهی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Counters",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← شمارنده‌ها",
+      "legacyClass": "electronics/4518"
+    },
+    {
+      "id": "palette.082",
+      "canonicalPartId": "circuits.4026",
+      "name": "4026: Decade counter and 7-segment decoder",
+      "nameFa": "۴۰۲۶: شمارنده ده‌دهی و دیکودر هفت‌قسمتی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Counters",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← شمارنده‌ها",
+      "legacyClass": "electronics/4026"
+    },
+    {
+      "id": "palette.083",
+      "canonicalPartId": "circuits.4017",
+      "name": "4017: Decoded (1-of-10) decade counter",
+      "nameFa": "۴۰۱۷: شمارنده ده‌دهی ۱ از ۱۰",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Counters",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← شمارنده‌ها",
+      "legacyClass": "electronics/4017"
+    },
+    {
+      "id": "palette.084",
+      "canonicalPartId": "circuits.4028",
+      "name": "4028: BCD to decimal (1-of-10) decoder",
+      "nameFa": "۴۰۲۸: دیکودر BCD به ده‌دهی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Decoders",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← دیکودرها",
+      "legacyClass": "electronics/4028"
+    },
+    {
+      "id": "palette.085",
+      "canonicalPartId": "circuits.4511",
+      "name": "4511: BCD to 7-segment display decoder",
+      "nameFa": "۴۵۱۱: دیکودر BCD به نمایشگر هفت‌قسمتی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Decoders",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← دیکودرها",
+      "legacyClass": "electronics/4511"
+    },
+    {
+      "id": "palette.086",
+      "canonicalPartId": "circuits.clock",
+      "name": "Clock",
+      "nameFa": "کلاک",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Inputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← ورودی‌ها",
+      "legacyClass": "electronics/clock"
+    },
+    {
+      "id": "palette.087",
+      "canonicalPartId": "circuits.latching-logic-input",
+      "name": "Latching logic input",
+      "nameFa": "ورودی منطقی قفل‌شونده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Inputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← ورودی‌ها",
+      "legacyClass": "electronics/latching-logic-input"
+    },
+    {
+      "id": "palette.088",
+      "canonicalPartId": "circuits.push-button-logic-input",
+      "name": "Push button logic input",
+      "nameFa": "ورودی منطقی فشاری",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Inputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← ورودی‌ها",
+      "legacyClass": "electronics/push-button-logic-input"
+    },
+    {
+      "id": "palette.089",
+      "canonicalPartId": "circuits.new-context-logic-input",
+      "name": "Custom logic input",
+      "nameFa": "ورودی منطقی سفارشی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Inputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← ورودی‌ها",
+      "legacyClass": "electronics/new-context-logic-input"
+    },
+    {
+      "id": "palette.090",
+      "canonicalPartId": "circuits.context-logic-input",
+      "name": "Target logic input",
+      "nameFa": "ورودی منطقی هدف",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Inputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← ورودی‌ها",
+      "legacyClass": "electronics/context-logic-input"
+    },
+    {
+      "id": "palette.091",
+      "canonicalPartId": "circuits.logic-output",
+      "name": "Logic indicator",
+      "nameFa": "نشانگر منطقی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Outputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← خروجی‌ها",
+      "legacyClass": "electronics/logic-output"
+    },
+    {
+      "id": "palette.092",
+      "canonicalPartId": "circuits.new-context-logic-output",
+      "name": "Custom logic output",
+      "nameFa": "خروجی منطقی سفارشی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Outputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← خروجی‌ها",
+      "legacyClass": "electronics/new-context-logic-output"
+    },
+    {
+      "id": "palette.093",
+      "canonicalPartId": "circuits.context-logic-output",
+      "name": "Target logic output",
+      "nameFa": "خروجی منطقی هدف",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Electronics > Digital > Outputs",
+      "categoryPathFa": "الکترونیک ← دیجیتال ← خروجی‌ها",
+      "legacyClass": "electronics/context-logic-output"
+    },
+    {
+      "id": "palette.094",
+      "canonicalPartId": "mechanics.chain",
+      "name": "Chain",
+      "nameFa": "زنجیر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/chain"
+    },
+    {
+      "id": "palette.095",
+      "canonicalPartId": "mechanics.motor",
+      "name": "Constant speed motor",
+      "nameFa": "موتور با سرعت ثابت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/motor"
+    },
+    {
+      "id": "palette.096",
+      "canonicalPartId": "mechanics.flywheel-and-gear",
+      "name": "Flywheel",
+      "nameFa": "چرخ طیار",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/flywheel-and-gear"
+    },
+    {
+      "id": "palette.097",
+      "canonicalPartId": "mechanics.double-gear",
+      "name": "Gear",
+      "nameFa": "چرخ‌دنده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/double-gear"
+    },
+    {
+      "id": "palette.098",
+      "canonicalPartId": "mechanics.connected-generator",
+      "name": "Generator",
+      "nameFa": "ژنراتور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/connected-generator"
+    },
+    {
+      "id": "palette.099",
+      "canonicalPartId": "mechanics.connected-electric-motor",
+      "name": "Electric motor",
+      "nameFa": "موتور الکتریکی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/connected-electric-motor"
+    },
+    {
+      "id": "palette.100",
+      "canonicalPartId": "mechanics.rack-and-pinion",
+      "name": "Rack and pinion",
+      "nameFa": "دنده شانه‌ای و پینیون",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/rack-and-pinion"
+    },
+    {
+      "id": "palette.101",
+      "canonicalPartId": "mechanics.torque-application",
+      "name": "Torque",
+      "nameFa": "گشتاور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/torque-application"
+    },
+    {
+      "id": "palette.102",
+      "canonicalPartId": "mechanics.connected-microswitch",
+      "name": "Microswitch",
+      "nameFa": "میکروسوئیچ",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/connected-microswitch"
+    },
+    {
+      "id": "palette.103",
+      "canonicalPartId": "mechanics.connected-solenoid",
+      "name": "Solenoid",
+      "nameFa": "سلونوئید",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Mechanisms",
+      "categoryPathFa": "حرکت و نیرو ← سازوکارها",
+      "legacyClass": "motion/connected-solenoid"
+    },
+    {
+      "id": "palette.104",
+      "canonicalPartId": "mechanics.space2",
+      "name": "Space",
+      "nameFa": "محیط شبیه‌سازی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion",
+      "categoryPathFa": "حرکت و نیرو ← حرکت",
+      "legacyClass": "motion/space2"
+    },
+    {
+      "id": "palette.105",
+      "canonicalPartId": "mechanics.ideal-elastic-ground",
+      "name": "Ideal elastic ground",
+      "nameFa": "سطح کاملاً کشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/ideal-elastic-ground"
+    },
+    {
+      "id": "palette.106",
+      "canonicalPartId": "mechanics.ideal-inelastic-ground",
+      "name": "Ideal inelastic ground",
+      "nameFa": "سطح کاملاً ناکشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/ideal-inelastic-ground"
+    },
+    {
+      "id": "palette.107",
+      "canonicalPartId": "mechanics.wood-ground",
+      "name": "Wooden ground",
+      "nameFa": "سطح چوبی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/wood-ground"
+    },
+    {
+      "id": "palette.108",
+      "canonicalPartId": "mechanics.metal-ground",
+      "name": "Metal ground",
+      "nameFa": "سطح فلزی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/metal-ground"
+    },
+    {
+      "id": "palette.109",
+      "canonicalPartId": "mechanics.rubber-ground",
+      "name": "Rubber ground",
+      "nameFa": "سطح لاستیکی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/rubber-ground"
+    },
+    {
+      "id": "palette.110",
+      "canonicalPartId": "mechanics.glass-ground",
+      "name": "Glass ground",
+      "nameFa": "سطح شیشه‌ای",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/glass-ground"
+    },
+    {
+      "id": "palette.111",
+      "canonicalPartId": "mechanics.ice-ground",
+      "name": "Ice ground",
+      "nameFa": "سطح یخی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/ice-ground"
+    },
+    {
+      "id": "palette.112",
+      "canonicalPartId": "mechanics.concrete-ground",
+      "name": "Concrete ground",
+      "nameFa": "سطح بتنی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Grounds",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح افقی",
+      "legacyClass": "motion/concrete-ground"
+    },
+    {
+      "id": "palette.113",
+      "canonicalPartId": "mechanics.ideal-elastic-slope",
+      "name": "Ideal elastic slope",
+      "nameFa": "سطح شیب‌دار کاملاً کشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/ideal-elastic-slope"
+    },
+    {
+      "id": "palette.114",
+      "canonicalPartId": "mechanics.ideal-inelastic-slope",
+      "name": "Ideal inelastic slope",
+      "nameFa": "سطح شیب‌دار کاملاً ناکشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/ideal-inelastic-slope"
+    },
+    {
+      "id": "palette.115",
+      "canonicalPartId": "mechanics.wood-slope",
+      "name": "Wooden slope",
+      "nameFa": "شیب چوبی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/wood-slope"
+    },
+    {
+      "id": "palette.116",
+      "canonicalPartId": "mechanics.metal-slope",
+      "name": "Metal slope",
+      "nameFa": "شیب فلزی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/metal-slope"
+    },
+    {
+      "id": "palette.117",
+      "canonicalPartId": "mechanics.rubber-slope",
+      "name": "Rubber slope",
+      "nameFa": "شیب لاستیکی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/rubber-slope"
+    },
+    {
+      "id": "palette.118",
+      "canonicalPartId": "mechanics.glass-slope",
+      "name": "Glass slope",
+      "nameFa": "شیب شیشه‌ای",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/glass-slope"
+    },
+    {
+      "id": "palette.119",
+      "canonicalPartId": "mechanics.ice-slope",
+      "name": "Ice slope",
+      "nameFa": "شیب یخی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/ice-slope"
+    },
+    {
+      "id": "palette.120",
+      "canonicalPartId": "mechanics.concrete-slope",
+      "name": "Concrete slope",
+      "nameFa": "شیب بتنی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Slopes",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← سطوح شیب‌دار",
+      "legacyClass": "motion/concrete-slope"
+    },
+    {
+      "id": "palette.121",
+      "canonicalPartId": "mechanics.ideal-elastic-ball",
+      "name": "Ideal elastic ball",
+      "nameFa": "توپ کاملاً کشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/ideal-elastic-ball"
+    },
+    {
+      "id": "palette.122",
+      "canonicalPartId": "mechanics.ideal-inelastic-ball",
+      "name": "Ideal inelastic ball",
+      "nameFa": "توپ کاملاً ناکشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/ideal-inelastic-ball"
+    },
+    {
+      "id": "palette.123",
+      "canonicalPartId": "mechanics.soccer-ball",
+      "name": "Soccer ball",
+      "nameFa": "توپ فوتبال",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/soccer-ball"
+    },
+    {
+      "id": "palette.124",
+      "canonicalPartId": "mechanics.basketball",
+      "name": "Basketball",
+      "nameFa": "توپ بسکتبال",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/basketball"
+    },
+    {
+      "id": "palette.125",
+      "canonicalPartId": "mechanics.cricket-ball",
+      "name": "Cricket ball",
+      "nameFa": "توپ کریکت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/cricket-ball"
+    },
+    {
+      "id": "palette.126",
+      "canonicalPartId": "mechanics.golf-ball",
+      "name": "Golf ball",
+      "nameFa": "توپ گلف",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/golf-ball"
+    },
+    {
+      "id": "palette.127",
+      "canonicalPartId": "mechanics.tennis-ball",
+      "name": "Tennis ball",
+      "nameFa": "توپ تنیس",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/tennis-ball"
+    },
+    {
+      "id": "palette.128",
+      "canonicalPartId": "mechanics.billiard-ball",
+      "name": "Billiard ball",
+      "nameFa": "توپ بیلیارد",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/billiard-ball"
+    },
+    {
+      "id": "palette.129",
+      "canonicalPartId": "mechanics.wood-ball2",
+      "name": "Wooden ball",
+      "nameFa": "توپ چوبی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/wood-ball2"
+    },
+    {
+      "id": "palette.130",
+      "canonicalPartId": "mechanics.rubber-ball2",
+      "name": "Rubber ball",
+      "nameFa": "توپ لاستیکی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/rubber-ball2"
+    },
+    {
+      "id": "palette.131",
+      "canonicalPartId": "mechanics.metal-ball2",
+      "name": "Metal ball",
+      "nameFa": "توپ فلزی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/metal-ball2"
+    },
+    {
+      "id": "palette.132",
+      "canonicalPartId": "mechanics.concrete-ball2",
+      "name": "Concrete ball",
+      "nameFa": "توپ بتنی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/concrete-ball2"
+    },
+    {
+      "id": "palette.133",
+      "canonicalPartId": "mechanics.glass-ball2",
+      "name": "Glass ball",
+      "nameFa": "توپ شیشه‌ای",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/glass-ball2"
+    },
+    {
+      "id": "palette.134",
+      "canonicalPartId": "mechanics.ice-ball2",
+      "name": "Ice ball",
+      "nameFa": "توپ یخی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Balls",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← توپ‌ها",
+      "legacyClass": "motion/ice-ball2"
+    },
+    {
+      "id": "palette.135",
+      "canonicalPartId": "mechanics.ideal-elastic-block",
+      "name": "Ideal elastic block",
+      "nameFa": "بلوک کاملاً کشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/ideal-elastic-block"
+    },
+    {
+      "id": "palette.136",
+      "canonicalPartId": "mechanics.ideal-inelastic-block",
+      "name": "Ideal inelastic block",
+      "nameFa": "بلوک کاملاً ناکشسان",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/ideal-inelastic-block"
+    },
+    {
+      "id": "palette.137",
+      "canonicalPartId": "mechanics.brick2",
+      "name": "Brick",
+      "nameFa": "آجر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/brick2"
+    },
+    {
+      "id": "palette.138",
+      "canonicalPartId": "mechanics.wood-block2",
+      "name": "Wooden block",
+      "nameFa": "بلوک چوبی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/wood-block2"
+    },
+    {
+      "id": "palette.139",
+      "canonicalPartId": "mechanics.metal-block2",
+      "name": "Metal block",
+      "nameFa": "بلوک فلزی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/metal-block2"
+    },
+    {
+      "id": "palette.140",
+      "canonicalPartId": "mechanics.rubber-block2",
+      "name": "Rubber block",
+      "nameFa": "بلوک لاستیکی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/rubber-block2"
+    },
+    {
+      "id": "palette.141",
+      "canonicalPartId": "mechanics.glass-block2",
+      "name": "Glass block",
+      "nameFa": "بلوک شیشه‌ای",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/glass-block2"
+    },
+    {
+      "id": "palette.142",
+      "canonicalPartId": "mechanics.ice-block2",
+      "name": "Ice block",
+      "nameFa": "بلوک یخی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/ice-block2"
+    },
+    {
+      "id": "palette.143",
+      "canonicalPartId": "mechanics.concrete-block2",
+      "name": "Concrete block",
+      "nameFa": "بلوک بتنی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion > Blocks",
+      "categoryPathFa": "حرکت و نیرو ← حرکت ← بلوک‌ها",
+      "legacyClass": "motion/concrete-block2"
+    },
+    {
+      "id": "palette.144",
+      "canonicalPartId": "mechanics.cart",
+      "name": "Cart",
+      "nameFa": "گاری آزمایشگاهی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion",
+      "categoryPathFa": "حرکت و نیرو ← حرکت",
+      "legacyClass": "motion/cart"
+    },
+    {
+      "id": "palette.145",
+      "canonicalPartId": "mechanics.rod",
+      "name": "Rod",
+      "nameFa": "میله",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion",
+      "categoryPathFa": "حرکت و نیرو ← حرکت",
+      "legacyClass": "motion/rod"
+    },
+    {
+      "id": "palette.146",
+      "canonicalPartId": "mechanics.spring",
+      "name": "Spring",
+      "nameFa": "فنر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Motion & Forces > Motion",
+      "categoryPathFa": "حرکت و نیرو ← حرکت",
+      "legacyClass": "motion/spring"
+    },
+    {
+      "id": "palette.147",
+      "canonicalPartId": "optics.opticalspace2",
+      "name": "Optical Space",
+      "nameFa": "محیط اپتیکی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics",
+      "categoryPathFa": "اپتیک",
+      "legacyClass": "optics/opticalSpace2"
+    },
+    {
+      "id": "palette.148",
+      "canonicalPartId": "optics.nearaxisobject",
+      "name": "Near Object Marker",
+      "nameFa": "نشانگر جسم نزدیک",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Ray Diagrams",
+      "categoryPathFa": "اپتیک ← نمودارهای پرتو",
+      "legacyClass": "optics/nearAxisObject"
+    },
+    {
+      "id": "palette.149",
+      "canonicalPartId": "optics.faraxisobject",
+      "name": "Far Object Marker",
+      "nameFa": "نشانگر جسم دور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Ray Diagrams",
+      "categoryPathFa": "اپتیک ← نمودارهای پرتو",
+      "legacyClass": "optics/farAxisObject"
+    },
+    {
+      "id": "palette.150",
+      "canonicalPartId": "optics.projection",
+      "name": "Screen",
+      "nameFa": "پرده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Ray Diagrams",
+      "categoryPathFa": "اپتیک ← نمودارهای پرتو",
+      "legacyClass": "optics/projection"
+    },
+    {
+      "id": "palette.151",
+      "canonicalPartId": "optics.eye",
+      "name": "Eye",
+      "nameFa": "چشم",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Ray Diagrams",
+      "categoryPathFa": "اپتیک ← نمودارهای پرتو",
+      "legacyClass": "optics/eye"
+    },
+    {
+      "id": "palette.152",
+      "canonicalPartId": "optics.lamp",
+      "name": "Diverging beam",
+      "nameFa": "دسته‌پرتو واگرا",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Light Sources",
+      "categoryPathFa": "اپتیک ← منابع نور",
+      "legacyClass": "optics/lamp"
+    },
+    {
+      "id": "palette.153",
+      "canonicalPartId": "optics.torch",
+      "name": "Parallel beam",
+      "nameFa": "دسته‌پرتو موازی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Light Sources",
+      "categoryPathFa": "اپتیک ← منابع نور",
+      "legacyClass": "optics/torch"
+    },
+    {
+      "id": "palette.154",
+      "canonicalPartId": "optics.raybox",
+      "name": "Ray box",
+      "nameFa": "جعبه پرتو",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Light Sources",
+      "categoryPathFa": "اپتیک ← منابع نور",
+      "legacyClass": "optics/rayBox"
+    },
+    {
+      "id": "palette.155",
+      "canonicalPartId": "optics.concavelens",
+      "name": "Concave Lens",
+      "nameFa": "عدسی مقعر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Lenses",
+      "categoryPathFa": "اپتیک ← عدسی‌ها",
+      "legacyClass": "optics/concaveLens"
+    },
+    {
+      "id": "palette.156",
+      "canonicalPartId": "optics.convexlens",
+      "name": "Convex Lens",
+      "nameFa": "عدسی محدب",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Lenses",
+      "categoryPathFa": "اپتیک ← عدسی‌ها",
+      "legacyClass": "optics/convexLens"
+    },
+    {
+      "id": "palette.157",
+      "canonicalPartId": "optics.planemirror",
+      "name": "Plane Mirror",
+      "nameFa": "آینه تخت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Mirrors",
+      "categoryPathFa": "اپتیک ← آینه‌ها",
+      "legacyClass": "optics/planeMirror"
+    },
+    {
+      "id": "palette.158",
+      "canonicalPartId": "optics.concavemirror",
+      "name": "Concave Mirror",
+      "nameFa": "آینه مقعر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Mirrors",
+      "categoryPathFa": "اپتیک ← آینه‌ها",
+      "legacyClass": "optics/concaveMirror"
+    },
+    {
+      "id": "palette.159",
+      "canonicalPartId": "optics.convexmirror",
+      "name": "Convex Mirror",
+      "nameFa": "آینه محدب",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Mirrors",
+      "categoryPathFa": "اپتیک ← آینه‌ها",
+      "legacyClass": "optics/convexMirror"
+    },
+    {
+      "id": "palette.160",
+      "canonicalPartId": "optics.parabolicmirror",
+      "name": "Parabolic Mirror",
+      "nameFa": "آینه سهموی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Mirrors",
+      "categoryPathFa": "اپتیک ← آینه‌ها",
+      "legacyClass": "optics/parabolicMirror"
+    },
+    {
+      "id": "palette.161",
+      "canonicalPartId": "optics.prism",
+      "name": "Prism",
+      "nameFa": "منشور",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Transparent Objects",
+      "categoryPathFa": "اپتیک ← اجسام شفاف",
+      "legacyClass": "optics/prism"
+    },
+    {
+      "id": "palette.162",
+      "canonicalPartId": "optics.transparentblock",
+      "name": "Transparent Block",
+      "nameFa": "بلوک شفاف",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Transparent Objects",
+      "categoryPathFa": "اپتیک ← اجسام شفاف",
+      "legacyClass": "optics/transparentBlock"
+    },
+    {
+      "id": "palette.163",
+      "canonicalPartId": "optics.semicircularblock",
+      "name": "Semi-circular Block",
+      "nameFa": "بلوک نیم‌دایره",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Transparent Objects",
+      "categoryPathFa": "اپتیک ← اجسام شفاف",
+      "legacyClass": "optics/semicircularBlock"
+    },
+    {
+      "id": "palette.164",
+      "canonicalPartId": "optics.adjustableslit",
+      "name": "Adjustable Slit",
+      "nameFa": "شکاف قابل تنظیم",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Opaque Objects",
+      "categoryPathFa": "اپتیک ← اجسام کدر",
+      "legacyClass": "optics/adjustableSlit"
+    },
+    {
+      "id": "palette.165",
+      "canonicalPartId": "optics.opaqueball",
+      "name": "Opaque Ball",
+      "nameFa": "توپ کدر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Opaque Objects",
+      "categoryPathFa": "اپتیک ← اجسام کدر",
+      "legacyClass": "optics/opaqueBall"
+    },
+    {
+      "id": "palette.166",
+      "canonicalPartId": "optics.opaqueblock",
+      "name": "Opaque Block",
+      "nameFa": "بلوک کدر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Opaque Objects",
+      "categoryPathFa": "اپتیک ← اجسام کدر",
+      "legacyClass": "optics/opaqueBlock"
+    },
+    {
+      "id": "palette.167",
+      "canonicalPartId": "optics.opaquetriangle",
+      "name": "Opaque Triangle",
+      "nameFa": "مثلث کدر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Opaque Objects",
+      "categoryPathFa": "اپتیک ← اجسام کدر",
+      "legacyClass": "optics/opaqueTriangle"
+    },
+    {
+      "id": "palette.168",
+      "canonicalPartId": "presentation.ruler",
+      "name": "Ruler",
+      "nameFa": "خط‌کش",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Measurement Tools",
+      "categoryPathFa": "اپتیک ← ابزارهای اندازه‌گیری",
+      "legacyClass": "presentation/ruler"
+    },
+    {
+      "id": "palette.169",
+      "canonicalPartId": "presentation.protractor",
+      "name": "Protractor",
+      "nameFa": "نقاله",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Measurement Tools",
+      "categoryPathFa": "اپتیک ← ابزارهای اندازه‌گیری",
+      "legacyClass": "presentation/protractor"
+    },
+    {
+      "id": "palette.170",
+      "canonicalPartId": "presentation.marker",
+      "name": "Marker",
+      "nameFa": "نشانگر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Optics > Measurement Tools",
+      "categoryPathFa": "اپتیک ← ابزارهای اندازه‌گیری",
+      "legacyClass": "presentation/marker"
+    },
+    {
+      "id": "palette.171",
+      "canonicalPartId": "presentation.ruler",
+      "name": "Ruler",
+      "nameFa": "خط‌کش",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation > Measurement Tools",
+      "categoryPathFa": "ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری",
+      "legacyClass": "presentation/ruler"
+    },
+    {
+      "id": "palette.172",
+      "canonicalPartId": "presentation.protractor",
+      "name": "Protractor",
+      "nameFa": "نقاله",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation > Measurement Tools",
+      "categoryPathFa": "ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری",
+      "legacyClass": "presentation/protractor"
+    },
+    {
+      "id": "palette.173",
+      "canonicalPartId": "presentation.marker",
+      "name": "Marker",
+      "nameFa": "نشانگر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation > Measurement Tools",
+      "categoryPathFa": "ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری",
+      "legacyClass": "presentation/marker"
+    },
+    {
+      "id": "palette.174",
+      "canonicalPartId": "presentation.graph",
+      "name": "Graph",
+      "nameFa": "نمودار",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/graph"
+    },
+    {
+      "id": "palette.175",
+      "canonicalPartId": "presentation.text",
+      "name": "Text",
+      "nameFa": "متن",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/text"
+    },
+    {
+      "id": "palette.176",
+      "canonicalPartId": "presentation.instructions",
+      "name": "Instructions",
+      "nameFa": "راهنمای مراحل",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/instructions"
+    },
+    {
+      "id": "palette.177",
+      "canonicalPartId": "presentation.image",
+      "name": "Picture",
+      "nameFa": "تصویر",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/image"
+    },
+    {
+      "id": "palette.178",
+      "canonicalPartId": "presentation.advanced-animation",
+      "name": "Animation",
+      "nameFa": "پویانمایی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/advanced-animation"
+    },
+    {
+      "id": "palette.179",
+      "canonicalPartId": "presentation.button",
+      "name": "Button",
+      "nameFa": "دکمه",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/button"
+    },
+    {
+      "id": "palette.180",
+      "canonicalPartId": "presentation.spinbox",
+      "name": "Number",
+      "nameFa": "کنترل عددی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/spinbox"
+    },
+    {
+      "id": "palette.181",
+      "canonicalPartId": "presentation.checkbox",
+      "name": "Checkbox",
+      "nameFa": "چک‌باکس",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/checkbox"
+    },
+    {
+      "id": "palette.182",
+      "canonicalPartId": "presentation.dropdown",
+      "name": "Drop-down list",
+      "nameFa": "فهرست کشویی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/dropdown"
+    },
+    {
+      "id": "palette.183",
+      "canonicalPartId": "presentation.editbox",
+      "name": "Edit box",
+      "nameFa": "کادر ویرایش",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/editbox"
+    },
+    {
+      "id": "palette.184",
+      "canonicalPartId": "presentation.pause",
+      "name": "Pause",
+      "nameFa": "مکث",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/pause"
+    },
+    {
+      "id": "palette.185",
+      "canonicalPartId": "presentation.reload",
+      "name": "Reload",
+      "nameFa": "بازنشانی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/reload"
+    },
+    {
+      "id": "palette.186",
+      "canonicalPartId": "presentation.2d",
+      "name": "Part Tray",
+      "nameFa": "سینی قطعات",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Presentation",
+      "categoryPathFa": "ارائه و کنترل آزمایش",
+      "legacyClass": "presentation/parttray/2d"
+    },
+    {
+      "id": "palette.187",
+      "canonicalPartId": "waves.propagation",
+      "name": "Wave propagation space",
+      "nameFa": "محیط انتشار موج",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 1D",
+      "categoryPathFa": "موج‌ها ← یک‌بعدی",
+      "legacyClass": "waves/1d/wavespace/propagation"
+    },
+    {
+      "id": "palette.188",
+      "canonicalPartId": "waves.penetration",
+      "name": "Wave penetration space",
+      "nameFa": "محیط نفوذ موج",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 1D",
+      "categoryPathFa": "موج‌ها ← یک‌بعدی",
+      "legacyClass": "waves/1d/wavespace/penetration"
+    },
+    {
+      "id": "palette.189",
+      "canonicalPartId": "waves.reflection",
+      "name": "Wave reflection space",
+      "nameFa": "محیط بازتاب موج",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 1D",
+      "categoryPathFa": "موج‌ها ← یک‌بعدی",
+      "legacyClass": "waves/1d/wavespace/reflection"
+    },
+    {
+      "id": "palette.190",
+      "canonicalPartId": "waves.interference",
+      "name": "Wave interference space",
+      "nameFa": "محیط تداخل موج",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 1D",
+      "categoryPathFa": "موج‌ها ← یک‌بعدی",
+      "legacyClass": "waves/1d/wavespace/interference"
+    },
+    {
+      "id": "palette.191",
+      "canonicalPartId": "waves.pinned",
+      "name": "Wave pinned space",
+      "nameFa": "محیط موج با انتهای ثابت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 1D",
+      "categoryPathFa": "موج‌ها ← یک‌بعدی",
+      "legacyClass": "waves/1d/wavespace/pinned"
+    },
+    {
+      "id": "palette.192",
+      "canonicalPartId": "waves.plucking",
+      "name": "Wave plucking space",
+      "nameFa": "محیط موج کشیده‌شده",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 1D",
+      "categoryPathFa": "موج‌ها ← یک‌بعدی",
+      "legacyClass": "waves/1d/wavespace/plucking"
+    },
+    {
+      "id": "palette.193",
+      "canonicalPartId": "waves.em-wavespace2-holder",
+      "name": "Electromagnetic wavespace",
+      "nameFa": "محیط موج الکترومغناطیسی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D",
+      "categoryPathFa": "موج‌ها ← دوبعدی",
+      "legacyClass": "waves/em-wavespace2-holder"
+    },
+    {
+      "id": "palette.194",
+      "canonicalPartId": "waves.sound-wavespace2-holder",
+      "name": "Sound wavespace",
+      "nameFa": "محیط موج صوتی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D",
+      "categoryPathFa": "موج‌ها ← دوبعدی",
+      "legacyClass": "waves/sound-wavespace2-holder"
+    },
+    {
+      "id": "palette.195",
+      "canonicalPartId": "waves.water-wavespace2-holder",
+      "name": "Water wavespace",
+      "nameFa": "محیط موج آب",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D",
+      "categoryPathFa": "موج‌ها ← دوبعدی",
+      "legacyClass": "waves/water-wavespace2-holder"
+    },
+    {
+      "id": "palette.196",
+      "canonicalPartId": "waves.point-source",
+      "name": "Point Source",
+      "nameFa": "منبع نقطه‌ای",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Sources",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← منابع",
+      "legacyClass": "waves/point-source"
+    },
+    {
+      "id": "palette.197",
+      "canonicalPartId": "waves.line-source",
+      "name": "Line Source",
+      "nameFa": "منبع خطی",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Sources",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← منابع",
+      "legacyClass": "waves/line-source"
+    },
+    {
+      "id": "palette.198",
+      "canonicalPartId": "waves.moving-point-source",
+      "name": "Moving Point Source",
+      "nameFa": "منبع نقطه‌ای متحرک",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Sources",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← منابع",
+      "legacyClass": "waves/moving-point-source"
+    },
+    {
+      "id": "palette.199",
+      "canonicalPartId": "waves.plane-reflector",
+      "name": "Plane Reflector",
+      "nameFa": "بازتاب‌دهنده تخت",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Reflectors",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← بازتاب‌دهنده‌ها",
+      "legacyClass": "waves/plane-reflector"
+    },
+    {
+      "id": "palette.200",
+      "canonicalPartId": "waves.rect-obstacle",
+      "name": "Block",
+      "nameFa": "بلوک",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Obstacles",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← موانع",
+      "legacyClass": "waves/rect-obstacle"
+    },
+    {
+      "id": "palette.201",
+      "canonicalPartId": "waves.sloped-block-obstacle",
+      "name": "Sloped block",
+      "nameFa": "بلوک شیب‌دار",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Obstacles",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← موانع",
+      "legacyClass": "waves/sloped-block-obstacle"
+    },
+    {
+      "id": "palette.202",
+      "canonicalPartId": "waves.triangular-obstacle",
+      "name": "Triangle",
+      "nameFa": "مثلث",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Obstacles",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← موانع",
+      "legacyClass": "waves/triangular-obstacle"
+    },
+    {
+      "id": "palette.203",
+      "canonicalPartId": "waves.circular-obstacle",
+      "name": "Circle",
+      "nameFa": "دایره",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Obstacles",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← موانع",
+      "legacyClass": "waves/circular-obstacle"
+    },
+    {
+      "id": "palette.204",
+      "canonicalPartId": "waves.single-slit-obstacle",
+      "name": "Single Slit",
+      "nameFa": "تک‌شکاف",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Slits",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← شکاف‌ها",
+      "legacyClass": "waves/single-slit-obstacle"
+    },
+    {
+      "id": "palette.205",
+      "canonicalPartId": "waves.double-slit-obstacle",
+      "name": "Double Slit",
+      "nameFa": "دوشکاف",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Slits",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← شکاف‌ها",
+      "legacyClass": "waves/double-slit-obstacle"
+    },
+    {
+      "id": "palette.206",
+      "canonicalPartId": "waves.detector",
+      "name": "Detector",
+      "nameFa": "آشکارساز",
+      "translationStatus": "verified-dictionary",
+      "categoryPath": "Waves > 2D > Measurement",
+      "categoryPathFa": "موج‌ها ← دوبعدی ← اندازه‌گیری",
+      "legacyClass": "waves/detector"
+    }
+  ]
+}

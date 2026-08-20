@@ -1,0 +1,53 @@
+{
+  "canonicalPartCount": 203,
+  "paletteEntryCount": 206,
+  "duplicatePaletteEntries": 3,
+  "domainCounts": {
+    "circuits": 93,
+    "mechanics": 53,
+    "optics": 21,
+    "presentation": 16,
+    "waves": 20
+  },
+  "familyCounts": {
+    "circuits/digital-logic": 26,
+    "circuits/nonlinear-or-active-device": 12,
+    "circuits/analog-network": 35,
+    "circuits/instrumentation": 2,
+    "circuits/source": 6,
+    "circuits/electromechanical-or-load": 12,
+    "mechanics/rigid-body": 25,
+    "mechanics/mechanism": 10,
+    "mechanics/static-collider": 16,
+    "mechanics/world-environment": 1,
+    "mechanics/constraint-force": 1,
+    "optics/ray-obstacle": 4,
+    "optics/refractive-optic": 5,
+    "optics/reflective-optic": 4,
+    "optics/ray-scene-component": 5,
+    "optics/ray-source": 3,
+    "presentation/presentation-control": 16,
+    "waves/wave-medium-1d": 6,
+    "waves/wave-obstacle": 4,
+    "waves/wave-detector": 1,
+    "waves/wave-aperture": 2,
+    "waves/wave-medium-2d": 3,
+    "waves/wave-source": 3,
+    "waves/wave-reflector": 1
+  },
+  "propertyRoleCounts": {
+    "state": 613,
+    "internal": 3603,
+    "computed": 1248,
+    "rendering": 484,
+    "parameter": 850,
+    "observable": 632,
+    "binding": 104
+  },
+  "translationPendingCount": 0,
+  "translationPending": [],
+  "notes": [
+    "203 canonical classes are represented by 206 palette placements because Ruler, Protractor and Marker appear in two palettes.",
+    "Solver contracts are interface specifications only; numerical behavior requires independent scientific implementation and golden tests."
+  ]
+}

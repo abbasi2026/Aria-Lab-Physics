@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aria-lab.ir/schemas/scene.schema.json",
+  "title": "Aria Lab Physics Scene Model v1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "domain", "parts", "connections", "simulation"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$"},
+    "title": {"type": "string"},
+    "titleFa": {"type": "string"},
+    "domain": {"enum": ["circuits", "mechanics", "optics", "waves", "mixed"]},
+    "simulation": {
+      "type": "object",
+      "properties": {
+        "dt": {"type": "number", "exclusiveMinimum": 0},
+        "timeScale": {"type": "number", "exclusiveMinimum": 0},
+        "gravity": {"$ref": "#/$defs/vector2"},
+        "waveSpeed": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "parts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["instanceId", "partId", "transform", "properties"],
+        "properties": {
+          "instanceId": {"type": "string"},
+          "partId": {"type": "string"},
+          "transform": {
+            "type": "object",
+            "required": ["position"],
+            "properties": {
+              "position": {"$ref": "#/$defs/vector2"},
+              "rotation": {"type": "number"},
+              "scale": {"$ref": "#/$defs/vector2"}
+            },
+            "additionalProperties": false
+          },
+          "properties": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "from", "to"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"enum": ["electrical", "mechanical", "optical", "wave", "binding"]},
+          "from": {"$ref": "#/$defs/endpoint"},
+          "to": {"$ref": "#/$defs/endpoint"},
+          "properties": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "probes": {"type": "array", "items": {"type": "object"}},
+    "metadata": {"type": "object"}
+  },
+  "$defs": {
+    "vector2": {"type": "object", "required": ["x", "y"], "properties": {"x": {"type": "number"}, "y": {"type": "number"}}, "additionalProperties": false},
+    "endpoint": {"type": "object", "required": ["instanceId"], "properties": {"instanceId": {"type": "string"}, "portId": {"type": "string"}}, "additionalProperties": false}
+  },
+  "additionalProperties": false
+}

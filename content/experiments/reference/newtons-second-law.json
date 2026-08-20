@@ -1,0 +1,63 @@
+{
+  "id": "reference.newtons-second-law",
+  "version": 1,
+  "title": "Newton’s Second Law",
+  "titleFa": "قانون دوم نیوتن",
+  "domain": [
+    "mechanics"
+  ],
+  "learningObjectives": [
+    "Validate the solver against a = F / m."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "mechanics/block"
+      },
+      {
+        "type": "mechanics/force"
+      },
+      {
+        "type": "measurement/motion-sensor"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "a = F / m"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "m": 2,
+          "F": 6
+        },
+        "expect": {
+          "a": 3
+        },
+        "tolerance": 1e-06
+      },
+      {
+        "inputs": {
+          "m": 5,
+          "F": 10
+        },
+        "expect": {
+          "a": 2
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

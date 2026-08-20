@@ -1,0 +1,459 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "mechanics.spring",
+  "name": "Spring",
+  "nameFa": "فنر",
+  "translationStatus": "verified-dictionary",
+  "domain": "mechanics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Motion & Forces > Motion",
+      "pathFa": "حرکت و نیرو ← حرکت"
+    }
+  ],
+  "capabilities": [
+    "force-law",
+    "mechanical-coupling"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "splittable",
+      "label": "Splittable",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "false"
+    },
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "false | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "motion-pos",
+      "label": "Motion Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Ang",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "min-length",
+      "label": "Min Length",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "length",
+      "default": 50.0
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pad-class",
+      "label": "Pad Class",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "motion/springlike-pad"
+    },
+    {
+      "key": "bendable",
+      "label": "Bendable",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "false"
+    },
+    {
+      "key": "link-controller-angle-snap",
+      "label": "Link Controller Angle Snap",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "default": 5,
+      "min": 0.0,
+      "max": 45.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0 45"
+          },
+          {
+            "key": "min",
+            "type": "int",
+            "value": "0"
+          },
+          {
+            "key": "max",
+            "type": "int",
+            "value": "45"
+          }
+        ]
+      }
+    },
+    {
+      "key": "link-controller-active",
+      "label": "Link Controller Active",
+      "kind": "boolean",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden",
+        "computed",
+        "always-notify"
+      ]
+    },
+    {
+      "key": "path",
+      "label": "Path",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "(0,0),(0,200)"
+    },
+    {
+      "key": "natural-length",
+      "label": "Natural length",
+      "kind": "unknown",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "quantity": "length"
+    },
+    {
+      "key": "tension",
+      "label": "Tension",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "force",
+      "defaultUnit": "newton",
+      "allowedUnits": [
+        "newton",
+        "kilonewton"
+      ]
+    },
+    {
+      "key": "extension",
+      "label": "Extension",
+      "kind": "number",
+      "role": "computed",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "length",
+      "defaultUnit": "meter",
+      "allowedUnits": [
+        "picometer",
+        "nanometer",
+        "micrometer",
+        "millimeter",
+        "centimeter",
+        "meter",
+        "kilometer"
+      ]
+    },
+    {
+      "key": "elastic-ep",
+      "label": "Elastic potential energy",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed"
+      ],
+      "quantity": "energy",
+      "defaultUnit": "joule",
+      "allowedUnits": [
+        "joule",
+        "kilojoule"
+      ]
+    },
+    {
+      "key": "display-forces",
+      "label": "Display Forces",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-array",
+      "legacyFlags": [
+        "user-hidden",
+        "computed"
+      ],
+      "quantity": "force"
+    },
+    {
+      "key": "forces-shown",
+      "label": "Force shown",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "force-labels-shown",
+      "label": "Force label shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "net-force-shown",
+      "label": "Net force shown",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "force"
+    },
+    {
+      "key": "tension-force-shown",
+      "label": "Tension force shown",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "quantity": "force"
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "motion/ui/spring"
+    },
+    {
+      "key": "spring-constant",
+      "label": "Spring constant",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "spring_constant",
+      "defaultUnit": "newtons per metre",
+      "allowedUnits": [
+        "newtons per metre"
+      ],
+      "default": 100.0,
+      "min": 1.0,
+      "max": 1000.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "1 1000"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "1"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "1000"
+          }
+        ]
+      }
+    }
+  ],
+  "solver": {
+    "engine": "mechanics-engine",
+    "family": "constraint-force",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "natural-length",
+      "force-labels-shown",
+      "tension-force-shown",
+      "spring-constant"
+    ],
+    "outputs": [],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "motion/icons/spring",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "motion/spring",
+    "legacyProto": "motion/springlike",
+    "definitionFile": "motion.domain/parts/30-freebody.xml",
+    "inheritanceChain": [
+      "motion/spring",
+      "motion/springlike",
+      "motion/link-base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

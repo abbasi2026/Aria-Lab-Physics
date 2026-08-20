@@ -1,0 +1,55 @@
+{
+  "id": "reference.distance-time-slope",
+  "version": 1,
+  "title": "Distance–Time Graph",
+  "titleFa": "نمودار مسافت–زمان",
+  "domain": [
+    "mechanics"
+  ],
+  "learningObjectives": [
+    "Validate the solver against v = Δx / Δt."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "mechanics/cart"
+      },
+      {
+        "type": "measurement/position"
+      },
+      {
+        "type": "measurement/graph"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "v = Δx / Δt"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "x0": 0,
+          "x1": 20,
+          "t0": 0,
+          "t1": 4
+        },
+        "expect": {
+          "v": 5
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

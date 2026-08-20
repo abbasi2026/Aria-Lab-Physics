@@ -1,0 +1,455 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "presentation.ruler",
+  "name": "Ruler",
+  "nameFa": "خط‌کش",
+  "translationStatus": "verified-dictionary",
+  "domain": "presentation",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Measurement Tools",
+      "pathFa": "اپتیک ← ابزارهای اندازه‌گیری"
+    },
+    {
+      "path": "Presentation > Measurement Tools",
+      "pathFa": "ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری"
+    }
+  ],
+  "capabilities": [
+    "experiment-ui"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pad-class",
+      "label": "Pad Class",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "presentation/hotspot"
+    },
+    {
+      "key": "depth",
+      "label": "Depth",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "1"
+    },
+    {
+      "key": "arrangeable",
+      "label": "Arrangeable",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "bendable",
+      "label": "Bendable",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "false"
+    },
+    {
+      "key": "splittable",
+      "label": "Splittable",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "false"
+    },
+    {
+      "key": "path-constraint",
+      "label": "Path Constraint",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "0"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "zero-length",
+      "label": "Zero Length",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "quantity": "length",
+      "default": "false"
+    },
+    {
+      "key": "link-controller-active",
+      "label": "Link Controller Active",
+      "kind": "boolean",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden",
+        "computed",
+        "always-notify"
+      ]
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "false"
+    },
+    {
+      "key": "path",
+      "label": "Path",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "(0,0),(250,0)"
+    },
+    {
+      "key": "disconnect-ends",
+      "label": "Disconnect Ends",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "fixed"
+    },
+    {
+      "key": "pos-x",
+      "label": "Pos X",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "pos-y",
+      "label": "Pos Y",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ratio",
+      "label": "Ratio",
+      "kind": "number",
+      "role": "computed",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "length",
+      "label": "Natural length",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "length",
+      "defaultUnit": "centimeter",
+      "allowedUnits": [
+        "picometer",
+        "nanometer",
+        "micrometer",
+        "millimeter",
+        "centimeter",
+        "meter",
+        "kilometer"
+      ],
+      "default": 0.5,
+      "min": 0.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.00"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.00"
+          }
+        ]
+      }
+    },
+    {
+      "key": "show-labels",
+      "label": "Show Labels",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "is-valid",
+      "label": "Is Valid",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "colour",
+      "label": "Display colour",
+      "kind": "color",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [],
+      "default": "#ff8040"
+    },
+    {
+      "key": "line-width",
+      "label": "Line Width",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 2.0
+    },
+    {
+      "key": "magic-popup-shield",
+      "label": "Magic Popup Shield",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/ui/ruler | presentation/ui/colour"
+    },
+    {
+      "key": "meta-icon",
+      "label": "Meta Icon",
+      "kind": "resource",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "presentation/icons/ruler"
+    },
+    {
+      "key": "show-tics",
+      "label": "Show ticks",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": []
+    },
+    {
+      "key": "tic-gap",
+      "label": "Tick gap",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "quantity": "length",
+      "defaultUnit": "centimeter",
+      "allowedUnits": [
+        "picometer",
+        "nanometer",
+        "micrometer",
+        "millimeter",
+        "centimeter",
+        "meter",
+        "kilometer"
+      ],
+      "default": 0.1,
+      "min": 0.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          }
+        ]
+      }
+    }
+  ],
+  "solver": {
+    "engine": "experiment-runtime",
+    "family": "presentation-control",
+    "status": "not-applicable",
+    "inputs": [
+      "length",
+      "colour",
+      "show-tics",
+      "tic-gap"
+    ],
+    "outputs": [],
+    "contractNotes": "Presentation/control component; no standalone physics solver."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "presentation/icons/ruler",
+    "interaction": "experiment-authoring-control"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "presentation/ruler",
+    "legacyProto": "presentation/linear-measure",
+    "definitionFile": "presentation.domain/parts/10-presentation.xml",
+    "inheritanceChain": [
+      "presentation/ruler",
+      "presentation/linear-measure",
+      "presentation/link-base"
+    ],
+    "paletteOccurrences": 2
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

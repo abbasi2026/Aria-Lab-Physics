@@ -1,0 +1,55 @@
+{
+  "id": "reference.conservation-of-momentum",
+  "version": 1,
+  "title": "Conservation of Momentum",
+  "titleFa": "پایستگی تکانه",
+  "domain": [
+    "mechanics"
+  ],
+  "learningObjectives": [
+    "Validate the solver against Σp_before = Σp_after."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "mechanics/cart"
+      },
+      {
+        "type": "mechanics/cart"
+      },
+      {
+        "type": "measurement/velocity"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "Σp_before = Σp_after"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "m1": 2,
+          "u1": 3,
+          "m2": 1,
+          "u2": 0
+        },
+        "expect": {
+          "p_total": 6
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

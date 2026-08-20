@@ -1,0 +1,1623 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "optics.nearaxisobject",
+  "name": "Near Object Marker",
+  "nameFa": "نشانگر جسم نزدیک",
+  "translationStatus": "verified-dictionary",
+  "domain": "optics",
+  "version": 1,
+  "categories": [
+    {
+      "path": "Optics > Ray Diagrams",
+      "pathFa": "اپتیک ← نمودارهای پرتو"
+    }
+  ],
+  "capabilities": [
+    "ray-tracing"
+  ],
+  "ports": [],
+  "properties": [
+    {
+      "key": "move-controller-config",
+      "label": "Move Controller Config",
+      "kind": "object",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "value-map",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true | true"
+    },
+    {
+      "key": "can-reflect",
+      "label": "Can Reflect",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "orientation",
+      "label": "Orientation",
+      "kind": "unknown",
+      "role": "state",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "show-toolbar",
+      "label": "Show Toolbar",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "true"
+    },
+    {
+      "key": "optics-pos",
+      "label": "Optics Pos",
+      "kind": "vector2",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "ang",
+      "label": "Ang",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "quantity": "angle",
+      "defaultUnit": "radian",
+      "allowedUnits": [
+        "radian",
+        "degree"
+      ],
+      "default": 0.0
+    },
+    {
+      "key": "framehalfheight",
+      "label": "Framehalfheight",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 20.0
+    },
+    {
+      "key": "framehalfwidth",
+      "label": "Framehalfwidth",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 5.0
+    },
+    {
+      "key": "part-outline",
+      "label": "Part Outline",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "part-outline-flavour",
+      "label": "Part Outline Flavour",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int-array",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "aa-part-ref",
+      "label": "Aa Part Ref",
+      "kind": "unknown",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "element",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "show-picture",
+      "label": "Show Picture",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": true,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "default": "../subpart[@role=raydiagram-image]/p[@key=visible]"
+    },
+    {
+      "key": "dottedline-start",
+      "label": "Dottedline Start",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0.0, 0.0)"
+    },
+    {
+      "key": "dottedline-end",
+      "label": "Dottedline End",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0.0, 0.0)"
+    },
+    {
+      "key": "dottedline-visible",
+      "label": "Dottedline Visible",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "show-raypoint-line",
+      "label": "Show Raypoint Line",
+      "kind": "unknown",
+      "role": "observable",
+      "editable": true,
+      "observable": true,
+      "legacyType": null,
+      "legacyFlags": [
+        "proxy"
+      ],
+      "default": "../subpart[@role=raydiagram-image]/p[@key=show-graphic-raypointline]"
+    },
+    {
+      "key": "raypoint-position",
+      "label": "Ray point position",
+      "kind": "vector2",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "point",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "(0,0)"
+    },
+    {
+      "key": "orientation-constraint",
+      "label": "Orientation Constraint",
+      "kind": "string",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [
+        "user-hidden"
+      ]
+    },
+    {
+      "key": "hidden",
+      "label": "Hidden",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "has-rotate-handle",
+      "label": "Has Rotate Handle",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "moveable",
+      "label": "Moveable",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": [],
+      "default": "true"
+    },
+    {
+      "key": "show-intensity-pic",
+      "label": "Show Intensity Pic",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": true
+    },
+    {
+      "key": "show-intermediate-images",
+      "label": "Show Intermediate Images",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": true
+    },
+    {
+      "key": "raystoeye-movepoint",
+      "label": "Raystoeye Movepoint",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Moveable Point",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Moveable Point Bottom Top"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Moveable Point"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Bottom"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Top"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystoeye-basicrays",
+      "label": "Raystoeye Basicrays",
+      "kind": "integer",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 3,
+      "min": 0.0,
+      "max": 9.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0 9"
+          },
+          {
+            "key": "min",
+            "type": "int",
+            "value": "0"
+          },
+          {
+            "key": "max",
+            "type": "int",
+            "value": "9"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystoeye-basicrays-mp",
+      "label": "Raystoeye Basicrays Mp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 3
+    },
+    {
+      "key": "raystoeye-basicrays-tp",
+      "label": "Raystoeye Basicrays Tp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 0
+    },
+    {
+      "key": "raystoeye-basicrays-bp",
+      "label": "Raystoeye Basicrays Bp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 0
+    },
+    {
+      "key": "raystoeye-coverage",
+      "label": "Raystoeye Coverage",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 100.0,
+      "min": 0.0,
+      "max": 100.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 100.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "100.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystoeye-coverage-mp",
+      "label": "Raystoeye Coverage Mp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 100.0
+    },
+    {
+      "key": "raystoeye-coverage-tp",
+      "label": "Raystoeye Coverage Tp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 100.0
+    },
+    {
+      "key": "raystoeye-coverage-bp",
+      "label": "Raystoeye Coverage Bp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 100.0
+    },
+    {
+      "key": "raystoeye-restore",
+      "label": "Raystoeye Restore",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": []
+    },
+    {
+      "key": "image",
+      "label": "Image",
+      "kind": "resource",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "resource",
+      "legacyFlags": [],
+      "legacyValidator": {
+        "label": "resource-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "value-array",
+            "value": "Bacteria optics/ray_diagrams/Bacteria Camel optics/ray_diagrams/Camel Crocodile optics/ray_diagrams/Crocodile Eye-chart optics/ray_diagrams/Eye-chart Flower optics/ray_diagrams/Flower Insect optics/ray_diagrams/Insect Meercat optics/ray_diagrams/Meercat Electronic chip optics/ray_diagrams/Elecronic chip Orangutan optics/ray_diagrams/Paul Tiger optics/ray_diagrams/Tiger Bridge optics/ray_diagrams/Bridge Comet optics/ray_diagrams/Comet Galaxy optics/ray_diagrams/Galaxy Hot air balloon optics/ray_diagrams/Hot air balloon Moon optics/ray_diagrams/Moon Mountain optics/ray_diagrams/Mountain Tree optics/ray_diagrams/Tree Waterfall optics/ray_diagrams/Waterfall Whale optics/ray_diagrams/Whale"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Bacteria optics/ray_diagrams/Bacteria"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Bacteria"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Bacteria"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Camel optics/ray_diagrams/Camel"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Camel"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Camel"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Crocodile optics/ray_diagrams/Crocodile"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Crocodile"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Crocodile"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Eye-chart optics/ray_diagrams/Eye-chart"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Eye-chart"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Eye-chart"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Flower optics/ray_diagrams/Flower"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Flower"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Flower"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Insect optics/ray_diagrams/Insect"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Insect"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Insect"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Meercat optics/ray_diagrams/Meercat"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Meercat"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Meercat"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Electronic chip optics/ray_diagrams/Elecronic chip"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Electronic chip"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Elecronic chip"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Orangutan optics/ray_diagrams/Paul"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Orangutan"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Paul"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Tiger optics/ray_diagrams/Tiger"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Tiger"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Tiger"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Bridge optics/ray_diagrams/Bridge"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Bridge"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Bridge"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Comet optics/ray_diagrams/Comet"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Comet"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Comet"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Galaxy optics/ray_diagrams/Galaxy"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Galaxy"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Galaxy"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Hot air balloon optics/ray_diagrams/Hot air balloon"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Hot air balloon"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Hot air balloon"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Moon optics/ray_diagrams/Moon"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Moon"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Moon"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Mountain optics/ray_diagrams/Mountain"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Mountain"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Mountain"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Tree optics/ray_diagrams/Tree"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Tree"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Tree"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Waterfall optics/ray_diagrams/Waterfall"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Waterfall"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Waterfall"
+          },
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "Whale optics/ray_diagrams/Whale"
+          },
+          {
+            "key": "label",
+            "type": "string",
+            "value": "Whale"
+          },
+          {
+            "key": "rez",
+            "type": "resource",
+            "value": "optics/ray_diagrams/Whale"
+          }
+        ]
+      }
+    },
+    {
+      "key": "part-id-prefix",
+      "label": "Part Id Prefix",
+      "kind": "unknown",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": null,
+      "legacyFlags": []
+    },
+    {
+      "key": "meta-controlpane",
+      "label": "Meta Controlpane",
+      "kind": "array",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "string-array",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": "optics/ui/nearObject"
+    },
+    {
+      "key": "part-color",
+      "label": "Part Color",
+      "kind": "color",
+      "role": "rendering",
+      "editable": false,
+      "observable": false,
+      "legacyType": "color",
+      "legacyFlags": [],
+      "default": "#58B848"
+    },
+    {
+      "key": "optical-axis",
+      "label": "Optical Axis",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Bottom Right",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Bottom Left Bottom Right"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Bottom Left"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Bottom Right"
+          }
+        ]
+      }
+    },
+    {
+      "key": "resize-selection",
+      "label": "Resize Selection",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "resize-center",
+      "label": "Resize Center",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "size-top",
+      "label": "Size Top",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "min": 10.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "10.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "10.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "size-bottom",
+      "label": "Size Bottom",
+      "kind": "number",
+      "role": "computed",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "computed",
+        "user-hidden"
+      ],
+      "min": 10.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "10.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "10.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raypointhandlevisible",
+      "label": "Raypointhandlevisible",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "raystolens-movepoint",
+      "label": "Raystolens Movepoint",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Moveable Point",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Moveable Point Bottom Top"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Moveable Point"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Bottom"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Top"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystolens-basicrays",
+      "label": "Raystolens Basicrays",
+      "kind": "integer",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 1,
+      "min": 0.0,
+      "max": 9.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0 9"
+          },
+          {
+            "key": "min",
+            "type": "int",
+            "value": "0"
+          },
+          {
+            "key": "max",
+            "type": "int",
+            "value": "9"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystolens-basicrays-mp",
+      "label": "Raystolens Basicrays Mp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 1
+    },
+    {
+      "key": "raystolens-basicrays-tp",
+      "label": "Raystolens Basicrays Tp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 0
+    },
+    {
+      "key": "raystolens-basicrays-bp",
+      "label": "Raystolens Basicrays Bp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 0
+    },
+    {
+      "key": "raystolens-coverage",
+      "label": "Raystolens Coverage",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 100.0,
+      "min": 0.0,
+      "max": 100.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 100.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "100.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystolens-coverage-mp",
+      "label": "Raystolens Coverage Mp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 100.0
+    },
+    {
+      "key": "raystolens-coverage-tp",
+      "label": "Raystolens Coverage Tp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 100.0
+    },
+    {
+      "key": "raystolens-coverage-bp",
+      "label": "Raystolens Coverage Bp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 100.0
+    },
+    {
+      "key": "raystolens-restore",
+      "label": "Raystolens Restore",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": []
+    },
+    {
+      "key": "raystolens-focalpoint",
+      "label": "Raystolens Focalpoint",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "raystolens-focalpoint-mp",
+      "label": "Raystolens Focalpoint Mp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": true
+    },
+    {
+      "key": "raystolens-focalpoint-tp",
+      "label": "Raystolens Focalpoint Tp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystolens-focalpoint-bp",
+      "label": "Raystolens Focalpoint Bp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystolens-perpendicular",
+      "label": "Raystolens Perpendicular",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": true
+    },
+    {
+      "key": "raystolens-perpendicular-mp",
+      "label": "Raystolens Perpendicular Mp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": true
+    },
+    {
+      "key": "raystolens-perpendicular-tp",
+      "label": "Raystolens Perpendicular Tp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystolens-perpendicular-bp",
+      "label": "Raystolens Perpendicular Bp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-movepoint",
+      "label": "Raystomirrors Movepoint",
+      "kind": "string",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "string",
+      "legacyFlags": [],
+      "default": "Moveable Point",
+      "legacyValidator": {
+        "label": "set-validator",
+        "values": [
+          {
+            "key": "",
+            "type": "string-array",
+            "value": "Moveable Point Bottom Top"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Moveable Point"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Bottom"
+          },
+          {
+            "key": "",
+            "type": "string",
+            "value": "Top"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystomirrors-basicrays",
+      "label": "Raystomirrors Basicrays",
+      "kind": "integer",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 3,
+      "min": 0.0,
+      "max": 9.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0 9"
+          },
+          {
+            "key": "min",
+            "type": "int",
+            "value": "0"
+          },
+          {
+            "key": "max",
+            "type": "int",
+            "value": "9"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystomirrors-basicrays-mp",
+      "label": "Raystomirrors Basicrays Mp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 3
+    },
+    {
+      "key": "raystomirrors-basicrays-tp",
+      "label": "Raystomirrors Basicrays Tp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 0
+    },
+    {
+      "key": "raystomirrors-basicrays-bp",
+      "label": "Raystomirrors Basicrays Bp",
+      "kind": "integer",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "int",
+      "legacyFlags": [],
+      "default": 0
+    },
+    {
+      "key": "raystomirrors-coverage",
+      "label": "Raystomirrors Coverage",
+      "kind": "number",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": 100.0,
+      "min": 0.0,
+      "max": 100.0,
+      "legacyValidator": {
+        "label": "",
+        "values": [
+          {
+            "key": "",
+            "type": "value-map",
+            "value": "0.0 100.0"
+          },
+          {
+            "key": "min",
+            "type": "double",
+            "value": "0.0"
+          },
+          {
+            "key": "max",
+            "type": "double",
+            "value": "100.0"
+          }
+        ]
+      }
+    },
+    {
+      "key": "raystomirrors-coverage-mp",
+      "label": "Raystomirrors Coverage Mp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 100.0
+    },
+    {
+      "key": "raystomirrors-coverage-tp",
+      "label": "Raystomirrors Coverage Tp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 100.0
+    },
+    {
+      "key": "raystomirrors-coverage-bp",
+      "label": "Raystomirrors Coverage Bp",
+      "kind": "number",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "double",
+      "legacyFlags": [],
+      "default": 100.0
+    },
+    {
+      "key": "raystomirrors-restore",
+      "label": "Raystomirrors Restore",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": []
+    },
+    {
+      "key": "raystomirrors-curvature",
+      "label": "Raystomirrors Curvature",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-curvature-mp",
+      "label": "Raystomirrors Curvature Mp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-curvature-tp",
+      "label": "Raystomirrors Curvature Tp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-curvature-bp",
+      "label": "Raystomirrors Curvature Bp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-focalpoint",
+      "label": "Raystomirrors Focalpoint",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-focalpoint-mp",
+      "label": "Raystomirrors Focalpoint Mp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-focalpoint-tp",
+      "label": "Raystomirrors Focalpoint Tp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-focalpoint-bp",
+      "label": "Raystomirrors Focalpoint Bp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-perpendicular",
+      "label": "Raystomirrors Perpendicular",
+      "kind": "boolean",
+      "role": "parameter",
+      "editable": true,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [
+        "user-hidden"
+      ],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-perpendicular-mp",
+      "label": "Raystomirrors Perpendicular Mp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-perpendicular-tp",
+      "label": "Raystomirrors Perpendicular Tp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    },
+    {
+      "key": "raystomirrors-perpendicular-bp",
+      "label": "Raystomirrors Perpendicular Bp",
+      "kind": "boolean",
+      "role": "internal",
+      "editable": false,
+      "observable": false,
+      "legacyType": "bool",
+      "legacyFlags": [],
+      "default": false
+    }
+  ],
+  "solver": {
+    "engine": "optics-engine",
+    "family": "ray-scene-component",
+    "status": "contract-defined; implementation-pending",
+    "inputs": [
+      "show-intensity-pic",
+      "show-intermediate-images",
+      "raystoeye-movepoint",
+      "raystoeye-basicrays",
+      "raystoeye-coverage",
+      "raystoeye-restore",
+      "image",
+      "optical-axis",
+      "raystolens-movepoint",
+      "raystolens-basicrays",
+      "raystolens-coverage",
+      "raystolens-restore",
+      "raystolens-focalpoint",
+      "raystolens-perpendicular",
+      "raystomirrors-movepoint",
+      "raystomirrors-basicrays",
+      "raystomirrors-coverage",
+      "raystomirrors-restore",
+      "raystomirrors-curvature",
+      "raystomirrors-focalpoint",
+      "raystomirrors-perpendicular"
+    ],
+    "outputs": [
+      "show-picture",
+      "show-raypoint-line"
+    ],
+    "contractNotes": "Interface extracted from clean-room legacy research. Numerical equations must be independently specified and verified by golden tests."
+  },
+  "rendering": {
+    "status": "implementation-pending",
+    "legacyIconHint": "optics/icons/nearobj",
+    "interaction": "drag/configure/observe"
+  },
+  "source": {
+    "baseline": "Crocodile Physics 605 clean-room research dataset",
+    "legacyClass": "optics/nearAxisObject",
+    "legacyProto": "optics/axisObject",
+    "definitionFile": "optics.domain/parts/optics.xml",
+    "inheritanceChain": [
+      "optics/nearAxisObject",
+      "optics/axisObject",
+      "optics/graphicCarrier",
+      "optics/base"
+    ],
+    "paletteOccurrences": 1
+  },
+  "migration": {
+    "dataModel": "generated",
+    "solverImplementation": "pending",
+    "visualImplementation": "pending",
+    "scientificReview": "required",
+    "evidenceLevel": "high"
+  }
+}

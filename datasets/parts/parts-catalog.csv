@@ -1,0 +1,204 @@
+﻿id,name,nameFa,domain,family,categories,propertyCount,parameterCount,observableCount,computedCount,portCount,legacyClass,solverStatus
+circuits.4017,4017: Decoded (1-of-10) decade counter,۴۰۱۷: شمارنده ده‌دهی ۱ از ۱۰,circuits,digital-logic,Electronics > Digital > Counters,28,0,0,3,0,electronics/4017,contract-defined; implementation-pending
+circuits.4026,4026: Decade counter and 7-segment decoder,۴۰۲۶: شمارنده ده‌دهی و دیکودر هفت‌قسمتی,circuits,digital-logic,Electronics > Digital > Counters,28,0,0,3,0,electronics/4026,contract-defined; implementation-pending
+circuits.4027,4027: JK flip-flop (with set),۴۰۲۷: فلیپ‌فلاپ JK با Set,circuits,digital-logic,Electronics > Digital > Flip-flops,28,0,0,3,0,electronics/4027,contract-defined; implementation-pending
+circuits.4028,4028: BCD to decimal (1-of-10) decoder,۴۰۲۸: دیکودر BCD به ده‌دهی,circuits,digital-logic,Electronics > Digital > Decoders,28,0,0,3,0,electronics/4028,contract-defined; implementation-pending
+circuits.4043-without-enable,4043: RS flip-flop,۴۰۴۳: فلیپ‌فلاپ RS,circuits,digital-logic,Electronics > Digital > Flip-flops,28,0,0,3,0,electronics/4043-without-enable,contract-defined; implementation-pending
+circuits.4511,4511: BCD to 7-segment display decoder,۴۵۱۱: دیکودر BCD به نمایشگر هفت‌قسمتی,circuits,digital-logic,Electronics > Digital > Decoders,28,0,0,3,0,electronics/4511,contract-defined; implementation-pending
+circuits.4518,4518: Decade (÷10) counter,۴۵۱۸: شمارنده ده‌دهی,circuits,digital-logic,Electronics > Digital > Counters,28,0,0,3,0,electronics/4518,contract-defined; implementation-pending
+circuits.555-timer,555 Timer,تایمر ۵۵۵,circuits,nonlinear-or-active-device,Electronics > Analog > Integrated Circuits,24,0,0,3,8,electronics/555-timer,contract-defined; implementation-pending
+circuits.7400,7400: NAND gate,۷۴۰۰: گیت NAND,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,6,electronics/7400,contract-defined; implementation-pending
+circuits.7402,7402: NOR gate,۷۴۰۲: گیت NOR,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,3,electronics/7402,contract-defined; implementation-pending
+circuits.7404,7404: Inverter,۷۴۰۴: معکوس‌کننده,circuits,digital-logic,Electronics > Digital > Logic Gates,28,0,0,4,2,electronics/7404,contract-defined; implementation-pending
+circuits.7408,7408: AND gate,۷۴۰۸: گیت AND,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,3,electronics/7408,contract-defined; implementation-pending
+circuits.7410,7410: 3-input NAND gate,۷۴۱۰: گیت NAND سه‌ورودی,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,4,electronics/7410,contract-defined; implementation-pending
+circuits.7414,7414: Schmitt inverter,۷۴۱۴: معکوس‌کننده اشمیت,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,2,electronics/7414,contract-defined; implementation-pending
+circuits.7420,7420: 4-input NAND gate,۷۴۲۰: گیت NAND چهارورودی,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,5,electronics/7420,contract-defined; implementation-pending
+circuits.7432,7432: OR gate,۷۴۳۲: گیت OR,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,3,electronics/7432,contract-defined; implementation-pending
+circuits.7473,7473: JK flip-flop (without set),۷۴۷۳: فلیپ‌فلاپ JK بدون Set,circuits,digital-logic,Electronics > Digital > Flip-flops,28,0,0,3,0,electronics/7473,contract-defined; implementation-pending
+circuits.7474,7474: D-type flip-flop,۷۴۷۴: فلیپ‌فلاپ نوع D,circuits,digital-logic,Electronics > Digital > Flip-flops,28,0,0,3,0,electronics/7474,contract-defined; implementation-pending
+circuits.7486,7486: Exclusive-OR gate,۷۴۸۶: گیت XOR,circuits,digital-logic,Electronics > Digital > Logic Gates,27,0,0,3,3,electronics/7486,contract-defined; implementation-pending
+circuits.8-resistors,8 Resistors,مجموعه ۸ مقاومت,circuits,analog-network,Electronics > Analog > Passive Components,27,1,0,3,16,electronics/8-resistors,contract-defined; implementation-pending
+circuits.ammeter,Ammeter,آمپرمتر,circuits,instrumentation,Electronics > Analog > Meters,36,0,3,9,2,electronics/ammeter,contract-defined; implementation-pending
+circuits.battery,Battery,باتری,circuits,source,Electronics > Analog > Power Supplies,36,1,3,8,2,electronics/battery,contract-defined; implementation-pending
+circuits.buzzer,Buzzer,بازر,circuits,electromechanical-or-load,Electronics > Analog > Signal Generators & Sound,34,0,4,8,2,electronics/buzzer,contract-defined; implementation-pending
+circuits.capacitor,Capacitor,خازن,circuits,analog-network,Electronics > Analog > Passive Components,36,2,3,8,2,electronics/capacitor,contract-defined; implementation-pending
+circuits.clock,Clock,کلاک,circuits,digital-logic,Electronics > Digital > Inputs,24,0,0,3,1,electronics/clock,contract-defined; implementation-pending
+circuits.context-logic-input,Target logic input,ورودی منطقی هدف,circuits,digital-logic,Electronics > Digital > Inputs,33,1,0,3,1,electronics/context-logic-input,contract-defined; implementation-pending
+circuits.context-logic-output,Target logic output,خروجی منطقی هدف,circuits,digital-logic,Electronics > Digital > Outputs,34,1,1,3,1,electronics/context-logic-output,contract-defined; implementation-pending
+circuits.current,Constant current source,منبع جریان ثابت,circuits,source,Electronics > Analog > Power Supplies,34,1,3,8,2,electronics/current,contract-defined; implementation-pending
+circuits.darlington-driver,Darlington driver,درایور دارلینگتون,circuits,nonlinear-or-active-device,Electronics > Analog > Integrated Circuits,27,0,0,3,2,electronics/darlington-driver,contract-defined; implementation-pending
+circuits.diode,Diode,دیود,circuits,nonlinear-or-active-device,Electronics > Analog > Discrete Semiconductors,36,0,3,11,2,electronics/diode,contract-defined; implementation-pending
+circuits.dpdt,DPDT,کلید DPDT,circuits,analog-network,Electronics > Analog > Switches,27,0,0,3,6,electronics/dpdt,contract-defined; implementation-pending
+circuits.dpdt-relay,DPDT relay,رله DPDT,circuits,electromechanical-or-load,Electronics > Analog > Switches,26,0,0,3,8,electronics/dpdt-relay,contract-defined; implementation-pending
+circuits.dpst,DPST,کلید DPST,circuits,analog-network,Electronics > Analog > Switches,27,0,0,3,4,electronics/dpst,contract-defined; implementation-pending
+circuits.earth,Ground,زمین الکتریکی,circuits,source,Electronics > Analog > Power Supplies,24,0,0,3,3,electronics/earth,contract-defined; implementation-pending
+circuits.ecapacitor,Electrolytic capacitor,خازن الکترولیتی,circuits,analog-network,Electronics > Analog > Passive Components,36,2,3,8,2,electronics/ecapacitor,contract-defined; implementation-pending
+circuits.filament-lamp,Filament Lamp,لامپ رشته‌ای,circuits,electromechanical-or-load,Electronics > Analog > Light Outputs,37,1,3,10,2,electronics/filament-lamp,contract-defined; implementation-pending
+circuits.floatswitch,Float switch,کلید شناور,circuits,analog-network,Electronics > Analog > Input Components,34,0,3,8,2,electronics/floatswitch,contract-defined; implementation-pending
+circuits.fuse,Fuse,فیوز,circuits,analog-network,Electronics > Analog > Input Components,35,1,3,8,2,electronics/fuse,contract-defined; implementation-pending
+circuits.green-led,Green LED,LED سبز,circuits,analog-network,Electronics > Analog > Light Outputs,37,0,3,11,2,electronics/green-led,contract-defined; implementation-pending
+circuits.half-h-driver,Half-H driver,درایور نیم‌پل H,circuits,nonlinear-or-active-device,Electronics > Analog > Integrated Circuits,28,0,0,3,7,electronics/half-h-driver,contract-defined; implementation-pending
+circuits.inductor,Inductor,سلف,circuits,analog-network,Electronics > Analog > Passive Components,34,1,3,8,2,electronics/inductor,contract-defined; implementation-pending
+circuits.latching-logic-input,Latching logic input,ورودی منطقی قفل‌شونده,circuits,digital-logic,Electronics > Digital > Inputs,25,0,0,3,1,electronics/latching-logic-input,contract-defined; implementation-pending
+circuits.ldr,Light dependent resistor,مقاومت وابسته به نور,circuits,analog-network,Electronics > Analog > Input Components,35,0,4,8,2,electronics/ldr,contract-defined; implementation-pending
+circuits.ldr-and-lamp,LDR and Lamp,مقاومت نوری و لامپ,circuits,electromechanical-or-load,Electronics > Analog > Input Components,35,0,4,8,2,electronics/ldr-and-lamp,contract-defined; implementation-pending
+circuits.ldr-with-lamp,LDR with Lamp,مقاومت نوری همراه لامپ,circuits,electromechanical-or-load,Electronics > Analog > Input Components,40,0,4,8,2,electronics/ldr-with-lamp,contract-defined; implementation-pending
+circuits.logic-output,Logic indicator,نشانگر منطقی,circuits,digital-logic,Electronics > Digital > Outputs,28,0,1,3,1,electronics/logic-output,contract-defined; implementation-pending
+circuits.loudspeaker,Loudspeaker,بلندگو,circuits,electromechanical-or-load,Electronics > Analog > Signal Generators & Sound,36,1,3,10,2,electronics/loudspeaker,contract-defined; implementation-pending
+circuits.mosfetn,N-Channel MOSFET,ماسفت کانال N,circuits,nonlinear-or-active-device,Electronics > Analog > Discrete Semiconductors,27,0,0,3,3,electronics/mosfetn,contract-defined; implementation-pending
+circuits.mosfetp,P-Channel MOSFET,ماسفت کانال P,circuits,nonlinear-or-active-device,Electronics > Analog > Discrete Semiconductors,27,0,0,3,3,electronics/mosfetp,contract-defined; implementation-pending
+circuits.new-context-logic-input,Custom logic input,ورودی منطقی سفارشی,circuits,digital-logic,Electronics > Digital > Inputs,26,0,1,0,0,electronics/new-context-logic-input,contract-defined; implementation-pending
+circuits.new-context-logic-output,Custom logic output,خروجی منطقی سفارشی,circuits,digital-logic,Electronics > Digital > Outputs,26,0,0,0,0,electronics/new-context-logic-output,contract-defined; implementation-pending
+circuits.npn,NPN transistor,ترانزیستور NPN,circuits,nonlinear-or-active-device,Electronics > Analog > Discrete Semiconductors,31,1,0,3,3,electronics/npn,contract-defined; implementation-pending
+circuits.opamp-324,324 Op-amp,تقویت‌کننده عملیاتی ۳۲۴,circuits,nonlinear-or-active-device,Electronics > Analog > Integrated Circuits,40,2,0,3,3,electronics/opamp-324,contract-defined; implementation-pending
+circuits.opamp-741,741 Op-amp,تقویت‌کننده عملیاتی ۷۴۱,circuits,nonlinear-or-active-device,Electronics > Analog > Integrated Circuits,40,2,0,3,3,electronics/opamp-741,contract-defined; implementation-pending
+circuits.optoisolator,Opto-isolator,اپتوایزولاتور,circuits,analog-network,Electronics > Analog > Input Components,32,0,0,6,4,electronics/optoisolator,contract-defined; implementation-pending
+circuits.phototransistor,Photo-transistor with lamp,فوتوترانزیستور همراه لامپ,circuits,electromechanical-or-load,Electronics > Analog > Input Components,35,0,1,5,2,electronics/phototransistor,contract-defined; implementation-pending
+circuits.pictorial-battery,Battery,باتری,circuits,analog-network,Electronics > Pictorial,34,0,3,8,2,electronics/pictorial-battery,contract-defined; implementation-pending
+circuits.pictorial-battery-9v,9V battery,باتری ۹ ولت,circuits,analog-network,Electronics > Pictorial,34,0,3,8,2,electronics/pictorial-battery-9v,contract-defined; implementation-pending
+circuits.pictorial-buzzer,Buzzer,بازر,circuits,electromechanical-or-load,Electronics > Pictorial,34,0,4,8,2,electronics/pictorial-buzzer,contract-defined; implementation-pending
+circuits.pictorial-filament-lamp,Filament Lamp,لامپ رشته‌ای,circuits,electromechanical-or-load,Electronics > Pictorial,36,0,3,10,2,electronics/pictorial-filament-lamp,contract-defined; implementation-pending
+circuits.pictorial-fuse,1A Fuse,فیوز ۱ آمپر,circuits,analog-network,Electronics > Pictorial,34,0,3,8,2,electronics/pictorial-fuse,contract-defined; implementation-pending
+circuits.pictorial-green-led,Green LED,LED سبز,circuits,analog-network,Electronics > Pictorial,37,0,3,11,2,electronics/pictorial-green-led,contract-defined; implementation-pending
+circuits.pictorial-motor,Motor,موتور,circuits,electromechanical-or-load,Electronics > Pictorial,42,0,3,10,3,electronics/pictorial-motor,contract-defined; implementation-pending
+circuits.pictorial-pushmake,Push-to-make switch,کلید فشاری وصل‌شونده,circuits,analog-network,Electronics > Pictorial,38,0,3,8,2,electronics/pictorial-pushmake,contract-defined; implementation-pending
+circuits.pictorial-red-led,Red LED,LED قرمز,circuits,analog-network,Electronics > Pictorial,37,0,3,11,2,electronics/pictorial-red-led,contract-defined; implementation-pending
+circuits.pictorial-resistor,Resistor,مقاومت,circuits,analog-network,Electronics > Pictorial,34,0,3,9,2,electronics/pictorial-resistor,contract-defined; implementation-pending
+circuits.pictorial-spdt,SPDT,کلید SPDT,circuits,analog-network,Electronics > Pictorial,30,0,0,3,3,electronics/pictorial-spdt,contract-defined; implementation-pending
+circuits.pictorial-spst,SPST,کلید SPST,circuits,analog-network,Electronics > Pictorial,38,0,3,8,2,electronics/pictorial-spst,contract-defined; implementation-pending
+circuits.pictorial-vresistor,Variable resistor,مقاومت متغیر,circuits,analog-network,Electronics > Pictorial,39,0,4,10,2,electronics/pictorial-vresistor,contract-defined; implementation-pending
+circuits.pictorial-yellow-led,Yellow LED,LED زرد,circuits,analog-network,Electronics > Pictorial,37,0,3,11,2,electronics/pictorial-yellow-led,contract-defined; implementation-pending
+circuits.pnp,PNP transistor,ترانزیستور PNP,circuits,nonlinear-or-active-device,Electronics > Analog > Discrete Semiconductors,31,1,0,3,3,electronics/pnp,contract-defined; implementation-pending
+circuits.potentiometer,Potentiometer,پتانسیومتر,circuits,analog-network,Electronics > Analog > Input Components,29,1,0,3,3,electronics/potentiometer,contract-defined; implementation-pending
+circuits.push-button-logic-input,Push button logic input,ورودی منطقی فشاری,circuits,digital-logic,Electronics > Digital > Inputs,25,0,0,3,1,electronics/push-button-logic-input,contract-defined; implementation-pending
+circuits.pushbreak,Push-to-break switch,کلید فشاری قطع‌شونده,circuits,analog-network,Electronics > Analog > Switches,35,0,3,8,2,electronics/pushbreak,contract-defined; implementation-pending
+circuits.pushmake,Push-to-make switch,کلید فشاری وصل‌شونده,circuits,analog-network,Electronics > Analog > Switches,35,0,3,8,2,electronics/pushmake,contract-defined; implementation-pending
+circuits.red-led,Red LED,LED قرمز,circuits,analog-network,Electronics > Analog > Light Outputs,37,0,3,11,2,electronics/red-led,contract-defined; implementation-pending
+circuits.resistor,Resistor,مقاومت,circuits,analog-network,Electronics > Analog > Passive Components,37,1,3,9,4,electronics/resistor,contract-defined; implementation-pending
+circuits.seven-segment-display,Seven segment display,نمایشگر هفت‌قسمتی,circuits,analog-network,Electronics > Analog > Light Outputs,39,0,0,4,9,electronics/seven-segment-display,contract-defined; implementation-pending
+circuits.signal-lamp,Signal Lamp,چراغ سیگنال,circuits,electromechanical-or-load,Electronics > Analog > Light Outputs,40,0,4,10,2,electronics/signal-lamp,contract-defined; implementation-pending
+circuits.spdt,SPDT,کلید SPDT,circuits,analog-network,Electronics > Analog > Switches,27,0,0,3,3,electronics/spdt,contract-defined; implementation-pending
+circuits.spdt-relay,SPDT relay,رله SPDT,circuits,electromechanical-or-load,Electronics > Analog > Switches,26,0,0,3,5,electronics/spdt-relay,contract-defined; implementation-pending
+circuits.spst,SPST,کلید SPST,circuits,analog-network,Electronics > Analog > Switches,35,0,3,8,4,electronics/spst,contract-defined; implementation-pending
+circuits.thermistor,Thermistor,ترمیستور,circuits,analog-network,Electronics > Analog > Input Components,41,1,4,9,2,electronics/thermistor,contract-defined; implementation-pending
+circuits.thyristor,Thyristor,تریستور,circuits,nonlinear-or-active-device,Electronics > Analog > Discrete Semiconductors,25,0,0,3,3,electronics/thyristor,contract-defined; implementation-pending
+circuits.transformer,Transformer,ترانسفورماتور,circuits,analog-network,Electronics > Analog > Passive Components,26,1,0,3,4,electronics/transformer,contract-defined; implementation-pending
+circuits.voltmeter,Voltmeter,ولت‌متر,circuits,instrumentation,Electronics > Analog > Meters,36,0,3,9,2,electronics/voltmeter,contract-defined; implementation-pending
+circuits.voltrail,Voltage rail,خط تغذیه ولتاژ,circuits,source,Electronics > Analog > Power Supplies,27,1,1,3,1,electronics/voltrail,contract-defined; implementation-pending
+circuits.vpulse,Signal generator,مولد سیگنال,circuits,analog-network,Electronics > Analog > Signal Generators & Sound,39,5,3,8,2,electronics/vpulse,contract-defined; implementation-pending
+circuits.vresistor,Variable resistor,مقاومت متغیر,circuits,analog-network,Electronics > Analog > Input Components,39,1,4,10,2,electronics/vresistor,contract-defined; implementation-pending
+circuits.vslide,Variable voltage supply,منبع ولتاژ متغیر,circuits,source,Electronics > Analog > Power Supplies,29,1,2,3,1,electronics/vslide,contract-defined; implementation-pending
+circuits.vzero,Zero volt rail,خط صفر ولت,circuits,source,Electronics > Analog > Power Supplies,25,0,0,3,1,electronics/vzero,contract-defined; implementation-pending
+circuits.yellow-led,Yellow LED,LED زرد,circuits,analog-network,Electronics > Analog > Light Outputs,37,0,3,11,2,electronics/yellow-led,contract-defined; implementation-pending
+circuits.zener,Zener,دیود زنر,circuits,nonlinear-or-active-device,Electronics > Analog > Discrete Semiconductors,38,0,4,10,2,electronics/zener,contract-defined; implementation-pending
+mechanics.basketball,Basketball,توپ بسکتبال,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/basketball,contract-defined; implementation-pending
+mechanics.billiard-ball,Billiard ball,توپ بیلیارد,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/billiard-ball,contract-defined; implementation-pending
+mechanics.brick2,Brick,آجر,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/brick2,contract-defined; implementation-pending
+mechanics.cart,Cart,گاری آزمایشگاهی,mechanics,rigid-body,Motion & Forces > Motion,82,19,19,20,0,motion/cart,contract-defined; implementation-pending
+mechanics.chain,Chain,زنجیر,mechanics,mechanism,Motion & Forces > Mechanisms,26,1,1,7,0,motion/chain,contract-defined; implementation-pending
+mechanics.concrete-ball2,Concrete ball,توپ بتنی,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/concrete-ball2,contract-defined; implementation-pending
+mechanics.concrete-block2,Concrete block,بلوک بتنی,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/concrete-block2,contract-defined; implementation-pending
+mechanics.concrete-ground,Concrete ground,سطح بتنی,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/concrete-ground,contract-defined; implementation-pending
+mechanics.concrete-slope,Concrete slope,شیب بتنی,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/concrete-slope,contract-defined; implementation-pending
+mechanics.connected-electric-motor,Electric motor,موتور الکتریکی,mechanics,mechanism,Motion & Forces > Mechanisms,41,2,9,6,0,motion/connected-electric-motor,contract-defined; implementation-pending
+mechanics.connected-generator,Generator,ژنراتور,mechanics,mechanism,Motion & Forces > Mechanisms,43,2,9,8,0,motion/connected-generator,contract-defined; implementation-pending
+mechanics.connected-microswitch,Microswitch,میکروسوئیچ,mechanics,mechanism,Motion & Forces > Mechanisms,34,0,4,8,0,motion/connected-microswitch,contract-defined; implementation-pending
+mechanics.connected-solenoid,Solenoid,سلونوئید,mechanics,mechanism,Motion & Forces > Mechanisms,35,0,6,7,0,motion/connected-solenoid,contract-defined; implementation-pending
+mechanics.cricket-ball,Cricket ball,توپ کریکت,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/cricket-ball,contract-defined; implementation-pending
+mechanics.double-gear,Gear,چرخ‌دنده,mechanics,mechanism,Motion & Forces > Mechanisms,40,1,9,6,0,motion/double-gear,contract-defined; implementation-pending
+mechanics.flywheel-and-gear,Flywheel,چرخ طیار,mechanics,mechanism,Motion & Forces > Mechanisms,38,1,7,6,0,motion/flywheel-and-gear,contract-defined; implementation-pending
+mechanics.glass-ball2,Glass ball,توپ شیشه‌ای,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/glass-ball2,contract-defined; implementation-pending
+mechanics.glass-block2,Glass block,بلوک شیشه‌ای,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/glass-block2,contract-defined; implementation-pending
+mechanics.glass-ground,Glass ground,سطح شیشه‌ای,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/glass-ground,contract-defined; implementation-pending
+mechanics.glass-slope,Glass slope,شیب شیشه‌ای,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/glass-slope,contract-defined; implementation-pending
+mechanics.golf-ball,Golf ball,توپ گلف,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/golf-ball,contract-defined; implementation-pending
+mechanics.ice-ball2,Ice ball,توپ یخی,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/ice-ball2,contract-defined; implementation-pending
+mechanics.ice-block2,Ice block,بلوک یخی,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/ice-block2,contract-defined; implementation-pending
+mechanics.ice-ground,Ice ground,سطح یخی,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/ice-ground,contract-defined; implementation-pending
+mechanics.ice-slope,Ice slope,شیب یخی,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/ice-slope,contract-defined; implementation-pending
+mechanics.ideal-elastic-ball,Ideal elastic ball,توپ کاملاً کشسان,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/ideal-elastic-ball,contract-defined; implementation-pending
+mechanics.ideal-elastic-block,Ideal elastic block,بلوک کاملاً کشسان,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/ideal-elastic-block,contract-defined; implementation-pending
+mechanics.ideal-elastic-ground,Ideal elastic ground,سطح کاملاً کشسان,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/ideal-elastic-ground,contract-defined; implementation-pending
+mechanics.ideal-elastic-slope,Ideal elastic slope,سطح شیب‌دار کاملاً کشسان,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/ideal-elastic-slope,contract-defined; implementation-pending
+mechanics.ideal-inelastic-ball,Ideal inelastic ball,توپ کاملاً ناکشسان,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/ideal-inelastic-ball,contract-defined; implementation-pending
+mechanics.ideal-inelastic-block,Ideal inelastic block,بلوک کاملاً ناکشسان,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/ideal-inelastic-block,contract-defined; implementation-pending
+mechanics.ideal-inelastic-ground,Ideal inelastic ground,سطح کاملاً ناکشسان,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/ideal-inelastic-ground,contract-defined; implementation-pending
+mechanics.ideal-inelastic-slope,Ideal inelastic slope,سطح شیب‌دار کاملاً ناکشسان,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/ideal-inelastic-slope,contract-defined; implementation-pending
+mechanics.metal-ball2,Metal ball,توپ فلزی,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/metal-ball2,contract-defined; implementation-pending
+mechanics.metal-block2,Metal block,بلوک فلزی,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/metal-block2,contract-defined; implementation-pending
+mechanics.metal-ground,Metal ground,سطح فلزی,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/metal-ground,contract-defined; implementation-pending
+mechanics.metal-slope,Metal slope,شیب فلزی,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/metal-slope,contract-defined; implementation-pending
+mechanics.motor,Constant speed motor,موتور با سرعت ثابت,mechanics,mechanism,Motion & Forces > Mechanisms,38,2,7,6,0,motion/motor,contract-defined; implementation-pending
+mechanics.rack-and-pinion,Rack and pinion,دنده شانه‌ای و پینیون,mechanics,mechanism,Motion & Forces > Mechanisms,41,1,9,8,0,motion/rack-and-pinion,contract-defined; implementation-pending
+mechanics.rod,Rod,میله,mechanics,rigid-body,Motion & Forces > Motion,27,3,0,7,0,motion/rod,contract-defined; implementation-pending
+mechanics.rubber-ball2,Rubber ball,توپ لاستیکی,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/rubber-ball2,contract-defined; implementation-pending
+mechanics.rubber-block2,Rubber block,بلوک لاستیکی,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/rubber-block2,contract-defined; implementation-pending
+mechanics.rubber-ground,Rubber ground,سطح لاستیکی,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/rubber-ground,contract-defined; implementation-pending
+mechanics.rubber-slope,Rubber slope,شیب لاستیکی,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/rubber-slope,contract-defined; implementation-pending
+mechanics.soccer-ball,Soccer ball,توپ فوتبال,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/soccer-ball,contract-defined; implementation-pending
+mechanics.space2,Space,محیط شبیه‌سازی,mechanics,world-environment,Motion & Forces > Motion,21,0,4,0,0,motion/space2,contract-defined; implementation-pending
+mechanics.spring,Spring,فنر,mechanics,constraint-force,Motion & Forces > Motion,27,4,0,6,0,motion/spring,contract-defined; implementation-pending
+mechanics.tennis-ball,Tennis ball,توپ تنیس,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/tennis-ball,contract-defined; implementation-pending
+mechanics.torque-application,Torque,گشتاور,mechanics,mechanism,Motion & Forces > Mechanisms,17,1,0,2,0,motion/torque-application,contract-defined; implementation-pending
+mechanics.wood-ball2,Wooden ball,توپ چوبی,mechanics,rigid-body,Motion & Forces > Motion > Balls,82,19,17,20,0,motion/wood-ball2,contract-defined; implementation-pending
+mechanics.wood-block2,Wooden block,بلوک چوبی,mechanics,rigid-body,Motion & Forces > Motion > Blocks,82,21,17,20,0,motion/wood-block2,contract-defined; implementation-pending
+mechanics.wood-ground,Wooden ground,سطح چوبی,mechanics,static-collider,Motion & Forces > Motion > Grounds,30,11,0,2,0,motion/wood-ground,contract-defined; implementation-pending
+mechanics.wood-slope,Wooden slope,شیب چوبی,mechanics,static-collider,Motion & Forces > Motion > Slopes,30,14,0,2,0,motion/wood-slope,contract-defined; implementation-pending
+optics.adjustableslit,Adjustable Slit,شکاف قابل تنظیم,optics,ray-obstacle,Optics > Opaque Objects,26,3,0,4,0,optics/adjustableSlit,contract-defined; implementation-pending
+optics.concavelens,Concave Lens,عدسی مقعر,optics,refractive-optic,Optics > Lenses,26,2,0,4,0,optics/concaveLens,contract-defined; implementation-pending
+optics.concavemirror,Concave Mirror,آینه مقعر,optics,reflective-optic,Optics > Mirrors,27,2,0,5,0,optics/concaveMirror,contract-defined; implementation-pending
+optics.convexlens,Convex Lens,عدسی محدب,optics,refractive-optic,Optics > Lenses,26,2,0,4,0,optics/convexLens,contract-defined; implementation-pending
+optics.convexmirror,Convex Mirror,آینه محدب,optics,reflective-optic,Optics > Mirrors,27,2,0,5,0,optics/convexMirror,contract-defined; implementation-pending
+optics.eye,Eye,چشم,optics,ray-scene-component,Optics > Ray Diagrams,41,4,1,9,0,optics/eye,contract-defined; implementation-pending
+optics.faraxisobject,Far Object Marker,نشانگر جسم دور,optics,ray-scene-component,Optics > Ray Diagrams,58,13,2,2,0,optics/farAxisObject,contract-defined; implementation-pending
+optics.lamp,Diverging beam,دسته‌پرتو واگرا,optics,ray-source,Optics > Light Sources,22,3,0,4,0,optics/lamp,contract-defined; implementation-pending
+optics.nearaxisobject,Near Object Marker,نشانگر جسم نزدیک,optics,ray-scene-component,Optics > Ray Diagrams,83,21,2,4,0,optics/nearAxisObject,contract-defined; implementation-pending
+optics.opaqueball,Opaque Ball,توپ کدر,optics,ray-obstacle,Optics > Opaque Objects,23,3,0,3,0,optics/opaqueBall,contract-defined; implementation-pending
+optics.opaqueblock,Opaque Block,بلوک کدر,optics,ray-obstacle,Optics > Opaque Objects,21,2,0,2,0,optics/opaqueBlock,contract-defined; implementation-pending
+optics.opaquetriangle,Opaque Triangle,مثلث کدر,optics,ray-obstacle,Optics > Opaque Objects,20,2,0,2,0,optics/opaqueTriangle,contract-defined; implementation-pending
+optics.opticalspace2,Optical Space,محیط اپتیکی,optics,ray-scene-component,Optics,21,0,5,0,0,optics/opticalSpace2,contract-defined; implementation-pending
+optics.parabolicmirror,Parabolic Mirror,آینه سهموی,optics,reflective-optic,Optics > Mirrors,27,2,0,5,0,optics/parabolicMirror,contract-defined; implementation-pending
+optics.planemirror,Plane Mirror,آینه تخت,optics,reflective-optic,Optics > Mirrors,25,1,0,5,0,optics/planeMirror,contract-defined; implementation-pending
+optics.prism,Prism,منشور,optics,refractive-optic,Optics > Transparent Objects,21,3,0,2,0,optics/prism,contract-defined; implementation-pending
+optics.projection,Screen,پرده,optics,ray-scene-component,Optics > Ray Diagrams,20,0,0,4,0,optics/projection,contract-defined; implementation-pending
+optics.raybox,Ray box,جعبه پرتو,optics,ray-source,Optics > Light Sources,23,4,0,4,0,optics/rayBox,contract-defined; implementation-pending
+optics.semicircularblock,Semi-circular Block,بلوک نیم‌دایره,optics,refractive-optic,Optics > Transparent Objects,23,3,0,2,0,optics/semicircularBlock,contract-defined; implementation-pending
+optics.torch,Parallel beam,دسته‌پرتو موازی,optics,ray-source,Optics > Light Sources,22,3,0,4,0,optics/torch,contract-defined; implementation-pending
+optics.transparentblock,Transparent Block,بلوک شفاف,optics,refractive-optic,Optics > Transparent Objects,22,4,0,2,0,optics/transparentBlock,contract-defined; implementation-pending
+presentation.advanced-animation,Animation,پویانمایی,presentation,presentation-control,Presentation,38,4,0,1,0,presentation/advanced-animation,not-applicable
+presentation.button,Button,دکمه,presentation,presentation-control,Presentation,26,1,0,0,0,presentation/button,not-applicable
+presentation.checkbox,Checkbox,چک‌باکس,presentation,presentation-control,Presentation,22,3,0,0,0,presentation/checkbox,not-applicable
+presentation.dropdown,Drop-down list,فهرست کشویی,presentation,presentation-control,Presentation,21,3,0,0,0,presentation/dropdown,not-applicable
+presentation.editbox,Edit box,کادر ویرایش,presentation,presentation-control,Presentation,23,4,0,0,0,presentation/editbox,not-applicable
+presentation.graph,Graph,نمودار,presentation,presentation-control,Presentation,38,8,0,0,0,presentation/graph,not-applicable
+presentation.image,Picture,تصویر,presentation,presentation-control,Presentation,19,4,0,1,0,presentation/image,not-applicable
+presentation.instructions,Instructions,راهنمای مراحل,presentation,presentation-control,Presentation,41,0,0,0,0,presentation/instructions,not-applicable
+presentation.marker,Marker,نشانگر,presentation,presentation-control,Optics > Measurement Tools | Presentation > Measurement Tools,29,4,0,2,0,presentation/marker,not-applicable
+presentation.2d,Part Tray,سینی قطعات,presentation,presentation-control,Presentation,19,0,0,0,0,presentation/parttray/2d,not-applicable
+presentation.pause,Pause,مکث,presentation,presentation-control,Presentation,26,0,0,0,0,presentation/pause,not-applicable
+presentation.protractor,Protractor,نقاله,presentation,presentation-control,Optics > Measurement Tools | Presentation > Measurement Tools,18,3,0,0,0,presentation/protractor,not-applicable
+presentation.reload,Reload,بازنشانی,presentation,presentation-control,Presentation,28,0,0,0,0,presentation/reload,not-applicable
+presentation.ruler,Ruler,خط‌کش,presentation,presentation-control,Optics > Measurement Tools | Presentation > Measurement Tools,28,4,0,2,0,presentation/ruler,not-applicable
+presentation.spinbox,Number,کنترل عددی,presentation,presentation-control,Presentation,29,10,0,0,0,presentation/spinbox,not-applicable
+presentation.text,Text,متن,presentation,presentation-control,Presentation,31,0,0,0,0,presentation/text,not-applicable
+waves.interference,Wave interference space,محیط تداخل موج,waves,wave-medium-1d,Waves > 1D,42,0,1,2,0,waves/1d/wavespace/interference,contract-defined; implementation-pending
+waves.penetration,Wave penetration space,محیط نفوذ موج,waves,wave-medium-1d,Waves > 1D,39,0,1,4,0,waves/1d/wavespace/penetration,contract-defined; implementation-pending
+waves.pinned,Wave pinned space,محیط موج با انتهای ثابت,waves,wave-medium-1d,Waves > 1D,33,0,1,2,0,waves/1d/wavespace/pinned,contract-defined; implementation-pending
+waves.plucking,Wave plucking space,محیط موج کشیده‌شده,waves,wave-medium-1d,Waves > 1D,36,0,1,0,0,waves/1d/wavespace/plucking,contract-defined; implementation-pending
+waves.propagation,Wave propagation space,محیط انتشار موج,waves,wave-medium-1d,Waves > 1D,33,0,1,2,0,waves/1d/wavespace/propagation,contract-defined; implementation-pending
+waves.reflection,Wave reflection space,محیط بازتاب موج,waves,wave-medium-1d,Waves > 1D,33,0,1,2,0,waves/1d/wavespace/reflection,contract-defined; implementation-pending
+waves.circular-obstacle,Circle,دایره,waves,wave-obstacle,Waves > 2D > Obstacles,28,0,0,1,0,waves/circular-obstacle,contract-defined; implementation-pending
+waves.detector,Detector,آشکارساز,waves,wave-detector,Waves > 2D > Measurement,16,0,0,4,0,waves/detector,contract-defined; implementation-pending
+waves.double-slit-obstacle,Double Slit,دوشکاف,waves,wave-aperture,Waves > 2D > Slits,28,0,0,1,0,waves/double-slit-obstacle,contract-defined; implementation-pending
+waves.em-wavespace2-holder,Electromagnetic wavespace,محیط موج الکترومغناطیسی,waves,wave-medium-2d,Waves > 2D,40,0,0,5,0,waves/em-wavespace2-holder,contract-defined; implementation-pending
+waves.line-source,Line Source,منبع خطی,waves,wave-source,Waves > 2D > Sources,41,0,1,4,0,waves/line-source,contract-defined; implementation-pending
+waves.moving-point-source,Moving Point Source,منبع نقطه‌ای متحرک,waves,wave-source,Waves > 2D > Sources,38,0,0,4,0,waves/moving-point-source,contract-defined; implementation-pending
+waves.plane-reflector,Plane Reflector,بازتاب‌دهنده تخت,waves,wave-reflector,Waves > 2D > Reflectors,24,0,0,1,0,waves/plane-reflector,contract-defined; implementation-pending
+waves.point-source,Point Source,منبع نقطه‌ای,waves,wave-source,Waves > 2D > Sources,38,0,0,4,0,waves/point-source,contract-defined; implementation-pending
+waves.rect-obstacle,Block,بلوک,waves,wave-obstacle,Waves > 2D > Obstacles,24,0,0,1,0,waves/rect-obstacle,contract-defined; implementation-pending
+waves.single-slit-obstacle,Single Slit,تک‌شکاف,waves,wave-aperture,Waves > 2D > Slits,28,0,0,1,0,waves/single-slit-obstacle,contract-defined; implementation-pending
+waves.sloped-block-obstacle,Sloped block,بلوک شیب‌دار,waves,wave-obstacle,Waves > 2D > Obstacles,25,0,0,1,0,waves/sloped-block-obstacle,contract-defined; implementation-pending
+waves.sound-wavespace2-holder,Sound wavespace,محیط موج صوتی,waves,wave-medium-2d,Waves > 2D,40,0,0,5,0,waves/sound-wavespace2-holder,contract-defined; implementation-pending
+waves.triangular-obstacle,Triangle,مثلث,waves,wave-obstacle,Waves > 2D > Obstacles,24,0,0,1,0,waves/triangular-obstacle,contract-defined; implementation-pending
+waves.water-wavespace2-holder,Water wavespace,محیط موج آب,waves,wave-medium-2d,Waves > 2D,41,0,0,5,0,waves/water-wavespace2-holder,contract-defined; implementation-pending

@@ -1,0 +1,66 @@
+{
+  "id": "reference.ohms-law",
+  "version": 1,
+  "title": "Ohm’s Law",
+  "titleFa": "قانون اهم",
+  "domain": [
+    "circuits"
+  ],
+  "learningObjectives": [
+    "Validate the solver against V = I R."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "electronics/resistor"
+      },
+      {
+        "type": "electronics/voltage-source"
+      },
+      {
+        "type": "electronics/ammeter"
+      },
+      {
+        "type": "electronics/voltmeter"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "V = I R"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "R": 10,
+          "V": 5
+        },
+        "expect": {
+          "I": 0.5
+        },
+        "tolerance": 1e-06
+      },
+      {
+        "inputs": {
+          "R": 100,
+          "V": 12
+        },
+        "expect": {
+          "I": 0.12
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

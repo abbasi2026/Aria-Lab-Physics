@@ -1,0 +1,207 @@
+﻿id,canonicalPartId,name,nameFa,categoryPath,categoryPathFa,legacyClass
+palette.001,circuits.battery,Battery,باتری,Electronics > Analog > Power Supplies,الکترونیک ← آنالوگ ← منابع تغذیه,electronics/battery
+palette.002,circuits.vslide,Variable voltage supply,منبع ولتاژ متغیر,Electronics > Analog > Power Supplies,الکترونیک ← آنالوگ ← منابع تغذیه,electronics/vslide
+palette.003,circuits.voltrail,Voltage rail,خط تغذیه ولتاژ,Electronics > Analog > Power Supplies,الکترونیک ← آنالوگ ← منابع تغذیه,electronics/voltrail
+palette.004,circuits.vzero,Zero volt rail,خط صفر ولت,Electronics > Analog > Power Supplies,الکترونیک ← آنالوگ ← منابع تغذیه,electronics/vzero
+palette.005,circuits.earth,Ground,زمین الکتریکی,Electronics > Analog > Power Supplies,الکترونیک ← آنالوگ ← منابع تغذیه,electronics/earth
+palette.006,circuits.current,Constant current source,منبع جریان ثابت,Electronics > Analog > Power Supplies,الکترونیک ← آنالوگ ← منابع تغذیه,electronics/current
+palette.007,circuits.spst,SPST,کلید SPST,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/spst
+palette.008,circuits.pushmake,Push-to-make switch,کلید فشاری وصل‌شونده,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/pushmake
+palette.009,circuits.pushbreak,Push-to-break switch,کلید فشاری قطع‌شونده,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/pushbreak
+palette.010,circuits.spdt,SPDT,کلید SPDT,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/spdt
+palette.011,circuits.dpst,DPST,کلید DPST,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/dpst
+palette.012,circuits.dpdt,DPDT,کلید DPDT,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/dpdt
+palette.013,circuits.spdt-relay,SPDT relay,رله SPDT,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/spdt-relay
+palette.014,circuits.dpdt-relay,DPDT relay,رله DPDT,Electronics > Analog > Switches,الکترونیک ← آنالوگ ← کلیدها,electronics/dpdt-relay
+palette.015,circuits.floatswitch,Float switch,کلید شناور,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/floatswitch
+palette.016,circuits.thermistor,Thermistor,ترمیستور,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/thermistor
+palette.017,circuits.ldr-with-lamp,LDR with Lamp,مقاومت نوری همراه لامپ,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/ldr-with-lamp
+palette.018,circuits.ldr-and-lamp,LDR and Lamp,مقاومت نوری و لامپ,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/ldr-and-lamp
+palette.019,circuits.ldr,Light dependent resistor,مقاومت وابسته به نور,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/ldr
+palette.020,circuits.phototransistor,Photo-transistor with lamp,فوتوترانزیستور همراه لامپ,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/phototransistor
+palette.021,circuits.optoisolator,Opto-isolator,اپتوایزولاتور,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/optoisolator
+palette.022,circuits.vresistor,Variable resistor,مقاومت متغیر,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/vresistor
+palette.023,circuits.potentiometer,Potentiometer,پتانسیومتر,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/potentiometer
+palette.024,circuits.fuse,Fuse,فیوز,Electronics > Analog > Input Components,الکترونیک ← آنالوگ ← قطعات ورودی,electronics/fuse
+palette.025,circuits.resistor,Resistor,مقاومت,Electronics > Analog > Passive Components,الکترونیک ← آنالوگ ← قطعات غیرفعال,electronics/resistor
+palette.026,circuits.8-resistors,8 Resistors,مجموعه ۸ مقاومت,Electronics > Analog > Passive Components,الکترونیک ← آنالوگ ← قطعات غیرفعال,electronics/8-resistors
+palette.027,circuits.inductor,Inductor,سلف,Electronics > Analog > Passive Components,الکترونیک ← آنالوگ ← قطعات غیرفعال,electronics/inductor
+palette.028,circuits.capacitor,Capacitor,خازن,Electronics > Analog > Passive Components,الکترونیک ← آنالوگ ← قطعات غیرفعال,electronics/capacitor
+palette.029,circuits.ecapacitor,Electrolytic capacitor,خازن الکترولیتی,Electronics > Analog > Passive Components,الکترونیک ← آنالوگ ← قطعات غیرفعال,electronics/ecapacitor
+palette.030,circuits.transformer,Transformer,ترانسفورماتور,Electronics > Analog > Passive Components,الکترونیک ← آنالوگ ← قطعات غیرفعال,electronics/transformer
+palette.031,circuits.diode,Diode,دیود,Electronics > Analog > Discrete Semiconductors,الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا,electronics/diode
+palette.032,circuits.zener,Zener,دیود زنر,Electronics > Analog > Discrete Semiconductors,الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا,electronics/zener
+palette.033,circuits.thyristor,Thyristor,تریستور,Electronics > Analog > Discrete Semiconductors,الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا,electronics/thyristor
+palette.034,circuits.mosfetn,N-Channel MOSFET,ماسفت کانال N,Electronics > Analog > Discrete Semiconductors,الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا,electronics/mosfetn
+palette.035,circuits.mosfetp,P-Channel MOSFET,ماسفت کانال P,Electronics > Analog > Discrete Semiconductors,الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا,electronics/mosfetp
+palette.036,circuits.npn,NPN transistor,ترانزیستور NPN,Electronics > Analog > Discrete Semiconductors,الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا,electronics/npn
+palette.037,circuits.pnp,PNP transistor,ترانزیستور PNP,Electronics > Analog > Discrete Semiconductors,الکترونیک ← آنالوگ ← نیمه‌رساناهای مجزا,electronics/pnp
+palette.038,circuits.555-timer,555 Timer,تایمر ۵۵۵,Electronics > Analog > Integrated Circuits,الکترونیک ← آنالوگ ← مدارهای مجتمع,electronics/555-timer
+palette.039,circuits.opamp-324,324 Op-amp,تقویت‌کننده عملیاتی ۳۲۴,Electronics > Analog > Integrated Circuits,الکترونیک ← آنالوگ ← مدارهای مجتمع,electronics/opamp-324
+palette.040,circuits.opamp-741,741 Op-amp,تقویت‌کننده عملیاتی ۷۴۱,Electronics > Analog > Integrated Circuits,الکترونیک ← آنالوگ ← مدارهای مجتمع,electronics/opamp-741
+palette.041,circuits.darlington-driver,Darlington driver,درایور دارلینگتون,Electronics > Analog > Integrated Circuits,الکترونیک ← آنالوگ ← مدارهای مجتمع,electronics/darlington-driver
+palette.042,circuits.half-h-driver,Half-H driver,درایور نیم‌پل H,Electronics > Analog > Integrated Circuits,الکترونیک ← آنالوگ ← مدارهای مجتمع,electronics/half-h-driver
+palette.043,circuits.vpulse,Signal generator,مولد سیگنال,Electronics > Analog > Signal Generators & Sound,الکترونیک ← آنالوگ ← مولد سیگنال و صوت,electronics/vpulse
+palette.044,circuits.buzzer,Buzzer,بازر,Electronics > Analog > Signal Generators & Sound,الکترونیک ← آنالوگ ← مولد سیگنال و صوت,electronics/buzzer
+palette.045,circuits.loudspeaker,Loudspeaker,بلندگو,Electronics > Analog > Signal Generators & Sound,الکترونیک ← آنالوگ ← مولد سیگنال و صوت,electronics/loudspeaker
+palette.046,circuits.signal-lamp,Signal Lamp,چراغ سیگنال,Electronics > Analog > Light Outputs,الکترونیک ← آنالوگ ← خروجی‌های نوری,electronics/signal-lamp
+palette.047,circuits.filament-lamp,Filament Lamp,لامپ رشته‌ای,Electronics > Analog > Light Outputs,الکترونیک ← آنالوگ ← خروجی‌های نوری,electronics/filament-lamp
+palette.048,circuits.red-led,Red LED,LED قرمز,Electronics > Analog > Light Outputs,الکترونیک ← آنالوگ ← خروجی‌های نوری,electronics/red-led
+palette.049,circuits.green-led,Green LED,LED سبز,Electronics > Analog > Light Outputs,الکترونیک ← آنالوگ ← خروجی‌های نوری,electronics/green-led
+palette.050,circuits.yellow-led,Yellow LED,LED زرد,Electronics > Analog > Light Outputs,الکترونیک ← آنالوگ ← خروجی‌های نوری,electronics/yellow-led
+palette.051,circuits.seven-segment-display,Seven segment display,نمایشگر هفت‌قسمتی,Electronics > Analog > Light Outputs,الکترونیک ← آنالوگ ← خروجی‌های نوری,electronics/seven-segment-display
+palette.052,circuits.ammeter,Ammeter,آمپرمتر,Electronics > Analog > Meters,الکترونیک ← آنالوگ ← اندازه‌گیرها,electronics/ammeter
+palette.053,circuits.voltmeter,Voltmeter,ولت‌متر,Electronics > Analog > Meters,الکترونیک ← آنالوگ ← اندازه‌گیرها,electronics/voltmeter
+palette.054,circuits.pictorial-battery,Battery,باتری,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-battery
+palette.055,circuits.pictorial-battery-9v,9V battery,باتری ۹ ولت,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-battery-9v
+palette.056,circuits.pictorial-fuse,1A Fuse,فیوز ۱ آمپر,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-fuse
+palette.057,circuits.pictorial-spst,SPST,کلید SPST,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-spst
+palette.058,circuits.pictorial-spdt,SPDT,کلید SPDT,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-spdt
+palette.059,circuits.pictorial-pushmake,Push-to-make switch,کلید فشاری وصل‌شونده,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-pushmake
+palette.060,circuits.pictorial-vresistor,Variable resistor,مقاومت متغیر,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-vresistor
+palette.061,circuits.pictorial-resistor,Resistor,مقاومت,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-resistor
+palette.062,circuits.pictorial-buzzer,Buzzer,بازر,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-buzzer
+palette.063,circuits.pictorial-filament-lamp,Filament Lamp,لامپ رشته‌ای,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-filament-lamp
+palette.064,circuits.pictorial-red-led,Red LED,LED قرمز,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-red-led
+palette.065,circuits.pictorial-green-led,Green LED,LED سبز,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-green-led
+palette.066,circuits.pictorial-yellow-led,Yellow LED,LED زرد,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-yellow-led
+palette.067,circuits.pictorial-motor,Motor,موتور,Electronics > Pictorial,الکترونیک ← نمای تصویری,electronics/pictorial-motor
+palette.068,circuits.7414,7414: Schmitt inverter,۷۴۱۴: معکوس‌کننده اشمیت,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7414
+palette.069,circuits.7404,7404: Inverter,۷۴۰۴: معکوس‌کننده,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7404
+palette.070,circuits.7408,7408: AND gate,۷۴۰۸: گیت AND,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7408
+palette.071,circuits.7400,7400: NAND gate,۷۴۰۰: گیت NAND,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7400
+palette.072,circuits.7410,7410: 3-input NAND gate,۷۴۱۰: گیت NAND سه‌ورودی,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7410
+palette.073,circuits.7420,7420: 4-input NAND gate,۷۴۲۰: گیت NAND چهارورودی,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7420
+palette.074,circuits.7432,7432: OR gate,۷۴۳۲: گیت OR,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7432
+palette.075,circuits.7402,7402: NOR gate,۷۴۰۲: گیت NOR,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7402
+palette.076,circuits.7486,7486: Exclusive-OR gate,۷۴۸۶: گیت XOR,Electronics > Digital > Logic Gates,الکترونیک ← دیجیتال ← گیت‌های منطقی,electronics/7486
+palette.077,circuits.4043-without-enable,4043: RS flip-flop,۴۰۴۳: فلیپ‌فلاپ RS,Electronics > Digital > Flip-flops,الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها,electronics/4043-without-enable
+palette.078,circuits.7474,7474: D-type flip-flop,۷۴۷۴: فلیپ‌فلاپ نوع D,Electronics > Digital > Flip-flops,الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها,electronics/7474
+palette.079,circuits.4027,4027: JK flip-flop (with set),۴۰۲۷: فلیپ‌فلاپ JK با Set,Electronics > Digital > Flip-flops,الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها,electronics/4027
+palette.080,circuits.7473,7473: JK flip-flop (without set),۷۴۷۳: فلیپ‌فلاپ JK بدون Set,Electronics > Digital > Flip-flops,الکترونیک ← دیجیتال ← فلیپ‌فلاپ‌ها,electronics/7473
+palette.081,circuits.4518,4518: Decade (÷10) counter,۴۵۱۸: شمارنده ده‌دهی,Electronics > Digital > Counters,الکترونیک ← دیجیتال ← شمارنده‌ها,electronics/4518
+palette.082,circuits.4026,4026: Decade counter and 7-segment decoder,۴۰۲۶: شمارنده ده‌دهی و دیکودر هفت‌قسمتی,Electronics > Digital > Counters,الکترونیک ← دیجیتال ← شمارنده‌ها,electronics/4026
+palette.083,circuits.4017,4017: Decoded (1-of-10) decade counter,۴۰۱۷: شمارنده ده‌دهی ۱ از ۱۰,Electronics > Digital > Counters,الکترونیک ← دیجیتال ← شمارنده‌ها,electronics/4017
+palette.084,circuits.4028,4028: BCD to decimal (1-of-10) decoder,۴۰۲۸: دیکودر BCD به ده‌دهی,Electronics > Digital > Decoders,الکترونیک ← دیجیتال ← دیکودرها,electronics/4028
+palette.085,circuits.4511,4511: BCD to 7-segment display decoder,۴۵۱۱: دیکودر BCD به نمایشگر هفت‌قسمتی,Electronics > Digital > Decoders,الکترونیک ← دیجیتال ← دیکودرها,electronics/4511
+palette.086,circuits.clock,Clock,کلاک,Electronics > Digital > Inputs,الکترونیک ← دیجیتال ← ورودی‌ها,electronics/clock
+palette.087,circuits.latching-logic-input,Latching logic input,ورودی منطقی قفل‌شونده,Electronics > Digital > Inputs,الکترونیک ← دیجیتال ← ورودی‌ها,electronics/latching-logic-input
+palette.088,circuits.push-button-logic-input,Push button logic input,ورودی منطقی فشاری,Electronics > Digital > Inputs,الکترونیک ← دیجیتال ← ورودی‌ها,electronics/push-button-logic-input
+palette.089,circuits.new-context-logic-input,Custom logic input,ورودی منطقی سفارشی,Electronics > Digital > Inputs,الکترونیک ← دیجیتال ← ورودی‌ها,electronics/new-context-logic-input
+palette.090,circuits.context-logic-input,Target logic input,ورودی منطقی هدف,Electronics > Digital > Inputs,الکترونیک ← دیجیتال ← ورودی‌ها,electronics/context-logic-input
+palette.091,circuits.logic-output,Logic indicator,نشانگر منطقی,Electronics > Digital > Outputs,الکترونیک ← دیجیتال ← خروجی‌ها,electronics/logic-output
+palette.092,circuits.new-context-logic-output,Custom logic output,خروجی منطقی سفارشی,Electronics > Digital > Outputs,الکترونیک ← دیجیتال ← خروجی‌ها,electronics/new-context-logic-output
+palette.093,circuits.context-logic-output,Target logic output,خروجی منطقی هدف,Electronics > Digital > Outputs,الکترونیک ← دیجیتال ← خروجی‌ها,electronics/context-logic-output
+palette.094,mechanics.chain,Chain,زنجیر,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/chain
+palette.095,mechanics.motor,Constant speed motor,موتور با سرعت ثابت,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/motor
+palette.096,mechanics.flywheel-and-gear,Flywheel,چرخ طیار,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/flywheel-and-gear
+palette.097,mechanics.double-gear,Gear,چرخ‌دنده,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/double-gear
+palette.098,mechanics.connected-generator,Generator,ژنراتور,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/connected-generator
+palette.099,mechanics.connected-electric-motor,Electric motor,موتور الکتریکی,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/connected-electric-motor
+palette.100,mechanics.rack-and-pinion,Rack and pinion,دنده شانه‌ای و پینیون,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/rack-and-pinion
+palette.101,mechanics.torque-application,Torque,گشتاور,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/torque-application
+palette.102,mechanics.connected-microswitch,Microswitch,میکروسوئیچ,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/connected-microswitch
+palette.103,mechanics.connected-solenoid,Solenoid,سلونوئید,Motion & Forces > Mechanisms,حرکت و نیرو ← سازوکارها,motion/connected-solenoid
+palette.104,mechanics.space2,Space,محیط شبیه‌سازی,Motion & Forces > Motion,حرکت و نیرو ← حرکت,motion/space2
+palette.105,mechanics.ideal-elastic-ground,Ideal elastic ground,سطح کاملاً کشسان,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/ideal-elastic-ground
+palette.106,mechanics.ideal-inelastic-ground,Ideal inelastic ground,سطح کاملاً ناکشسان,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/ideal-inelastic-ground
+palette.107,mechanics.wood-ground,Wooden ground,سطح چوبی,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/wood-ground
+palette.108,mechanics.metal-ground,Metal ground,سطح فلزی,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/metal-ground
+palette.109,mechanics.rubber-ground,Rubber ground,سطح لاستیکی,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/rubber-ground
+palette.110,mechanics.glass-ground,Glass ground,سطح شیشه‌ای,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/glass-ground
+palette.111,mechanics.ice-ground,Ice ground,سطح یخی,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/ice-ground
+palette.112,mechanics.concrete-ground,Concrete ground,سطح بتنی,Motion & Forces > Motion > Grounds,حرکت و نیرو ← حرکت ← سطوح افقی,motion/concrete-ground
+palette.113,mechanics.ideal-elastic-slope,Ideal elastic slope,سطح شیب‌دار کاملاً کشسان,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/ideal-elastic-slope
+palette.114,mechanics.ideal-inelastic-slope,Ideal inelastic slope,سطح شیب‌دار کاملاً ناکشسان,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/ideal-inelastic-slope
+palette.115,mechanics.wood-slope,Wooden slope,شیب چوبی,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/wood-slope
+palette.116,mechanics.metal-slope,Metal slope,شیب فلزی,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/metal-slope
+palette.117,mechanics.rubber-slope,Rubber slope,شیب لاستیکی,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/rubber-slope
+palette.118,mechanics.glass-slope,Glass slope,شیب شیشه‌ای,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/glass-slope
+palette.119,mechanics.ice-slope,Ice slope,شیب یخی,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/ice-slope
+palette.120,mechanics.concrete-slope,Concrete slope,شیب بتنی,Motion & Forces > Motion > Slopes,حرکت و نیرو ← حرکت ← سطوح شیب‌دار,motion/concrete-slope
+palette.121,mechanics.ideal-elastic-ball,Ideal elastic ball,توپ کاملاً کشسان,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/ideal-elastic-ball
+palette.122,mechanics.ideal-inelastic-ball,Ideal inelastic ball,توپ کاملاً ناکشسان,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/ideal-inelastic-ball
+palette.123,mechanics.soccer-ball,Soccer ball,توپ فوتبال,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/soccer-ball
+palette.124,mechanics.basketball,Basketball,توپ بسکتبال,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/basketball
+palette.125,mechanics.cricket-ball,Cricket ball,توپ کریکت,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/cricket-ball
+palette.126,mechanics.golf-ball,Golf ball,توپ گلف,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/golf-ball
+palette.127,mechanics.tennis-ball,Tennis ball,توپ تنیس,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/tennis-ball
+palette.128,mechanics.billiard-ball,Billiard ball,توپ بیلیارد,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/billiard-ball
+palette.129,mechanics.wood-ball2,Wooden ball,توپ چوبی,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/wood-ball2
+palette.130,mechanics.rubber-ball2,Rubber ball,توپ لاستیکی,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/rubber-ball2
+palette.131,mechanics.metal-ball2,Metal ball,توپ فلزی,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/metal-ball2
+palette.132,mechanics.concrete-ball2,Concrete ball,توپ بتنی,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/concrete-ball2
+palette.133,mechanics.glass-ball2,Glass ball,توپ شیشه‌ای,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/glass-ball2
+palette.134,mechanics.ice-ball2,Ice ball,توپ یخی,Motion & Forces > Motion > Balls,حرکت و نیرو ← حرکت ← توپ‌ها,motion/ice-ball2
+palette.135,mechanics.ideal-elastic-block,Ideal elastic block,بلوک کاملاً کشسان,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/ideal-elastic-block
+palette.136,mechanics.ideal-inelastic-block,Ideal inelastic block,بلوک کاملاً ناکشسان,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/ideal-inelastic-block
+palette.137,mechanics.brick2,Brick,آجر,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/brick2
+palette.138,mechanics.wood-block2,Wooden block,بلوک چوبی,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/wood-block2
+palette.139,mechanics.metal-block2,Metal block,بلوک فلزی,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/metal-block2
+palette.140,mechanics.rubber-block2,Rubber block,بلوک لاستیکی,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/rubber-block2
+palette.141,mechanics.glass-block2,Glass block,بلوک شیشه‌ای,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/glass-block2
+palette.142,mechanics.ice-block2,Ice block,بلوک یخی,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/ice-block2
+palette.143,mechanics.concrete-block2,Concrete block,بلوک بتنی,Motion & Forces > Motion > Blocks,حرکت و نیرو ← حرکت ← بلوک‌ها,motion/concrete-block2
+palette.144,mechanics.cart,Cart,گاری آزمایشگاهی,Motion & Forces > Motion,حرکت و نیرو ← حرکت,motion/cart
+palette.145,mechanics.rod,Rod,میله,Motion & Forces > Motion,حرکت و نیرو ← حرکت,motion/rod
+palette.146,mechanics.spring,Spring,فنر,Motion & Forces > Motion,حرکت و نیرو ← حرکت,motion/spring
+palette.147,optics.opticalspace2,Optical Space,محیط اپتیکی,Optics,اپتیک,optics/opticalSpace2
+palette.148,optics.nearaxisobject,Near Object Marker,نشانگر جسم نزدیک,Optics > Ray Diagrams,اپتیک ← نمودارهای پرتو,optics/nearAxisObject
+palette.149,optics.faraxisobject,Far Object Marker,نشانگر جسم دور,Optics > Ray Diagrams,اپتیک ← نمودارهای پرتو,optics/farAxisObject
+palette.150,optics.projection,Screen,پرده,Optics > Ray Diagrams,اپتیک ← نمودارهای پرتو,optics/projection
+palette.151,optics.eye,Eye,چشم,Optics > Ray Diagrams,اپتیک ← نمودارهای پرتو,optics/eye
+palette.152,optics.lamp,Diverging beam,دسته‌پرتو واگرا,Optics > Light Sources,اپتیک ← منابع نور,optics/lamp
+palette.153,optics.torch,Parallel beam,دسته‌پرتو موازی,Optics > Light Sources,اپتیک ← منابع نور,optics/torch
+palette.154,optics.raybox,Ray box,جعبه پرتو,Optics > Light Sources,اپتیک ← منابع نور,optics/rayBox
+palette.155,optics.concavelens,Concave Lens,عدسی مقعر,Optics > Lenses,اپتیک ← عدسی‌ها,optics/concaveLens
+palette.156,optics.convexlens,Convex Lens,عدسی محدب,Optics > Lenses,اپتیک ← عدسی‌ها,optics/convexLens
+palette.157,optics.planemirror,Plane Mirror,آینه تخت,Optics > Mirrors,اپتیک ← آینه‌ها,optics/planeMirror
+palette.158,optics.concavemirror,Concave Mirror,آینه مقعر,Optics > Mirrors,اپتیک ← آینه‌ها,optics/concaveMirror
+palette.159,optics.convexmirror,Convex Mirror,آینه محدب,Optics > Mirrors,اپتیک ← آینه‌ها,optics/convexMirror
+palette.160,optics.parabolicmirror,Parabolic Mirror,آینه سهموی,Optics > Mirrors,اپتیک ← آینه‌ها,optics/parabolicMirror
+palette.161,optics.prism,Prism,منشور,Optics > Transparent Objects,اپتیک ← اجسام شفاف,optics/prism
+palette.162,optics.transparentblock,Transparent Block,بلوک شفاف,Optics > Transparent Objects,اپتیک ← اجسام شفاف,optics/transparentBlock
+palette.163,optics.semicircularblock,Semi-circular Block,بلوک نیم‌دایره,Optics > Transparent Objects,اپتیک ← اجسام شفاف,optics/semicircularBlock
+palette.164,optics.adjustableslit,Adjustable Slit,شکاف قابل تنظیم,Optics > Opaque Objects,اپتیک ← اجسام کدر,optics/adjustableSlit
+palette.165,optics.opaqueball,Opaque Ball,توپ کدر,Optics > Opaque Objects,اپتیک ← اجسام کدر,optics/opaqueBall
+palette.166,optics.opaqueblock,Opaque Block,بلوک کدر,Optics > Opaque Objects,اپتیک ← اجسام کدر,optics/opaqueBlock
+palette.167,optics.opaquetriangle,Opaque Triangle,مثلث کدر,Optics > Opaque Objects,اپتیک ← اجسام کدر,optics/opaqueTriangle
+palette.168,presentation.ruler,Ruler,خط‌کش,Optics > Measurement Tools,اپتیک ← ابزارهای اندازه‌گیری,presentation/ruler
+palette.169,presentation.protractor,Protractor,نقاله,Optics > Measurement Tools,اپتیک ← ابزارهای اندازه‌گیری,presentation/protractor
+palette.170,presentation.marker,Marker,نشانگر,Optics > Measurement Tools,اپتیک ← ابزارهای اندازه‌گیری,presentation/marker
+palette.171,presentation.ruler,Ruler,خط‌کش,Presentation > Measurement Tools,ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری,presentation/ruler
+palette.172,presentation.protractor,Protractor,نقاله,Presentation > Measurement Tools,ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری,presentation/protractor
+palette.173,presentation.marker,Marker,نشانگر,Presentation > Measurement Tools,ارائه و کنترل آزمایش ← ابزارهای اندازه‌گیری,presentation/marker
+palette.174,presentation.graph,Graph,نمودار,Presentation,ارائه و کنترل آزمایش,presentation/graph
+palette.175,presentation.text,Text,متن,Presentation,ارائه و کنترل آزمایش,presentation/text
+palette.176,presentation.instructions,Instructions,راهنمای مراحل,Presentation,ارائه و کنترل آزمایش,presentation/instructions
+palette.177,presentation.image,Picture,تصویر,Presentation,ارائه و کنترل آزمایش,presentation/image
+palette.178,presentation.advanced-animation,Animation,پویانمایی,Presentation,ارائه و کنترل آزمایش,presentation/advanced-animation
+palette.179,presentation.button,Button,دکمه,Presentation,ارائه و کنترل آزمایش,presentation/button
+palette.180,presentation.spinbox,Number,کنترل عددی,Presentation,ارائه و کنترل آزمایش,presentation/spinbox
+palette.181,presentation.checkbox,Checkbox,چک‌باکس,Presentation,ارائه و کنترل آزمایش,presentation/checkbox
+palette.182,presentation.dropdown,Drop-down list,فهرست کشویی,Presentation,ارائه و کنترل آزمایش,presentation/dropdown
+palette.183,presentation.editbox,Edit box,کادر ویرایش,Presentation,ارائه و کنترل آزمایش,presentation/editbox
+palette.184,presentation.pause,Pause,مکث,Presentation,ارائه و کنترل آزمایش,presentation/pause
+palette.185,presentation.reload,Reload,بازنشانی,Presentation,ارائه و کنترل آزمایش,presentation/reload
+palette.186,presentation.2d,Part Tray,سینی قطعات,Presentation,ارائه و کنترل آزمایش,presentation/parttray/2d
+palette.187,waves.propagation,Wave propagation space,محیط انتشار موج,Waves > 1D,موج‌ها ← یک‌بعدی,waves/1d/wavespace/propagation
+palette.188,waves.penetration,Wave penetration space,محیط نفوذ موج,Waves > 1D,موج‌ها ← یک‌بعدی,waves/1d/wavespace/penetration
+palette.189,waves.reflection,Wave reflection space,محیط بازتاب موج,Waves > 1D,موج‌ها ← یک‌بعدی,waves/1d/wavespace/reflection
+palette.190,waves.interference,Wave interference space,محیط تداخل موج,Waves > 1D,موج‌ها ← یک‌بعدی,waves/1d/wavespace/interference
+palette.191,waves.pinned,Wave pinned space,محیط موج با انتهای ثابت,Waves > 1D,موج‌ها ← یک‌بعدی,waves/1d/wavespace/pinned
+palette.192,waves.plucking,Wave plucking space,محیط موج کشیده‌شده,Waves > 1D,موج‌ها ← یک‌بعدی,waves/1d/wavespace/plucking
+palette.193,waves.em-wavespace2-holder,Electromagnetic wavespace,محیط موج الکترومغناطیسی,Waves > 2D,موج‌ها ← دوبعدی,waves/em-wavespace2-holder
+palette.194,waves.sound-wavespace2-holder,Sound wavespace,محیط موج صوتی,Waves > 2D,موج‌ها ← دوبعدی,waves/sound-wavespace2-holder
+palette.195,waves.water-wavespace2-holder,Water wavespace,محیط موج آب,Waves > 2D,موج‌ها ← دوبعدی,waves/water-wavespace2-holder
+palette.196,waves.point-source,Point Source,منبع نقطه‌ای,Waves > 2D > Sources,موج‌ها ← دوبعدی ← منابع,waves/point-source
+palette.197,waves.line-source,Line Source,منبع خطی,Waves > 2D > Sources,موج‌ها ← دوبعدی ← منابع,waves/line-source
+palette.198,waves.moving-point-source,Moving Point Source,منبع نقطه‌ای متحرک,Waves > 2D > Sources,موج‌ها ← دوبعدی ← منابع,waves/moving-point-source
+palette.199,waves.plane-reflector,Plane Reflector,بازتاب‌دهنده تخت,Waves > 2D > Reflectors,موج‌ها ← دوبعدی ← بازتاب‌دهنده‌ها,waves/plane-reflector
+palette.200,waves.rect-obstacle,Block,بلوک,Waves > 2D > Obstacles,موج‌ها ← دوبعدی ← موانع,waves/rect-obstacle
+palette.201,waves.sloped-block-obstacle,Sloped block,بلوک شیب‌دار,Waves > 2D > Obstacles,موج‌ها ← دوبعدی ← موانع,waves/sloped-block-obstacle
+palette.202,waves.triangular-obstacle,Triangle,مثلث,Waves > 2D > Obstacles,موج‌ها ← دوبعدی ← موانع,waves/triangular-obstacle
+palette.203,waves.circular-obstacle,Circle,دایره,Waves > 2D > Obstacles,موج‌ها ← دوبعدی ← موانع,waves/circular-obstacle
+palette.204,waves.single-slit-obstacle,Single Slit,تک‌شکاف,Waves > 2D > Slits,موج‌ها ← دوبعدی ← شکاف‌ها,waves/single-slit-obstacle
+palette.205,waves.double-slit-obstacle,Double Slit,دوشکاف,Waves > 2D > Slits,موج‌ها ← دوبعدی ← شکاف‌ها,waves/double-slit-obstacle
+palette.206,waves.detector,Detector,آشکارساز,Waves > 2D > Measurement,موج‌ها ← دوبعدی ← اندازه‌گیری,waves/detector

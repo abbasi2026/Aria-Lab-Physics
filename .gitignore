@@ -1,0 +1,17 @@
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+research-private/
+raw-proprietary/
+*.dll
+*.exe
+*.msi
+*.iso

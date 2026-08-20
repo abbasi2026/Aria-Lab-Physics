@@ -1,0 +1,54 @@
+{
+  "id": "reference.snells-law",
+  "version": 1,
+  "title": "Refraction / Snell’s Law",
+  "titleFa": "شکست نور و قانون اسنل",
+  "domain": [
+    "optics"
+  ],
+  "learningObjectives": [
+    "Validate the solver against n1 sin θ1 = n2 sin θ2."
+  ],
+  "scene": {
+    "parts": [
+      {
+        "type": "optics/ray-source"
+      },
+      {
+        "type": "optics/interface"
+      },
+      {
+        "type": "measurement/protractor"
+      }
+    ],
+    "connections": [],
+    "bindings": []
+  },
+  "steps": [],
+  "measurements": [],
+  "expectedResults": [
+    {
+      "equation": "n1 sin θ1 = n2 sin θ2"
+    }
+  ],
+  "assessment": {
+    "goldenCases": [
+      {
+        "inputs": {
+          "n1": 1,
+          "n2": 1.5,
+          "theta1_deg": 30
+        },
+        "expect": {
+          "theta2_deg": 19.4712206345
+        },
+        "tolerance": 1e-06
+      }
+    ]
+  },
+  "researchBaseline": {
+    "legacyProduct": "Crocodile Physics 605",
+    "use": "concept/reference only",
+    "cleanRoom": true
+  }
+}

@@ -1,0 +1,78 @@
+﻿name,abbrev,prefix,slope,offset
+meter,m,true,1.0,0.0
+inch,in,false,39.370079,0.0
+yard,yd,false,1.0936133,0.0
+mile,,false,0.0006213712,0.0
+foot,ft,false,3.2808398,0.0
+nautical mile,,false,0.0005399568,0.0
+astronomical unit,AU,false,6.68458134e-12,0.0
+angstrom,Å,false,1e10,0.0
+kilogram,kg,true,1.0,0.0
+gram,g,true,1000,0.0
+tonne,t,false,1/1000,0.0
+ounce,oz,false,1000.0 / 28.3495231,0.0
+pound,lb,false,2.2055951,0.0
+stone,st,false,0.15747304441777,0.0
+ton,T,false,1.0 / 907.18474,0.0
+second,s,true,1.0,0.0
+minute,min,false,1/60,0.0
+hour,h,false,1/3600,0.0
+day,,false,1/86400,0.0
+week,wk,false,1/604800,0.0
+month,,false,1/2629743.8,0.0
+year,,false,1/31556926,0.0
+kelvin,K,true,1,0.0
+celsius,°C,true,1.0,-273.15
+fahrenheit,°F,true,9/5,32-((9/5)*273.15)
+ampere,A,true,1.0,0.0
+mole,mol,true,1.0,0.0
+candela,Cd,true,1.0,0.0
+radian,rad,true,1.0,0.0
+degree,°,true,180.0/PI,0.0
+gradian,grad,true,200/PI,0.0
+volts,V,true,1.0,0.0
+siemens,S,true,1.0,0.0
+siemens_per_metre,S·m<sup>-1</sup>,true,1.0,0.0
+milli_siemens_per_metre,mS·m<sup>-1</sup>,false,1e3,0.0
+henry,H,true,1.0,0.0
+ohm,Ω,true,1.0,0.0
+coulomb,C,true,1.0,0.0
+farad,F,true,1.0,0.0
+joule,J,true,1.0,0.0
+watt,W,true,1.0,0.0
+newton,N,true,1.0,0.0
+hertz,Hz,true,1.0,0.0
+pascal,Pa,true,1.0,0.0
+atmosphere,atm,false,1.0/101325,0.0
+bar,,true,1e-5,0.0
+torr,,false,1.0/1.333224e2,0.0
+pounds per square inch,psi,false,1.0/6894.7573,0.0
+newton metre,Nm,false,1.0,0.0
+newtons per metre,N·m<sup>-1</sup>,false,1.0,0.0
+kilogram metres squared,kg·m<sup>2</sup>,false,1.0,0.0
+gram metres squared,g·m<sup>2</sup>,false,1000,0.0
+kilogram metres per second,kg·m·s<sup>-1</sup>,false,1,0.0
+radians per second,rad·s<sup>-1</sup>,true,1.0,0.0
+degrees per second,deg·s<sup>-1</sup>,false,180/PI,0.0
+radians per second per second,rad·s<sup>-2</sup>,false,1.0,0.0
+degrees per second per second,deg·s<sup>-2</sup>,false,180/PI,0.0
+revolutions per minute,rpm,false,60/(2*PI),0.0
+metres per second,m·s<sup>-1</sup>,false,1.0,0.0
+kilometres per second,km·s<sup>-1</sup>,false,0.001,0.0
+kilometres per hour,km·h<sup>-1</sup>,false,3.6,0.0
+metres per second per second,m·s<sup>-2</sup>,false,1.0,0.0
+volts per metre,V·m<sup>-1</sup>,true,1.0,0.0
+decibel (SPL),dB,false,1.0,0.0
+m2,m<sup>2</sup>,false,1.0,0.0
+cm2,cm<sup>2</sup>,false,1e4,0.0
+m3,m<sup>3</sup>,false,1,0.0
+cm3,cm<sup>3</sup>,false,1e6,0.0
+ml,mL,false,1e6,0.0
+litres,L,false,1e3,0.0
+kilograms per cubic metre,kg·m<sup>-3</sup>,false,1.0,0.0
+grams per cubic centimetre,g·cm<sup>-3</sup>,false,1e-3,0.0
+moles per dm3,mol·dm<sup>-3</sup>,false,1.0,0.0
+molarity,M,false,1.0,0.0
+moles per litre,mol·L<sup>-1</sup>,false,1.0,0.0
+cubic metres per second,m<sup>3</sup>·s<sup>-1</sup>,false,1.0,0.0
+cubic centimetres per second,cm<sup>3</sup>·s<sup>-1</sup>,false,1e6,0.0
