@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage6.rc-charge-guided",
+  "version": 1,
+  "title": "شارژ خازن در مدار RC",
+  "titleFa": "شارژ خازن در مدار RC",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "در این آزمایش تغییر ولتاژ خازن در زمان و ثابت زمانی RC بررسی می‌شود.",
+  "learningObjectives": [
+    "تشخیص نقش مقاومت و خازن در مدار RC",
+    "مشاهده پاسخ گذرای نمایی",
+    "مقایسه داده شبیه‌سازی با ثابت زمانی τ=RC"
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage5.rc-transient",
+    "title": "شارژ گذرای خازن RC",
+    "titleFa": "شارژ گذرای خازن RC",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": -9.81
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "battery",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -3,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "voltage": 5,
+          "nodeA": "n1",
+          "nodeB": "0"
+        }
+      },
+      {
+        "instanceId": "resistor",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "resistance": 1000,
+          "nodeA": "n1",
+          "nodeB": "n2"
+        }
+      },
+      {
+        "instanceId": "capacitor",
+        "partId": "circuits.capacitor",
+        "transform": {
+          "position": {
+            "x": 3,
+            "y": 0
+          },
+          "rotation": 90,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "capacitance": 1e-06,
+          "initialVoltage": 0,
+          "nodeA": "n2",
+          "nodeB": "0"
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "capacitor-voltage",
+        "quantity": "voltage",
+        "node": "n2"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage5",
+      "stage": 5
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "inspect",
+        "titleFa": "بررسی مدار",
+        "instructionFa": "باتری، مقاومت و خازن را در صحنه پیدا کنید و مقادیر آن‌ها را بررسی کنید.",
+        "whyFa": "ثابت زمانی مدار از R و C تعیین می‌شود.",
+        "checks": [
+          {
+            "type": "part-exists",
+            "partId": "circuits.battery"
+          },
+          {
+            "type": "part-exists",
+            "partId": "circuits.resistor"
+          },
+          {
+            "type": "part-exists",
+            "partId": "circuits.capacitor"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در Inspector مقدار مقاومت و ظرفیت خازن را ببینید."
+          }
+        ]
+      },
+      {
+        "id": "values",
+        "titleFa": "تنظیم پارامترها",
+        "instructionFa": "R را روی ۱ کیلو اهم و C را روی ۱ میکروفاراد نگه دارید.",
+        "whyFa": "در این حالت τ=RC برابر ۱ میلی‌ثانیه است.",
+        "checks": [
+          {
+            "type": "property-range",
+            "instanceId": "resistor",
+            "property": "resistance",
+            "min": 999,
+            "max": 1001
+          },
+          {
+            "type": "property-range",
+            "instanceId": "capacitor",
+            "property": "capacitance",
+            "min": 9.9e-07,
+            "max": 1.01e-06
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "R=1000 Ω و C=0.000001 F است."
+          }
+        ]
+      },
+      {
+        "id": "run",
+        "titleFa": "اجرای گذرا",
+        "instructionFa": "شبیه‌سازی را اجرا کنید تا دست‌کم ۵ میلی‌ثانیه بگذرد.",
+        "whyFa": "پس از حدود ۵τ ولتاژ خازن تقریباً به مقدار نهایی می‌رسد.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.005
+          },
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "دکمه اجرا را بزنید و زمان t را دنبال کنید."
+          }
+        ]
+      },
+      {
+        "id": "observe",
+        "titleFa": "اندازه‌گیری ولتاژ",
+        "instructionFa": "ولتاژ خازن را مشاهده کنید؛ باید به حدود ۵ ولت نزدیک شده باشد.",
+        "whyFa": "در حالت ماندگار DC جریان خازن صفر و ولتاژ آن نزدیک ولتاژ منبع است.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "capacitor-voltage",
+            "min": 4.8,
+            "max": 5.05
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "نمودار Probe خازن را بررسی کنید؛ منحنی باید صعودی و اشباع‌شونده باشد."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "capacitor-voltage",
+      "labelFa": "ولتاژ خازن",
+      "unit": "V",
+      "probe": {
+        "id": "capacitor-voltage",
+        "quantity": "voltage",
+        "node": "n2"
+      },
+      "expected": {
+        "type": "range",
+        "min": 4.8,
+        "max": 5.05
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "در t≈5τ، ولتاژ خازن بیش از ۹۹٪ مقدار نهایی است.",
+      "equation": "Vc(t)=V(1-exp(-t/RC))"
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "rc-time",
+        "type": "simulation-time",
+        "min": 0.005,
+        "weight": 1
+      },
+      {
+        "id": "rc-vc",
+        "type": "measurement-range",
+        "measurementId": "capacitor-voltage",
+        "min": 4.8,
+        "max": 5.05,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [
+      "τ=RC",
+      "Vc(t)=V(1-e^{-t/RC})",
+      "در t=τ ولتاژ خازن حدود 63.2٪ مقدار نهایی است."
+    ],
+    "guardrails": [
+      "از مقادیر اندازه‌گیری‌نشده نتیجه نساز.",
+      "پاسخ را فقط بر پایه تعریف آزمایش، صحنه و داده Runtime ارائه کن.",
+      "به‌جای انجام خودکار مرحله، دانش‌آموز را برای مشاهده و استدلال راهنمایی کن."
+    ]
+  },
+  "metadata": {
+    "authoringVersion": "stage6",
+    "language": "fa-IR",
+    "cleanRoom": true
+  }
+}

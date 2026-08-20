@@ -1,6 +1,7 @@
 import { SimulationClock } from '../../physics-core/src/clock.mjs';
 import { World2D } from '../../mechanics-engine/src/world2d.mjs';
 import { CircuitNetwork } from '../../circuits-engine/src/mna.mjs';
+import { TransientCircuit } from '../../circuits-engine/src/transient.mjs';
 import { RayScene } from '../../optics-engine/src/ray-scene.mjs';
 import { WaveGrid2D } from '../../waves-engine/src/wave-grid.mjs';
 import { ProbeRecorder } from '../../measurement-engine/src/index.mjs';
@@ -62,19 +63,25 @@ function genericAdapter(scene) {
 function mechanicsAdapter(scene) {
   const sim = scene.simulation ?? {};
   const world = new World2D({ gravity: sim.gravity ?? { x: 0, y: -9.81 }, dt: sim.dt ?? 1 / 120, floorY: sim.floorY ?? null });
+  const drives = new Map();
   for (const part of scene.parts) {
     const id = alias(part.partId); const p = part.properties ?? {}; const position = part.transform.position;
-    if (id.includes('ball')) world.addBody({ id: part.instanceId, mass: p.mass ?? 1, position, velocity: { x: p.velocityX ?? 0, y: p.velocityY ?? 0 }, shape: { type: 'circle', radius: p.radius ?? 0.5 }, restitution: p.restitution ?? p.elasticity ?? 0.6, friction: p.friction ?? p['kinetic-friction'] ?? 0.2, staticBody: p.staticBody ?? false });
-    else if (id.includes('block') || id.includes('ground')) world.addBody({ id: part.instanceId, mass: p.mass ?? 1, position, velocity: { x: p.velocityX ?? 0, y: p.velocityY ?? 0 }, shape: { type: 'box', width: p.width ?? 1, height: p.height ?? 1 }, restitution: p.restitution ?? 0.4, friction: p.friction ?? 0.3, staticBody: id.includes('ground') || p.staticBody === true });
+    const common = { id: part.instanceId, mass: p.mass ?? 1, position, velocity: { x: p.velocityX ?? 0, y: p.velocityY ?? 0 }, restitution: p.restitution ?? p.elasticity ?? 0.6, friction: p.friction ?? p['kinetic-friction'] ?? 0.2, staticBody: p.staticBody ?? false, angle: (part.transform.rotation ?? p.angle ?? 0) * Math.PI / 180, angularVelocity: p.angularVelocity ?? 0 };
+    let body = null;
+    if (id.includes('ball')) body = world.addBody({ ...common, shape: { type: 'circle', radius: p.radius ?? 0.5 } });
+    else if (id.includes('block') || id.includes('ground')) body = world.addBody({ ...common, shape: { type: 'box', width: p.width ?? 1, height: p.height ?? 1 }, staticBody: id.includes('ground') || p.staticBody === true });
+    if (body) drives.set(body.id, { forceX: Number(p.forceX ?? 0), forceY: Number(p.forceY ?? 0), torque: Number(p.torque ?? 0) });
   }
-  for (const c of scene.connections ?? []) if (c.kind === 'mechanical' && c.properties?.type === 'spring') world.addSpring({ id: c.id, a: c.from.instanceId, b: c.to.instanceId, restLength: c.properties.restLength ?? 1, stiffness: c.properties.stiffness ?? 10, damping: c.properties.damping ?? 0.2 });
+  for (const c of scene.connections ?? []) if (c.kind === 'mechanical') {
+    if (c.properties?.type === 'spring') world.addSpring({ id: c.id, a: c.from.instanceId, b: c.to.instanceId, restLength: c.properties.restLength ?? 1, stiffness: c.properties.stiffness ?? 10, damping: c.properties.damping ?? 0.2 });
+    else if (c.properties?.type === 'distance-joint') world.addDistanceJoint({ id: c.id, a: c.from.instanceId, b: c.to?.instanceId ?? null, anchor: c.properties.anchor ?? null, length: c.properties.length ?? c.properties.restLength ?? 1, stiffness: c.properties.stiffness ?? 1 });
+  }
   const state = () => ({ bodies: world.snapshot() });
   return {
-    step: dt => { world.step(dt); return state(); }, snapshot: state,
-    measure(probe) { const body = world.bodies.find(b => b.id === probe.instanceId); if (!body) return null; if (probe.quantity === 'position-x') return body.position.x; if (probe.quantity === 'position-y') return body.position.y; if (probe.quantity === 'velocity-x') return body.velocity.x; if (probe.quantity === 'velocity-y') return body.velocity.y; if (probe.quantity === 'speed') return Math.hypot(body.velocity.x, body.velocity.y); if (probe.quantity === 'momentum') return Number.isFinite(body.mass) ? body.mass * Math.hypot(body.velocity.x, body.velocity.y) : null; return null; }
+    step: dt => { for (const body of world.bodies) { const drive=drives.get(body.id); if(!drive)continue; if(drive.forceX||drive.forceY)body.applyForce({x:drive.forceX,y:drive.forceY}); if(drive.torque)body.applyTorque(drive.torque); } world.step(dt); return state(); }, snapshot: state,
+    measure(probe) { const body = world.bodies.find(b => b.id === probe.instanceId); if (!body) return null; if (probe.quantity === 'position-x') return body.position.x; if (probe.quantity === 'position-y') return body.position.y; if (probe.quantity === 'velocity-x') return body.velocity.x; if (probe.quantity === 'velocity-y') return body.velocity.y; if (probe.quantity === 'speed') return Math.hypot(body.velocity.x, body.velocity.y); if (probe.quantity === 'momentum') return Number.isFinite(body.mass) ? body.mass * Math.hypot(body.velocity.x, body.velocity.y) : null; if (probe.quantity === 'angle') return body.angle; if (probe.quantity === 'angular-velocity') return body.angularVelocity; return null; }
   };
 }
-
 function logicalPorts(definition) {
   const ports = definition?.ports ?? [];
   const seen = new Set(), out = [];
@@ -105,7 +112,31 @@ function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
   const roots = [...new Set([...parent.keys()].map(find))]; if (!groundRoot && roots.length) groundRoot = roots[0];
   const nodeNames = new Map(); let nodeCounter = 1; if (groundRoot) nodeNames.set(groundRoot, '0');
   for (const root of roots) if (!nodeNames.has(root)) nodeNames.set(root, `n${nodeCounter++}`);
-  const nodeFor = (part, index, fallback) => { const ports = logicalPorts(defs.get(part.partId)); const port = ports[index]; return port ? nodeNames.get(find(key(part.instanceId, port.id))) : (part.properties?.[fallback] ?? null); };
+  const nodeFor = (part, index, fallback) => { const explicit = part.properties?.[fallback]; if (explicit !== undefined && explicit !== null && explicit !== '') return explicit; const ports = logicalPorts(defs.get(part.partId)); const port = ports[index]; return port ? nodeNames.get(find(key(part.instanceId, port.id))) : null; };
+  const dynamic = scene.parts.some(part => /capacitor|inductor|diode/i.test(part.partId));
+
+  if (dynamic) {
+    const transient = new TransientCircuit({ dt: scene.simulation?.dt ?? 1e-4 });
+    for (const part of scene.parts) {
+      const id = alias(part.partId), p = part.properties ?? {}; const a = nodeFor(part, 0, 'nodeA') ?? p.from ?? '0'; const b = nodeFor(part, 1, 'nodeB') ?? p.to ?? part.instanceId;
+      if (id.includes('resistor')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1000));
+      else if (id.includes('battery') || id.includes('voltage-source')) transient.voltageSource(part.instanceId, a, b, Number(p.voltage ?? 9));
+      else if (id.includes('current-source')) transient.currentSource(part.instanceId, a, b, Number(p.current ?? 0.001));
+      else if (id.includes('capacitor')) { const capacitance=Number(p.capacitance ?? 1e-6); const initialVoltage=Number(p.initialVoltage ?? (Number.isFinite(Number(p.charge)) ? Number(p.charge)/capacitance : 0)); transient.capacitor(part.instanceId, a, b, capacitance, { initialVoltage }); }
+      else if (id.includes('inductor')) transient.inductor(part.instanceId, a, b, Number(p.inductance ?? 1e-3), { initialCurrent: Number(p.initialCurrent ?? 0) });
+      else if (id.includes('diode')) transient.diode(part.instanceId, a, b, { saturationCurrent: Number(p.saturationCurrent ?? 1e-12), ideality: Number(p.ideality ?? 1), thermalVoltage: Number(p.thermalVoltage ?? 0.02585) });
+      else if (id.includes('switch') || id.includes('pushmake') || id.includes('pushbreak')) transient.resistor(part.instanceId, a, b, (p.closed ?? p.on ?? !id.includes('pushbreak')) ? 1e-9 : 1e15);
+      else if (id.includes('lamp')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 100));
+      else if (id.includes('ammeter')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e-6));
+      else if (id.includes('voltmeter')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e9));
+    }
+    const state = () => result;
+    return {
+      step: dt => { result = transient.step(dt); return result; }, snapshot: state,
+      measure(probe) { if (probe.quantity === 'voltage') return result.nodeVoltages?.[probe.node ?? probe.instanceId] ?? null; if (probe.quantity === 'current') return result.branchCurrents?.[probe.instanceId] ?? null; return null; }
+    };
+  }
+
   const solve = () => {
     const net = new CircuitNetwork();
     for (const part of scene.parts) {
@@ -124,7 +155,6 @@ function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
   return { step: () => { try { return solve(); } catch (error) { return result = { error: error.message, nodeVoltages: { 0: 0 }, branchCurrents: {} }; } }, snapshot: () => result,
     measure(probe) { if (probe.quantity === 'voltage') return result.nodeVoltages?.[probe.node ?? probe.instanceId] ?? null; if (probe.quantity === 'current') return result.branchCurrents?.[probe.instanceId] ?? null; return null; } };
 }
-
 function segmentFromPart(part, defaultLength = 4) {
   const p = part.properties ?? {}; const length = Number(p.length ?? p.height ?? defaultLength); const angle = (part.transform.rotation ?? 0) * Math.PI / 180; const dx = Math.cos(angle) * length / 2, dy = Math.sin(angle) * length / 2; const c = part.transform.position;
   return [{ x: c.x - dx, y: c.y - dy }, { x: c.x + dx, y: c.y + dy }];
@@ -134,6 +164,8 @@ function opticsAdapter(scene) {
   for (const part of scene.parts) {
     const id = alias(part.partId); const p = part.properties ?? {};
     if (id.includes('ray-source') || id.endsWith('.ray') || id.includes('ray-box')) source = { origin: { ...part.transform.position }, direction: { x: Number(p.directionX ?? 1), y: Number(p.directionY ?? 0) } };
+    else if (id.includes('spherical-mirror')) rayScene.addSphericalMirror(part.instanceId, { center: { ...part.transform.position }, radius: Number(p.radius ?? 1) });
+    else if (id.includes('spherical-interface') || id.includes('glass-sphere')) rayScene.addSphericalInterface(part.instanceId, { center: { ...part.transform.position }, radius: Number(p.radius ?? 1), nInside: Number(p.nInside ?? p.refractiveIndex ?? 1.5), nOutside: Number(p.nOutside ?? 1) });
     else if (id.includes('mirror')) { const [a, b] = segmentFromPart(part); rayScene.addMirror(part.instanceId, a, b); }
     else if (id.includes('screen')) { const [a, b] = segmentFromPart(part); rayScene.addScreen(part.instanceId, a, b); }
     else if (id.includes('interface') || id.includes('transparent')) { const [a, b] = segmentFromPart(part); rayScene.addInterface(part.instanceId, a, b, { nLeft: Number(p.nLeft ?? p.refractiveIndex1 ?? 1), nRight: Number(p.nRight ?? p.refractiveIndex ?? 1.5) }); }
@@ -147,9 +179,16 @@ function opticsAdapter(scene) {
 function wavesAdapter(scene) {
   const space = scene.parts.find(p => alias(p.partId).includes('space')) ?? scene.parts[0]; const p = space?.properties ?? {}; const sim = scene.simulation ?? {};
   const width = Math.max(3, Math.round(Number(p.width ?? 41))), height = Math.max(3, Math.round(Number(p.height ?? 31))), dx = Number(p.dx ?? 1), waveSpeed = Number(sim.waveSpeed ?? p.waveSpeed ?? 1); const dt = Number(sim.dt ?? 0.25);
-  const grid = new WaveGrid2D({ width, height, dx, dt, waveSpeed, damping: Number(p.damping ?? 0.002), boundary: p.boundary ?? 'fixed' });
+  const rawMap = Array.isArray(p.waveSpeedMap) ? p.waveSpeedMap : null;
+  const grid = new WaveGrid2D({ width, height, dx, dt, waveSpeed, waveSpeedMap: rawMap, damping: Number(p.damping ?? 0.002), boundary: p.boundary ?? 'fixed', absorbingLayers: Number(p.absorbingLayers ?? 0), absorbingStrength: Number(p.absorbingStrength ?? 0.2) });
+  for (const part of scene.parts) {
+    const id=alias(part.partId), q=part.properties??{};
+    if(id.includes('medium-region')) grid.setWaveSpeedRegion({x0:Math.round(q.x0??part.transform.position.x),y0:Math.round(q.y0??part.transform.position.y),x1:Math.round(q.x1??((q.x0??part.transform.position.x)+(q.width??1))),y1:Math.round(q.y1??((q.y0??part.transform.position.y)+(q.height??1))),waveSpeed:Number(q.waveSpeed??waveSpeed)});
+    if(id.includes('obstacle')) { const cx=Math.round(part.transform.position.x),cy=Math.round(part.transform.position.y),rw=Math.max(1,Math.round(q.width??1)),rh=Math.max(1,Math.round(q.height??1)); for(let y=cy-Math.floor(rh/2);y<=cy+Math.floor((rh-1)/2);y++)for(let x=cx-Math.floor(rw/2);x<=cx+Math.floor((rw-1)/2);x++)if(x>=0&&x<width&&y>=0&&y<height)grid.addObstacle(x,y); }
+  }
   const sources = scene.parts.filter(x => alias(x.partId).includes('source')).map(source => ({ x: Math.max(1, Math.min(width - 2, Math.round(source.transform.position.x))), y: Math.max(1, Math.min(height - 2, Math.round(source.transform.position.y))), amplitude: Number(source.properties?.amplitude ?? 1), frequency: Number(source.properties?.frequency ?? 1) }));
   const step = () => { grid.step({ sources: sources.map(s => ({ x: s.x, y: s.y, value: t => s.amplitude * Math.sin(2 * Math.PI * s.frequency * t) })) }); return snapshot(); };
-  const snapshot = () => ({ width, height, time: grid.time, values: Array.from(grid.current) });
-  return { step, snapshot, measure(probe) { if (probe.quantity !== 'displacement') return null; const x = Math.max(0, Math.min(width - 1, Math.round(probe.x ?? width / 2))), y = Math.max(0, Math.min(height - 1, Math.round(probe.y ?? height / 2))); return grid.sample(x, y); } };
+  const snapshot = () => ({ width, height, time: grid.time, values: Array.from(grid.current), energy: grid.energy() });
+  return { step, snapshot, measure(probe) { if (probe.quantity === 'energy') return grid.energy(); if (probe.quantity !== 'displacement') return null; const x = Math.max(0, Math.min(width - 1, Math.round(probe.x ?? width / 2))), y = Math.max(0, Math.min(height - 1, Math.round(probe.y ?? height / 2))); return grid.sample(x, y); } };
 }
+

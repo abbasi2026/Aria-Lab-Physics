@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "aria.stage5.spherical-refraction",
+  "title": "شکست نور در سطح کروی",
+  "titleFa": "شکست نور در سطح کروی",
+  "domain": "optics",
+  "simulation": {
+    "dt": 0.01,
+    "timeScale": 1,
+    "gravity": {
+      "x": 0,
+      "y": -9.81
+    }
+  },
+  "parts": [
+    {
+      "instanceId": "ray",
+      "partId": "optics.ray-source",
+      "transform": {
+        "position": {
+          "x": -4,
+          "y": 0.45
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "directionX": 1,
+        "directionY": 0
+      }
+    },
+    {
+      "instanceId": "sphere",
+      "partId": "aria.optics.spherical-interface",
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "radius": 1.5,
+        "nInside": 1.5,
+        "nOutside": 1
+      }
+    },
+    {
+      "instanceId": "screen",
+      "partId": "optics.screen",
+      "transform": {
+        "position": {
+          "x": 4,
+          "y": 0
+        },
+        "rotation": 90,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "length": 6
+      }
+    }
+  ],
+  "connections": [],
+  "probes": [
+    {
+      "id": "interactions",
+      "quantity": "interaction-count"
+    }
+  ],
+  "metadata": {
+    "editorVersion": "stage5",
+    "stage": 5
+  }
+}

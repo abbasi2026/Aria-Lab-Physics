@@ -1,0 +1,26 @@
+[
+  {
+    "id": "stage6.rc-charge-guided",
+    "titleFa": "شارژ خازن در مدار RC",
+    "domain": "circuits",
+    "path": "/content/experiments/stage6/rc-charge-guided.json"
+  },
+  {
+    "id": "stage6.rotational-guided",
+    "titleFa": "گشتاور و حرکت دورانی",
+    "domain": "mechanics",
+    "path": "/content/experiments/stage6/rotational-guided.json"
+  },
+  {
+    "id": "stage6.spherical-refraction-guided",
+    "titleFa": "شکست نور در سطح کروی",
+    "domain": "optics",
+    "path": "/content/experiments/stage6/spherical-refraction-guided.json"
+  },
+  {
+    "id": "stage6.heterogeneous-wave-guided",
+    "titleFa": "موج در محیط ناهمگن",
+    "domain": "waves",
+    "path": "/content/experiments/stage6/heterogeneous-wave-guided.json"
+  }
+]

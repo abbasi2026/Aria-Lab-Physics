@@ -1,0 +1,104 @@
+{
+  "stage": 6,
+  "name": "Experiment Studio — Authoring, Guidance, Assessment & Grounded Coach",
+  "createdAt": "2026-08-20T13:56:30.161169+00:00",
+  "experimentSchema": "2.0.0",
+  "guidedExperiments": 4,
+  "stage6Tests": 19,
+  "regression": {
+    "goldenExperiments": 12,
+    "goldenCases": 17,
+    "stage3": 19,
+    "stage4": 12,
+    "stage5": 15,
+    "stage6": 19,
+    "webSmoke": "passed"
+  },
+  "files": [
+    {
+      "path": "packages/experiment-runtime/src/index.mjs",
+      "bytes": 17258,
+      "sha256": "ada2fa42a0a4560ad3697575ee39a7c4ba6053a8fce7f4056fbcbb13ba91a1ec"
+    },
+    {
+      "path": "datasets/experiments/experiment-schema-v2.json",
+      "bytes": 1955,
+      "sha256": "a9d3751e6eff026f56163f766e635fdf8379e0cdd4aec1f84dbaeb6b765637ee"
+    },
+    {
+      "path": "tools/experiment-validator/index.mjs",
+      "bytes": 1784,
+      "sha256": "733c332cd80f15d9962d0c908b59e6636e06f05b4cab6c22e5bc3e732177f28a"
+    },
+    {
+      "path": "apps/web/index.html",
+      "bytes": 4652,
+      "sha256": "bfc32654edc1004c049b7eb8a4b97e068ebf27debc453fbe83d001b8302741de"
+    },
+    {
+      "path": "apps/web/src/main.js",
+      "bytes": 28577,
+      "sha256": "98205bb287a9b68d699e24bd61a5c03da2770268501c2127d4d26fd2c4532ca0"
+    },
+    {
+      "path": "apps/web/styles.css",
+      "bytes": 13584,
+      "sha256": "f6ba1d986ec76aaeee6f12896d364bd7475f102cb2ae8b325bdf9278f422085e"
+    },
+    {
+      "path": "tests/physics/stage6/run-stage6-tests.mjs",
+      "bytes": 9536,
+      "sha256": "52f07439e22af962560e8f094d630b57b22696b5921b67f3296f5ec6dc959d93"
+    },
+    {
+      "path": "tests/smoke/run-web-smoke.mjs",
+      "bytes": 2543,
+      "sha256": "caedba8d24d802a62c6b7228708a0df894a3ef5ea6c545ca5ad1fa24fb28c55e"
+    },
+    {
+      "path": "docs/architecture/STAGE6_EXPERIMENT_AUTHORING_GUIDANCE.md",
+      "bytes": 3587,
+      "sha256": "bd10cb96349649d71f47f3d592c972891458301ef8ec03754d7c5a76a450577a"
+    },
+    {
+      "path": "docs/testing/STAGE_06_TEST_REPORT_FA.md",
+      "bytes": 720,
+      "sha256": "890c040bde11fdc11a0449cdddf5722f65acc53dcdfd9a866a3c41d19aa05b4a"
+    },
+    {
+      "path": "package.json",
+      "bytes": 997,
+      "sha256": "d06aa474ef5ebd56eed13ba61f59411138493fc9be104786ba4cc90fb4b26526"
+    },
+    {
+      "path": "content/experiments/stage6/index.json",
+      "bytes": 800,
+      "sha256": "b4b48651c84c7cbe875fc607770456cc8ae0ebdc91be70154a7eb1a5a5222737"
+    },
+    {
+      "path": "content/experiments/stage6/rc-charge-guided.json",
+      "bytes": 7192,
+      "sha256": "974a5e46e4d9aa0f6245153db5fa2a749254cc9f540ae4a39f49d8eb6802cf11"
+    },
+    {
+      "path": "content/experiments/stage6/rotational-guided.json",
+      "bytes": 6328,
+      "sha256": "0da5818a7a023ca11a447adb6d29b50d353a10c0d60619d20302e6e5a219e53a"
+    },
+    {
+      "path": "content/experiments/stage6/spherical-refraction-guided.json",
+      "bytes": 6487,
+      "sha256": "fedd2ddc2fb87be82e7384f9f81b6162981c5aebd4628eff073374e207c77c1e"
+    },
+    {
+      "path": "content/experiments/stage6/heterogeneous-wave-guided.json",
+      "bytes": 7784,
+      "sha256": "c35bf9e0631790ea81a2a33d2133a2a865372230221f85e73f258cb1e94354ee"
+    },
+    {
+      "path": "packages/scene-runtime/src/index.mjs",
+      "bytes": 17308,
+      "sha256": "d965cadfaed94de090e45e0efda2fc76c535489bce4c3089ea4fc6c06c4417c0"
+    }
+  ]
+}

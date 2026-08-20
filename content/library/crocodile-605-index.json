@@ -1,0 +1,5018 @@
+[
+  {
+    "id": "legacy.crocodile.circuits.555-oscillator-2",
+    "version": 1,
+    "title": "555 Oscillator 2",
+    "titleFa": "555 Oscillator 2",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/555 Oscillator 2.cxp",
+      "fileSize": 78599,
+      "sceneCount": 1,
+      "partCount": 19,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:4; electronics/resistor:2; presentation/grid:2; presentation/axis:2; electronics/capacitor:1; electronics/voltrail:1; electronics/spst:1; electronics/vzero:1; electronics/555-timer:1; electronics/signal-lamp:1; presentation/graph:1; presentation/cliprect:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.555-monostable",
+    "version": 1,
+    "title": "555 monostable",
+    "titleFa": "555 monostable",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/555 monostable.cxp",
+      "fileSize": 39033,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:2; electronics/diode:1; electronics/signal-lamp:1; electronics/spdt-relay:1; electronics/voltrail:1; electronics/pushmake:1; electronics/vzero:1; electronics/ecapacitor:1; electronics/555-timer:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.555-oscillator-1",
+    "version": 1,
+    "title": "555 oscillator 1",
+    "titleFa": "555 oscillator 1",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/555 oscillator 1.cxp",
+      "fileSize": 45450,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:4; electronics/green-led:1; electronics/red-led:1; electronics/555-timer:1; electronics/vzero:1; electronics/ecapacitor:1; electronics/voltrail:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.am-transmitter-receiver",
+    "version": 1,
+    "title": "AM Transmitter-Receiver",
+    "titleFa": "AM Transmitter-Receiver",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/AM Transmitter-Receiver.cxp",
+      "fileSize": 176397,
+      "sceneCount": 3,
+      "partCount": 13,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:5; electronics/capacitor:2; electronics/diode:2; electronics/vpulse:2; electronics/transformer:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.adder",
+    "version": 1,
+    "title": "Adder",
+    "titleFa": "Adder",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Adder.cxp",
+      "fileSize": 21381,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:2; electronics/red-led:2; electronics/latching-logic-input:2; electronics/and:1; electronics/xor:1; electronics/earth:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.basic-circuits",
+    "version": 1,
+    "title": "Basic circuits",
+    "titleFa": "Basic circuits",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Basic circuits.cxp",
+      "fileSize": 72355,
+      "sceneCount": 1,
+      "partCount": 29,
+      "instructionPageCount": 6,
+      "topClasses": "presentation/parttray/2d:3; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; electronics/pictorial-battery:1; electronics/pictorial-fuse:1; electronics/pictorial-spst:1; electronics/pictorial-vresistor:1; electronics/pictorial-resistor:1; electronics/pictorial-buzzer:1",
+      "intro": "In this kit you will compare pictures of simple electronic components with their circuit symbols."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.beating-soundwave",
+    "version": 1,
+    "title": "Beating soundwave",
+    "titleFa": "Beating soundwave",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Beating soundwave.cxp",
+      "fileSize": 36359,
+      "sceneCount": 3,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/vpulse:2; electronics/loudspeaker:1; electronics/earth:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.capacitor-discharging",
+    "version": 1,
+    "title": "Capacitor Discharging",
+    "titleFa": "Capacitor Discharging",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Capacitor Discharging.cxp",
+      "fileSize": 18122,
+      "sceneCount": 1,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/ecapacitor:1; electronics/resistor:1; electronics/pushmake:1; electronics/battery:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.charge-and-voltage",
+    "version": 1,
+    "title": "Charge and Voltage",
+    "titleFa": "Charge and Voltage",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Charge and Voltage.cxp",
+      "fileSize": 18416,
+      "sceneCount": 3,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:1; electronics/capacitor:1; electronics/vslide:1; electronics/vzero:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.counter-0-to-9",
+    "version": 1,
+    "title": "Counter - 0 to 9",
+    "titleFa": "Counter - 0 to 9",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Counter - 0 to 9.cxp",
+      "fileSize": 31641,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/latching-logic-input:3; electronics/earth:2; electronics/resistor:1; electronics/pushmake:1; electronics/decade-counter-bcd:1; electronics/decoder-4511:1; electronics/seven-segment-display:1; electronics/8-resistors:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.counter-0-to-99",
+    "version": 1,
+    "title": "Counter - 0 to 99",
+    "titleFa": "Counter - 0 to 99",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Counter - 0 to 99.cxp",
+      "fileSize": 55437,
+      "sceneCount": 3,
+      "partCount": 17,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/latching-logic-input:5; electronics/earth:2; electronics/decade-counter-bcd:2; electronics/decoder-4511:2; electronics/seven-segment-display:2; electronics/8-resistors:2; electronics/and:1; electronics/clock:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.current-voltage-graphs",
+    "version": 1,
+    "title": "Current-voltage graphs",
+    "titleFa": "Current-voltage graphs",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Current-voltage graphs.cxp",
+      "fileSize": 55863,
+      "sceneCount": 1,
+      "partCount": 24,
+      "instructionPageCount": 7,
+      "topClasses": "presentation/trace:4; presentation/grid:2; presentation/axis:2; electronics/terminalblock:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; electronics/vslide:1; electronics/vzero:1; electronics/ammeter:1",
+      "intro": "In this kit you will draw current-voltage graphs for different electrical components."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.darlington-pair",
+    "version": 1,
+    "title": "Darlington Pair",
+    "titleFa": "Darlington Pair",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Darlington Pair.cxp",
+      "fileSize": 24367,
+      "sceneCount": 1,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/npn:2; electronics/resistor:2; electronics/voltmeter:1; electronics/pushmake:1; electronics/signal-lamp:1; electronics/vzero:1; electronics/voltrail:1; electronics/ecapacitor:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.decade-counter",
+    "version": 1,
+    "title": "Decade Counter",
+    "titleFa": "Decade Counter",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Decade Counter.cxp",
+      "fileSize": 21083,
+      "sceneCount": 1,
+      "partCount": 19,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/logic-output:14; electronics/latching-logic-input:2; electronics/clock:1; electronics/decade-counter-bcd:1; electronics/decoder:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.dimmer-switch",
+    "version": 1,
+    "title": "Dimmer Switch",
+    "titleFa": "Dimmer Switch",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Dimmer Switch.cxp",
+      "fileSize": 14556,
+      "sceneCount": 1,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/voltmeter:2; electronics/signal-lamp:2; electronics/earth:2; electronics/vresistor:1; electronics/voltrail:1; electronics/vslide:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.doorbell",
+    "version": 1,
+    "title": "Doorbell",
+    "titleFa": "Doorbell",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Doorbell.cxp",
+      "fileSize": 7183,
+      "sceneCount": 1,
+      "partCount": 3,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/pictorial-pushmake:1; electronics/pictorial-battery-9v:1; electronics/pictorial-buzzer:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.electronic-die",
+    "version": 1,
+    "title": "Electronic Die",
+    "titleFa": "Electronic Die",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Electronic Die.cxp",
+      "fileSize": 42603,
+      "sceneCount": 1,
+      "partCount": 24,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:7; electronics/red-led:7; electronics/and:2; electronics/or:2; electronics/latching-logic-input:1; electronics/pushmake:1; electronics/clock:1; electronics/vzero:1; electronics/inverter:1; electronics/binary-counter-with-enable:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.fire-alarm",
+    "version": 1,
+    "title": "Fire Alarm",
+    "titleFa": "Fire Alarm",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Fire Alarm.cxp",
+      "fileSize": 107664,
+      "sceneCount": 2,
+      "partCount": 15,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/text:4; presentation/button:3; electronics/context-logic-input:2; electronics/or:1; electronics/context-logic-output:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.fridge",
+    "version": 1,
+    "title": "Fridge",
+    "titleFa": "Fridge",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Fridge.cxp",
+      "fileSize": 11921,
+      "sceneCount": 3,
+      "partCount": 3,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/pushbreak:1; electronics/battery:1; electronics/signal-lamp:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.ldr-and-thermistor",
+    "version": 1,
+    "title": "LDR and thermistor",
+    "titleFa": "LDR and thermistor",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/LDR and thermistor.cxp",
+      "fileSize": 83506,
+      "sceneCount": 1,
+      "partCount": 26,
+      "instructionPageCount": 6,
+      "topClasses": "presentation/spinbox:4; motion/origin:2; electronics/terminalblock:2; flowcharts/readprop:2; flowcharts/ci-setvar:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; electronics/thermistor:1; electronics/ldr-with-lamp:1",
+      "intro": "In this kit you will discover how the LDR (Light Dependent Resistor) and thermistor respond to changes in light and temperature."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.landing-light",
+    "version": 1,
+    "title": "Landing Light",
+    "titleFa": "Landing Light",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Landing Light.cxp",
+      "fileSize": 10266,
+      "sceneCount": 1,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/spdt:2; electronics/vzero:1; electronics/signal-lamp:1; electronics/voltrail:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.landing-light-2",
+    "version": 1,
+    "title": "Landing light 2",
+    "titleFa": "Landing light 2",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Landing light 2.cxp",
+      "fileSize": 64392,
+      "sceneCount": 2,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/text:4; presentation/button:3; electronics/context-logic-input:2; electronics/context-logic-output:1; electronics/xor:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.light-sensor-1",
+    "version": 1,
+    "title": "Light Sensor 1",
+    "titleFa": "Light Sensor 1",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Light Sensor 1.cxp",
+      "fileSize": 21285,
+      "sceneCount": 1,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:3; electronics/vresistor:1; electronics/red-led:1; electronics/npn:1; electronics/voltrail:1; electronics/ldr-with-lamp:1; electronics/vzero:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.light-sensor-2",
+    "version": 1,
+    "title": "Light Sensor 2",
+    "titleFa": "Light Sensor 2",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Light Sensor 2.cxp",
+      "fileSize": 27527,
+      "sceneCount": 3,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/signal-lamp:2; electronics/ammeter:2; electronics/battery:2; electronics/resistor:1; electronics/npn:1; electronics/pushmake:1; electronics/ldr-and-lamp:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.logic-gates",
+    "version": 1,
+    "title": "Logic Gates",
+    "titleFa": "Logic Gates",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Logic Gates.cxp",
+      "fileSize": 22074,
+      "sceneCount": 1,
+      "partCount": 14,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/logic-output:5; electronics/inverter:2; electronics/latching-logic-input:2; electronics/xor:1; electronics/nor:1; electronics/or:1; electronics/nand2:1; electronics/and:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.maze",
+    "version": 1,
+    "title": "Maze",
+    "titleFa": "Maze",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Maze.cxp",
+      "fileSize": 15283,
+      "sceneCount": 1,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/pushmake:5; electronics/battery:1; electronics/signal-lamp:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.noise",
+    "version": 1,
+    "title": "Noise",
+    "titleFa": "Noise",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Noise.cxp",
+      "fileSize": 73591,
+      "sceneCount": 3,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:3; electronics/voltrail:1; electronics/vzero:1; electronics/capacitor:1; electronics/loudspeaker:1; electronics/555-timer:1; electronics/vresistor:1; electronics/spst:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.ohm-s-law",
+    "version": 1,
+    "title": "Ohm's law",
+    "titleFa": "Ohm's law",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Ohm's law.cxp",
+      "fileSize": 66316,
+      "sceneCount": 1,
+      "partCount": 26,
+      "instructionPageCount": 7,
+      "topClasses": "electronics/resistor:5; presentation/trace:4; presentation/grid:2; presentation/axis:2; electronics/terminalblock:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; presentation/graph:1; presentation/cliprect:1",
+      "intro": "In this kit you will learn how the current through a resistor is related to the potential difference across the resistor."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.ohms-law",
+    "version": 1,
+    "title": "Ohms Law",
+    "titleFa": "Ohms Law",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Ohms Law.cxp",
+      "fileSize": 16986,
+      "sceneCount": 1,
+      "partCount": 8,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:3; electronics/ammeter:3; electronics/vslide:1; electronics/vzero:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.operational-amplifier-saturation",
+    "version": 1,
+    "title": "Operational Amplifier - Saturation",
+    "titleFa": "Operational Amplifier - Saturation",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Operational Amplifier - Saturation.cxp",
+      "fileSize": 57451,
+      "sceneCount": 3,
+      "partCount": 6,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:2; electronics/vzero:1; electronics/opamp:1; presentation/graph:1; electronics/vpulse:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.operational-amplifier",
+    "version": 1,
+    "title": "Operational Amplifier",
+    "titleFa": "Operational Amplifier",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Operational Amplifier.cxp",
+      "fileSize": 24211,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:4; electronics/voltrail:2; electronics/voltmeter:2; electronics/vzero:1; electronics/opamp:1; electronics/potentiometer:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.overheating-alarm",
+    "version": 1,
+    "title": "Overheating Alarm",
+    "titleFa": "Overheating Alarm",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Overheating Alarm.cxp",
+      "fileSize": 112674,
+      "sceneCount": 3,
+      "partCount": 28,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:4; presentation/trace:4; motion/origin:3; presentation/grid:2; presentation/axis:2; electronics/buzzer:1; electronics/latching-logic-input:1; electronics/vresistor:1; electronics/vzero:1; electronics/voltrail:1; electronics/spst:1; electronics/thermistor:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.parallel-circuits",
+    "version": 1,
+    "title": "Parallel circuits",
+    "titleFa": "Parallel circuits",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Parallel circuits.cxp",
+      "fileSize": 105828,
+      "sceneCount": 1,
+      "partCount": 23,
+      "instructionPageCount": 6,
+      "topClasses": "electronics/ammeter:6; electronics/voltmeter:4; electronics/signal-lamp:4; electronics/spst:4; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; electronics/battery:1",
+      "intro": "In this kit you will learn how current and voltage are distributed in parallel circuits."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.potential-divider",
+    "version": 1,
+    "title": "Potential Divider",
+    "titleFa": "Potential Divider",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Potential Divider.cxp",
+      "fileSize": 9811,
+      "sceneCount": 1,
+      "partCount": 4,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/vzero:1; electronics/voltmeter:1; electronics/voltrail:1; electronics/potentiometer:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.pressure-sensing-alarm-1",
+    "version": 1,
+    "title": "Pressure Sensing Alarm 1",
+    "titleFa": "Pressure Sensing Alarm 1",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Pressure Sensing Alarm 1.cxp",
+      "fileSize": 17256,
+      "sceneCount": 1,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/nand2:2; electronics/buzzer:1; electronics/inverter:1; electronics/spdt:1; electronics/vzero:1; electronics/resistor:1; electronics/voltrail:1; electronics/pushbreak:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.pressure-sensing-alarm-2",
+    "version": 1,
+    "title": "Pressure Sensing Alarm 2",
+    "titleFa": "Pressure Sensing Alarm 2",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Pressure Sensing Alarm 2.cxp",
+      "fileSize": 24187,
+      "sceneCount": 1,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/buzzer:1; electronics/vzero:1; electronics/pushbreak:1; electronics/npn:1; electronics/resistor:1; electronics/diode:1; electronics/spdt-relay:1; electronics/spst:1; electronics/voltrail:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.puzzle",
+    "version": 1,
+    "title": "Puzzle",
+    "titleFa": "Puzzle",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Puzzle.cxp",
+      "fileSize": 22138,
+      "sceneCount": 3,
+      "partCount": 8,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/spst:2; electronics/spdt:2; electronics/dpdt:1; electronics/dpst:1; electronics/signal-lamp:1; electronics/battery:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.relay",
+    "version": 1,
+    "title": "Relay",
+    "titleFa": "Relay",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Relay.cxp",
+      "fileSize": 29363,
+      "sceneCount": 1,
+      "partCount": 13,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:3; electronics/pushmake:2; electronics/voltrail:1; electronics/battery:1; electronics/buzzer:1; electronics/spdt-relay:1; electronics/diode:1; electronics/npn:1; electronics/vzero:1; electronics/vresistor:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.security-system",
+    "version": 1,
+    "title": "Security System",
+    "titleFa": "Security System",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Security System.cxp",
+      "fileSize": 122688,
+      "sceneCount": 1,
+      "partCount": 19,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/button:7; electronics/context-logic-input:5; electronics/context-logic-output:2; electronics/and:2; electronics/or:2; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.series-circuits-batteries",
+    "version": 1,
+    "title": "Series circuits (batteries)",
+    "titleFa": "Series circuits (batteries)",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Series circuits (batteries).cxp",
+      "fileSize": 54069,
+      "sceneCount": 1,
+      "partCount": 10,
+      "instructionPageCount": 5,
+      "topClasses": "electronics/battery:3; electronics/spdt:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; electronics/voltmeter:1",
+      "intro": "In this kit you will learn how potential difference changes when batteries are connected in series."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.series-circuits-lamps",
+    "version": 1,
+    "title": "Series circuits (lamps)",
+    "titleFa": "Series circuits (lamps)",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Series circuits (lamps).cxp",
+      "fileSize": 124957,
+      "sceneCount": 1,
+      "partCount": 28,
+      "instructionPageCount": 6,
+      "topClasses": "electronics/ammeter:6; electronics/signal-lamp:6; electronics/voltmeter:6; electronics/battery:3; electronics/spst:3; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1",
+      "intro": "In this kit you will learn how current and potential difference are distributed in series circuits."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.series-circuits-resistors",
+    "version": 1,
+    "title": "Series circuits (resistors)",
+    "titleFa": "Series circuits (resistors)",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Series circuits (resistors).cxp",
+      "fileSize": 106321,
+      "sceneCount": 1,
+      "partCount": 22,
+      "instructionPageCount": 5,
+      "topClasses": "electronics/resistor:9; electronics/battery:3; electronics/ammeter:3; electronics/spst:3; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1",
+      "intro": "In this kit you will learn how to calculate the total resistance of resistors in series."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.thyristor-controlling-motor",
+    "version": 1,
+    "title": "Thyristor Controlling Motor",
+    "titleFa": "Thyristor Controlling Motor",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Thyristor Controlling Motor.cxp",
+      "fileSize": 13313,
+      "sceneCount": 1,
+      "partCount": 6,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/motor:1; electronics/battery:1; electronics/pushbreak:1; electronics/pushmake:1; electronics/resistor:1; electronics/thyristor:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.torch-batteries-correct",
+    "version": 1,
+    "title": "Torch - Batteries Correct",
+    "titleFa": "Torch - Batteries Correct",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Torch - Batteries Correct.cxp",
+      "fileSize": 10891,
+      "sceneCount": 1,
+      "partCount": 6,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/pictorial-battery:4; electronics/pictorial-spst:1; electronics/pictorial-filament-lamp:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.torch-batteries-wrong",
+    "version": 1,
+    "title": "Torch - Batteries Wrong",
+    "titleFa": "Torch - Batteries Wrong",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Torch - Batteries Wrong.cxp",
+      "fileSize": 9943,
+      "sceneCount": 1,
+      "partCount": 6,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/pictorial-battery:4; electronics/pictorial-filament-lamp:1; electronics/pictorial-spst:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.traffic-lights-1",
+    "version": 1,
+    "title": "Traffic Lights 1",
+    "titleFa": "Traffic Lights 1",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Traffic Lights 1.cxp",
+      "fileSize": 27273,
+      "sceneCount": 1,
+      "partCount": 14,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:3; electronics/dtype-flipflop:2; electronics/inverter:2; electronics/xor:1; electronics/clock:1; electronics/earth:1; electronics/red-led:1; electronics/yellow-led:1; electronics/green-led:1; electronics/and:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.traffic-lights-2",
+    "version": 1,
+    "title": "Traffic Lights 2",
+    "titleFa": "Traffic Lights 2",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Traffic Lights 2.cxp",
+      "fileSize": 29238,
+      "sceneCount": 1,
+      "partCount": 16,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/latching-logic-input:3; electronics/resistor:3; electronics/jk-flipflop:2; electronics/inverter:2; electronics/clock:1; electronics/earth:1; electronics/red-led:1; electronics/yellow-led:1; electronics/green-led:1; electronics/and:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.transistor",
+    "version": 1,
+    "title": "Transistor",
+    "titleFa": "Transistor",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Transistor.cxp",
+      "fileSize": 25535,
+      "sceneCount": 1,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:5; electronics/voltmeter:1; electronics/battery:1; electronics/red-led:1; electronics/npn:1; electronics/spst:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.wheatstone-bridge",
+    "version": 1,
+    "title": "Wheatstone Bridge",
+    "titleFa": "Wheatstone Bridge",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/Wheatstone Bridge.cxp",
+      "fileSize": 16012,
+      "sceneCount": 1,
+      "partCount": 6,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/resistor:2; electronics/battery:1; electronics/ldr-with-lamp:1; electronics/vresistor:1; electronics/ammeter:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.x10-inverting-amplifier",
+    "version": 1,
+    "title": "x10 Inverting Amplifier",
+    "titleFa": "x10 Inverting Amplifier",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/x10 Inverting Amplifier.cxp",
+      "fileSize": 13329,
+      "sceneCount": 1,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/earth:2; electronics/resistor:2; electronics/voltmeter:1; electronics/vslide:1; electronics/opamp:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.circuits.x10-non-inverting-amplifier",
+    "version": 1,
+    "title": "x10 Non-Inverting Amplifier",
+    "titleFa": "x10 Non-Inverting Amplifier",
+    "domain": "circuits",
+    "category": "Circuits",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Circuits",
+      "file": "Circuits/x10 Non-Inverting Amplifier.cxp",
+      "fileSize": 13327,
+      "sceneCount": 1,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/earth:2; electronics/resistor:2; electronics/voltmeter:1; electronics/vslide:1; electronics/opamp:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.acceleration",
+    "version": 1,
+    "title": "Acceleration",
+    "titleFa": "Acceleration",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Acceleration.cxp",
+      "fileSize": 304024,
+      "sceneCount": 1,
+      "partCount": 26,
+      "instructionPageCount": 8,
+      "topClasses": "motion/metal-block2:6; presentation/trace:4; motion/origin:2; presentation/grid:2; presentation/axis:2; presentation/spinbox:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/ideal-inelastic-ground:1; presentation/graph:1",
+      "intro": "In this kit you will learn how acceleration can be found from a velocity-time graph."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.distance-time-graph-1",
+    "version": 1,
+    "title": "Distance-time graph 1",
+    "titleFa": "Distance-time graph 1",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Distance-time graph 1.cxp",
+      "fileSize": 41318,
+      "sceneCount": 3,
+      "partCount": 22,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; presentation/text:3; presentation/grid:2; presentation/axis:2; motion/cart:1; motion/ideal-inelastic-ground:1; presentation/spinbox:1; presentation/graph:1; presentation/cliprect:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.distance-time-graph-2",
+    "version": 1,
+    "title": "Distance-time graph 2",
+    "titleFa": "Distance-time graph 2",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Distance-time graph 2.cxp",
+      "fileSize": 42910,
+      "sceneCount": 3,
+      "partCount": 23,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; presentation/text:3; presentation/spinbox:2; presentation/grid:2; presentation/axis:2; motion/cart:1; motion/ideal-inelastic-ground:1; presentation/graph:1; presentation/cliprect:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.distance-time-graph-3",
+    "version": 1,
+    "title": "Distance-time graph 3",
+    "titleFa": "Distance-time graph 3",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Distance-time graph 3.cxp",
+      "fileSize": 25080,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; motion/space:1; motion/cart:1; motion/ideal-inelastic-ground:1; presentation/graph:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.distance-time-graphs",
+    "version": 1,
+    "title": "Distance-time graphs",
+    "titleFa": "Distance-time graphs",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Distance-time graphs.cxp",
+      "fileSize": 307099,
+      "sceneCount": 1,
+      "partCount": 25,
+      "instructionPageCount": 11,
+      "topClasses": "motion/metal-block2:6; presentation/trace:4; motion/origin:2; presentation/grid:2; presentation/axis:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/ideal-inelastic-ground:1; presentation/graph:1",
+      "intro": "In this kit you will learn about the shapes of distance-time graphs for stationary and moving bodies."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.speed-time-graph-1",
+    "version": 1,
+    "title": "Speed-time graph 1",
+    "titleFa": "Speed-time graph 1",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Speed-time graph 1.cxp",
+      "fileSize": 40069,
+      "sceneCount": 3,
+      "partCount": 22,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; presentation/text:3; presentation/grid:2; presentation/axis:2; motion/cart:1; motion/ideal-inelastic-ground:1; presentation/spinbox:1; presentation/graph:1; presentation/cliprect:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.speed-time-graph-2",
+    "version": 1,
+    "title": "Speed-time graph 2",
+    "titleFa": "Speed-time graph 2",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Speed-time graph 2.cxp",
+      "fileSize": 42471,
+      "sceneCount": 3,
+      "partCount": 23,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; presentation/text:3; presentation/spinbox:2; presentation/grid:2; presentation/axis:2; motion/cart:1; motion/ideal-inelastic-ground:1; presentation/graph:1; presentation/cliprect:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.describing-motion.velocity-time-graphs",
+    "version": 1,
+    "title": "Velocity-time graphs",
+    "titleFa": "Velocity-time graphs",
+    "domain": "mechanics",
+    "category": "Describing Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Describing Motion",
+      "file": "Describing Motion/Velocity-time graphs.cxp",
+      "fileSize": 303631,
+      "sceneCount": 1,
+      "partCount": 24,
+      "instructionPageCount": 6,
+      "topClasses": "motion/metal-block2:6; presentation/trace:4; motion/origin:2; presentation/grid:2; presentation/axis:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/ideal-inelastic-ground:1; presentation/parttray/2d:1; presentation/graph:1",
+      "intro": "In this kit you will learn about the shapes of velocity-time graphs for bodies moving with constant velocity."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.ac-rectifier-1",
+    "version": 1,
+    "title": "AC Rectifier 1",
+    "titleFa": "AC Rectifier 1",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/AC Rectifier 1.cxp",
+      "fileSize": 29308,
+      "sceneCount": 1,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/diode:4; electronics/earth:1; electronics/voltmeter:1; electronics/resistor:1; electronics/vpulse:1; presentation/graph:1; motion/origin:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.ac-rectifier-2",
+    "version": 1,
+    "title": "AC Rectifier 2",
+    "titleFa": "AC Rectifier 2",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/AC Rectifier 2.cxp",
+      "fileSize": 33476,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/diode:4; electronics/earth:1; electronics/voltmeter:1; electronics/resistor:1; electronics/vpulse:1; electronics/ecapacitor:1; presentation/graph:1; motion/origin:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.ac-rectifier-3",
+    "version": 1,
+    "title": "AC Rectifier 3",
+    "titleFa": "AC Rectifier 3",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/AC Rectifier 3.cxp",
+      "fileSize": 37595,
+      "sceneCount": 1,
+      "partCount": 13,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/diode:4; electronics/vpulse:1; electronics/spst:1; electronics/transformer:1; electronics/ecapacitor:1; electronics/earth:1; electronics/voltmeter:1; electronics/resistor:1; presentation/graph:1; motion/origin:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.alternating-and-direct-current",
+    "version": 1,
+    "title": "Alternating and direct current",
+    "titleFa": "Alternating and direct current",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Alternating and direct current.cxp",
+      "fileSize": 45047,
+      "sceneCount": 1,
+      "partCount": 20,
+      "instructionPageCount": 3,
+      "topClasses": "presentation/trace:4; presentation/grid:2; presentation/axis:2; electronics/voltmeter:2; electronics/spst:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; presentation/graph:1; presentation/cliprect:1; electronics/battery:1",
+      "intro": "In this kit you will learn the difference between a.c. and d.c."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.cost-of-energy",
+    "version": 1,
+    "title": "Cost of energy",
+    "titleFa": "Cost of energy",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Cost of energy.cxp",
+      "fileSize": 846821,
+      "sceneCount": 1,
+      "partCount": 276,
+      "instructionPageCount": 8,
+      "topClasses": "flowcharts/stop:37; flowcharts/on-event:34; flowcharts/action:34; motion/origin:21; presentation/spinbox:21; presentation/image:19; electronics/resistor:17; electronics/earth:17; electronics/spst:17; presentation/editbox:8; flowcharts/setprop:5; flowcharts/ci-setvar:5",
+      "intro": "In this kit you will find out how much electrical energy is used in common household appliances and how much this energy costs."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.electrical-power",
+    "version": 1,
+    "title": "Electrical power",
+    "titleFa": "Electrical power",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Electrical power.cxp",
+      "fileSize": 297478,
+      "sceneCount": 1,
+      "partCount": 114,
+      "instructionPageCount": 7,
+      "topClasses": "flowcharts/on-event:16; flowcharts/stop:16; flowcharts/action:16; motion/origin:9; presentation/image:9; electronics/resistor:8; electronics/earth:8; presentation/spinbox:8; electronics/spst:8; electronics/ammeter:2; presentation/parttray/2d:1; presentation/instructions:1",
+      "intro": "In this kit you will learn how to calculate the power of an electrical appliance from the potential difference across it and the current through it."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.electromechanics",
+    "version": 1,
+    "title": "Electromechanics",
+    "titleFa": "Electromechanics",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Electromechanics.cxp",
+      "fileSize": 20690,
+      "sceneCount": 3,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "electronics/motor:2; electronics/battery:1; electronics/pushmake:1; motion/double-gear:1; motion/connected-electric-motor:1; motion/flywheel-and-gear:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.fuses",
+    "version": 1,
+    "title": "Fuses",
+    "titleFa": "Fuses",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Fuses.cxp",
+      "fileSize": 197857,
+      "sceneCount": 1,
+      "partCount": 81,
+      "instructionPageCount": 6,
+      "topClasses": "electronics/spst:8; flowcharts/on-event:8; flowcharts/stop:8; flowcharts/action:8; electronics/terminalblock:8; electronics/fuse:4; electronics/voltrail:4; electronics/ammeter:4; motion/origin:4; electronics/resistor:4; electronics/earth:4; presentation/spinbox:4",
+      "intro": "In this kit you will learn how to choose the right fuse to protect an electrical appliance and its users from short circuits or surges of current."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.high-power-appliances",
+    "version": 1,
+    "title": "High power appliances",
+    "titleFa": "High power appliances",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/High power appliances.cxp",
+      "fileSize": 509697,
+      "sceneCount": 1,
+      "partCount": 159,
+      "instructionPageCount": 5,
+      "topClasses": "flowcharts/stop:19; flowcharts/on-event:16; flowcharts/action:16; motion/origin:12; presentation/spinbox:12; presentation/image:10; electronics/resistor:8; electronics/earth:8; electronics/spst:8; presentation/editbox:8; flowcharts/setprop:5; flowcharts/ci-setvar:5",
+      "intro": "In this kit you will learn how the power usage of electrical appliances is calculated and that the total cost depends on which appliances we use and for how long."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.low-power-appliances",
+    "version": 1,
+    "title": "Low power appliances",
+    "titleFa": "Low power appliances",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Low power appliances.cxp",
+      "fileSize": 606556,
+      "sceneCount": 1,
+      "partCount": 172,
+      "instructionPageCount": 5,
+      "topClasses": "flowcharts/stop:21; flowcharts/on-event:18; flowcharts/action:18; motion/origin:13; presentation/spinbox:13; presentation/image:11; electronics/resistor:9; electronics/earth:9; electronics/spst:9; presentation/editbox:8; flowcharts/setprop:5; flowcharts/ci-setvar:5",
+      "intro": "In this kit you will learn how the power usage of electrical appliances is calculated and that the total cost depends on which appliances we use and for how long."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.model-car-design",
+    "version": 1,
+    "title": "Model car design",
+    "titleFa": "Model car design",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Model car design.cxp",
+      "fileSize": 33814,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; motion/flywheel-and-gear:2; electronics/dpdt:1; electronics/battery:1; electronics/spst:1; motion/double-gear:1; motion/connected-electric-motor:1; electronics/motor:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.transformers",
+    "version": 1,
+    "title": "Transformers",
+    "titleFa": "Transformers",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Transformers.cxp",
+      "fileSize": 138304,
+      "sceneCount": 1,
+      "partCount": 42,
+      "instructionPageCount": 3,
+      "topClasses": "presentation/text:11; electronics/transformer:10; electronics/terminalblock:8; electronics/voltmeter:4; presentation/parttray/2d:2; electronics/resistor:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; electronics/signal-lamp:1; electronics/vpulse:1",
+      "intro": "In this kit you will discover how transformers are used to change the voltage in power lines to save energy."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.electrical-energy.transforming-energy",
+    "version": 1,
+    "title": "Transforming energy",
+    "titleFa": "Transforming energy",
+    "domain": "circuits",
+    "category": "Electrical Energy",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Electrical Energy",
+      "file": "Electrical Energy/Transforming energy.cxp",
+      "fileSize": 460617,
+      "sceneCount": 1,
+      "partCount": 164,
+      "instructionPageCount": 5,
+      "topClasses": "flowcharts/on-event:24; flowcharts/stop:24; flowcharts/action:24; motion/origin:13; electronics/resistor:12; electronics/earth:12; presentation/spinbox:12; presentation/image:12; electronics/spst:12; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1",
+      "intro": "In this kit you will explore examples of energy transformation in electrical appliances."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.change-in-energy-1",
+    "version": 1,
+    "title": "Change in energy 1",
+    "titleFa": "Change in energy 1",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Change in energy 1.cxp",
+      "fileSize": 48118,
+      "sceneCount": 3,
+      "partCount": 31,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:8; motion/origin:4; presentation/grid:4; presentation/axis:4; presentation/text:3; presentation/graph:2; presentation/cliprect:2; motion/ideal-inelastic-slope:1; motion/ideal-inelastic-block:1; presentation/pause:1; presentation/reload:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.change-in-energy-2",
+    "version": 1,
+    "title": "Change in energy 2",
+    "titleFa": "Change in energy 2",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Change in energy 2.cxp",
+      "fileSize": 26863,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; presentation/graph:2; motion/concrete-ball:1; motion/ideal-elastic-ground:1; presentation/image:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.change-in-momentum",
+    "version": 1,
+    "title": "Change in momentum",
+    "titleFa": "Change in momentum",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Change in momentum.cxp",
+      "fileSize": 52912,
+      "sceneCount": 1,
+      "partCount": 18,
+      "instructionPageCount": 6,
+      "topClasses": "presentation/trace:4; presentation/grid:2; presentation/axis:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; presentation/graph:1; presentation/cliprect:1; presentation/spinbox:1; motion/origin:1; motion/ideal-inelastic-ground:1",
+      "intro": "In this kit you will learn how momentum and force are related."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.conservation-of-momentum",
+    "version": 1,
+    "title": "Conservation of momentum",
+    "titleFa": "Conservation of momentum",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Conservation of momentum.cxp",
+      "fileSize": 100083,
+      "sceneCount": 1,
+      "partCount": 26,
+      "instructionPageCount": 11,
+      "topClasses": "motion/ideal-elastic-ball:5; presentation/trace:4; presentation/spinbox:3; motion/origin:2; presentation/grid:2; presentation/axis:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/ideal-inelastic-ground:1",
+      "intro": "In this kit you will learn that momentum is conserved in a perfectly elastic collision."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.definition-of-momentum",
+    "version": 1,
+    "title": "Definition of momentum",
+    "titleFa": "Definition of momentum",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Definition of momentum.cxp",
+      "fileSize": 49731,
+      "sceneCount": 1,
+      "partCount": 15,
+      "instructionPageCount": 7,
+      "topClasses": "motion/ideal-elastic-ball:4; presentation/spinbox:3; motion/origin:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/ideal-inelastic-ground:1; presentation/parttray/2d:1",
+      "intro": "In this kit you will be introduced to the idea of momentum."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.elastic-potential-energy",
+    "version": 1,
+    "title": "Elastic potential energy",
+    "titleFa": "Elastic potential energy",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Elastic potential energy.cxp",
+      "fileSize": 52719,
+      "sceneCount": 1,
+      "partCount": 18,
+      "instructionPageCount": 5,
+      "topClasses": "presentation/trace:4; presentation/grid:2; presentation/axis:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; presentation/graph:1; presentation/cliprect:1; motion/origin:1; motion/ideal-inelastic-ground:1; motion/ideal-elastic-ball:1",
+      "intro": "In this kit you will learn that elastic potential energy increases as work is done to change a body's shape."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.energy-changes",
+    "version": 1,
+    "title": "Energy changes",
+    "titleFa": "Energy changes",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Energy changes.cxp",
+      "fileSize": 82646,
+      "sceneCount": 3,
+      "partCount": 31,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:8; motion/origin:4; presentation/grid:4; presentation/axis:4; motion/ideal-elastic-ball:3; presentation/spinbox:3; presentation/graph:2; presentation/cliprect:2; motion/ideal-elastic-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.gravitational-potential-energy",
+    "version": 1,
+    "title": "Gravitational potential energy",
+    "titleFa": "Gravitational potential energy",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Gravitational potential energy.cxp",
+      "fileSize": 43569,
+      "sceneCount": 3,
+      "partCount": 23,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; presentation/text:3; presentation/spinbox:2; presentation/grid:2; presentation/axis:2; motion/ideal-inelastic-ground:1; motion/ideal-inelastic-ball:1; presentation/graph:1; presentation/cliprect:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.hooke-s-law",
+    "version": 1,
+    "title": "Hooke's Law",
+    "titleFa": "Hooke's Law",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Hooke's Law.cxp",
+      "fileSize": 24234,
+      "sceneCount": 3,
+      "partCount": 8,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; motion/ideal-elastic-ground:1; presentation/graph:1; motion/metal-block:1; presentation/text:1; presentation/spinbox:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.ideal-elastic-collision",
+    "version": 1,
+    "title": "Ideal elastic collision",
+    "titleFa": "Ideal elastic collision",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Ideal elastic collision.cxp",
+      "fileSize": 53534,
+      "sceneCount": 3,
+      "partCount": 31,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:8; motion/origin:4; presentation/grid:4; presentation/axis:4; presentation/text:2; motion/cart:2; presentation/graph:2; presentation/cliprect:2; motion/ideal-inelastic-ground:1; presentation/pause:1; presentation/reload:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.ideal-inelastic-collision",
+    "version": 1,
+    "title": "Ideal inelastic collision",
+    "titleFa": "Ideal inelastic collision",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Ideal inelastic collision.cxp",
+      "fileSize": 53494,
+      "sceneCount": 3,
+      "partCount": 31,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:8; motion/origin:4; presentation/grid:4; presentation/axis:4; presentation/text:2; motion/cart:2; presentation/graph:2; presentation/cliprect:2; motion/ideal-inelastic-ground:1; presentation/pause:1; presentation/reload:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.kinetic-energy-changing-mass",
+    "version": 1,
+    "title": "Kinetic energy (changing mass)",
+    "titleFa": "Kinetic energy (changing mass)",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Kinetic energy (changing mass).cxp",
+      "fileSize": 298370,
+      "sceneCount": 1,
+      "partCount": 18,
+      "instructionPageCount": 7,
+      "topClasses": "motion/metal-block2:6; presentation/spinbox:4; motion/origin:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/concrete-ground:1; presentation/parttray/2d:1",
+      "intro": "In this kit you will learn that kinetic energy increases as the mass of a moving body increases."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.kinetic-energy-changing-speed",
+    "version": 1,
+    "title": "Kinetic energy (changing speed)",
+    "titleFa": "Kinetic energy (changing speed)",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Kinetic energy (changing speed).cxp",
+      "fileSize": 213814,
+      "sceneCount": 1,
+      "partCount": 9,
+      "instructionPageCount": 5,
+      "topClasses": "presentation/spinbox:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; motion/concrete-ground:1; motion/metal-block2:1",
+      "intro": "In this kit you will learn that kinetic energy increases as the speed of a moving body increases."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.kinetic-energy",
+    "version": 1,
+    "title": "Kinetic energy",
+    "titleFa": "Kinetic energy",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Kinetic energy.cxp",
+      "fileSize": 22688,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/spinbox:3; presentation/text:1; motion/space:1; motion/ideal-inelastic-ball:1; presentation/pause:1; presentation/reload:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.momentum-in-elastic-collisions",
+    "version": 1,
+    "title": "Momentum in elastic collisions",
+    "titleFa": "Momentum in elastic collisions",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Momentum in elastic collisions.cxp",
+      "fileSize": 38678,
+      "sceneCount": 3,
+      "partCount": 18,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; motion/ideal-elastic-ball:2; presentation/grid:2; presentation/axis:2; presentation/text:1; motion/ideal-inelastic-ground:1; presentation/graph:1; presentation/cliprect:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.momentum-in-inelastic-collisions",
+    "version": 1,
+    "title": "Momentum in inelastic collisions",
+    "titleFa": "Momentum in inelastic collisions",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Momentum in inelastic collisions.cxp",
+      "fileSize": 38656,
+      "sceneCount": 3,
+      "partCount": 18,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; presentation/grid:2; presentation/axis:2; presentation/text:1; motion/ideal-inelastic-ground:1; motion/basketball:1; motion/soccer-ball:1; presentation/graph:1; presentation/cliprect:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.momentum",
+    "version": 1,
+    "title": "Momentum",
+    "titleFa": "Momentum",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Momentum.cxp",
+      "fileSize": 22815,
+      "sceneCount": 3,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/spinbox:3; motion/space:1; motion/ideal-inelastic-ground:1; motion/cart:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.semi-elastic-collision",
+    "version": 1,
+    "title": "Semi-elastic collision",
+    "titleFa": "Semi-elastic collision",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Semi-elastic collision.cxp",
+      "fileSize": 54012,
+      "sceneCount": 3,
+      "partCount": 31,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:8; motion/origin:4; presentation/grid:4; presentation/axis:4; presentation/text:2; presentation/graph:2; presentation/cliprect:2; motion/cart:2; presentation/pause:1; presentation/reload:1; motion/ideal-inelastic-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.springs-energy",
+    "version": 1,
+    "title": "Springs - energy",
+    "titleFa": "Springs - energy",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Springs - energy.cxp",
+      "fileSize": 44391,
+      "sceneCount": 3,
+      "partCount": 35,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:12; presentation/grid:6; presentation/axis:6; motion/origin:3; presentation/graph:3; presentation/cliprect:3; motion/ideal-inelastic-ball:1; motion/ideal-elastic-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.energy-and-motion.work-done",
+    "version": 1,
+    "title": "Work done",
+    "titleFa": "Work done",
+    "domain": "mechanics",
+    "category": "Energy and Motion",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Energy and Motion",
+      "file": "Energy and Motion/Work done.cxp",
+      "fileSize": 92946,
+      "sceneCount": 1,
+      "partCount": 24,
+      "instructionPageCount": 5,
+      "topClasses": "presentation/spinbox:5; flowcharts/on-event:3; flowcharts/setprop:3; flowcharts/stop:3; flowcharts/readprop:2; presentation/instructions:1; presentation/text:1; motion/origin:1; motion/concrete-ground:1; motion/ideal-elastic-block:1; presentation/image:1; presentation/reload:1",
+      "intro": "In this kit you will learn how work done is calculated from the force applied to an object and the distance travelled in the direction of the force."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.balanced-forces",
+    "version": 1,
+    "title": "Balanced forces",
+    "titleFa": "Balanced forces",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Balanced forces.cxp",
+      "fileSize": 30582,
+      "sceneCount": 3,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/spinbox:2; presentation/text:1; motion/space:1; motion/ideal-inelastic-block:1; motion/ideal-inelastic-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.circular-motion-changing-mass",
+    "version": 1,
+    "title": "Circular motion (changing mass)",
+    "titleFa": "Circular motion (changing mass)",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Circular motion (changing mass).cxp",
+      "fileSize": 75544,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 6,
+      "topClasses": "motion/ideal-elastic-ball:4; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; presentation/spinbox:1; presentation/parttray/2d:1",
+      "intro": "In this kit you will learn that the centripetal force acting on an object in circular motion increases with the mass of the object."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.circular-motion-changing-radius",
+    "version": 1,
+    "title": "Circular motion (changing radius)",
+    "titleFa": "Circular motion (changing radius)",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Circular motion (changing radius).cxp",
+      "fileSize": 35462,
+      "sceneCount": 1,
+      "partCount": 8,
+      "instructionPageCount": 4,
+      "topClasses": "presentation/spinbox:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; motion/ideal-elastic-ball:1",
+      "intro": "In this kit you will learn that the centripetal force acting on an object in circular motion changes with increasing distance between the object and its centre of motion."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.defining-the-newton",
+    "version": 1,
+    "title": "Defining the Newton",
+    "titleFa": "Defining the Newton",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Defining the Newton.cxp",
+      "fileSize": 46618,
+      "sceneCount": 3,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; motion/space:1; motion/brick:1; motion/wood-block:1; motion/concrete-ball:1; motion/metal-ball:1; presentation/text:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.forces-on-a-vehicle",
+    "version": 1,
+    "title": "Forces on a vehicle",
+    "titleFa": "Forces on a vehicle",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Forces on a vehicle.cxp",
+      "fileSize": 84527,
+      "sceneCount": 2,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; motion/concrete-ground:2; motion/rubber-block:2; presentation/text:2; presentation/spinbox:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.friction",
+    "version": 1,
+    "title": "Friction",
+    "titleFa": "Friction",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Friction.cxp",
+      "fileSize": 42102,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:5; motion/wood-ground:2; motion/wood-block:2; presentation/spinbox:2; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.gravity-and-weight",
+    "version": 1,
+    "title": "Gravity and weight",
+    "titleFa": "Gravity and weight",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Gravity and weight.cxp",
+      "fileSize": 627875,
+      "sceneCount": 3,
+      "partCount": 24,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:6; presentation/text:4; motion/space:3; motion/ideal-elastic-ground:3; presentation/image:3; motion/basketball:3; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.measuring-g",
+    "version": 1,
+    "title": "Measuring g",
+    "titleFa": "Measuring g",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Measuring g.cxp",
+      "fileSize": 28509,
+      "sceneCount": 3,
+      "partCount": 20,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:4; presentation/text:3; motion/origin:3; presentation/grid:2; presentation/axis:2; presentation/graph:1; presentation/cliprect:1; motion/ideal-inelastic-ground:1; motion/metal-ball:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.moving-sideways-and-downwards",
+    "version": 1,
+    "title": "Moving sideways and downwards",
+    "titleFa": "Moving sideways and downwards",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Moving sideways and downwards.cxp",
+      "fileSize": 31212,
+      "sceneCount": 3,
+      "partCount": 13,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/text:3; motion/ideal-inelastic-ball:2; motion/space:1; motion/ideal-inelastic-ground:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.moving-up-and-down",
+    "version": 1,
+    "title": "Moving up and down",
+    "titleFa": "Moving up and down",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Moving up and down.cxp",
+      "fileSize": 30569,
+      "sceneCount": 3,
+      "partCount": 21,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:4; presentation/text:3; motion/origin:3; presentation/grid:2; presentation/axis:2; presentation/graph:1; presentation/cliprect:1; motion/ideal-inelastic-ground:1; presentation/spinbox:1; motion/cricket-ball:1; presentation/reload:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.newton-s-first-law",
+    "version": 1,
+    "title": "Newton's first law",
+    "titleFa": "Newton's first law",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Newton's first law.cxp",
+      "fileSize": 101336,
+      "sceneCount": 1,
+      "partCount": 22,
+      "instructionPageCount": 5,
+      "topClasses": "flowcharts/on-event:4; flowcharts/setprop:4; flowcharts/stop:4; motion/origin:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/ideal-elastic-ball:1; motion/ideal-elastic-block:1; presentation/image:1; presentation/button:1",
+      "intro": "In this kit you will learn that, if no external resultant force is acting on a body, it will: if stationary; remain stationary if moving; keep moving at a constant speed in a straight line."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.newton-s-second-law",
+    "version": 1,
+    "title": "Newton's second law",
+    "titleFa": "Newton's second law",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Newton's second law.cxp",
+      "fileSize": 146914,
+      "sceneCount": 1,
+      "partCount": 36,
+      "instructionPageCount": 5,
+      "topClasses": "flowcharts/setprop:8; flowcharts/on-event:6; flowcharts/stop:6; motion/origin:3; presentation/spinbox:3; motion/ideal-elastic-block:2; presentation/image:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; presentation/button:1",
+      "intro": "In this kit you will learn that the heavier an object, the more force is needed to provide the same acceleration."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.newton-s-third-law",
+    "version": 1,
+    "title": "Newton's third law",
+    "titleFa": "Newton's third law",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Newton's third law.cxp",
+      "fileSize": 80727,
+      "sceneCount": 1,
+      "partCount": 10,
+      "instructionPageCount": 5,
+      "topClasses": "motion/cart:2; presentation/spinbox:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; motion/ideal-inelastic-ground:1",
+      "intro": "In this kit you will learn that whenever one object exerts a force on a second, the second object exerts an equal but opposite force on the first."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.pendulums-different-amplitudes",
+    "version": 1,
+    "title": "Pendulums - different amplitudes",
+    "titleFa": "Pendulums - different amplitudes",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Pendulums - different amplitudes.cxp",
+      "fileSize": 34504,
+      "sceneCount": 3,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "motion/metal-ball:4; motion/origin:3; motion/wood-ground:1; presentation/graph:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.pendulums-different-lengths",
+    "version": 1,
+    "title": "Pendulums - different lengths",
+    "titleFa": "Pendulums - different lengths",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Pendulums - different lengths.cxp",
+      "fileSize": 33513,
+      "sceneCount": 3,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "motion/metal-ball:4; motion/origin:3; presentation/graph:1; presentation/text:1; motion/wood-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.pendulums-different-masses",
+    "version": 1,
+    "title": "Pendulums - different masses",
+    "titleFa": "Pendulums - different masses",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Pendulums - different masses.cxp",
+      "fileSize": 33198,
+      "sceneCount": 3,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "motion/metal-ball:4; motion/origin:3; motion/wood-ground:1; presentation/graph:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.pendulums-velocity-and-displacement",
+    "version": 1,
+    "title": "Pendulums - velocity and displacement",
+    "titleFa": "Pendulums - velocity and displacement",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Pendulums - velocity and displacement.cxp",
+      "fileSize": 16187,
+      "sceneCount": 3,
+      "partCount": 6,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; presentation/graph:1; motion/ideal-inelastic-ball:1; motion/rubber-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.resultant-forces",
+    "version": 1,
+    "title": "Resultant forces",
+    "titleFa": "Resultant forces",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Resultant forces.cxp",
+      "fileSize": 64106,
+      "sceneCount": 1,
+      "partCount": 8,
+      "instructionPageCount": 5,
+      "topClasses": "motion/ideal-inelastic-block:3; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1",
+      "intro": "In this kit you will learn that a combination of unbalanced forces can be represented by a single force. This is known as the resultant force."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.shm",
+    "version": 1,
+    "title": "SHM",
+    "titleFa": "SHM",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/SHM.cxp",
+      "fileSize": 24660,
+      "sceneCount": 3,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; presentation/graph:2; motion/rubber-ground:1; motion/cart:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.springs-displacement-and-velocity",
+    "version": 1,
+    "title": "Springs - displacement and velocity",
+    "titleFa": "Springs - displacement and velocity",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Springs - displacement and velocity.cxp",
+      "fileSize": 23047,
+      "sceneCount": 3,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; presentation/graph:2; motion/ideal-elastic-ball:1; motion/ideal-inelastic-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.springs-forces",
+    "version": 1,
+    "title": "Springs - forces",
+    "titleFa": "Springs - forces",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Springs - forces.cxp",
+      "fileSize": 18007,
+      "sceneCount": 3,
+      "partCount": 6,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; motion/ideal-inelastic-ball:1; motion/ideal-elastic-ground:1; presentation/graph:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.springs-velocity-and-acceleration",
+    "version": 1,
+    "title": "Springs - velocity and acceleration",
+    "titleFa": "Springs - velocity and acceleration",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Springs - velocity and acceleration.cxp",
+      "fileSize": 21736,
+      "sceneCount": 3,
+      "partCount": 8,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; presentation/graph:3; motion/ideal-elastic-ball:1; motion/ideal-inelastic-ground:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.toppling-tractors",
+    "version": 1,
+    "title": "Toppling tractors",
+    "titleFa": "Toppling tractors",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Toppling tractors.cxp",
+      "fileSize": 131320,
+      "sceneCount": 1,
+      "partCount": 12,
+      "instructionPageCount": 7,
+      "topClasses": "motion/metal-block2:3; motion/origin:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/concrete-slope:1; presentation/spinbox:1",
+      "intro": "In this kit you will discover how the weight of a body acting about its centre of mass affects its stability."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.unequal-forces",
+    "version": 1,
+    "title": "Unequal forces",
+    "titleFa": "Unequal forces",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Unequal forces.cxp",
+      "fileSize": 85760,
+      "sceneCount": 1,
+      "partCount": 12,
+      "instructionPageCount": 7,
+      "topClasses": "presentation/spinbox:4; motion/cart:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; motion/ideal-inelastic-ground:1",
+      "intro": "In this kit you will learn that unbalanced forces produce an acceleration that is proportional to the unbalanced force."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.velocity-changes",
+    "version": 1,
+    "title": "Velocity changes",
+    "titleFa": "Velocity changes",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Velocity changes.cxp",
+      "fileSize": 72582,
+      "sceneCount": 3,
+      "partCount": 22,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; presentation/trace:4; presentation/spinbox:4; motion/ideal-elastic-ball:2; presentation/grid:2; presentation/axis:2; motion/space:1; motion/ideal-elastic-ground:1; presentation/graph:1; presentation/cliprect:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.force-and-acceleration.weight",
+    "version": 1,
+    "title": "Weight",
+    "titleFa": "Weight",
+    "domain": "mechanics",
+    "category": "Force and Acceleration",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Force and Acceleration",
+      "file": "Force and Acceleration/Weight.cxp",
+      "fileSize": 243560,
+      "sceneCount": 1,
+      "partCount": 21,
+      "instructionPageCount": 6,
+      "topClasses": "presentation/text:4; motion/origin:4; motion/ideal-inelastic-ground:3; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/parttray/2d:1; motion/tennis-ball:1; motion/golf-ball:1; motion/metal-ball2:1; motion/basketball:1; motion/soccer-ball:1",
+      "intro": "In this kit you will learn how the weight of an object is related to its mass."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.angles-of-reflection",
+    "version": 1,
+    "title": "Angles of reflection",
+    "titleFa": "Angles of reflection",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Angles of reflection.cxp",
+      "fileSize": 35359,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 5,
+      "topClasses": "presentation/parttray/2d:2; presentation/protractor:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/planeMirror:1; optics/rayBox:1",
+      "intro": "In this kit you will learn how rays of light are reflected in a plane mirror."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.binoculars",
+    "version": 1,
+    "title": "Binoculars",
+    "titleFa": "Binoculars",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Binoculars.cxp",
+      "fileSize": 330900,
+      "sceneCount": 3,
+      "partCount": 19,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/convexLens:4; optics/planeMirror:4; optics/aa-part:2; optics/farAxisObject:2; optics/opticsGraphic:2; presentation/image:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.box-of-light",
+    "version": 1,
+    "title": "Box of Light",
+    "titleFa": "Box of Light",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Box of Light.cxp",
+      "fileSize": 45494,
+      "sceneCount": 3,
+      "partCount": 243,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:232; motion/origin:4; optics/planeMirror:4; optics/opticalSpace:1; optics/aa-part:1; optics/rayBox:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.caustic-curve",
+    "version": 1,
+    "title": "Caustic Curve",
+    "titleFa": "Caustic Curve",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Caustic Curve.cxp",
+      "fileSize": 48107,
+      "sceneCount": 3,
+      "partCount": 206,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:198; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/concaveMirror:1; optics/rayBox:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.colour-mixing",
+    "version": 1,
+    "title": "Colour Mixing",
+    "titleFa": "Colour Mixing",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Colour Mixing.cxp",
+      "fileSize": 45612,
+      "sceneCount": 3,
+      "partCount": 110,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:46; optics/fadedPolygon:46; optics/torch:9; motion/origin:5; optics/opticalSpace:2; optics/aa-part:2",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.colours-of-light",
+    "version": 1,
+    "title": "Colours of Light",
+    "titleFa": "Colours of Light",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Colours of Light.cxp",
+      "fileSize": 45263,
+      "sceneCount": 3,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "waves/1d/wavespace/propagation:7; motion/origin:3; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.converging-lenses-1",
+    "version": 1,
+    "title": "Converging Lenses 1",
+    "titleFa": "Converging Lenses 1",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Converging Lenses 1.cxp",
+      "fileSize": 33735,
+      "sceneCount": 3,
+      "partCount": 93,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:81; motion/origin:4; optics/rayBox:3; optics/convexLens:3; optics/opticalSpace:1; optics/aa-part:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.converging-lenses-2",
+    "version": 1,
+    "title": "Converging Lenses 2",
+    "titleFa": "Converging Lenses 2",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Converging Lenses 2.cxp",
+      "fileSize": 43246,
+      "sceneCount": 3,
+      "partCount": 150,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:135; optics/convexLens:6; motion/origin:4; optics/rayBox:3; optics/opticalSpace:1; optics/aa-part:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.converging-and-diverging-lenses",
+    "version": 1,
+    "title": "Converging and Diverging Lenses",
+    "titleFa": "Converging and Diverging Lenses",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Converging and Diverging Lenses.cxp",
+      "fileSize": 33653,
+      "sceneCount": 3,
+      "partCount": 102,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:90; motion/origin:4; optics/rayBox:2; optics/concaveLens:2; optics/convexLens:2; optics/opticalSpace:1; optics/aa-part:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.convex-mirror",
+    "version": 1,
+    "title": "Convex Mirror",
+    "titleFa": "Convex Mirror",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Convex Mirror.cxp",
+      "fileSize": 36092,
+      "sceneCount": 3,
+      "partCount": 83,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:70; motion/origin:5; optics/opticalSpace:2; optics/aa-part:2; optics/convexMirror:2; optics/rayBox:2",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.convex-and-concave-mirrors",
+    "version": 1,
+    "title": "Convex and concave mirrors",
+    "titleFa": "Convex and concave mirrors",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Convex and concave mirrors.cxp",
+      "fileSize": 142551,
+      "sceneCount": 1,
+      "partCount": 37,
+      "instructionPageCount": 4,
+      "topClasses": "flowcharts/setprop:6; motion/origin:5; flowcharts/on-button:4; flowcharts/stop:4; flowcharts/readprop:4; presentation/button:3; flowcharts/test:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1",
+      "intro": "In this kit you will construct ray diagrams involving convex and concave mirrors."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.determining-f-mirror-method",
+    "version": 1,
+    "title": "Determining f - Mirror Method",
+    "titleFa": "Determining f - Mirror Method",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Determining f - Mirror Method.cxp",
+      "fileSize": 54484,
+      "sceneCount": 3,
+      "partCount": 255,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:240; optics/axisImage:6; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/planeMirror:1; optics/convexLens:1; optics/nearAxisObject:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.determining-f-ray-method",
+    "version": 1,
+    "title": "Determining f - Ray Method",
+    "titleFa": "Determining f - Ray Method",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Determining f - Ray Method.cxp",
+      "fileSize": 51731,
+      "sceneCount": 3,
+      "partCount": 80,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:61; optics/axisImage:10; motion/origin:4; optics/convexLens:2; optics/opticalSpace:1; optics/aa-part:1; optics/nearAxisObject:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.distant-object",
+    "version": 1,
+    "title": "Distant Object",
+    "titleFa": "Distant Object",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Distant Object.cxp",
+      "fileSize": 55951,
+      "sceneCount": 3,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "optics/farAxisObject:2; optics/opticsGraphic:2; optics/aa-part:1; optics/convexLens:1; optics/concaveLens:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.diverging-lenses-1",
+    "version": 1,
+    "title": "Diverging Lenses 1",
+    "titleFa": "Diverging Lenses 1",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Diverging Lenses 1.cxp",
+      "fileSize": 23758,
+      "sceneCount": 3,
+      "partCount": 25,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:8; optics/fadedPolygon:8; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/concaveLens:1; optics/torch:1; optics/lamp:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.diverging-lenses-2",
+    "version": 1,
+    "title": "Diverging Lenses 2",
+    "titleFa": "Diverging Lenses 2",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Diverging Lenses 2.cxp",
+      "fileSize": 25810,
+      "sceneCount": 3,
+      "partCount": 41,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:30; motion/origin:4; optics/rayBox:3; optics/concaveLens:2; optics/opticalSpace:1; optics/aa-part:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.eye",
+    "version": 1,
+    "title": "Eye",
+    "titleFa": "Eye",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Eye.cxp",
+      "fileSize": 79122,
+      "sceneCount": 3,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/aa-part:1; optics/opaqueBlock:1; presentation/image:1; optics/nearAxisObject:1; optics/opticsGraphic:1; optics/convexLens:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.far-or-long-sightedness",
+    "version": 1,
+    "title": "Far or Long Sightedness",
+    "titleFa": "Far or Long Sightedness",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Far or Long Sightedness.cxp",
+      "fileSize": 113450,
+      "sceneCount": 3,
+      "partCount": 105,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:46; optics/fadedPolygon:46; motion/origin:4; optics/convexLens:2; optics/opticalSpace:1; optics/opaqueBlock:1; optics/aa-part:1; presentation/image:1; optics/lamp:1; optics/concaveLens:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.focal-point-convering-lens",
+    "version": 1,
+    "title": "Focal Point - Convering Lens",
+    "titleFa": "Focal Point - Convering Lens",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Focal Point - Convering Lens.cxp",
+      "fileSize": 35216,
+      "sceneCount": 3,
+      "partCount": 8,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/aa-part:1; optics/convexLens:1; optics/farAxisObject:1; optics/opticsGraphic:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.focal-point-diverging-lens",
+    "version": 1,
+    "title": "Focal Point - Diverging Lens",
+    "titleFa": "Focal Point - Diverging Lens",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Focal Point - Diverging Lens.cxp",
+      "fileSize": 35269,
+      "sceneCount": 3,
+      "partCount": 8,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/aa-part:1; optics/farAxisObject:1; optics/opticsGraphic:1; optics/concaveLens:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.galilean-telescope",
+    "version": 1,
+    "title": "Galilean Telescope",
+    "titleFa": "Galilean Telescope",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Galilean Telescope.cxp",
+      "fileSize": 91243,
+      "sceneCount": 3,
+      "partCount": 309,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:294; optics/axisImage:6; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/convexLens:1; optics/concaveLens:1; optics/farAxisObject:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.lens-formula",
+    "version": 1,
+    "title": "Lens Formula",
+    "titleFa": "Lens Formula",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Lens Formula.cxp",
+      "fileSize": 46131,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/aa-part:1; optics/nearAxisObject:1; optics/opticsGraphic:1; optics/convexLens:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.lenses-mirrors",
+    "version": 1,
+    "title": "Lenses & Mirrors",
+    "titleFa": "Lenses & Mirrors",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Lenses & Mirrors.cxp",
+      "fileSize": 57454,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/nearAxisObject:2; optics/opticsGraphic:2; optics/aa-part:1; optics/convexLens:1; optics/concaveMirror:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.lenses",
+    "version": 1,
+    "title": "Lenses",
+    "titleFa": "Lenses",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Lenses.cxp",
+      "fileSize": 39811,
+      "sceneCount": 1,
+      "partCount": 10,
+      "instructionPageCount": 8,
+      "topClasses": "presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/nearAxisObject:1; optics/opticsGraphic:1; optics/concaveLens:1; optics/convexLens:1",
+      "intro": "In this kit you will learn the nature of images produced by convex (converging) and concave (diverging) lenses."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.light-from-distant-objects",
+    "version": 1,
+    "title": "Light from Distant Objects",
+    "titleFa": "Light from Distant Objects",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Light from Distant Objects.cxp",
+      "fileSize": 70667,
+      "sceneCount": 3,
+      "partCount": 33,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:11; optics/fadedPolygon:11; motion/origin:4; optics/opticalSpace:1; optics/opaqueBlock:1; optics/aa-part:1; presentation/image:1; optics/torch:1; optics/convexLens:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.light-from-nearby-objects",
+    "version": 1,
+    "title": "Light from Nearby Objects",
+    "titleFa": "Light from Nearby Objects",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Light from Nearby Objects.cxp",
+      "fileSize": 78914,
+      "sceneCount": 3,
+      "partCount": 53,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:21; optics/fadedPolygon:21; motion/origin:4; optics/opticalSpace:1; optics/opaqueBlock:1; optics/aa-part:1; presentation/image:1; optics/lamp:1; optics/convexLens:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.magnification",
+    "version": 1,
+    "title": "Magnification",
+    "titleFa": "Magnification",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Magnification.cxp",
+      "fileSize": 38774,
+      "sceneCount": 1,
+      "partCount": 10,
+      "instructionPageCount": 6,
+      "topClasses": "presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/nearAxisObject:1; optics/opticsGraphic:1; presentation/parttray/2d:1; optics/concaveMirror:1; optics/convexLens:1",
+      "intro": "In this kit you will learn about ray diagrams of magnification for a convex lens and a concave mirror."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.magnifying-glass",
+    "version": 1,
+    "title": "Magnifying glass",
+    "titleFa": "Magnifying glass",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Magnifying glass.cxp",
+      "fileSize": 75600,
+      "sceneCount": 1,
+      "partCount": 17,
+      "instructionPageCount": 5,
+      "topClasses": "optics/convexLens:4; presentation/parttray/2d:2; optics/opticsGraphic:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/nearAxisObject:1; optics/eye:1; presentation/image:1; optics/concaveLens:1",
+      "intro": "In this kit you will learn how the focal length of a lens affects the magnification of a magnifying glass."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.microscope",
+    "version": 1,
+    "title": "Microscope",
+    "titleFa": "Microscope",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Microscope.cxp",
+      "fileSize": 192030,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/convexLens:2; optics/opticsGraphic:2; optics/aa-part:1; presentation/image:1; optics/nearAxisObject:1; optics/eye:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.mirrors-and-reflection",
+    "version": 1,
+    "title": "Mirrors and reflection",
+    "titleFa": "Mirrors and reflection",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Mirrors and reflection.cxp",
+      "fileSize": 121811,
+      "sceneCount": 1,
+      "partCount": 20,
+      "instructionPageCount": 5,
+      "topClasses": "optics/opticsGraphic:6; optics/nearAxisObject:5; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/planeMirror:1; optics/eye:1; presentation/protractor:1",
+      "intro": "In this kit you will learn how an image is formed in a reflection."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.near-or-short-sightedness",
+    "version": 1,
+    "title": "Near or Short Sightedness",
+    "titleFa": "Near or Short Sightedness",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Near or Short Sightedness.cxp",
+      "fileSize": 225467,
+      "sceneCount": 3,
+      "partCount": 253,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:120; optics/fadedPolygon:120; motion/origin:4; optics/convexLens:2; optics/opticalSpace:1; optics/opaqueBlock:1; optics/aa-part:1; optics/torch:1; optics/concaveLens:1; presentation/image:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.nearby-object",
+    "version": 1,
+    "title": "Nearby Object",
+    "titleFa": "Nearby Object",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Nearby Object.cxp",
+      "fileSize": 31228,
+      "sceneCount": 3,
+      "partCount": 8,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/aa-part:1; optics/nearAxisObject:1; optics/opticsGraphic:1; optics/convexLens:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.newtonian-reflecting-telescope",
+    "version": 1,
+    "title": "Newtonian Reflecting Telescope",
+    "titleFa": "Newtonian Reflecting Telescope",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Newtonian Reflecting Telescope.cxp",
+      "fileSize": 90566,
+      "sceneCount": 3,
+      "partCount": 122,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:108; motion/origin:4; optics/planeMirror:2; optics/axisImage:2; optics/opticalSpace:1; optics/aa-part:1; optics/concaveMirror:1; optics/convexLens:1; optics/farAxisObject:1; optics/opticsGraphic:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.object-between-f-and-the-lens",
+    "version": 1,
+    "title": "Object - Between F and the Lens",
+    "titleFa": "Object - Between F and the Lens",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Object - Between F and the Lens.cxp",
+      "fileSize": 83435,
+      "sceneCount": 3,
+      "partCount": 404,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:390; motion/origin:4; optics/axisImage:3; presentation/text:2; optics/opticalSpace:1; optics/aa-part:1; optics/nearAxisObject:1; optics/convexLens:1; optics/eye:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.object-at-2f",
+    "version": 1,
+    "title": "Object at 2F",
+    "titleFa": "Object at 2F",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Object at 2F.cxp",
+      "fileSize": 42765,
+      "sceneCount": 3,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/opticsGraphic:2; optics/aa-part:1; optics/nearAxisObject:1; optics/convexLens:1; optics/projection:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.object-at-f",
+    "version": 1,
+    "title": "Object at F",
+    "titleFa": "Object at F",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Object at F.cxp",
+      "fileSize": 42937,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/aa-part:1; optics/nearAxisObject:1; optics/opticsGraphic:1; optics/convexLens:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.object-between-f-and-2f",
+    "version": 1,
+    "title": "Object between F and 2F",
+    "titleFa": "Object between F and 2F",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Object between F and 2F.cxp",
+      "fileSize": 103629,
+      "sceneCount": 3,
+      "partCount": 659,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:641; optics/axisImage:8; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/convexLens:1; optics/nearAxisObject:1; optics/projection:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.object-beyond-2f",
+    "version": 1,
+    "title": "Object beyond 2F",
+    "titleFa": "Object beyond 2F",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Object beyond 2F.cxp",
+      "fileSize": 49503,
+      "sceneCount": 3,
+      "partCount": 250,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:237; motion/origin:4; optics/axisImage:3; optics/opticalSpace:1; optics/aa-part:1; optics/nearAxisObject:1; optics/convexLens:1; optics/projection:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.periscopes",
+    "version": 1,
+    "title": "Periscopes",
+    "titleFa": "Periscopes",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Periscopes.cxp",
+      "fileSize": 62517,
+      "sceneCount": 1,
+      "partCount": 16,
+      "instructionPageCount": 4,
+      "topClasses": "optics/planeMirror:6; optics/opticsGraphic:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/eye:1; optics/nearAxisObject:1",
+      "intro": "In this kit you will use your knowledge of reflection to build a periscope."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.principle-of-additivity",
+    "version": 1,
+    "title": "Principle of Additivity",
+    "titleFa": "Principle of Additivity",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Principle of Additivity.cxp",
+      "fileSize": 55455,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/convexLens:3; optics/nearAxisObject:2; optics/opticsGraphic:2; optics/aa-part:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.principle-of-reversibility",
+    "version": 1,
+    "title": "Principle of Reversibility",
+    "titleFa": "Principle of Reversibility",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Principle of Reversibility.cxp",
+      "fileSize": 55194,
+      "sceneCount": 3,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/nearAxisObject:2; optics/opticsGraphic:2; optics/convexLens:2; optics/aa-part:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.prism",
+    "version": 1,
+    "title": "Prism",
+    "titleFa": "Prism",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Prism.cxp",
+      "fileSize": 106824,
+      "sceneCount": 3,
+      "partCount": 476,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:232; optics/fadedPolygon:232; motion/origin:4; optics/prism:3; optics/torch:3; optics/opticalSpace:1; optics/aa-part:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.rainbow",
+    "version": 1,
+    "title": "Rainbow",
+    "titleFa": "Rainbow",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Rainbow.cxp",
+      "fileSize": 53773,
+      "sceneCount": 3,
+      "partCount": 22,
+      "instructionPageCount": 0,
+      "topClasses": "optics/torch:7; waves/1d/wavespace/propagation:7; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/beamSegment:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.reflecting-telescope",
+    "version": 1,
+    "title": "Reflecting Telescope",
+    "titleFa": "Reflecting Telescope",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Reflecting Telescope.cxp",
+      "fileSize": 251239,
+      "sceneCount": 3,
+      "partCount": 104,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:85; motion/origin:4; optics/axisImage:4; optics/concaveMirror:2; optics/farAxisObject:2; optics/opticsGraphic:2; optics/opticalSpace:1; optics/aa-part:1; presentation/image:1; optics/convexLens:1; optics/convexMirror:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.refracting-telescope",
+    "version": 1,
+    "title": "Refracting Telescope",
+    "titleFa": "Refracting Telescope",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Refracting Telescope.cxp",
+      "fileSize": 288163,
+      "sceneCount": 3,
+      "partCount": 165,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:150; motion/origin:4; optics/convexLens:2; optics/opticsGraphic:2; optics/axisImage:2; optics/opticalSpace:1; optics/aa-part:1; presentation/image:1; optics/farAxisObject:1; optics/eye:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.refraction",
+    "version": 1,
+    "title": "Refraction",
+    "titleFa": "Refraction",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Refraction.cxp",
+      "fileSize": 55906,
+      "sceneCount": 1,
+      "partCount": 13,
+      "instructionPageCount": 4,
+      "topClasses": "optics/transparentBlock:5; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/rayBox:1; presentation/protractor:1",
+      "intro": "In this kit you will learn about optical refraction."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.satellite-dish",
+    "version": 1,
+    "title": "Satellite Dish",
+    "titleFa": "Satellite Dish",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Satellite Dish.cxp",
+      "fileSize": 30156,
+      "sceneCount": 3,
+      "partCount": 63,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:55; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/rayBox:1; optics/parabolicMirror:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.shadows-1",
+    "version": 1,
+    "title": "Shadows 1",
+    "titleFa": "Shadows 1",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Shadows 1.cxp",
+      "fileSize": 51789,
+      "sceneCount": 3,
+      "partCount": 20,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/opaqueBall:4; optics/beamSegment:3; optics/fadedPolygon:3; optics/opaqueBlock:2; optics/opticalSpace:1; optics/aa-part:1; optics/lamp:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.shadows-2",
+    "version": 1,
+    "title": "Shadows 2",
+    "titleFa": "Shadows 2",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Shadows 2.cxp",
+      "fileSize": 26240,
+      "sceneCount": 3,
+      "partCount": 21,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:6; optics/fadedPolygon:6; motion/origin:4; optics/lamp:2; optics/opticalSpace:1; optics/aa-part:1; optics/opaqueBall:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.solar-eclipse",
+    "version": 1,
+    "title": "Solar eclipse",
+    "titleFa": "Solar eclipse",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Solar eclipse.cxp",
+      "fileSize": 124166,
+      "sceneCount": 3,
+      "partCount": 130,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:57; optics/fadedPolygon:57; optics/lamp:7; motion/origin:4; optics/opaqueBall:2; optics/opticalSpace:1; optics/aa-part:1; presentation/image:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.spectrometer",
+    "version": 1,
+    "title": "Spectrometer",
+    "titleFa": "Spectrometer",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Spectrometer.cxp",
+      "fileSize": 37626,
+      "sceneCount": 3,
+      "partCount": 108,
+      "instructionPageCount": 0,
+      "topClasses": "optics/beamSegment:48; optics/fadedPolygon:48; motion/origin:4; optics/torch:4; optics/opticalSpace:1; optics/aa-part:1; optics/prism:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.split-combine-ray",
+    "version": 1,
+    "title": "Split Combine Ray",
+    "titleFa": "Split Combine Ray",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Split Combine Ray.cxp",
+      "fileSize": 57368,
+      "sceneCount": 3,
+      "partCount": 342,
+      "instructionPageCount": 0,
+      "topClasses": "optics/raySegment:333; motion/origin:4; optics/opticalSpace:1; optics/aa-part:1; optics/rayBox:1; optics/prism:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.telescope-simple",
+    "version": 1,
+    "title": "Telescope (simple)",
+    "titleFa": "Telescope (simple)",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Telescope (simple).cxp",
+      "fileSize": 150486,
+      "sceneCount": 1,
+      "partCount": 13,
+      "instructionPageCount": 5,
+      "topClasses": "optics/opticsGraphic:2; optics/convexLens:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/eye:1; optics/farAxisObject:1; optics/concaveLens:1",
+      "intro": "In this kit you will explore how a simple telescope may be used to magnify a distant image."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.total-internal-reflection",
+    "version": 1,
+    "title": "Total Internal Reflection",
+    "titleFa": "Total Internal Reflection",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/Total Internal Reflection.cxp",
+      "fileSize": 32114,
+      "sceneCount": 3,
+      "partCount": 11,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; optics/prism:2; optics/opticalSpace:1; optics/aa-part:1; optics/opaqueBall:1; optics/rayBox:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.optics.camera",
+    "version": 1,
+    "title": "camera",
+    "titleFa": "camera",
+    "domain": "optics",
+    "category": "Optics",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Optics",
+      "file": "Optics/camera.cxp",
+      "fileSize": 194518,
+      "sceneCount": 1,
+      "partCount": 18,
+      "instructionPageCount": 5,
+      "topClasses": "optics/opticsGraphic:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; optics/aa-part:1; optics/opaqueBlock:1; presentation/image:1; optics/nearAxisObject:1; optics/projection:1; optics/physics_kits/7cmconvex:1",
+      "intro": "In this kit you will learn how a camera uses a lens to focus an image onto the film."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.drag-and-buoyancy",
+    "version": 1,
+    "title": "Drag and buoyancy",
+    "titleFa": "Drag and buoyancy",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Drag and buoyancy.cxp",
+      "fileSize": 45820,
+      "sceneCount": 1,
+      "partCount": 12,
+      "instructionPageCount": 8,
+      "topClasses": "motion/origin:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/concrete-ball2:1; motion/glass-ball2:1; motion/ice-ball2:1; presentation/parttray/2d:1; motion/wood-ball2:1; motion/rubber-ground:1",
+      "intro": "Experiment with new simulations of drag and buoyancy."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.plotting-a-graph",
+    "version": 1,
+    "title": "Plotting a graph",
+    "titleFa": "Plotting a graph",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Plotting a graph.cxp",
+      "fileSize": 36746,
+      "sceneCount": 1,
+      "partCount": 17,
+      "instructionPageCount": 12,
+      "topClasses": "presentation/trace:4; presentation/grid:2; presentation/axis:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; motion/ideal-inelastic-ball:1; presentation/graph:1; presentation/cliprect:1; presentation/parttray/2d:1",
+      "intro": "Learn how to graph the motion of a ball against time."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.setting-up-a-motion-experiment",
+    "version": 1,
+    "title": "Setting up a motion experiment",
+    "titleFa": "Setting up a motion experiment",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Setting up a motion experiment.cxp",
+      "fileSize": 36093,
+      "sceneCount": 1,
+      "partCount": 9,
+      "instructionPageCount": 10,
+      "topClasses": "motion/origin:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/ideal-inelastic-ground:1; motion/ideal-elastic-ball:1; presentation/parttray/2d:1",
+      "intro": "Learn how to set up a motion simulation, giving a ball a velocity and making a pendulum."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.setting-up-a-simple-circuit",
+    "version": 1,
+    "title": "Setting up a simple circuit",
+    "titleFa": "Setting up a simple circuit",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Setting up a simple circuit.cxp",
+      "fileSize": 42759,
+      "sceneCount": 1,
+      "partCount": 15,
+      "instructionPageCount": 9,
+      "topClasses": "presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; electronics/battery:1; electronics/filament-lamp:1; electronics/spst:1; electronics/fuse:1; electronics/resistor:1; electronics/diode:1; electronics/buzzer:1",
+      "intro": "Learn how to create a simple circuit."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.setting-up-a-simple-ray-diagram",
+    "version": 1,
+    "title": "Setting up a simple ray diagram",
+    "titleFa": "Setting up a simple ray diagram",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Setting up a simple ray diagram.cxp",
+      "fileSize": 36025,
+      "sceneCount": 1,
+      "partCount": 12,
+      "instructionPageCount": 9,
+      "topClasses": "optics/opticsGraphic:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; optics/aa-part:1; optics/convexLens:1; optics/projection:1; optics/nearAxisObject:1; presentation/parttray/2d:1",
+      "intro": "Learn how to set up a simple ray diagram using a lens, near object marker and screen."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.setting-up-a-waves-experiment",
+    "version": 1,
+    "title": "Setting up a waves experiment",
+    "titleFa": "Setting up a waves experiment",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Setting up a waves experiment.cxp",
+      "fileSize": 55890,
+      "sceneCount": 1,
+      "partCount": 21,
+      "instructionPageCount": 11,
+      "topClasses": "waves/image:5; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; waves/water-wavespace2-holder:1; waves/wavespace-plot:1; waves/sloped-block-obstacle:1; waves/circular-obstacle:1; waves/plane-reflector:1; waves/point-source:1",
+      "intro": "Learn how to set up a wave experiment to demonstrate refraction."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.using-lesson-kits",
+    "version": 1,
+    "title": "Using lesson kits",
+    "titleFa": "Using lesson kits",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Using lesson kits.cxp",
+      "fileSize": 38244,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 7,
+      "topClasses": "presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; presentation/parttray/2d:1; motion/ideal-inelastic-ball:1; presentation/spinbox:1; waves/1d/wavespace/propagation:1; waves/1d/source-wave:1; waves/1d/longitudinal-wave:1",
+      "intro": "Learn how to use lesson kits. Press the right-hand arrow on these instructions to continue. Notice the highlighting indicates what to interact with at each step of the instructions."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.using-parts",
+    "version": 1,
+    "title": "Using parts",
+    "titleFa": "Using parts",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Using parts.cxp",
+      "fileSize": 30206,
+      "sceneCount": 1,
+      "partCount": 7,
+      "instructionPageCount": 9,
+      "topClasses": "presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/cart:1; motion/origin:1; presentation/parttray/2d:1",
+      "intro": "Discover how to select, rotate, resize and find the help for a part."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.tutorials.using-presentation-parts",
+    "version": 1,
+    "title": "Using presentation parts",
+    "titleFa": "Using presentation parts",
+    "domain": "mixed",
+    "category": "Tutorials",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Tutorials",
+      "file": "Tutorials/Using presentation parts.cxp",
+      "fileSize": 51202,
+      "sceneCount": 1,
+      "partCount": 18,
+      "instructionPageCount": 9,
+      "topClasses": "waves/image:2; presentation/spinbox:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; waves/sound-wavespace2-holder:1; waves/wavespace-plot:1; waves/line-source:1; waves/single-slit-obstacle:1; waves/detector:1",
+      "intro": "Learn how presentation parts can be used to display and control properties in the simulation."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.am-radio",
+    "version": 1,
+    "title": "AM Radio",
+    "titleFa": "AM Radio",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/AM Radio.cxp",
+      "fileSize": 19386,
+      "sceneCount": 3,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; waves/1d/wavespace/interference:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.absorption-of-radiation",
+    "version": 1,
+    "title": "Absorption of radiation",
+    "titleFa": "Absorption of radiation",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Absorption of radiation.cxp",
+      "fileSize": 88770,
+      "sceneCount": 1,
+      "partCount": 27,
+      "instructionPageCount": 5,
+      "topClasses": "waves/image:9; waves/rect-obstacle:8; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; waves/em-wavespace2-holder:1; waves/wavespace-plot:1; waves/point-source:1; waves/detector:1; presentation/spinbox:1; presentation/parttray/2d:1",
+      "intro": "In this kit you will learn how much X-rays and gamma radiation are stopped by different materials."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.basic-wave-properties",
+    "version": 1,
+    "title": "Basic Wave Properties",
+    "titleFa": "Basic Wave Properties",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Basic Wave Properties.cxp",
+      "fileSize": 46206,
+      "sceneCount": 1,
+      "partCount": 14,
+      "instructionPageCount": 0,
+      "topClasses": "waves/1d/wavespace/propagation:4; waves/1d/source-wave:4; waves/1d/longitudinal-wave:4; presentation/text:2",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.diffraction-around-hill",
+    "version": 1,
+    "title": "Diffraction around Hill",
+    "titleFa": "Diffraction around Hill",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Diffraction around Hill.cxp",
+      "fileSize": 402707,
+      "sceneCount": 3,
+      "partCount": 14,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; waves/image:2; presentation/spinbox:2; waves/em-wavespace:1; waves/wavespace-plot:1; waves/sloped-block-obstacle:1; waves/detector:1; waves/point-source:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.diffraction",
+    "version": 1,
+    "title": "Diffraction",
+    "titleFa": "Diffraction",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Diffraction.cxp",
+      "fileSize": 57850,
+      "sceneCount": 1,
+      "partCount": 17,
+      "instructionPageCount": 5,
+      "topClasses": "waves/single-slit-obstacle:4; waves/image:4; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; waves/water-wavespace2-holder:1; waves/wavespace-plot:1; waves/line-source:1",
+      "intro": "In this kit you will learn about diffraction."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.doppler-shift",
+    "version": 1,
+    "title": "Doppler shift",
+    "titleFa": "Doppler shift",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Doppler shift.cxp",
+      "fileSize": 130391,
+      "sceneCount": 1,
+      "partCount": 22,
+      "instructionPageCount": 7,
+      "topClasses": "presentation/trace:4; presentation/grid:2; presentation/axis:2; presentation/spinbox:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; presentation/graph:1; presentation/cliprect:1; waves/sound-wavespace2-holder:1",
+      "intro": "In this kit you will learn about Doppler shift."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.electromagnetic-spectrum",
+    "version": 1,
+    "title": "Electromagnetic spectrum",
+    "titleFa": "Electromagnetic spectrum",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Electromagnetic spectrum.cxp",
+      "fileSize": 40741,
+      "sceneCount": 1,
+      "partCount": 11,
+      "instructionPageCount": 7,
+      "topClasses": "presentation/spinbox:3; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; waves/1d/wavespace/propagation:1; waves/1d/source-wave:1; waves/1d/longitudinal-wave:1; presentation/parttray/2d:1",
+      "intro": "In this kit you will learn that the electromagnetic spectrum is a continuous range of frequencies this is split into eight main types of electromagnetic waves classified according to their wavelengths."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.harmonic-frequency-harmonic",
+    "version": 1,
+    "title": "Harmonic Frequency - Harmonic",
+    "titleFa": "Harmonic Frequency - Harmonic",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Harmonic Frequency - Harmonic.cxp",
+      "fileSize": 25635,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "waves/1d/wavespace/plucking:3; waves/1d/plucking-wave:3; presentation/dropdown:3; presentation/spinbox:3",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.harmonic-frequency-tension",
+    "version": 1,
+    "title": "Harmonic Frequency - Tension",
+    "titleFa": "Harmonic Frequency - Tension",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Harmonic Frequency - Tension.cxp",
+      "fileSize": 26678,
+      "sceneCount": 3,
+      "partCount": 12,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/spinbox:6; waves/1d/wavespace/plucking:3; waves/1d/plucking-wave:3",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.interference",
+    "version": 1,
+    "title": "Interference",
+    "titleFa": "Interference",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Interference.cxp",
+      "fileSize": 58594,
+      "sceneCount": 1,
+      "partCount": 17,
+      "instructionPageCount": 5,
+      "topClasses": "waves/double-slit-obstacle:4; waves/image:4; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; waves/water-wavespace2-holder:1; waves/wavespace-plot:1; waves/line-source:1",
+      "intro": "In this kit you will learn about interference using water waves travelling through a double slit."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.jet-plane-sonic-wake",
+    "version": 1,
+    "title": "Jet plane sonic wake",
+    "titleFa": "Jet plane sonic wake",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Jet plane sonic wake.cxp",
+      "fileSize": 174343,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:4; waves/sound-wavespace:1; waves/wavespace-plot:1; waves/moving-point-source:1; presentation/text:1; presentation/pause:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.loudness-and-pitch",
+    "version": 1,
+    "title": "Loudness and pitch",
+    "titleFa": "Loudness and pitch",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Loudness and pitch.cxp",
+      "fileSize": 56437,
+      "sceneCount": 1,
+      "partCount": 16,
+      "instructionPageCount": 4,
+      "topClasses": "motion/origin:3; presentation/spinbox:2; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; waves/sound-wavespace2-holder:1; waves/wavespace-plot:1; waves/cross-section:1; waves/physics_kits/manDetect:1; waves/image:1; waves/line-source:1",
+      "intro": "In this kit you will learn about loudness and pitch and their relationship with the shape of the sound wave."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.measuring-distance",
+    "version": 1,
+    "title": "Measuring Distance",
+    "titleFa": "Measuring Distance",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Measuring Distance.cxp",
+      "fileSize": 17205,
+      "sceneCount": 3,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; waves/1d/wavespace/reflection:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.penetration-of-gamma-rays",
+    "version": 1,
+    "title": "Penetration of Gamma Rays",
+    "titleFa": "Penetration of Gamma Rays",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Penetration of Gamma Rays.cxp",
+      "fileSize": 46650,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; waves/1d/wavespace/penetration:3; presentation/text:3",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.penetration-of-x-rays",
+    "version": 1,
+    "title": "Penetration of X-Rays",
+    "titleFa": "Penetration of X-Rays",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Penetration of X-Rays.cxp",
+      "fileSize": 45780,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; waves/1d/wavespace/penetration:3; presentation/text:3",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.pulse-reflection",
+    "version": 1,
+    "title": "Pulse Reflection",
+    "titleFa": "Pulse Reflection",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Pulse Reflection.cxp",
+      "fileSize": 19951,
+      "sceneCount": 3,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; waves/1d/wavespace/pinned:1; waves/1d/wavespace/reflection:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.reflection-type",
+    "version": 1,
+    "title": "Reflection Type",
+    "titleFa": "Reflection Type",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Reflection Type.cxp",
+      "fileSize": 27675,
+      "sceneCount": 3,
+      "partCount": 15,
+      "instructionPageCount": 0,
+      "topClasses": "waves/1d/virtual-wave:4; motion/origin:3; waves/1d/source-wave:2; waves/1d/longitudinal-wave:2; presentation/text:2; waves/1d/wavespace/reflection:1; waves/1d/wavespace/pinned:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.reflection-and-refraction",
+    "version": 1,
+    "title": "Reflection and refraction",
+    "titleFa": "Reflection and refraction",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Reflection and refraction.cxp",
+      "fileSize": 49751,
+      "sceneCount": 1,
+      "partCount": 16,
+      "instructionPageCount": 6,
+      "topClasses": "waves/image:3; waves/plane-reflector:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; motion/origin:1; waves/water-wavespace2-holder:1; waves/wavespace-plot:1; waves/line-source:1; waves/sloped-block-obstacle:1",
+      "intro": "In this kit you will learn about reflection and refraction of water waves."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.setting-node-position",
+    "version": 1,
+    "title": "Setting Node Position",
+    "titleFa": "Setting Node Position",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Setting Node Position.cxp",
+      "fileSize": 28160,
+      "sceneCount": 3,
+      "partCount": 9,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; waves/1d/wavespace/pinned:3; presentation/text:3",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.simple-harmonic-motion-1",
+    "version": 1,
+    "title": "Simple Harmonic Motion 1",
+    "titleFa": "Simple Harmonic Motion 1",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Simple Harmonic Motion 1.cxp",
+      "fileSize": 45568,
+      "sceneCount": 3,
+      "partCount": 29,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:8; presentation/grid:4; presentation/axis:4; motion/origin:3; presentation/graph:2; presentation/cliprect:2; motion/ideal-elastic-ground:1; waves/1d/wavespace/propagation:1; waves/1d/source-wave:1; waves/1d/longitudinal-wave:1; presentation/text:1; motion/ideal-elastic-ball:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.simple-harmonic-motion-2",
+    "version": 1,
+    "title": "Simple Harmonic Motion 2",
+    "titleFa": "Simple Harmonic Motion 2",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Simple Harmonic Motion 2.cxp",
+      "fileSize": 43859,
+      "sceneCount": 3,
+      "partCount": 29,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:8; presentation/grid:4; presentation/axis:4; motion/origin:3; presentation/graph:2; presentation/cliprect:2; waves/1d/wavespace/propagation:1; waves/1d/source-wave:1; waves/1d/longitudinal-wave:1; motion/ideal-elastic-ground:1; motion/ideal-elastic-ball:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.simple-harmonic-motion-3",
+    "version": 1,
+    "title": "Simple Harmonic Motion 3",
+    "titleFa": "Simple Harmonic Motion 3",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Simple Harmonic Motion 3.cxp",
+      "fileSize": 39253,
+      "sceneCount": 3,
+      "partCount": 21,
+      "instructionPageCount": 0,
+      "topClasses": "presentation/trace:4; motion/origin:3; presentation/spinbox:2; presentation/grid:2; presentation/axis:2; motion/ideal-elastic-ground:1; motion/ideal-elastic-ball:1; waves/1d/wavespace/propagation:1; waves/1d/source-wave:1; waves/1d/longitudinal-wave:1; presentation/graph:1; presentation/cliprect:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.sound-waves-in-a-pipe",
+    "version": 1,
+    "title": "Sound Waves in a Pipe",
+    "titleFa": "Sound Waves in a Pipe",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Sound Waves in a Pipe.cxp",
+      "fileSize": 27289,
+      "sceneCount": 3,
+      "partCount": 10,
+      "instructionPageCount": 0,
+      "topClasses": "waves/1d/virtual-wave:4; waves/1d/source-wave:2; waves/1d/longitudinal-wave:2; waves/1d/wavespace/reflection:1; waves/1d/wavespace/pinned:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.speed-of-water-waves",
+    "version": 1,
+    "title": "Speed of Water Waves",
+    "titleFa": "Speed of Water Waves",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Speed of Water Waves.cxp",
+      "fileSize": 22059,
+      "sceneCount": 3,
+      "partCount": 5,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; waves/1d/wavespace/penetration:1; presentation/text:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.speed-of-sound",
+    "version": 1,
+    "title": "Speed of sound",
+    "titleFa": "Speed of sound",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Speed of sound.cxp",
+      "fileSize": 72150,
+      "sceneCount": 1,
+      "partCount": 22,
+      "instructionPageCount": 5,
+      "topClasses": "waves/rect-obstacle:4; waves/image:4; presentation/spinbox:4; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; waves/sound-wavespace2-holder:1; waves/wavespace-plot:1; waves/point-source:1; waves/cross-section:1; waves/sound-viewer-1d:1",
+      "intro": "In this kit you will learn that the speed of sound changes in different materials."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.string-harmonics",
+    "version": 1,
+    "title": "String Harmonics",
+    "titleFa": "String Harmonics",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/String Harmonics.cxp",
+      "fileSize": 20331,
+      "sceneCount": 3,
+      "partCount": 7,
+      "instructionPageCount": 0,
+      "topClasses": "motion/origin:3; presentation/text:2; waves/1d/wavespace/plucking:1; waves/1d/wavespace/pinned:1",
+      "intro": ""
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  },
+  {
+    "id": "legacy.crocodile.waves.ultrasound",
+    "version": 1,
+    "title": "Ultrasound",
+    "titleFa": "Ultrasound",
+    "domain": "waves",
+    "category": "Waves",
+    "source": "crocodile-605",
+    "status": "migration-draft",
+    "legacy": {
+      "category": "Waves",
+      "file": "Waves/Ultrasound.cxp",
+      "fileSize": 73318,
+      "sceneCount": 1,
+      "partCount": 22,
+      "instructionPageCount": 8,
+      "topClasses": "presentation/trace:4; waves/image:2; presentation/grid:2; presentation/axis:2; presentation/parttray/2d:1; presentation/instructions:1; presentation/reload:1; presentation/pause:1; presentation/text:1; waves/sound-wavespace2-holder:1; waves/wavespace-plot:1; waves/detector:1",
+      "intro": "In this kit you will learn how ultrasound is used for distance measurement."
+    },
+    "tags": [
+      "legacy",
+      "migration"
+    ]
+  }
+]

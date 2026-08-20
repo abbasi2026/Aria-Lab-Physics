@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage6.rotational-guided",
+  "version": 1,
+  "title": "گشتاور و حرکت دورانی",
+  "titleFa": "گشتاور و حرکت دورانی",
+  "domain": [
+    "mechanics"
+  ],
+  "summaryFa": "اثر گشتاور بر سرعت زاویه‌ای یک جسم و رفتار اتصال فاصله‌ای بررسی می‌شود.",
+  "learningObjectives": [
+    "رابطه τ=Iα",
+    "مشاهده افزایش سرعت زاویه‌ای",
+    "درک قید فاصله‌ای بین دو جسم"
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage5.rotational-joint",
+    "title": "مکانیک دورانی و اتصال فاصله‌ای",
+    "titleFa": "مکانیک دورانی و اتصال فاصله‌ای",
+    "domain": "mechanics",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "driver",
+        "partId": "mechanics.block",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "mass": 1,
+          "width": 1,
+          "height": 1,
+          "torque": 1
+        }
+      },
+      {
+        "instanceId": "follower",
+        "partId": "mechanics.block",
+        "transform": {
+          "position": {
+            "x": 1,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "mass": 1,
+          "width": 1,
+          "height": 1
+        }
+      }
+    ],
+    "connections": [
+      {
+        "id": "joint-1",
+        "kind": "mechanical",
+        "from": {
+          "instanceId": "driver"
+        },
+        "to": {
+          "instanceId": "follower"
+        },
+        "properties": {
+          "type": "distance-joint",
+          "length": 2,
+          "stiffness": 1
+        }
+      }
+    ],
+    "probes": [
+      {
+        "id": "omega",
+        "instanceId": "driver",
+        "quantity": "angular-velocity"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage5",
+      "stage": 5
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "inspect",
+        "titleFa": "شناسایی اجسام",
+        "instructionFa": "دو بلوک driver و follower و اتصال مکانیکی میان آن‌ها را بررسی کنید.",
+        "checks": [
+          {
+            "type": "part-exists",
+            "instanceId": "driver"
+          },
+          {
+            "type": "part-exists",
+            "instanceId": "follower"
+          },
+          {
+            "type": "connection-exists",
+            "kind": "mechanical",
+            "count": 1
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "خط اتصال مکانیکی باید بین دو جسم دیده شود."
+          }
+        ]
+      },
+      {
+        "id": "torque",
+        "titleFa": "اعمال گشتاور",
+        "instructionFa": "مقدار torque جسم driver را روی ۱ N·m قرار دهید.",
+        "whyFa": "گشتاور باعث شتاب زاویه‌ای می‌شود.",
+        "checks": [
+          {
+            "type": "property-range",
+            "instanceId": "driver",
+            "property": "torque",
+            "min": 0.99,
+            "max": 1.01
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "Property افزوده‌شده torque در Inspector قابل ویرایش است."
+          }
+        ]
+      },
+      {
+        "id": "run",
+        "titleFa": "اجرای حرکت",
+        "instructionFa": "شبیه‌سازی را حداقل یک ثانیه اجرا کنید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 1
+          },
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "زمان شبیه‌سازی باید از ۱٫۰۰ s عبور کند."
+          }
+        ]
+      },
+      {
+        "id": "omega",
+        "titleFa": "مشاهده سرعت زاویه‌ای",
+        "instructionFa": "Probe سرعت زاویه‌ای driver را بررسی کنید؛ مقدار آن باید مثبت باشد.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "omega",
+            "min": 0.1
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "گشتاور مثبت باید ω را در جهت مثبت افزایش دهد."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "omega",
+      "labelFa": "سرعت زاویه‌ای driver",
+      "unit": "rad/s",
+      "probe": {
+        "id": "omega",
+        "instanceId": "driver",
+        "quantity": "angular-velocity"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "τ=Iα",
+      "statementFa": "با گشتاور ثابت، سرعت زاویه‌ای با زمان افزایش می‌یابد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "omega-positive",
+        "type": "measurement-range",
+        "measurementId": "omega",
+        "min": 0.1,
+        "weight": 2
+      },
+      {
+        "id": "joint-present",
+        "type": "connection-exists",
+        "kind": "mechanical",
+        "count": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [
+      "τ=Iα",
+      "برای جسم صلب I به توزیع جرم وابسته است."
+    ],
+    "guardrails": [
+      "از مقادیر اندازه‌گیری‌نشده نتیجه نساز.",
+      "پاسخ را فقط بر پایه تعریف آزمایش، صحنه و داده Runtime ارائه کن.",
+      "به‌جای انجام خودکار مرحله، دانش‌آموز را برای مشاهده و استدلال راهنمایی کن."
+    ]
+  },
+  "metadata": {
+    "authoringVersion": "stage6",
+    "language": "fa-IR",
+    "cleanRoom": true
+  }
+}

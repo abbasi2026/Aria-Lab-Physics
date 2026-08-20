@@ -1,0 +1,306 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage6.heterogeneous-wave-guided",
+  "version": 1,
+  "title": "موج در محیط ناهمگن",
+  "titleFa": "موج در محیط ناهمگن",
+  "domain": [
+    "waves"
+  ],
+  "summaryFa": "انتشار موج در دو ناحیه با سرعت متفاوت و نقش مرز جاذب در کاهش بازتاب بررسی می‌شود.",
+  "learningObjectives": [
+    "درک وابستگی طول موج به سرعت محیط",
+    "مشاهده شکست/تغییر الگوی موج در محیط ناهمگن",
+    "شناخت نقش مرز جاذب عددی"
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage5.heterogeneous-wave",
+    "title": "موج در محیط ناهمگن با مرز جاذب",
+    "titleFa": "موج در محیط ناهمگن با مرز جاذب",
+    "domain": "waves",
+    "simulation": {
+      "dt": 0.2,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": -9.81
+      },
+      "waveSpeed": 1
+    },
+    "parts": [
+      {
+        "instanceId": "space",
+        "partId": "waves.space-2d",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "width": 31,
+          "height": 21,
+          "dx": 1,
+          "boundary": "absorbing",
+          "absorbingLayers": 4,
+          "absorbingStrength": 0.3
+        }
+      },
+      {
+        "instanceId": "medium",
+        "partId": "aria.waves.medium-region",
+        "transform": {
+          "position": {
+            "x": 16,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "x0": 16,
+          "y0": 0,
+          "x1": 31,
+          "y1": 21,
+          "waveSpeed": 0.55
+        }
+      },
+      {
+        "instanceId": "obstacle",
+        "partId": "aria.waves.obstacle",
+        "transform": {
+          "position": {
+            "x": 15,
+            "y": 10
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "width": 1,
+          "height": 7
+        }
+      },
+      {
+        "instanceId": "source",
+        "partId": "waves.point-source",
+        "transform": {
+          "position": {
+            "x": 6,
+            "y": 10
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "amplitude": 1,
+          "frequency": 0.8
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "energy",
+        "quantity": "energy"
+      },
+      {
+        "id": "right-probe",
+        "quantity": "displacement",
+        "x": 24,
+        "y": 10
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage5",
+      "stage": 5
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "space",
+        "titleFa": "بررسی محیط",
+        "instructionFa": "فضای موج، منبع، ناحیه کندتر و مانع را شناسایی کنید.",
+        "checks": [
+          {
+            "type": "part-exists",
+            "instanceId": "space"
+          },
+          {
+            "type": "part-exists",
+            "instanceId": "source"
+          },
+          {
+            "type": "part-exists",
+            "instanceId": "medium"
+          },
+          {
+            "type": "part-exists",
+            "instanceId": "obstacle"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "ناحیه medium نیمه راست شبکه را پوشش می‌دهد."
+          }
+        ]
+      },
+      {
+        "id": "absorbing",
+        "titleFa": "مرز جاذب",
+        "instructionFa": "Boundary را روی absorbing و تعداد لایه‌های جاذب را ۴ نگه دارید.",
+        "checks": [
+          {
+            "type": "property-equals",
+            "instanceId": "space",
+            "property": "boundary",
+            "value": "absorbing"
+          },
+          {
+            "type": "property-range",
+            "instanceId": "space",
+            "property": "absorbingLayers",
+            "min": 4,
+            "max": 4
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "لایه جاذب بازتاب مصنوعی از لبه شبکه را کم می‌کند."
+          }
+        ]
+      },
+      {
+        "id": "run",
+        "titleFa": "انتشار موج",
+        "instructionFa": "شبیه‌سازی را دست‌کم ۲۰ واحد زمانی اجرا کنید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 20
+          },
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "برای رسیدن موج به ناحیه دوم به زمان کافی نیاز است."
+          }
+        ]
+      },
+      {
+        "id": "probe",
+        "titleFa": "مشاهده سمت راست",
+        "instructionFa": "Probe سمت راست باید جابجایی غیرصفر ثبت کرده باشد.",
+        "checks": [
+          {
+            "type": "measurement-sample-count",
+            "measurementId": "right-probe",
+            "min": 10
+          },
+          {
+            "type": "measurement-peak-absolute-min",
+            "measurementId": "right-probe",
+            "min": 1e-06
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در نمودار right-probe وجود نمونه‌ها را بررسی کنید."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "right-probe",
+      "labelFa": "جابجایی موج در ناحیه کند",
+      "unit": "arb.",
+      "probe": {
+        "id": "right-probe",
+        "quantity": "displacement",
+        "x": 24,
+        "y": 10
+      }
+    },
+    {
+      "id": "energy",
+      "labelFa": "انرژی میدان",
+      "unit": "arb.",
+      "probe": {
+        "id": "energy",
+        "quantity": "energy"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "v=fλ",
+      "statementFa": "با ثابت ماندن فرکانس، در محیط کندتر طول موج کاهش می‌یابد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "elapsed",
+        "type": "simulation-time",
+        "min": 20,
+        "weight": 1
+      },
+      {
+        "id": "boundary",
+        "type": "property-equals",
+        "instanceId": "space",
+        "property": "boundary",
+        "value": "absorbing",
+        "weight": 1
+      },
+      {
+        "id": "wave-arrived",
+        "type": "measurement-sample-count",
+        "measurementId": "right-probe",
+        "min": 10,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [
+      "v=fλ",
+      "مرز جاذب یک تقریب عددی برای کاهش بازتاب از لبه دامنه محاسباتی است."
+    ],
+    "guardrails": [
+      "از مقادیر اندازه‌گیری‌نشده نتیجه نساز.",
+      "پاسخ را فقط بر پایه تعریف آزمایش، صحنه و داده Runtime ارائه کن.",
+      "به‌جای انجام خودکار مرحله، دانش‌آموز را برای مشاهده و استدلال راهنمایی کن."
+    ]
+  },
+  "metadata": {
+    "authoringVersion": "stage6",
+    "language": "fa-IR",
+    "cleanRoom": true
+  }
+}

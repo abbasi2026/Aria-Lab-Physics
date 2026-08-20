@@ -1,0 +1,249 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage6.spherical-refraction-guided",
+  "version": 1,
+  "title": "شکست نور در سطح کروی",
+  "titleFa": "شکست نور در سطح کروی",
+  "domain": [
+    "optics"
+  ],
+  "summaryFa": "مسیر یک پرتو هنگام ورود و خروج از یک محیط کروی با ضریب شکست بیشتر بررسی می‌شود.",
+  "learningObjectives": [
+    "تشخیص نرمال سطح کروی",
+    "مشاهده شکست در ورود و خروج",
+    "ارتباط با قانون اسنل"
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage5.spherical-refraction",
+    "title": "شکست نور در سطح کروی",
+    "titleFa": "شکست نور در سطح کروی",
+    "domain": "optics",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": -9.81
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "ray",
+        "partId": "optics.ray-source",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 0.45
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "directionX": 1,
+          "directionY": 0
+        }
+      },
+      {
+        "instanceId": "sphere",
+        "partId": "aria.optics.spherical-interface",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "radius": 1.5,
+          "nInside": 1.5,
+          "nOutside": 1
+        }
+      },
+      {
+        "instanceId": "screen",
+        "partId": "optics.screen",
+        "transform": {
+          "position": {
+            "x": 4,
+            "y": 0
+          },
+          "rotation": 90,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "length": 6
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "interactions",
+        "quantity": "interaction-count"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage5",
+      "stage": 5
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "scene",
+        "titleFa": "بررسی صحنه",
+        "instructionFa": "منبع پرتو، سطح کروی و پرده را پیدا کنید.",
+        "checks": [
+          {
+            "type": "part-exists",
+            "instanceId": "ray"
+          },
+          {
+            "type": "part-exists",
+            "instanceId": "sphere"
+          },
+          {
+            "type": "part-exists",
+            "instanceId": "screen"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "سطح کروی در مرکز صحنه قرار دارد."
+          }
+        ]
+      },
+      {
+        "id": "index",
+        "titleFa": "ضریب شکست",
+        "instructionFa": "ضریب شکست داخل کره را ۱٫۵ و بیرون را ۱ نگه دارید.",
+        "checks": [
+          {
+            "type": "property-range",
+            "instanceId": "sphere",
+            "property": "nInside",
+            "min": 1.49,
+            "max": 1.51
+          },
+          {
+            "type": "property-range",
+            "instanceId": "sphere",
+            "property": "nOutside",
+            "min": 0.99,
+            "max": 1.01
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "این تنظیم تقریب ساده‌ای از شیشه در هوا است."
+          }
+        ]
+      },
+      {
+        "id": "trace",
+        "titleFa": "ردیابی پرتو",
+        "instructionFa": "یک گام شبیه‌سازی اجرا کنید و مسیر پرتو را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.01
+          },
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "با دکمه یک‌گام، مسیر جدید محاسبه می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "interactions",
+        "titleFa": "شمارش تعامل‌ها",
+        "instructionFa": "پرتو باید دست‌کم دو تعامل با سطح کروی داشته باشد: ورود و خروج.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "interactions",
+            "min": 2
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "ورود به کره و خروج از آن دو شکست جداگانه هستند."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "interactions",
+      "labelFa": "تعداد تعامل‌های پرتو",
+      "unit": "count",
+      "probe": {
+        "id": "interactions",
+        "quantity": "interaction-count"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "n1 sin θ1 = n2 sin θ2",
+      "statementFa": "پرتو هنگام ورود به محیط با n بیشتر به سمت نرمال خم می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "two-interactions",
+        "type": "measurement-range",
+        "measurementId": "interactions",
+        "min": 2,
+        "weight": 2
+      },
+      {
+        "id": "glass-index",
+        "type": "property-range",
+        "instanceId": "sphere",
+        "property": "nInside",
+        "min": 1.49,
+        "max": 1.51,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [
+      "قانون اسنل: n1 sinθ1=n2 sinθ2",
+      "نرمال سطح کروی در هر نقطه در راستای شعاع آن نقطه است."
+    ],
+    "guardrails": [
+      "از مقادیر اندازه‌گیری‌نشده نتیجه نساز.",
+      "پاسخ را فقط بر پایه تعریف آزمایش، صحنه و داده Runtime ارائه کن.",
+      "به‌جای انجام خودکار مرحله، دانش‌آموز را برای مشاهده و استدلال راهنمایی کن."
+    ]
+  },
+  "metadata": {
+    "authoringVersion": "stage6",
+    "language": "fa-IR",
+    "cleanRoom": true
+  }
+}

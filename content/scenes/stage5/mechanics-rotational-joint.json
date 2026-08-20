@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "aria.stage5.rotational-joint",
+  "title": "مکانیک دورانی و اتصال فاصله‌ای",
+  "titleFa": "مکانیک دورانی و اتصال فاصله‌ای",
+  "domain": "mechanics",
+  "simulation": {
+    "dt": 0.01,
+    "timeScale": 1,
+    "gravity": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "parts": [
+    {
+      "instanceId": "driver",
+      "partId": "mechanics.block",
+      "transform": {
+        "position": {
+          "x": -1,
+          "y": 0
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "mass": 1,
+        "width": 1,
+        "height": 1,
+        "torque": 1
+      }
+    },
+    {
+      "instanceId": "follower",
+      "partId": "mechanics.block",
+      "transform": {
+        "position": {
+          "x": 1,
+          "y": 0
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "mass": 1,
+        "width": 1,
+        "height": 1
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "joint-1",
+      "kind": "mechanical",
+      "from": {
+        "instanceId": "driver"
+      },
+      "to": {
+        "instanceId": "follower"
+      },
+      "properties": {
+        "type": "distance-joint",
+        "length": 2,
+        "stiffness": 1
+      }
+    }
+  ],
+  "probes": [
+    {
+      "id": "omega",
+      "instanceId": "driver",
+      "quantity": "angular-velocity"
+    }
+  ],
+  "metadata": {
+    "editorVersion": "stage5",
+    "stage": 5
+  }
+}

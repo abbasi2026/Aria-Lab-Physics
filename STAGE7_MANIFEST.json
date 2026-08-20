@@ -1,0 +1,82 @@
+{
+  "project": "Aria Lab Physics",
+  "stage": 7,
+  "name": "AI Experiment Studio / Rule Builder / Library / Crocodile Migration",
+  "date": "2026-08-20",
+  "baseline": {
+    "artifact": "Aria-Lab-Physics-Stage6-working.zip",
+    "sha256": "8c0d452e147a557791a9093b0aa075af1237dd2940ae90903e0979a5eeeffe58"
+  },
+  "capabilities": [
+    "server-side Gemini-ready grounded AI coach",
+    "AI-assisted experiment guide drafting with allow-listed checks",
+    "visual Rule/Step/Hint Builder",
+    "experiment library search/filter",
+    "browser-local authored experiment persistence",
+    "Crocodile Physics 605 metadata migration library",
+    "structured extracted-content migration path"
+  ],
+  "inventory": {
+    "canonicalParts": 203,
+    "paletteEntries": 206,
+    "normalizedProperties": 7534,
+    "ports": 235,
+    "ariaGuidedExperiments": 4,
+    "crocodileMigrationRecords": 209
+  },
+  "tests": {
+    "stage3": 19,
+    "stage4": 12,
+    "stage5": 15,
+    "stage6": 19,
+    "stage7": 22,
+    "webSmoke": "PASS",
+    "fullCi": "PASS"
+  },
+  "aiVerification": {
+    "externalLiveCallPerformed": false,
+    "reason": "No user API key is stored in the snapshot.",
+    "mockUpstreamEndToEnd": "PASS",
+    "apiKeyExposureTest": "PASS"
+  },
+  "migrationFidelity": {
+    "metadataOnlyDoesNotFabricateSceneOrSteps": true,
+    "rawCxpPresentInSnapshot": false,
+    "extractedJsonImporter": true
+  },
+  "changes": {
+    "added": [
+      ".env.example",
+      "content/library/crocodile-605-index.json",
+      "docs/architecture/STAGE7_AI_RULE_LIBRARY_MIGRATION.md",
+      "docs/testing/STAGE_07_TEST_REPORT_FA.md",
+      "packages/ai-coach/package.json",
+      "packages/ai-coach/src/index.mjs",
+      "packages/crocodile-importer/package.json",
+      "packages/crocodile-importer/src/index.mjs",
+      "packages/experiment-library/package.json",
+      "packages/experiment-library/src/index.mjs",
+      "tests/physics/stage7/run-stage7-tests.mjs",
+      "tools/crocodile-migration/extracted-format.example.json",
+      "tools/crocodile-migration/import-extracted.mjs",
+      "tools/crocodile-migration/import-stage7.mjs"
+    ],
+    "modified": [
+      "README.md",
+      "apps/web/index.html",
+      "apps/web/src/main.js",
+      "apps/web/styles.css",
+      "package.json",
+      "packages/experiment-runtime/src/index.mjs",
+      "tests/smoke/run-web-smoke.mjs",
+      "tools/dev-server/index.mjs"
+    ],
+    "removed": []
+  },
+  "limitations": [
+    "Raw .cxp parsing is not performed because raw CXP files are not present in the Stage 6/7 snapshot.",
+    "Production AI endpoint still requires authentication, rate limiting, durable audit logs and secret management.",
+    "Browser local library is development/single-user persistence, not the final cloud library.",
+    "AI-authored guides require teacher/author review before publication."
+  ]
+}

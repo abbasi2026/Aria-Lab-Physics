@@ -1,0 +1,11 @@
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { parseCsv, legacyRowToLibraryEntry } from '../../packages/crocodile-importer/src/index.mjs';
+const root=resolve(new URL('../..', import.meta.url).pathname);
+const input=resolve(root,'datasets/legacy/crocodile-physics-605/experiments_summary.csv');
+const output=resolve(root,'content/library/crocodile-605-index.json');
+const rows=parseCsv(await readFile(input,'utf8'));
+const entries=rows.map(legacyRowToLibraryEntry).map(({draft,...entry})=>entry);
+await mkdir(dirname(output),{recursive:true});
+await writeFile(output,JSON.stringify(entries,null,2)+'\n');
+console.log(`Crocodile migration library: ${entries.length} entries -> ${output}`);

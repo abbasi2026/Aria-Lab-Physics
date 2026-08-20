@@ -40,3 +40,5 @@ export function rlCurrentRise({ supplyVoltage, resistance, inductance, time, ini
 }
 
 export * from './mna.mjs';
+
+export * from './transient.mjs';

@@ -1,0 +1,21 @@
+{
+  "category": "Optics",
+  "title": "Example extracted legacy experiment",
+  "sourceFile": "Optics/example.cxp",
+  "intro": "Original extracted introduction text, if available.",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "scene.legacy.example",
+    "title": "Example",
+    "titleFa": "نمونه",
+    "domain": "optics",
+    "parts": [],
+    "connections": [],
+    "probes": [],
+    "simulation": { "dt": 0.008333333333333333 }
+  },
+  "instructionPages": [
+    { "id": "legacy-page-1", "text": "Exact extracted instruction text." },
+    { "id": "legacy-page-2", "textFa": "متن فارسی فقط در صورتی که واقعاً از منبع استخراج شده باشد." }
+  ]
+}

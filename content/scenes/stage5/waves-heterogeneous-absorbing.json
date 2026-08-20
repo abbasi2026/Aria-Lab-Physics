@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "aria.stage5.heterogeneous-wave",
+  "title": "موج در محیط ناهمگن با مرز جاذب",
+  "titleFa": "موج در محیط ناهمگن با مرز جاذب",
+  "domain": "waves",
+  "simulation": {
+    "dt": 0.2,
+    "timeScale": 1,
+    "gravity": {
+      "x": 0,
+      "y": -9.81
+    },
+    "waveSpeed": 1
+  },
+  "parts": [
+    {
+      "instanceId": "space",
+      "partId": "waves.space-2d",
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "width": 31,
+        "height": 21,
+        "dx": 1,
+        "boundary": "absorbing",
+        "absorbingLayers": 4,
+        "absorbingStrength": 0.3
+      }
+    },
+    {
+      "instanceId": "medium",
+      "partId": "aria.waves.medium-region",
+      "transform": {
+        "position": {
+          "x": 16,
+          "y": 0
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "x0": 16,
+        "y0": 0,
+        "x1": 31,
+        "y1": 21,
+        "waveSpeed": 0.55
+      }
+    },
+    {
+      "instanceId": "obstacle",
+      "partId": "aria.waves.obstacle",
+      "transform": {
+        "position": {
+          "x": 15,
+          "y": 10
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "width": 1,
+        "height": 7
+      }
+    },
+    {
+      "instanceId": "source",
+      "partId": "waves.point-source",
+      "transform": {
+        "position": {
+          "x": 6,
+          "y": 10
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "amplitude": 1,
+        "frequency": 0.8
+      }
+    }
+  ],
+  "connections": [],
+  "probes": [
+    {
+      "id": "energy",
+      "quantity": "energy"
+    },
+    {
+      "id": "right-probe",
+      "quantity": "displacement",
+      "x": 24,
+      "y": 10
+    }
+  ],
+  "metadata": {
+    "editorVersion": "stage5",
+    "stage": 5
+  }
+}

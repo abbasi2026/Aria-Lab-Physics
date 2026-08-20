@@ -5,7 +5,7 @@ const port = 4199;
 const base = `http://127.0.0.1:${port}`;
 const child = spawn(process.execPath, ['tools/dev-server/index.mjs'], {
   cwd: new URL('../..', import.meta.url),
-  env: { ...process.env, PORT: String(port) },
+  env: { ...process.env, PORT: String(port), GEMINI_API_KEY: '', GEMINI_MODEL: '' },
   stdio: ['ignore', 'pipe', 'pipe']
 });
 
@@ -38,13 +38,33 @@ try {
   const html = await expectAsset('/', /text\/html/, /آزمایشگاه فیزیک آریا/);
   assert.match(html, /\/apps\/web\/styles\.css/);
   assert.match(html, /\/apps\/web\/src\/main\.js/);
+  assert.match(html, /id=\"experiment-select\"/);
+  assert.match(html, /data-tab=\"guide\"/);
+  assert.match(html, /data-tab=\"author\"/);
   await expectAsset('/apps/web/styles.css', /text\/css/, /\.app-shell/);
-  await expectAsset('/apps/web/src/main.js', /text\/javascript/, /SceneRuntime/);
+  const main = await expectAsset('/apps/web/src/main.js', /text\/javascript/, /SceneRuntime/);
+  assert.match(main, /GroundedAIClient/);
+  assert.match(main, /Rule \/ Step Builder/);
+  assert.match(main, /renderExperimentLibrary/);
+  assert.match(main, /renderPartTree/);
+  assert.match(main, /renderExperimentTree/);
+  assert.match(main, /renderTopicTree/);
+  assert.match(main, /iconSvg/);
   const parts = await expectAsset('/datasets/parts/canonical-parts.json', /application\/json/, /circuits\.battery/);
   assert.equal(JSON.parse(parts).length, 203);
+  const taxonomy = await expectAsset('/datasets/navigation/crocodile-taxonomy.json', /application\/json/, /Crocodile Physics 605 clean-room taxonomy/);
+  const nav = JSON.parse(taxonomy);
+  assert.equal(nav.stats.canonicalParts, 203);
+  assert.equal(nav.stats.paletteEntries, 206);
+  assert.equal(nav.stats.partLeafPaths, 39);
+  assert.equal(nav.stats.experimentCategories, 8);
+  assert.equal(nav.stats.legacyExperiments, 209);
+  const experimentIndex = await expectAsset('/content/experiments/stage6/index.json', /application\/json/, /stage6\.rc-charge-guided/);
+  assert.equal(JSON.parse(experimentIndex).length, 4);
+  await expectAsset('/content/experiments/stage6/rc-charge-guided.json', /application\/json/, /\"schemaVersion\": \"2.0.0\"/);
   const missing = await fetch(`${base}/definitely-missing.asset`);
   assert.equal(missing.status, 404);
-  console.log('Web smoke: 6 checks passed.');
+  console.log('Web smoke: Stage 8 taxonomy browser + editor + library + AI safeguards passed.');
 } finally {
   child.kill('SIGTERM');
   await new Promise(resolve => {

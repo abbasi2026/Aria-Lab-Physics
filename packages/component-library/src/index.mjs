@@ -26,6 +26,15 @@ export class ComponentCatalog {
     return Object.fromEntries((part.properties ?? []).filter(p => p.editable && p.default !== undefined).map(p => [p.key, structuredClone(p.default)]));
   }
   editableProperties(id) { return (this.get(id)?.properties ?? []).filter(p => p.editable); }
+  propertyDescriptors(id, values = {}) {
+    const canonical = this.editableProperties(id);
+    const known = new Set(canonical.map(p => p.key));
+    const inferred = Object.entries(values).filter(([key]) => !known.has(key)).map(([key, value]) => ({
+      key, label: key, kind: typeof value === 'boolean' ? 'boolean' : typeof value === 'number' ? 'number' : 'string',
+      role: 'scene-extension', editable: true, observable: false, source: 'scene'
+    }));
+    return [...canonical, ...inferred];
+  }
   ports(id) { return this.get(id)?.ports ?? []; }
   displayPorts(id) {
     const ports = this.ports(id);

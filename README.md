@@ -35,7 +35,7 @@ tools/                 ابزارهای مهاجرت و اعتبارسنجی
 
 ## وضعیت فعلی
 
-مرحله ۳: Interactive Simulation Engines.
+مرحله ۷: AI Experiment Studio + Visual Rule Builder + Experiment Library + Crocodile Migration.
 
 - ۲۰۳ Canonical Part و ۲۰۶ Palette Entry استاندارد شده‌اند.
 - Physics Core و ۱۲ Golden Experiment فعال‌اند.
@@ -86,3 +86,60 @@ npm test
 ```
 
 See `docs/architecture/STAGE4_EDITOR_RUNTIME.md` for contracts and limitations.
+
+## Stage 5 — Advanced Solvers
+
+Stage 5 adds transient/nonlinear circuits (RLC + diode), rotational mechanics and distance joints, spherical ray-optics surfaces, and heterogeneous/absorbing wave media. Four loadable reference scenes are available under `content/scenes/stage5/`.
+
+Run the complete scientific + web regression suite:
+
+```bash
+npm run ci
+```
+
+## Stage 6 — Experiment Studio
+
+Stage 6 adds Experiment Package v2, guided step-by-step execution, machine-checkable completion conditions, measurements and assessment, a grounded coaching context, and basic experiment authoring directly inside the web editor.
+
+Reference guided experiments are under `content/experiments/stage6/`.
+
+```bash
+npm run test:stage6
+npm run ci
+```
+
+
+## Stage 7 — AI Experiment Studio
+
+Stage 7 adds a grounded Gemini-ready coach, server-side AI proxy, visual Rule/Step Builder, searchable experiment library, browser-local authored experiment storage, and clean-room Crocodile Physics 605 migration tooling.
+
+AI is optional. Without credentials, deterministic Stage 6 guidance remains fully functional. To enable the server-side Gemini adapter:
+
+```bash
+cp .env.example .env
+# configure GEMINI_API_KEY and GEMINI_MODEL in the server environment
+npm run dev
+```
+
+The development server reads environment variables directly; it does **not** load `.env` automatically. Configure them in your shell/process manager. Never put the API key in `apps/web`.
+
+Regenerate the 209-record Crocodile migration library:
+
+```bash
+npm run migrate:crocodile
+```
+
+Import structured content extracted from a legacy experiment:
+
+```bash
+npm run migrate:crocodile:extracted -- extracted.json output.json
+```
+
+Run Stage 7 and full CI:
+
+```bash
+npm run test:stage7
+npm run ci
+```
+
+See `docs/architecture/STAGE7_AI_RULE_LIBRARY_MIGRATION.md`.

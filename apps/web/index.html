@@ -2,67 +2,123 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#07111f" />
-  <title>آزمایشگاه فیزیک آریا — Stage 4</title>
+  <meta name="color-scheme" content="dark" />
+  <title>آزمایشگاه فیزیک آریا — Stage 8</title>
   <link rel="stylesheet" href="/apps/web/styles.css" />
 </head>
 <body>
   <div id="app" class="app-shell">
     <header class="topbar">
-      <div class="brand"><span class="brand-mark">A</span><div><strong>آزمایشگاه فیزیک آریا</strong><small>Scene Editor · Stage 4</small></div></div>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <div><strong>آزمایشگاه فیزیک آریا</strong><small>Physics Studio · Stage 8</small></div>
+      </div>
+
       <div class="toolbar" aria-label="کنترل‌های آزمایش">
-        <button id="new-scene" class="tool-btn" title="صحنه جدید">＋</button>
-        <button id="undo" class="tool-btn" title="واگرد">↶</button>
-        <button id="redo" class="tool-btn" title="بازانجام">↷</button>
+        <button id="new-scene" class="icon-btn" title="صحنه جدید" aria-label="صحنه جدید">＋</button>
+        <button id="undo" class="icon-btn" title="واگرد" aria-label="واگرد">↶</button>
+        <button id="redo" class="icon-btn" title="بازانجام" aria-label="بازانجام">↷</button>
         <span class="separator"></span>
         <button id="run-toggle" class="run-btn"><span id="run-icon">▶</span><span id="run-label">اجرا</span></button>
-        <button id="step" class="tool-btn" title="یک گام">▹|</button>
-        <button id="reset" class="tool-btn" title="بازنشانی">↺</button>
+        <button id="step" class="icon-btn" title="یک گام" aria-label="یک گام">▹|</button>
+        <button id="reset" class="icon-btn" title="بازنشانی" aria-label="بازنشانی">↺</button>
         <span class="runtime-time" id="runtime-time">t = ۰٫۰۰۰ s</span>
       </div>
+
       <div class="file-actions">
+        <span id="ai-status" class="ai-status" title="وضعیت دستیار هوشمند">AI · بررسی…</span>
+        <select id="experiment-select" class="experiment-select" title="دسترسی سریع به آزمایش‌های راهنما"><option value="">آزمایش راهنما</option></select>
         <button id="import-scene" class="ghost-btn">ورود JSON</button>
-        <button id="export-scene" class="ghost-btn">خروجی JSON</button>
+        <button id="export-scene" class="ghost-btn">خروجی</button>
         <input id="import-file" type="file" accept="application/json,.json" hidden />
+        <span class="separator"></span>
+        <button id="toggle-library" class="icon-btn panel-toggle" title="نمایش/پنهان کردن کتابخانه">☷</button>
+        <button id="toggle-inspector" class="icon-btn panel-toggle" title="نمایش/پنهان کردن ویژگی‌ها">⚙</button>
       </div>
     </header>
 
+    <div class="mobile-bar" aria-label="ناوبری موبایل">
+      <button id="mobile-library">☷ <span>کتابخانه</span></button>
+      <button id="mobile-inspector">⚙ <span>ویژگی‌ها</span></button>
+      <button id="mobile-bottom">⌁ <span>ابزارها</span></button>
+    </div>
+
     <main class="editor-grid">
-      <aside class="palette-panel panel">
-        <div class="panel-heading"><div><strong>کتابخانه قطعات</strong><small id="catalog-count">در حال بارگذاری…</small></div></div>
-        <div class="search-wrap"><input id="part-search" type="search" placeholder="جست‌وجوی قطعه…" autocomplete="off" /></div>
-        <nav id="domain-tabs" class="domain-tabs"></nav>
-        <div id="part-list" class="part-list" aria-live="polite"></div>
+      <aside id="library-panel" class="palette-panel panel side-panel">
+        <div class="side-panel-head">
+          <div><strong>مرورگر آزمایشگاه</strong><small id="catalog-count">در حال بارگذاری…</small></div>
+          <button id="close-library" class="mobile-close" aria-label="بستن">×</button>
+        </div>
+        <nav class="browser-modes" aria-label="نوع کتابخانه">
+          <button class="browser-mode active" data-browser="parts"><span>◫</span><strong>قطعات</strong></button>
+          <button class="browser-mode" data-browser="experiments"><span>⚗</span><strong>آزمایش‌ها</strong></button>
+          <button class="browser-mode" data-browser="topics"><span>◉</span><strong>مباحث</strong></button>
+        </nav>
+        <div class="search-wrap"><span class="search-icon">⌕</span><input id="part-search" type="search" placeholder="جست‌وجوی قطعه یا شاخه…" autocomplete="off" /></div>
+        <div class="browser-context"><span id="browser-breadcrumb">Crocodile Parts Library</span><span class="source-badge">۶۰۵</span></div>
+        <div id="part-list" class="part-list hierarchy-browser" aria-live="polite"></div>
       </aside>
 
       <section class="workspace-wrap">
         <div class="workspace-toolbar">
-          <div class="scene-title"><input id="scene-title" value="صحنه جدید" aria-label="نام صحنه" /><span id="scene-domain-badge">ترکیبی</span></div>
-          <div class="workspace-tools">
-            <button id="select-mode" class="mode-btn active">انتخاب</button>
-            <button id="wire-mode" class="mode-btn">سیم/اتصال</button>
-            <button id="delete-selected" class="mode-btn danger">حذف</button>
+          <div class="scene-title">
+            <span class="scene-kicker">صحنه آزمایش</span>
+            <input id="scene-title" value="صحنه جدید" aria-label="نام صحنه" />
+            <span id="scene-domain-badge">ترکیبی</span>
+          </div>
+          <div class="workspace-tools" role="toolbar" aria-label="ابزارهای صحنه">
+            <button id="select-mode" class="mode-btn active"><span>⌖</span> انتخاب</button>
+            <button id="wire-mode" class="mode-btn"><span>⌁</span> اتصال</button>
+            <button id="delete-selected" class="mode-btn danger"><span>⌫</span> حذف</button>
           </div>
         </div>
-        <div id="workspace" class="workspace" tabindex="0">
+
+        <div id="workspace" class="workspace" tabindex="0" aria-label="فضای آزمایش">
           <svg id="connection-layer" class="connection-layer" aria-hidden="true"></svg>
           <div class="workspace-grid"></div>
           <div id="part-layer" class="part-layer"></div>
-          <div id="empty-state" class="empty-state"><div class="empty-icon">⚛</div><strong>قطعه‌ای به صحنه اضافه کنید</strong><span>از کتابخانه بکشید و روی صفحه رها کنید.</span></div>
-          <div class="workspace-hud"><span id="part-count">۰ قطعه</span><span id="connection-count">۰ اتصال</span><span id="zoom-label">۱۰۰٪</span></div>
+          <div id="empty-state" class="empty-state">
+            <div class="empty-icon">⚛</div>
+            <strong>آزمایش خود را بسازید</strong>
+            <span>از شاخه‌بندی Crocodile یک قطعه را بکشید و روی صحنه رها کنید.</span>
+            <small>دوبار کلیک روی قطعه = افزودن سریع</small>
+          </div>
+          <div class="workspace-hud">
+            <span id="part-count">۰ قطعه</span><span id="connection-count">۰ اتصال</span><span id="zoom-label">۱۰۰٪</span>
+          </div>
         </div>
+
         <section class="bottom-panel panel">
-          <div class="bottom-tabs"><button class="bottom-tab active" data-tab="measure">اندازه‌گیری</button><button class="bottom-tab" data-tab="graph">نمودار</button><button class="bottom-tab" data-tab="scene-json">Scene JSON</button></div>
+          <div class="bottom-tabs" role="tablist">
+            <button class="bottom-tab active" data-tab="measure">اندازه‌گیری</button>
+            <button class="bottom-tab" data-tab="graph">نمودار</button>
+            <button class="bottom-tab" data-tab="guide">راهنمای آزمایش</button>
+            <button class="bottom-tab" data-tab="author">طراحی آزمایش</button>
+            <button class="bottom-tab" data-tab="library">کتابخانه</button>
+            <button class="bottom-tab" data-tab="scene-json">Scene JSON</button>
+            <button id="bottom-collapse" class="bottom-collapse" title="جمع کردن پنل">⌄</button>
+          </div>
           <div id="bottom-content" class="bottom-content"></div>
         </section>
       </section>
 
-      <aside class="inspector-panel panel">
-        <div class="panel-heading"><div><strong>ویژگی‌ها</strong><small id="selection-subtitle">هیچ قطعه‌ای انتخاب نشده</small></div></div>
-        <div id="inspector" class="inspector-empty"><div>یک قطعه را انتخاب کنید تا تنظیمات آن نمایش داده شود.</div></div>
+      <aside id="inspector-panel" class="inspector-panel panel side-panel">
+        <div class="side-panel-head">
+          <div><strong>ویژگی‌ها و تنظیمات</strong><small id="selection-subtitle">هیچ قطعه‌ای انتخاب نشده</small></div>
+          <button id="close-inspector" class="mobile-close" aria-label="بستن">×</button>
+        </div>
+        <div id="inspector" class="inspector-empty"><div>یک قطعه را انتخاب کنید تا Propertyهای آن نمایش داده شود.</div></div>
       </aside>
     </main>
+
+    <footer class="status-strip">
+      <span><i class="status-led ok"></i> موتور شبیه‌سازی آماده</span>
+      <span>Ctrl + Wheel: زوم</span>
+      <span>Space: اجرا/توقف</span>
+      <span>B: کتابخانه · I: ویژگی‌ها</span>
+    </footer>
     <div id="toast" class="toast" role="status"></div>
   </div>
   <script type="module" src="/apps/web/src/main.js"></script>

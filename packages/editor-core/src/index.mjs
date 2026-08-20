@@ -12,7 +12,7 @@ export function createBlankScene({ id = 'scene.untitled', title = 'Untitled scen
     parts: [],
     connections: [],
     probes: [],
-    metadata: { createdAt: nowIso(), updatedAt: nowIso(), editorVersion: 'stage4' },
+    metadata: { createdAt: nowIso(), updatedAt: nowIso(), editorVersion: 'stage6' },
   };
 }
 
@@ -58,7 +58,7 @@ export class SceneDocument {
     this.redoStack = [];
   }
   #touch() {
-    this.scene.metadata = { ...(this.scene.metadata ?? {}), updatedAt: nowIso(), editorVersion: 'stage4' };
+    this.scene.metadata = { ...(this.scene.metadata ?? {}), updatedAt: nowIso(), editorVersion: 'stage6' };
   }
   #mutate(label, fn) {
     this.#checkpoint(label);

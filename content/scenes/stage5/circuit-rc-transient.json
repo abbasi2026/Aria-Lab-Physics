@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "aria.stage5.rc-transient",
+  "title": "شارژ گذرای خازن RC",
+  "titleFa": "شارژ گذرای خازن RC",
+  "domain": "circuits",
+  "simulation": {
+    "dt": 0.0001,
+    "timeScale": 1,
+    "gravity": {
+      "x": 0,
+      "y": -9.81
+    }
+  },
+  "parts": [
+    {
+      "instanceId": "battery",
+      "partId": "circuits.battery",
+      "transform": {
+        "position": {
+          "x": -3,
+          "y": 0
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "voltage": 5,
+        "nodeA": "n1",
+        "nodeB": "0"
+      }
+    },
+    {
+      "instanceId": "resistor",
+      "partId": "circuits.resistor",
+      "transform": {
+        "position": {
+          "x": 0,
+          "y": 1
+        },
+        "rotation": 0,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "resistance": 1000,
+        "nodeA": "n1",
+        "nodeB": "n2"
+      }
+    },
+    {
+      "instanceId": "capacitor",
+      "partId": "circuits.capacitor",
+      "transform": {
+        "position": {
+          "x": 3,
+          "y": 0
+        },
+        "rotation": 90,
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "properties": {
+        "capacitance": 1e-06,
+        "initialVoltage": 0,
+        "nodeA": "n2",
+        "nodeB": "0"
+      }
+    }
+  ],
+  "connections": [],
+  "probes": [
+    {
+      "id": "capacitor-voltage",
+      "quantity": "voltage",
+      "node": "n2"
+    }
+  ],
+  "metadata": {
+    "editorVersion": "stage5",
+    "stage": 5
+  }
+}

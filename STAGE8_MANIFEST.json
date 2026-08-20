@@ -1,0 +1,69 @@
+{
+  "stage": 8,
+  "name": "Crocodile Taxonomy Browser & UX",
+  "status": "working-tree-ready",
+  "sourceStage": 7,
+  "taxonomy": {
+    "canonicalParts": 203,
+    "paletteEntries": 206,
+    "topPartBranches": 5,
+    "leafCategoryPaths": 39,
+    "experimentCategories": 8,
+    "legacyExperiments": 209,
+    "topPartBranchTitles": [
+      "Electronics",
+      "Motion & Forces",
+      "Optics",
+      "Presentation",
+      "Waves"
+    ],
+    "experimentCategoryTitles": [
+      "Circuits",
+      "Describing Motion",
+      "Electrical Energy",
+      "Energy and Motion",
+      "Force and Acceleration",
+      "Optics",
+      "Tutorials",
+      "Waves"
+    ]
+  },
+  "ux": [
+    "hierarchical Crocodile-style parts tree",
+    "part and branch SVG icons",
+    "experiments grouped by Crocodile categories",
+    "topics grouped by same eight Crocodile categories",
+    "search across hierarchy",
+    "drag/drop and double-click part placement",
+    "desktop collapsible rails",
+    "tablet/mobile drawers",
+    "collapsible bottom tools",
+    "scene inspector defaults",
+    "responsive RTL layout"
+  ],
+  "newFiles": [
+    "datasets/navigation/crocodile-taxonomy.json",
+    "tools/taxonomy-builder/build.mjs",
+    "tests/physics/stage8/run-stage8-tests.mjs",
+    "docs/architecture/STAGE8_CROCODILE_TAXONOMY_UX.md",
+    "docs/testing/STAGE_08_TEST_REPORT_FA.md"
+  ],
+  "modifiedFiles": [
+    "apps/web/index.html",
+    "apps/web/src/main.js",
+    "apps/web/styles.css",
+    "tests/smoke/run-web-smoke.mjs",
+    "package.json"
+  ],
+  "validation": {
+    "stage8Tests": "10/10",
+    "fullCi": "PASS",
+    "webSmoke": "PASS",
+    "visualE2E": "not-run-environment-limitation"
+  },
+  "notes": [
+    "No fake Crocodile category hierarchy was introduced; taxonomy is generated from extracted palette paths.",
+    "Legacy experiments remain migration drafts unless extracted CXP content is available.",
+    "Stage 8 has not been committed or pushed."
+  ]
+}
