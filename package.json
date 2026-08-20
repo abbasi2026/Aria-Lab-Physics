@@ -12,7 +12,9 @@
     "validate:parts": "python tools/part-validator/validate.py",
     "validate": "npm run validate:data && npm run validate:parts",
     "test:stage2": "node tests/physics/stage2/run-stage2-tests.mjs",
-    "test": "npm run validate && npm run test:stage2 && npm run test:stage3",
-    "test:stage3": "node tests/physics/stage3/run-stage3-tests.mjs"
+    "test": "npm run validate && npm run test:stage2 && npm run test:stage3 && npm run test:stage4",
+    "test:stage3": "node tests/physics/stage3/run-stage3-tests.mjs",
+    "dev": "node tools/dev-server/index.mjs",
+    "test:stage4": "node tests/physics/stage4/run-stage4-tests.mjs"
   }
 }
