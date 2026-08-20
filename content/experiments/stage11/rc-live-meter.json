@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage11.rc-live-meter",
+  "version": 1,
+  "title": "شارژ خازن با ولت‌متر زنده",
+  "titleFa": "شارژ خازن با ولت‌متر زنده",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "ولتاژ خازن در طول زمان از حل گذرای MNA محاسبه و روی ولت‌متر نمایش داده می‌شود.",
+  "learningObjectives": [
+    "ولتاژ خازن در طول زمان از حل گذرای MNA محاسبه و روی ولت‌متر نمایش داده می‌شود."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage11.rc-live-meter",
+    "title": "شارژ خازن با ولت‌متر زنده",
+    "titleFa": "شارژ خازن با ولت‌متر زنده",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "battery",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "0",
+          "voltage": 5
+        }
+      },
+      {
+        "instanceId": "r",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "n2",
+          "resistance": 1000
+        }
+      },
+      {
+        "instanceId": "c",
+        "partId": "circuits.capacitor",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0",
+          "capacitance": 0.0001,
+          "initialVoltage": 0
+        }
+      },
+      {
+        "instanceId": "vm",
+        "partId": "circuits.voltmeter",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": -1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0"
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "cap-voltage",
+        "quantity": "voltage",
+        "instanceId": "vm"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage11",
+      "stage": 11,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "start",
+        "titleFa": "شروع شارژ",
+        "instructionFa": "مدار را اجرا کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در لحظه اول خازن تقریباً بدون بار است."
+          }
+        ]
+      },
+      {
+        "id": "charge",
+        "titleFa": "مشاهده شارژ",
+        "instructionFa": "زمان را جلو ببرید و افزایش ولتاژ را ببینید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.1
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "ثابت زمانی RC برابر ۰٫۱ ثانیه است."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "cap-voltage",
+      "labelFa": "ولتاژ خازن",
+      "unit": "V",
+      "probe": {
+        "id": "cap-voltage",
+        "quantity": "voltage",
+        "instanceId": "vm"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "Vc(t)=5(1-e^{-t/0.1})",
+      "statementFa": "پس از چند ثابت زمانی ولتاژ خازن به ۵ ولت نزدیک می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "v",
+        "type": "measurement-range",
+        "measurementId": "cap-voltage",
+        "min": 3,
+        "max": 5.01,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از اندازه‌گیری و وضعیت واقعی Solver استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 11,
+    "executionMode": true
+  }
+}

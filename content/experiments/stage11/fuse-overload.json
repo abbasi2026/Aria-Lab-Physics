@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage11.fuse-overload",
+  "version": 1,
+  "title": "حفاظت مدار با فیوز",
+  "titleFa": "حفاظت مدار با فیوز",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "فیوز در اضافه‌جریان واقعی می‌سوزد و مدار را باز می‌کند.",
+  "learningObjectives": [
+    "فیوز در اضافه‌جریان واقعی می‌سوزد و مدار را باز می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage11.fuse-overload",
+    "title": "حفاظت مدار با فیوز",
+    "titleFa": "حفاظت مدار با فیوز",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "battery",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "0",
+          "voltage": 6
+        }
+      },
+      {
+        "instanceId": "fuse",
+        "partId": "circuits.fuse",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "n2",
+          "rating": 1,
+          "resistance": 0.02
+        }
+      },
+      {
+        "instanceId": "load",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0",
+          "resistance": 1
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "fuse-state",
+        "quantity": "fuse-blown",
+        "instanceId": "fuse"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage11",
+      "stage": 11,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "ایجاد اضافه‌بار",
+        "instructionFa": "مدار را اجرا کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "بار ۱ اهم جریان بسیار بیشتری از جریان نامی فیوز می‌خواهد."
+          }
+        ]
+      },
+      {
+        "id": "blow",
+        "titleFa": "سوختن فیوز",
+        "instructionFa": "وضعیت فیوز را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "fuse-state",
+            "min": 1,
+            "max": 1
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "پس از سوختن، مقاومت مؤثر فیوز بسیار بزرگ می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "fuse-state",
+      "labelFa": "وضعیت فیوز",
+      "unit": "bool",
+      "probe": {
+        "id": "fuse-state",
+        "quantity": "fuse-blown",
+        "instanceId": "fuse"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "I≈6/(1+0.02)>1A",
+      "statementFa": "فیوز ۱ آمپر می‌سوزد و جریان بعدی تقریباً صفر می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "f",
+        "type": "measurement-range",
+        "measurementId": "fuse-state",
+        "min": 1,
+        "max": 1,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از اندازه‌گیری و وضعیت واقعی Solver استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 11,
+    "executionMode": true
+  }
+}

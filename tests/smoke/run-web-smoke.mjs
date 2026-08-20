@@ -53,6 +53,8 @@ try {
   assert.match(main, /buildExecutionFrame/);
   assert.match(main, /toggleInteractivePart/);
   assert.match(main, /renderPhysicsLayer/);
+  assert.match(main, /attachInlineExecutionControl/);
+  assert.match(main, /stage11Experiments/);
   const parts = await expectAsset('/datasets/parts/canonical-parts.json', /application\/json/, /circuits\.battery/);
   assert.equal(JSON.parse(parts).length, 203);
   const taxonomy = await expectAsset('/datasets/navigation/crocodile-taxonomy.json', /application\/json/, /Crocodile Physics 605 clean-room taxonomy/);
@@ -67,7 +69,7 @@ try {
   await expectAsset('/content/experiments/stage6/rc-charge-guided.json', /application\/json/, /\"schemaVersion\": \"2.0.0\"/);
   const missing = await fetch(`${base}/definitely-missing.asset`);
   assert.equal(missing.status, 404);
-  console.log('Web smoke: Stage 10 executable optics + Stage 9 execution mode + editor safeguards passed.');
+  console.log('Web smoke: Stage 11 executable circuits + Stage 10 optics + Stage 9 execution mode passed.');
 } finally {
   child.kill('SIGTERM');
   await new Promise(resolve => {

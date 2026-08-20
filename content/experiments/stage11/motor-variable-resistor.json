@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage11.motor-variable-resistor",
+  "version": 1,
+  "title": "کنترل سرعت موتور با مقاومت متغیر",
+  "titleFa": "کنترل سرعت موتور با مقاومت متغیر",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "با تغییر مقاومت روی خود برد، جریان واقعی موتور و نمایش سرعت آن تغییر می‌کند.",
+  "learningObjectives": [
+    "با تغییر مقاومت روی خود برد، جریان واقعی موتور و نمایش سرعت آن تغییر می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage11.motor-variable-resistor",
+    "title": "کنترل سرعت موتور با مقاومت متغیر",
+    "titleFa": "کنترل سرعت موتور با مقاومت متغیر",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "battery",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "0",
+          "voltage": 6
+        }
+      },
+      {
+        "instanceId": "vr",
+        "partId": "circuits.vresistor",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "n2",
+          "resistance": 120,
+          "maxResistance": 1000
+        }
+      },
+      {
+        "instanceId": "motor",
+        "partId": "circuits.pictorial-motor",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0",
+          "resistance": 30,
+          "nominalCurrent": 0.2
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "motor-current",
+        "quantity": "current",
+        "instanceId": "motor"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage11",
+      "stage": 11,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "low-r",
+        "titleFa": "مقاومت کم",
+        "instructionFa": "لغزنده مقاومت را روی مقدار کم قرار دهید و جریان موتور را ببینید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "با کاهش مقاومت سری، جریان موتور بیشتر می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "observe",
+        "titleFa": "مشاهده موتور",
+        "instructionFa": "جریان و چرخش موتور را مقایسه کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "motor-current",
+            "min": 0.03,
+            "max": 0.05
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "سرعت دیداری از جریان Solver مشتق می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "motor-current",
+      "labelFa": "جریان موتور",
+      "unit": "A",
+      "probe": {
+        "id": "motor-current",
+        "quantity": "current",
+        "instanceId": "motor"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "I=6/(Rvariable+30)",
+      "statementFa": "با R=120Ω جریان موتور حدود ۴۰ mA است."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "i",
+        "type": "measurement-range",
+        "measurementId": "motor-current",
+        "min": 0.03,
+        "max": 0.05,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از اندازه‌گیری و وضعیت واقعی Solver استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 11,
+    "executionMode": true
+  }
+}

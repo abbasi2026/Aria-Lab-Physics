@@ -45,17 +45,18 @@ const ICONS = {
 function iconSvg(key='folder', cls='') { return `<svg class="nav-icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[key] ?? ICONS.folder}</svg>`; }
 
 async function boot() {
-  const [canonical, palette, nav, stage6Experiments, stage9Experiments, stage10Experiments, legacy, status] = await Promise.all([
+  const [canonical, palette, nav, stage6Experiments, stage9Experiments, stage10Experiments, stage11Experiments, legacy, status] = await Promise.all([
     fetch('/datasets/parts/canonical-parts.json').then(r => r.json()),
     fetch('/datasets/parts/palette.json').then(r => r.json()),
     fetch('/datasets/navigation/crocodile-taxonomy.json').then(r => r.json()),
     fetch('/content/experiments/stage6/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/experiments/stage9/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/experiments/stage10/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch('/content/experiments/stage11/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/library/crocodile-605-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/api/ai/status').then(r => r.ok ? r.json() : ({ enabled:false, provider:'gemini', model:null })).catch(() => ({ enabled:false, provider:'gemini', model:null })),
   ]);
-  const experiments = [...stage10Experiments, ...stage9Experiments, ...stage6Experiments];
+  const experiments = [...stage11Experiments, ...stage10Experiments, ...stage9Experiments, ...stage6Experiments];
   canonicalParts = canonical; paletteEntries = palette.entries ?? []; taxonomy = nav; catalog = new ComponentCatalog(canonical);
   partIconById = new Map(); (function collect(nodes){for(const n of nodes){for(const e of n.entries??[])if(!partIconById.has(e.canonicalPartId))partIconById.set(e.canonicalPartId,e.iconKey);collect(n.children??[]);}})(taxonomy.parts.roots); experimentLibrary = experiments; legacyLibrary = legacy; aiStatus = status;
   const guidedEntries = experiments.map(item => ({ ...item, source:'aria', status:'ready', version:1, tags:['guided'] }));
@@ -188,9 +189,22 @@ function createPartElement(part) {
   const definition = catalog.get(part.partId); const screen = worldToScreen(part.transform.position); const el = document.createElement('div'); el.className = `scene-part ${doc.selection.type === 'part' && doc.selection.id === part.instanceId ? 'selected' : ''}`; el.dataset.instanceId = part.instanceId; el.style.left = `${screen.x}px`; el.style.top = `${screen.y}px`; el.style.rotate = `${part.transform.rotation ?? 0}deg`; 
   const capability=executableCapability(part.partId); el.dataset.executable=capability.supported?'true':'false'; el.innerHTML = `<div class="scene-part-physical physical-${escapeAttr(capability.kind)}"><div class="scene-part-icon">${iconSvg(partIconById.get(part.partId) ?? domainIcons[definition?.domain] ?? 'folder')}</div></div><div class="scene-part-name">${escapeHtml(definition?.nameFa ?? part.partId)}</div>${capability.supported?'':'<span class="dev-badge">در حال توسعه</span>'}`;
   el.onclick = e => { e.stopPropagation(); if (mode === 'execute' && isInteractiveSwitch(part.partId)) { toggleInteractivePart(part); return; } if (mode === 'select' || mode === 'execute') doc.selectPart(part.instanceId); };
+  attachInlineExecutionControl(el, part);
   bindPartDrag(el, part);
   const ports = definition ? catalog.displayPorts(definition.id) : []; ports.forEach((port, i) => { const dot = document.createElement('span'); dot.className = 'port'; dot.dataset.instanceId = part.instanceId; dot.dataset.portId = port.id; dot.dataset.side = i % 2 ? 'right' : 'left'; dot.style.top = `${20 + (i % Math.max(1,Math.ceil(ports.length/2))) * 18}px`; dot.title = port.id; dot.onclick = e => { e.stopPropagation(); onPortClick(dot, definition, port); }; el.appendChild(dot); });
   return el;
+}
+
+
+function attachInlineExecutionControl(el,part){
+  const id=String(part.partId).toLowerCase(),p=part.properties??{};
+  let spec=null;
+  if(/vresistor|potentiometer/.test(id))spec={key:'resistance',min:1,max:Number(p.maxResistance??5000),step:1,value:Number(p.resistance??p.value??1000),label:'R'};
+  else if(/ldr/.test(id))spec={key:'lightLevel',min:0,max:1,step:.01,value:Number(p.lightLevel??.5),label:'نور'};
+  else if(/thermistor/.test(id))spec={key:'temperature',min:-10,max:100,step:1,value:Number(p.temperature??25),label:'دما'};
+  if(!spec)return;
+  const wrap=document.createElement('label');wrap.className='inline-control';wrap.innerHTML=`<span>${spec.label}</span><input type="range" min="${spec.min}" max="${spec.max}" step="${spec.step}" value="${spec.value}">`;
+  const input=wrap.querySelector('input');input.addEventListener('pointerdown',e=>e.stopPropagation());input.addEventListener('click',e=>e.stopPropagation());input.addEventListener('change',e=>{e.stopPropagation();doc.updateProperties(part.instanceId,{[spec.key]:Number(e.target.value)});syncRuntime(true);runtime?.step(1);renderRuntimeOverlay();});el.appendChild(wrap);
 }
 
 function bindPartDrag(el, part) {
@@ -240,7 +254,7 @@ function propertyField(prop,value){const val=value??prop.default??'';const meta=
 function syncRuntime(force=false){if(!force&&runtime?.status==='running')return;runtime=new SceneRuntime(doc.snapshot(), { partDefinitions: canonicalParts });updateRunUI();}
 function animate(){cancelAnimationFrame(raf);const loop=()=>{if(runtime?.status==='running'){runtime.step(1);renderRuntimeOverlay();renderBottom(false);}updateRunUI();raf=requestAnimationFrame(loop);};raf=requestAnimationFrame(loop);}
 function updateRunUI(){const running=runtime?.status==='running';$('#run-icon').textContent=running?'Ⅱ':'▶';$('#run-label').textContent=running?'توقف':'اجرا';$('#runtime-time').textContent=`t = ${(runtime?.clock.time??0).toFixed(3)} s`;}
-function renderRuntimeOverlay(){const snap=runtime?.snapshot();if(!snap)return;$('#runtime-time').textContent=`t = ${snap.time.toFixed(3)} s`;const frame=buildExecutionFrame(doc.snapshot(),snap);renderPhysicsLayer(frame);for(const [id,state] of Object.entries(frame.parts)){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(id)}"]`);if(!el)continue;el.classList.toggle('physics-active',Boolean(state.active));el.classList.toggle('unsupported-part',!state.supported);if(Number.isFinite(state.intensity))el.style.setProperty('--intensity',String(state.intensity));}if(snap.domain==='mechanics'){for(const b of snap.state.bodies??[]){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(b.id)}"]`);if(el){const screen=worldToScreen(b.position);el.style.left=`${screen.x}px`;el.style.top=`${screen.y}px`;if(Number.isFinite(b.angle))el.style.rotate=`${b.angle*180/Math.PI}deg`;el.classList.toggle('running',runtime.status==='running');}}renderConnections();}}
+function renderRuntimeOverlay(){const snap=runtime?.snapshot();if(!snap)return;$('#runtime-time').textContent=`t = ${snap.time.toFixed(3)} s`;const frame=buildExecutionFrame(doc.snapshot(),snap);renderPhysicsLayer(frame);for(const [id,state] of Object.entries(frame.parts)){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(id)}"]`);if(!el)continue;el.classList.toggle('physics-active',Boolean(state.active));el.classList.toggle('unsupported-part',!state.supported);if(Number.isFinite(state.intensity))el.style.setProperty('--intensity',String(state.intensity));if(Number.isFinite(state.speed))el.style.setProperty('--speed',String(state.speed));el.classList.toggle('fuse-blown',Boolean(state.blown));let readout=el.querySelector('.live-readout');if(state.display){if(!readout){readout=document.createElement('span');readout.className='live-readout';el.appendChild(readout);}readout.textContent=state.display;}else readout?.remove();}if(snap.domain==='mechanics'){for(const b of snap.state.bodies??[]){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(b.id)}"]`);if(el){const screen=worldToScreen(b.position);el.style.left=`${screen.x}px`;el.style.top=`${screen.y}px`;if(Number.isFinite(b.angle))el.style.rotate=`${b.angle*180/Math.PI}deg`;el.classList.toggle('running',runtime.status==='running');}}renderConnections();}}
 
 
 function toggleInteractivePart(part){

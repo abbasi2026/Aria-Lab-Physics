@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage11.led-series",
+  "version": 1,
+  "title": "LED و مقاومت سری",
+  "titleFa": "LED و مقاومت سری",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "جریان LED از مدل الکتریکی واقعی و افت ولتاژ روشن‌شدن محاسبه می‌شود.",
+  "learningObjectives": [
+    "جریان LED از مدل الکتریکی واقعی و افت ولتاژ روشن‌شدن محاسبه می‌شود."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage11.led-series",
+    "title": "LED و مقاومت سری",
+    "titleFa": "LED و مقاومت سری",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "battery",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "0",
+          "voltage": 5
+        }
+      },
+      {
+        "instanceId": "r",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "n2",
+          "resistance": 150
+        }
+      },
+      {
+        "instanceId": "led",
+        "partId": "circuits.red-led",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0",
+          "forwardVoltage": 1.9,
+          "nominalCurrent": 0.02
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "led-current",
+        "quantity": "current",
+        "instanceId": "led"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage11",
+      "stage": 11,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "اجرای مدار",
+        "instructionFa": "مدار را اجرا کنید و روشن شدن LED را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "LED باید فقط در بایاس مستقیم روشن شود."
+          }
+        ]
+      },
+      {
+        "id": "measure",
+        "titleFa": "اندازه‌گیری جریان",
+        "instructionFa": "جریان LED را بخوانید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "led-current",
+            "min": 0.015,
+            "max": 0.022
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "مقاومت سری جریان LED را محدود می‌کند."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "led-current",
+      "labelFa": "جریان LED",
+      "unit": "A",
+      "probe": {
+        "id": "led-current",
+        "quantity": "current",
+        "instanceId": "led"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "I≈(5-1.9)/(150+20)",
+      "statementFa": "جریان LED حدود ۱۸ میلی‌آمپر است."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "i",
+        "type": "measurement-range",
+        "measurementId": "led-current",
+        "min": 0.015,
+        "max": 0.022,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از اندازه‌گیری و وضعیت واقعی Solver استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 11,
+    "executionMode": true
+  }
+}

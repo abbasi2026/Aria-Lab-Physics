@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage11.voltage-divider-meter",
+  "version": 1,
+  "title": "تقسیم ولتاژ با ولت‌متر زنده",
+  "titleFa": "تقسیم ولتاژ با ولت‌متر زنده",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "ولت‌متر اختلاف پتانسیل واقعی دو سر خود را بدون بارگذاری محسوس مدار نمایش می‌دهد.",
+  "learningObjectives": [
+    "ولت‌متر اختلاف پتانسیل واقعی دو سر خود را بدون بارگذاری محسوس مدار نمایش می‌دهد."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage11.voltage-divider-meter",
+    "title": "تقسیم ولتاژ با ولت‌متر زنده",
+    "titleFa": "تقسیم ولتاژ با ولت‌متر زنده",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "battery",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "0",
+          "voltage": 6
+        }
+      },
+      {
+        "instanceId": "r1",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "n2",
+          "resistance": 100
+        }
+      },
+      {
+        "instanceId": "r2",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0",
+          "resistance": 100
+        }
+      },
+      {
+        "instanceId": "vm",
+        "partId": "circuits.voltmeter",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": -1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0"
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "divider-voltage",
+        "quantity": "voltage",
+        "instanceId": "vm"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage11",
+      "stage": 11,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "اجرای تقسیم ولتاژ",
+        "instructionFa": "مدار را اجرا کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "دو مقاومت برابر ولتاژ منبع را نصف می‌کنند."
+          }
+        ]
+      },
+      {
+        "id": "read",
+        "titleFa": "خواندن ولت‌متر",
+        "instructionFa": "مقدار روی ولت‌متر را بخوانید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "divider-voltage",
+            "min": 2.99,
+            "max": 3.01
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "ولت‌متر مقاومت داخلی بسیار بزرگ دارد."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "divider-voltage",
+      "labelFa": "ولتاژ خروجی",
+      "unit": "V",
+      "probe": {
+        "id": "divider-voltage",
+        "quantity": "voltage",
+        "instanceId": "vm"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "Vout=6×100/(100+100)=3V",
+      "statementFa": "ولت‌متر تقریباً ۳ ولت نشان می‌دهد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "v",
+        "type": "measurement-range",
+        "measurementId": "divider-voltage",
+        "min": 2.99,
+        "max": 3.01,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از اندازه‌گیری و وضعیت واقعی Solver استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 11,
+    "executionMode": true
+  }
+}

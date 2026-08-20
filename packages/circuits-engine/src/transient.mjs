@@ -59,6 +59,10 @@ export class TransientCircuit {
   diode(id, from, to, options = {}) {
     this.components.push({ id, type: 'diode', from: normalizeNode(from), to: normalizeNode(to), ...DEFAULT_DIODE, ...options }); return this;
   }
+  led(id, from, to, { forwardVoltage = 2, onResistance = 20, offResistance = 1e9 } = {}) {
+    if (!(forwardVoltage >= 0 && onResistance > 0 && offResistance > 0)) throw new Error('invalid LED parameters');
+    this.components.push({ id, type: 'pwlDiode', from: normalizeNode(from), to: normalizeNode(to), forwardVoltage, onResistance, offResistance }); return this;
+  }
 
   reset() {
     this.time = 0;
@@ -98,6 +102,13 @@ export class TransientCircuit {
           const model = diodeModel(vd, c);
           linear.push({ id: `${c.id}::g`, type: 'resistor', from: c.from, to: c.to, resistance: 1 / model.conductance });
           linear.push({ id: `${c.id}::eq`, type: 'currentSource', from: c.from, to: c.to, current: model.equivalentCurrent });
+        } else if (c.type === 'pwlDiode') {
+          const vd = (guess[c.from] ?? 0) - (guess[c.to] ?? 0);
+          const on = vd >= c.forwardVoltage;
+          const resistance = on ? c.onResistance : c.offResistance;
+          const equivalentCurrent = on ? -c.forwardVoltage / resistance : 0;
+          linear.push({ id: `${c.id}::g`, type: 'resistor', from: c.from, to: c.to, resistance });
+          if (equivalentCurrent) linear.push({ id: `${c.id}::eq`, type: 'currentSource', from: c.from, to: c.to, current: equivalentCurrent });
         }
       }
 
@@ -129,6 +140,7 @@ export class TransientCircuit {
         branchCurrents[c.id] = current;
         this.state.inductorCurrents[c.id] = current;
       } else if (c.type === 'diode') branchCurrents[c.id] = diodeModel(v, c).current;
+      else if (c.type === 'pwlDiode') branchCurrents[c.id] = v >= c.forwardVoltage ? (v - c.forwardVoltage) / c.onResistance : v / c.offResistance;
     }
 
     this.time = nextTime;

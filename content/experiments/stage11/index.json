@@ -1,0 +1,42 @@
+[
+  {
+    "id": "stage11.led-series",
+    "titleFa": "LED و مقاومت سری",
+    "domain": "circuits",
+    "path": "/content/experiments/stage11/led-series.json",
+    "stage": 11,
+    "executionMode": true
+  },
+  {
+    "id": "stage11.motor-variable-resistor",
+    "titleFa": "کنترل سرعت موتور با مقاومت متغیر",
+    "domain": "circuits",
+    "path": "/content/experiments/stage11/motor-variable-resistor.json",
+    "stage": 11,
+    "executionMode": true
+  },
+  {
+    "id": "stage11.voltage-divider-meter",
+    "titleFa": "تقسیم ولتاژ با ولت‌متر زنده",
+    "domain": "circuits",
+    "path": "/content/experiments/stage11/voltage-divider-meter.json",
+    "stage": 11,
+    "executionMode": true
+  },
+  {
+    "id": "stage11.rc-live-meter",
+    "titleFa": "شارژ خازن با ولت‌متر زنده",
+    "domain": "circuits",
+    "path": "/content/experiments/stage11/rc-live-meter.json",
+    "stage": 11,
+    "executionMode": true
+  },
+  {
+    "id": "stage11.fuse-overload",
+    "titleFa": "حفاظت مدار با فیوز",
+    "domain": "circuits",
+    "path": "/content/experiments/stage11/fuse-overload.json",
+    "stage": 11,
+    "executionMode": true
+  }
+]

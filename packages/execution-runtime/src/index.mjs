@@ -17,12 +17,19 @@ export function executableCapability(partId='') {
   }
   if(id.startsWith('circuits.')){
     if(/battery|current$/.test(id))return {supported:true,kind:'source',labelFa:'منبع الکتریکی'};
+    if(/vresistor|potentiometer/.test(id))return {supported:true,kind:'variable-resistor',labelFa:'مقاومت متغیر'};
+    if(/ldr|thermistor/.test(id))return {supported:true,kind:'sensor-resistor',labelFa:'حسگر مقاومتی'};
     if(/resistor/.test(id))return {supported:true,kind:'resistor',labelFa:'مقاومت'};
     if(/spst|spdt|dpst|dpdt|pushmake|pushbreak|floatswitch|switch/.test(id))return {supported:true,kind:'switch',labelFa:'کلید'};
+    if(/led/.test(id))return {supported:true,kind:'led',labelFa:'دیود نورافشان'};
     if(/lamp/.test(id))return {supported:true,kind:'lamp',labelFa:'لامپ'};
+    if(/motor/.test(id))return {supported:true,kind:'motor',labelFa:'موتور'};
+    if(/buzzer|loudspeaker/.test(id))return {supported:true,kind:'sound-output',labelFa:'خروجی صوتی'};
+    if(/fuse/.test(id))return {supported:true,kind:'fuse',labelFa:'فیوز'};
     if(/ammeter/.test(id))return {supported:true,kind:'ammeter',labelFa:'آمپرمتر'};
     if(/voltmeter/.test(id))return {supported:true,kind:'voltmeter',labelFa:'ولت‌متر'};
-    if(/capacitor|inductor|diode/.test(id))return {supported:true,kind:'dynamic-circuit',labelFa:'قطعه مدار گذرا'};
+    if(/capacitor|inductor|diode|zener/.test(id))return {supported:true,kind:'dynamic-circuit',labelFa:'قطعه مدار گذرا'};
+    if(/vslide|vpulse|\.clock$/.test(id))return {supported:true,kind:'source',labelFa:'منبع سیگنال/ولتاژ'};
     return {supported:false,kind:'circuit',labelFa:'مدار — در حال توسعه'};
   }
   if(id.startsWith('mechanics.')){
@@ -55,6 +62,12 @@ export function buildExecutionFrame(scene, runtimeSnapshot){
       const id=idOf(part), current=state.branchCurrents?.[part.instanceId];
       if(Number.isFinite(current)){frame.parts[part.instanceId].value=current;frame.parts[part.instanceId].active=Math.abs(current)>1e-6;}
       if(/lamp/.test(id)){const nominal=finite(part.properties?.nominalCurrent)||0.2;frame.parts[part.instanceId].intensity=Math.max(0,Math.min(1,Math.abs(finite(current))/nominal));}
+      if(/led/.test(id)){const nominal=finite(part.properties?.nominalCurrent)||0.02;frame.parts[part.instanceId].intensity=Math.max(0,Math.min(1,Math.abs(finite(current))/nominal));frame.parts[part.instanceId].display=`${(Math.abs(finite(current))*1000).toFixed(1)} mA`;}
+      if(/motor/.test(id)){const nominal=finite(part.properties?.nominalCurrent)||0.2;frame.parts[part.instanceId].speed=Math.max(0,Math.min(1,Math.abs(finite(current))/nominal));frame.parts[part.instanceId].display=`${Math.abs(finite(current)).toFixed(3)} A`;}
+      if(/buzzer|loudspeaker/.test(id)){frame.parts[part.instanceId].soundLevel=Math.max(0,Math.min(1,Math.abs(finite(current))/(finite(part.properties?.nominalCurrent)||0.1)));}
+      if(/fuse/.test(id))frame.parts[part.instanceId].blown=(state.blownFuses??[]).includes(part.instanceId);
+      if(/ammeter/.test(id))frame.parts[part.instanceId].display=`${Math.abs(finite(current)).toFixed(3)} A`;
+      if(/voltmeter/.test(id)){const nodes=state.partNodes?.[part.instanceId],v=nodes?(finite(state.nodeVoltages?.[nodes.a])-finite(state.nodeVoltages?.[nodes.b])):0;frame.parts[part.instanceId].display=`${v.toFixed(3)} V`;frame.parts[part.instanceId].value=v;}
       if(/spst|spdt|dpst|dpdt|pushmake|pushbreak|switch/.test(id))frame.parts[part.instanceId].closed=Boolean(part.properties?.closed??part.properties?.on??!id.includes('pushbreak'));
     }
     if(state.error)frame.warnings.push(state.error);

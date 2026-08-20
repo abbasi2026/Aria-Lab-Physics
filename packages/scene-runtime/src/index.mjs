@@ -97,7 +97,7 @@ function logicalPorts(definition) {
 }
 
 function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
-  let result = { nodeVoltages: { 0: 0 }, branchCurrents: {} };
+  let result = { nodeVoltages: { 0: 0 }, branchCurrents: {}, partNodes: {} };
   const defs = new Map(partDefinitions.map(d => [d.id, d]));
   const parent = new Map();
   const key = (instanceId, portId) => `${instanceId}:${portId}`;
@@ -108,56 +108,97 @@ function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
   let groundRoot = null;
   for (const part of scene.parts) {
     const id = alias(part.partId), ports = logicalPorts(defs.get(part.partId));
-    if (id.includes('battery') || id.includes('voltage-source')) {
+    if (id.includes('battery') || id.includes('voltage-source') || id.includes('vslide')) {
       const neg = ports.find(p => /negative|minus|t2/i.test(p.id)) ?? ports[1]; if (neg) { groundRoot = find(key(part.instanceId, neg.id)); break; }
     }
   }
   const roots = [...new Set([...parent.keys()].map(find))]; if (!groundRoot && roots.length) groundRoot = roots[0];
   const nodeNames = new Map(); let nodeCounter = 1; if (groundRoot) nodeNames.set(groundRoot, '0');
   for (const root of roots) if (!nodeNames.has(root)) nodeNames.set(root, `n${nodeCounter++}`);
-  const nodeFor = (part, index, fallback) => { const explicit = part.properties?.[fallback]; if (explicit !== undefined && explicit !== null && explicit !== '') return explicit; const ports = logicalPorts(defs.get(part.partId)); const port = ports[index]; return port ? nodeNames.get(find(key(part.instanceId, port.id))) : null; };
-  const dynamic = scene.parts.some(part => /capacitor|inductor|diode/i.test(part.partId));
+  const nodeFor = (part, index, fallback) => { const explicit = part.properties?.[fallback]; if (explicit !== undefined && explicit !== null && explicit !== '') return String(explicit); const ports = logicalPorts(defs.get(part.partId)); const port = ports[index]; return port ? nodeNames.get(find(key(part.instanceId, port.id))) : null; };
+  const partNodes = {};
+  for (const part of scene.parts) { const p=part.properties??{}; partNodes[part.instanceId]={ a:nodeFor(part,0,'nodeA')??p.from??'0', b:nodeFor(part,1,'nodeB')??p.to??part.instanceId }; }
+  const isLed=id=>/(?:^|[-.])(red|green|yellow)?-?led(?:$|-)/i.test(id)||/\.led$/i.test(id);
+  const isVariableResistor=id=>/vresistor|potentiometer|ldr|thermistor/i.test(id);
+  const isLoad=id=>/motor|buzzer|loudspeaker/i.test(id);
+  const isFuse=id=>/fuse/i.test(id);
+  const sourceVoltage=(id,p,time=0)=>{
+    if(/vpulse|clock/.test(id)){const low=Number(p.lowVoltage??p.low??0),high=Number(p.highVoltage??p.high??p.voltage??5),frequency=Math.max(1e-9,Number(p.frequency??1)),duty=Math.max(0,Math.min(1,Number(p.dutyCycle??p.duty??.5)));return ((time*frequency)%1)<duty?high:low;}
+    return Number(p.voltage??p.value??(id.includes('9v')?9:6));
+  };
+  const resistanceFor=(id,p)=>{
+    if(/ammeter/.test(id))return Number(p.resistance??1e-6); if(/voltmeter/.test(id))return Number(p.resistance??1e9);
+    if(/lamp/.test(id))return Number(p.resistance??30); if(/motor/.test(id))return Number(p.resistance??30); if(/buzzer/.test(id))return Number(p.resistance??60); if(/loudspeaker/.test(id))return Number(p.resistance??8); if(isFuse(id))return Number(p.resistance??.02);
+    if(/ldr/.test(id)){const light=Math.max(0,Math.min(1,Number(p.lightLevel??p.light??.5)));return Number(p.resistance??(1e5/(1+99*light)));}
+    if(/thermistor/.test(id)){const r0=Number(p.r0??p.resistanceAt25??1000),beta=Number(p.beta??3500),tempC=Number(p.temperature??25),t=tempC+273.15,t0=298.15;return Number(p.resistance??r0*Math.exp(beta*(1/t-1/t0)));}
+    return Math.max(1e-9,Number(p.resistance??p.value??p.maxResistance??1000));
+  };
+  const dynamic = scene.parts.some(part => /capacitor|inductor|diode|led|zener/i.test(part.partId));
+  const fuseRatings=new Map(scene.parts.filter(p=>isFuse(alias(p.partId))).map(p=>[p.instanceId,Number(p.properties?.rating??p.properties?.maxCurrent??1)]));
+  const blownFuses=new Set();
+  const decorate=r=>({ ...r, partNodes, blownFuses:[...blownFuses] });
 
   if (dynamic) {
     const transient = new TransientCircuit({ dt: scene.simulation?.dt ?? 1e-4 });
     for (const part of scene.parts) {
-      const id = alias(part.partId), p = part.properties ?? {}; const a = nodeFor(part, 0, 'nodeA') ?? p.from ?? '0'; const b = nodeFor(part, 1, 'nodeB') ?? p.to ?? part.instanceId;
-      if (id.includes('resistor')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1000));
-      else if (id.includes('battery') || id.includes('voltage-source')) transient.voltageSource(part.instanceId, a, b, Number(p.voltage ?? 9));
-      else if (id.includes('current-source')) transient.currentSource(part.instanceId, a, b, Number(p.current ?? 0.001));
-      else if (id.includes('capacitor')) { const capacitance=Number(p.capacitance ?? 1e-6); const initialVoltage=Number(p.initialVoltage ?? (Number.isFinite(Number(p.charge)) ? Number(p.charge)/capacitance : 0)); transient.capacitor(part.instanceId, a, b, capacitance, { initialVoltage }); }
-      else if (id.includes('inductor')) transient.inductor(part.instanceId, a, b, Number(p.inductance ?? 1e-3), { initialCurrent: Number(p.initialCurrent ?? 0) });
-      else if (id.includes('diode')) transient.diode(part.instanceId, a, b, { saturationCurrent: Number(p.saturationCurrent ?? 1e-12), ideality: Number(p.ideality ?? 1), thermalVoltage: Number(p.thermalVoltage ?? 0.02585) });
-      else if (isCircuitSwitchId(id)) transient.resistor(part.instanceId, a, b, (p.closed ?? p.on ?? !id.includes('pushbreak')) ? 1e-9 : 1e15);
-      else if (id.includes('lamp')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 100));
-      else if (id.includes('ammeter')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e-6));
-      else if (id.includes('voltmeter')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e9));
+      const id=alias(part.partId),p=part.properties??{}, {a,b}=partNodes[part.instanceId];
+      if (isLed(id)) transient.led(part.instanceId,a,b,{forwardVoltage:Number(p.forwardVoltage??(id.includes('green')?2.2:id.includes('yellow')?2.0:1.9)),onResistance:Number(p.onResistance??20),offResistance:Number(p.offResistance??1e9)});
+      else if (id.includes('resistor')||isVariableResistor(id)||isLoad(id)||isFuse(id)) transient.resistor(part.instanceId,a,b,resistanceFor(id,p));
+      else if (id.includes('battery')||id.includes('voltage-source')||id.includes('vslide')||id.includes('vpulse')||id.endsWith('.clock')) transient.voltageSource(part.instanceId,a,b,time=>sourceVoltage(id,p,time));
+      else if (id.includes('current-source')||id.endsWith('.current')) transient.currentSource(part.instanceId,a,b,Number(p.current??.001));
+      else if (id.includes('capacitor')) { const capacitance=Number(p.capacitance??1e-6),initialVoltage=Number(p.initialVoltage??(Number.isFinite(Number(p.charge))?Number(p.charge)/capacitance:0));transient.capacitor(part.instanceId,a,b,capacitance,{initialVoltage}); }
+      else if (id.includes('inductor')) transient.inductor(part.instanceId,a,b,Number(p.inductance??1e-3),{initialCurrent:Number(p.initialCurrent??0)});
+      else if (id.includes('diode')||id.includes('zener')) transient.diode(part.instanceId,a,b,{saturationCurrent:Number(p.saturationCurrent??1e-12),ideality:Number(p.ideality??1),thermalVoltage:Number(p.thermalVoltage??.02585)});
+      else if (isCircuitSwitchId(id)) transient.resistor(part.instanceId,a,b,(p.closed??p.on??!id.includes('pushbreak'))?1e-9:1e15);
+      else if (id.includes('ammeter')||id.includes('voltmeter')) transient.resistor(part.instanceId,a,b,resistanceFor(id,p));
     }
-    const state = () => result;
     return {
-      step: dt => { result = transient.step(dt); return result; }, snapshot: state,
-      measure(probe) { if (probe.quantity === 'voltage') return result.nodeVoltages?.[probe.node ?? probe.instanceId] ?? null; if (probe.quantity === 'current') return result.branchCurrents?.[probe.instanceId] ?? null; return null; }
+      step: dt => {
+        result=decorate(transient.step(dt));
+        for(const [id,rating] of fuseRatings){
+          if(!blownFuses.has(id) && Math.abs(result.branchCurrents?.[id]??0)>rating){
+            blownFuses.add(id);
+            const component=transient.components.find(c=>c.id===id && c.type==='resistor');
+            if(component) component.resistance=1e15;
+          }
+        }
+        return decorate(result);
+      },
+      snapshot: () => decorate(result),
+      measure: probe => measureCircuitProbe(probe,result,partNodes)
     };
   }
 
   const solve = () => {
-    const net = new CircuitNetwork();
-    for (const part of scene.parts) {
-      const id = alias(part.partId), p = part.properties ?? {}; const a = nodeFor(part, 0, 'nodeA') ?? p.from ?? '0'; const b = nodeFor(part, 1, 'nodeB') ?? p.to ?? part.instanceId;
-      if (id.includes('resistor')) net.resistor(part.instanceId, a, b, Number(p.resistance ?? 1000));
-      else if (id.includes('battery') || id.includes('voltage-source')) net.voltageSource(part.instanceId, a, b, Number(p.voltage ?? 9));
-      else if (id.includes('current-source')) net.currentSource(part.instanceId, a, b, Number(p.current ?? 0.001));
-      else if (isCircuitSwitchId(id)) net.switch(part.instanceId, a, b, p.closed ?? p.on ?? !id.includes('pushbreak'));
-      else if (id.includes('lamp')) net.lamp(part.instanceId, a, b, { resistance: Number(p.resistance ?? 100) });
-      else if (id.includes('ammeter')) net.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e-6));
-      else if (id.includes('voltmeter')) net.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e9));
+    const net=new CircuitNetwork();
+    for(const part of scene.parts){
+      const id=alias(part.partId),p=part.properties??{}, {a,b}=partNodes[part.instanceId];
+      if(id.includes('resistor')||isVariableResistor(id)||isLoad(id)||isFuse(id))net.resistor(part.instanceId,a,b,blownFuses.has(part.instanceId)?1e15:resistanceFor(id,p));
+      else if(id.includes('battery')||id.includes('voltage-source')||id.includes('vslide')||id.includes('vpulse')||id.endsWith('.clock'))net.voltageSource(part.instanceId,a,b,sourceVoltage(id,p,0));
+      else if(id.includes('current-source')||id.endsWith('.current'))net.currentSource(part.instanceId,a,b,Number(p.current??.001));
+      else if(isCircuitSwitchId(id))net.switch(part.instanceId,a,b,p.closed??p.on??!id.includes('pushbreak'));
+      else if(/lamp/.test(id))net.lamp(part.instanceId,a,b,{resistance:resistanceFor(id,p)});
+      else if(/ammeter/.test(id)||/voltmeter/.test(id))net.resistor(part.instanceId,a,b,resistanceFor(id,p));
     }
-    result = net.solveDC(); return result;
+    let solved=net.solveDC();
+    let changed=false;for(const [id,rating] of fuseRatings){if(!blownFuses.has(id)&&Math.abs(solved.branchCurrents?.[id]??0)>rating){blownFuses.add(id);changed=true;}}
+    if(changed)return solve();
+    result=decorate(solved);return result;
   };
-  try { solve(); } catch (error) { result = { error: error.message, nodeVoltages: { 0: 0 }, branchCurrents: {} }; }
-  return { step: () => { try { return solve(); } catch (error) { return result = { error: error.message, nodeVoltages: { 0: 0 }, branchCurrents: {} }; } }, snapshot: () => result,
-    measure(probe) { if (probe.quantity === 'voltage') return result.nodeVoltages?.[probe.node ?? probe.instanceId] ?? null; if (probe.quantity === 'current') return result.branchCurrents?.[probe.instanceId] ?? null; return null; } };
+  try{solve();}catch(error){result=decorate({error:error.message,nodeVoltages:{0:0},branchCurrents:{}});}
+  return {step:()=>{try{return solve();}catch(error){return result=decorate({error:error.message,nodeVoltages:{0:0},branchCurrents:{}});}},snapshot:()=>decorate(result),measure:probe=>measureCircuitProbe(probe,result,partNodes)};
 }
+function measureCircuitProbe(probe,result,partNodes){
+  if(probe.quantity==='current')return result.branchCurrents?.[probe.instanceId]??null;
+  if(probe.quantity==='voltage'){
+    if(probe.node!==undefined)return result.nodeVoltages?.[probe.node]??null;
+    const nodes=partNodes[probe.instanceId];if(nodes)return (result.nodeVoltages?.[nodes.a]??0)-(result.nodeVoltages?.[nodes.b]??0);
+    return null;
+  }
+  if(probe.quantity==='fuse-blown')return (result.blownFuses??[]).includes(probe.instanceId)?1:0;
+  return null;
+}
+
 function segmentFromPart(part, defaultLength = 4) {
   const p = part.properties ?? {}; const length = Number(p.length ?? p.height ?? defaultLength); const angle = (part.transform.rotation ?? 0) * Math.PI / 180; const dx = Math.cos(angle) * length / 2, dy = Math.sin(angle) * length / 2; const c = part.transform.position;
   return [{ x: c.x - dx, y: c.y - dy }, { x: c.x + dx, y: c.y + dy }];
