@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage12.and-gate",
+  "version": 1,
+  "title": "گیت AND تعاملی",
+  "titleFa": "گیت AND تعاملی",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "خروجی AND فقط وقتی هر دو ورودی ۱ باشند برابر ۱ است.",
+  "learningObjectives": [
+    "خروجی AND فقط وقتی هر دو ورودی ۱ باشند برابر ۱ است."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage12.and-gate",
+    "title": "گیت AND تعاملی",
+    "titleFa": "گیت AND تعاملی",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.1,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      },
+      "circuitMode": "digital"
+    },
+    "parts": [
+      {
+        "instanceId": "a",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "b",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": -1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "gate",
+        "partId": "circuits.7408",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      },
+      {
+        "instanceId": "out",
+        "partId": "circuits.logic-output",
+        "transform": {
+          "position": {
+            "x": 4,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "connections": [
+      {
+        "id": "c1",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "a",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "gate",
+          "portId": "t1"
+        }
+      },
+      {
+        "id": "c2",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "b",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "gate",
+          "portId": "t2"
+        }
+      },
+      {
+        "id": "c3",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "gate",
+          "portId": "t3"
+        },
+        "to": {
+          "instanceId": "out",
+          "portId": "port-1"
+        }
+      }
+    ],
+    "probes": [
+      {
+        "id": "out-logic",
+        "instanceId": "out",
+        "quantity": "logic"
+      }
+    ],
+    "metadata": {
+      "stage": 12,
+      "executionMode": true,
+      "circuitMode": "digital"
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "touch",
+        "titleFa": "تغییر ورودی",
+        "instructionFa": "در حالت اجرا روی ورودی منطقی بزنید و تغییر خروجی را ببینید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "خروجی مستقیماً از شبکه منطقی محاسبه می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "out-logic",
+      "labelFa": "وضعیت منطقی",
+      "unit": "logic",
+      "probe": {
+        "id": "out-logic",
+        "instanceId": "out",
+        "quantity": "logic"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "خروجی AND فقط وقتی هر دو ورودی ۱ باشند برابر ۱ است."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.5,
+    "rules": [
+      {
+        "id": "out-logic",
+        "type": "measurement-range",
+        "measurementId": "out-logic",
+        "min": 0,
+        "max": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "وضعیت منطقی را فقط از Solver بخوان."
+    ]
+  },
+  "metadata": {
+    "stage": 12,
+    "executionMode": true
+  }
+}

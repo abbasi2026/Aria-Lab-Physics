@@ -1,0 +1,42 @@
+[
+  {
+    "id": "stage12.and-gate",
+    "titleFa": "گیت AND تعاملی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage12/and-gate.json",
+    "stage": 12,
+    "executionMode": true
+  },
+  {
+    "id": "stage12.xor-gate",
+    "titleFa": "گیت XOR تعاملی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage12/xor-gate.json",
+    "stage": 12,
+    "executionMode": true
+  },
+  {
+    "id": "stage12.not-gate",
+    "titleFa": "گیت NOT تعاملی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage12/not-gate.json",
+    "stage": 12,
+    "executionMode": true
+  },
+  {
+    "id": "stage12.clock-output",
+    "titleFa": "کلاک و خروجی منطقی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage12/clock-output.json",
+    "stage": 12,
+    "executionMode": true
+  },
+  {
+    "id": "stage12.seven-segment",
+    "titleFa": "نمایشگر هفت‌قسمتی تعاملی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage12/seven-segment.json",
+    "stage": 12,
+    "executionMode": true
+  }
+]

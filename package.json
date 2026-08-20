@@ -12,7 +12,7 @@
     "validate:parts": "python tools/part-validator/validate.py",
     "validate": "npm run validate:data && npm run validate:parts",
     "test:stage2": "node tests/physics/stage2/run-stage2-tests.mjs",
-    "test": "npm run validate && npm run test:stage2 && npm run test:stage3 && npm run test:stage4 && npm run test:stage5 && npm run test:stage6 && npm run test:stage7 && npm run test:stage8 && npm run test:stage9 && npm run test:stage10 && npm run test:stage11",
+    "test": "npm run validate && npm run test:stage2 && npm run test:stage3 && npm run test:stage4 && npm run test:stage5 && npm run test:stage6 && npm run test:stage7 && npm run test:stage8 && npm run test:stage9 && npm run test:stage10 && npm run test:stage11 && npm run test:stage12",
     "test:stage3": "node tests/physics/stage3/run-stage3-tests.mjs",
     "dev": "node tools/dev-server/index.mjs",
     "test:stage4": "node tests/physics/stage4/run-stage4-tests.mjs",
@@ -27,6 +27,7 @@
     "test:stage8": "node tests/physics/stage8/run-stage8-tests.mjs",
     "test:stage9": "node tests/physics/stage9/run-stage9-tests.mjs",
     "test:stage10": "node tests/physics/stage10/run-stage10-tests.mjs",
-    "test:stage11": "node tests/physics/stage11/run-stage11-tests.mjs"
+    "test:stage11": "node tests/physics/stage11/run-stage11-tests.mjs",
+    "test:stage12": "node tests/physics/stage12/run-stage12-tests.mjs"
   }
 }

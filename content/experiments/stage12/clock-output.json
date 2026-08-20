@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage12.clock-output",
+  "version": 1,
+  "title": "کلاک و خروجی منطقی",
+  "titleFa": "کلاک و خروجی منطقی",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "کلاک ۲ هرتز خروجی منطقی را بین ۰ و ۱ تغییر می‌دهد.",
+  "learningObjectives": [
+    "کلاک ۲ هرتز خروجی منطقی را بین ۰ و ۱ تغییر می‌دهد."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage12.clock-output",
+    "title": "کلاک و خروجی منطقی",
+    "titleFa": "کلاک و خروجی منطقی",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.1,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      },
+      "circuitMode": "digital"
+    },
+    "parts": [
+      {
+        "instanceId": "clock",
+        "partId": "circuits.clock",
+        "transform": {
+          "position": {
+            "x": -2,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "frequency": 2,
+          "dutyCycle": 0.5
+        }
+      },
+      {
+        "instanceId": "out",
+        "partId": "circuits.logic-output",
+        "transform": {
+          "position": {
+            "x": 3,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "connections": [
+      {
+        "id": "c1",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "clock",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "out",
+          "portId": "port-1"
+        }
+      }
+    ],
+    "probes": [
+      {
+        "id": "out-logic",
+        "instanceId": "out",
+        "quantity": "logic"
+      }
+    ],
+    "metadata": {
+      "stage": 12,
+      "executionMode": true,
+      "circuitMode": "digital"
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "اجرای کلاک",
+        "instructionFa": "اجرا را بزنید و تغییر پیاپی ۰ و ۱ را روی خروجی ببینید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.2
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "کلاک ۲ هرتز در هر نیم‌دوره وضعیت را عوض می‌کند."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "out-logic",
+      "labelFa": "وضعیت منطقی",
+      "unit": "logic",
+      "probe": {
+        "id": "out-logic",
+        "instanceId": "out",
+        "quantity": "logic"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "کلاک ۲ هرتز خروجی منطقی را بین ۰ و ۱ تغییر می‌دهد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.5,
+    "rules": [
+      {
+        "id": "out-logic",
+        "type": "measurement-range",
+        "measurementId": "out-logic",
+        "min": 0,
+        "max": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "وضعیت منطقی را فقط از Solver بخوان."
+    ]
+  },
+  "metadata": {
+    "stage": 12,
+    "executionMode": true
+  }
+}

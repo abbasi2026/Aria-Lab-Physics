@@ -38,5 +38,5 @@ test('mechanics execution moves and transfers velocity in collision',()=>{
 test('wave execution produces nonzero field energy',()=>{
   const e=read('content/experiments/stage9/wave-interference.json'),r=runtimeFor(e);r.step(30);const s=r.snapshot();assert.ok(s.state.energy>0);const f=buildExecutionFrame(e.scene,s);assert.equal(f.overlays.wave.width,41);assert.equal(f.overlays.wave.height,31);assert.ok(f.overlays.wave.values.some(v=>Math.abs(v)>1e-8));
 });
-test('unsupported parts are explicitly marked instead of faking physics',()=>{const c=executableCapability('circuits.7400');assert.equal(c.supported,false);assert.match(c.labelFa,/در حال توسعه/);});
+test('unsupported parts are explicitly marked instead of faking physics',()=>{const c=executableCapability('circuits.opamp-741');assert.equal(c.supported,false);assert.match(c.labelFa,/در حال توسعه/);});
 console.log(`\nStage 9: ${count} tests passed.`);

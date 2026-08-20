@@ -5,6 +5,7 @@ import { TransientCircuit } from '../../circuits-engine/src/transient.mjs';
 import { RayScene } from '../../optics-engine/src/ray-scene.mjs';
 import { WaveGrid2D } from '../../waves-engine/src/wave-grid.mjs';
 import { ProbeRecorder } from '../../measurement-engine/src/index.mjs';
+import { DigitalCircuit } from '../../digital-engine/src/index.mjs';
 
 const clone = value => structuredClone(value);
 const alias = id => String(id).toLowerCase();
@@ -52,6 +53,7 @@ export class SceneRuntime {
 
 function createDomainAdapter(scene, options = {}) {
   if (scene.domain === 'mechanics') return mechanicsAdapter(scene);
+  if (scene.domain === 'circuits' && scene.simulation?.circuitMode === 'digital') return digitalAdapter(scene, options);
   if (scene.domain === 'circuits') return circuitsAdapter(scene, options);
   if (scene.domain === 'optics') return opticsAdapter(scene);
   if (scene.domain === 'waves') return wavesAdapter(scene);
@@ -94,6 +96,17 @@ function logicalPorts(definition) {
     if (seen.has(role)) continue; seen.add(role); out.push(port);
   }
   return out;
+}
+
+
+function digitalAdapter(scene,{partDefinitions=[]}={}){
+  const circuit=new DigitalCircuit(scene,{partDefinitions});
+  let result=circuit.snapshot();
+  return {
+    step:dt=>{result=circuit.evaluate(dt);return result;},
+    snapshot:()=>result,
+    measure:probe=>circuit.measure(probe)
+  };
 }
 
 function circuitsAdapter(scene, { partDefinitions = [] } = {}) {

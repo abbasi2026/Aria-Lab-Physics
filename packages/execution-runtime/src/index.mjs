@@ -16,6 +16,11 @@ export function executableCapability(partId='') {
     return {supported:false,kind:'optics',labelFa:'اپتیک — در حال توسعه'};
   }
   if(id.startsWith('circuits.')){
+    if(/logic-input|push-button-logic-input/.test(id))return {supported:true,kind:'logic-input',labelFa:'ورودی منطقی'};
+    if(/logic-output/.test(id))return {supported:true,kind:'logic-output',labelFa:'خروجی منطقی'};
+    if(/(?:7400|7402|7404|7408|7410|7414|7420|7432|7486)$/.test(id))return {supported:true,kind:'logic-gate',labelFa:'گیت منطقی'};
+    if(/seven-segment-display/.test(id))return {supported:true,kind:'seven-segment',labelFa:'نمایشگر هفت‌قسمتی'};
+    if(/\.clock$/.test(id))return {supported:true,kind:'logic-clock',labelFa:'کلاک منطقی'};
     if(/battery|current$/.test(id))return {supported:true,kind:'source',labelFa:'منبع الکتریکی'};
     if(/vresistor|potentiometer/.test(id))return {supported:true,kind:'variable-resistor',labelFa:'مقاومت متغیر'};
     if(/ldr|thermistor/.test(id))return {supported:true,kind:'sensor-resistor',labelFa:'حسگر مقاومتی'};
@@ -57,6 +62,16 @@ export function buildExecutionFrame(scene, runtimeSnapshot){
     frame.overlays.rays=(state.rays??(state.path?[{path:state.path}]:[])).map(r=>({path:(r.path??[]).map(p=>({x:finite(p.point?.x),y:finite(p.point?.y),event:p.event??''}))}));
     if(state.focus&&Number.isFinite(state.focus.x)&&Number.isFinite(state.focus.y))frame.overlays.focus={x:state.focus.x,y:state.focus.y};
     for(const part of scene.parts??[]) frame.parts[part.instanceId].active=frame.parts[part.instanceId].supported;
+  } else if(domain==='circuits' && scene?.simulation?.circuitMode==='digital'){
+    for(const part of scene.parts??[]){
+      const digital=state.parts?.[part.instanceId]??{}, target=frame.parts[part.instanceId];
+      if(!target)continue;
+      const value=digital.value??digital.output;
+      if(typeof value==='boolean'){target.active=value;target.value=value?1:0;target.logic=value;target.display=value?'۱':'۰';}
+      if(digital.kind==='gate'){target.inputs=digital.inputs;target.logic=digital.output;target.active=Boolean(digital.output);target.display=digital.output?'۱':'۰';}
+      if(digital.kind==='seven-segment'){target.segments=digital.segments;target.digit=digital.digit;target.active=Object.values(digital.segments??{}).some(Boolean);target.display=Number.isInteger(digital.digit)?String(digital.digit):'—';}
+    }
+    for(const conflict of state.conflicts??[])frame.warnings.push(`تعارض منطقی روی ${conflict.net}`);
   } else if(domain==='circuits'){
     for(const part of scene.parts??[]){
       const id=idOf(part), current=state.branchCurrents?.[part.instanceId];
@@ -79,6 +94,8 @@ export function buildExecutionFrame(scene, runtimeSnapshot){
   }
   return frame;
 }
+
+export function isInteractiveLogicInput(partId=''){return /logic-input|push-button-logic-input/i.test(String(partId));}
 
 export function isInteractiveSwitch(partId=''){
   return /(?:spst|spdt|dpst|dpdt|pushmake|pushbreak|floatswitch|switch)/i.test(String(partId));

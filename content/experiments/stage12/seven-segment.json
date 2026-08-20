@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage12.seven-segment",
+  "version": 1,
+  "title": "نمایشگر هفت‌قسمتی تعاملی",
+  "titleFa": "نمایشگر هفت‌قسمتی تعاملی",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "با ورودی‌های سگمنت a,b,c,d,g نمایشگر عدد ۳ را نشان می‌دهد.",
+  "learningObjectives": [
+    "با ورودی‌های سگمنت a,b,c,d,g نمایشگر عدد ۳ را نشان می‌دهد."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage12.seven-segment",
+    "title": "نمایشگر هفت‌قسمتی تعاملی",
+    "titleFa": "نمایشگر هفت‌قسمتی تعاملی",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.1,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      },
+      "circuitMode": "digital"
+    },
+    "parts": [
+      {
+        "instanceId": "in-a",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 3
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "in-b",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "in-c",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "in-d",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "in-e",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": false
+        }
+      },
+      {
+        "instanceId": "in-f",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": false
+        }
+      },
+      {
+        "instanceId": "in-g",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -3
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "display",
+        "partId": "circuits.seven-segment-display",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "connections": [
+      {
+        "id": "c-a",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "in-a",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "a"
+        }
+      },
+      {
+        "id": "c-b",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "in-b",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "b"
+        }
+      },
+      {
+        "id": "c-c",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "in-c",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "c"
+        }
+      },
+      {
+        "id": "c-d",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "in-d",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "d"
+        }
+      },
+      {
+        "id": "c-e",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "in-e",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "e"
+        }
+      },
+      {
+        "id": "c-f",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "in-f",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "f"
+        }
+      },
+      {
+        "id": "c-g",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "in-g",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "g"
+        }
+      }
+    ],
+    "probes": [
+      {
+        "id": "digit",
+        "instanceId": "display",
+        "quantity": "digit"
+      }
+    ],
+    "metadata": {
+      "stage": 12,
+      "executionMode": true,
+      "circuitMode": "digital"
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "observe",
+        "titleFa": "نمایش عدد",
+        "instructionFa": "وضعیت سگمنت‌ها را مشاهده و یکی از ورودی‌ها را لمس کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "سگمنت‌های a,b,c,d,g عدد ۳ را می‌سازند."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "digit",
+      "labelFa": "وضعیت منطقی",
+      "unit": "logic",
+      "probe": {
+        "id": "digit",
+        "instanceId": "display",
+        "quantity": "digit"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "با ورودی‌های سگمنت a,b,c,d,g نمایشگر عدد ۳ را نشان می‌دهد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.5,
+    "rules": [
+      {
+        "id": "digit",
+        "type": "measurement-range",
+        "measurementId": "digit",
+        "min": 0,
+        "max": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "وضعیت منطقی را فقط از Solver بخوان."
+    ]
+  },
+  "metadata": {
+    "stage": 12,
+    "executionMode": true
+  }
+}
