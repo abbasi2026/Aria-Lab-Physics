@@ -7,6 +7,7 @@ import { GroundedAIClient } from '../../../packages/ai-coach/src/index.mjs';
 import { ExperimentLibrary } from '../../../packages/experiment-library/src/index.mjs';
 import { importLegacyMetadata } from '../../../packages/crocodile-importer/src/index.mjs';
 import { buildExecutionFrame, executableCapability, isInteractiveSwitch, isInteractiveLogicInput } from '../../../packages/execution-runtime/src/index.mjs';
+import { digitalVirtualPorts } from '../../../packages/digital-engine/src/index.mjs';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -45,7 +46,7 @@ const ICONS = {
 function iconSvg(key='folder', cls='') { return `<svg class="nav-icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[key] ?? ICONS.folder}</svg>`; }
 
 async function boot() {
-  const [canonical, palette, nav, stage6Experiments, stage9Experiments, stage10Experiments, stage11Experiments, stage12Experiments, legacy, status] = await Promise.all([
+  const [canonical, palette, nav, stage6Experiments, stage9Experiments, stage10Experiments, stage11Experiments, stage12Experiments, stage13Experiments, legacy, status] = await Promise.all([
     fetch('/datasets/parts/canonical-parts.json').then(r => r.json()),
     fetch('/datasets/parts/palette.json').then(r => r.json()),
     fetch('/datasets/navigation/crocodile-taxonomy.json').then(r => r.json()),
@@ -54,10 +55,11 @@ async function boot() {
     fetch('/content/experiments/stage10/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/experiments/stage11/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/experiments/stage12/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch('/content/experiments/stage13/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/library/crocodile-605-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/api/ai/status').then(r => r.ok ? r.json() : ({ enabled:false, provider:'gemini', model:null })).catch(() => ({ enabled:false, provider:'gemini', model:null })),
   ]);
-  const experiments = [...stage12Experiments, ...stage11Experiments, ...stage10Experiments, ...stage9Experiments, ...stage6Experiments];
+  const experiments = [...stage13Experiments, ...stage12Experiments, ...stage11Experiments, ...stage10Experiments, ...stage9Experiments, ...stage6Experiments];
   canonicalParts = canonical; paletteEntries = palette.entries ?? []; taxonomy = nav; catalog = new ComponentCatalog(canonical);
   partIconById = new Map(); (function collect(nodes){for(const n of nodes){for(const e of n.entries??[])if(!partIconById.has(e.canonicalPartId))partIconById.set(e.canonicalPartId,e.iconKey);collect(n.children??[]);}})(taxonomy.parts.roots); experimentLibrary = experiments; legacyLibrary = legacy; aiStatus = status;
   const guidedEntries = experiments.map(item => ({ ...item, source:'aria', status:'ready', version:1, tags:['guided'] }));
@@ -192,7 +194,7 @@ function createPartElement(part) {
   el.onclick = e => { e.stopPropagation(); if (mode === 'execute' && isInteractiveLogicInput(part.partId)) { toggleLogicInput(part); return; } if (mode === 'execute' && isInteractiveSwitch(part.partId)) { toggleInteractivePart(part); return; } if (mode === 'select' || mode === 'execute') doc.selectPart(part.instanceId); };
   attachInlineExecutionControl(el, part);
   bindPartDrag(el, part);
-  const ports = definition ? catalog.displayPorts(definition.id) : []; ports.forEach((port, i) => { const dot = document.createElement('span'); dot.className = 'port'; dot.dataset.instanceId = part.instanceId; dot.dataset.portId = port.id; dot.dataset.side = i % 2 ? 'right' : 'left'; dot.style.top = `${20 + (i % Math.max(1,Math.ceil(ports.length/2))) * 18}px`; dot.title = port.id; dot.onclick = e => { e.stopPropagation(); onPortClick(dot, definition, port); }; el.appendChild(dot); });
+  let ports = definition ? catalog.displayPorts(definition.id) : []; if(!ports.length) ports=digitalVirtualPorts(part.partId); ports.forEach((port, i) => { const dot = document.createElement('span'); dot.className = 'port'; dot.dataset.instanceId = part.instanceId; dot.dataset.portId = port.id; dot.dataset.side = i % 2 ? 'right' : 'left'; dot.style.top = `${20 + (i % Math.max(1,Math.ceil(ports.length/2))) * 18}px`; dot.title = port.id; dot.onclick = e => { e.stopPropagation(); onPortClick(dot, definition, port); }; el.appendChild(dot); });
   return el;
 }
 
@@ -252,16 +254,17 @@ function renderInspector() {
 function numberField(label,id,value,unit=''){return `<div class="property-row"><div class="property-label"><strong>${label}</strong><span>${unit}</span></div><input class="property-input" id="${id}" type="number" step="any" value="${Number(value)||0}" /></div>`;}
 function propertyField(prop,value){const val=value??prop.default??'';const meta=[prop.quantity,prop.defaultUnit].filter(Boolean).join(' · ');if(prop.kind==='boolean')return `<div class="property-row"><div class="property-label"><strong>${escapeHtml(prop.label)}</strong><span>${escapeHtml(meta)}</span></div><input class="property-input" data-prop-key="${escapeAttr(prop.key)}" type="checkbox" ${val?'checked':''}/></div>`;return `<div class="property-row"><div class="property-label"><strong title="${escapeAttr(prop.key)}">${escapeHtml(prop.label)}</strong><span>${escapeHtml(meta)}</span></div><input class="property-input" data-prop-key="${escapeAttr(prop.key)}" type="${['number','integer'].includes(prop.kind)?'number':'text'}" ${['number','integer'].includes(prop.kind)?'step="any"':''} value="${escapeAttr(val)}" /></div>`;}
 
-function syncRuntime(force=false){if(!force&&runtime?.status==='running')return;runtime=new SceneRuntime(doc.snapshot(), { partDefinitions: canonicalParts });updateRunUI();}
+function syncRuntime(force=false){if(!force&&runtime?.status==='running')return;const previous=!force?runtime?.snapshot():null;const next=new SceneRuntime(doc.snapshot(), { partDefinitions: canonicalParts });if(previous?.state?.memory&&next.adapter?.restoreMemory)next.adapter.restoreMemory(previous.state.memory);runtime=next;updateRunUI();}
 function animate(){cancelAnimationFrame(raf);const loop=()=>{if(runtime?.status==='running'){runtime.step(1);renderRuntimeOverlay();renderBottom(false);}updateRunUI();raf=requestAnimationFrame(loop);};raf=requestAnimationFrame(loop);}
 function updateRunUI(){const running=runtime?.status==='running';$('#run-icon').textContent=running?'Ⅱ':'▶';$('#run-label').textContent=running?'توقف':'اجرا';$('#runtime-time').textContent=`t = ${(runtime?.clock.time??0).toFixed(3)} s`;}
-function renderRuntimeOverlay(){const snap=runtime?.snapshot();if(!snap)return;$('#runtime-time').textContent=`t = ${snap.time.toFixed(3)} s`;const frame=buildExecutionFrame(doc.snapshot(),snap);renderPhysicsLayer(frame);for(const [id,state] of Object.entries(frame.parts)){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(id)}"]`);if(!el)continue;el.classList.toggle('physics-active',Boolean(state.active));el.classList.toggle('unsupported-part',!state.supported);if(Number.isFinite(state.intensity))el.style.setProperty('--intensity',String(state.intensity));if(Number.isFinite(state.speed))el.style.setProperty('--speed',String(state.speed));el.classList.toggle('fuse-blown',Boolean(state.blown));let readout=el.querySelector('.live-readout');if(state.display){if(!readout){readout=document.createElement('span');readout.className='live-readout';el.appendChild(readout);}readout.textContent=state.display;}else readout?.remove();}if(snap.domain==='mechanics'){for(const b of snap.state.bodies??[]){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(b.id)}"]`);if(el){const screen=worldToScreen(b.position);el.style.left=`${screen.x}px`;el.style.top=`${screen.y}px`;if(Number.isFinite(b.angle))el.style.rotate=`${b.angle*180/Math.PI}deg`;el.classList.toggle('running',runtime.status==='running');}}renderConnections();}}
+function renderRuntimeOverlay(){const snap=runtime?.snapshot();if(!snap)return;$('#runtime-time').textContent=`t = ${snap.time.toFixed(3)} s`;const frame=buildExecutionFrame(doc.snapshot(),snap);renderPhysicsLayer(frame);for(const [id,state] of Object.entries(frame.parts)){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(id)}"]`);if(!el)continue;el.classList.toggle('physics-active',Boolean(state.active));el.classList.toggle('unsupported-part',!state.supported);if(Number.isFinite(state.intensity))el.style.setProperty('--intensity',String(state.intensity));if(Number.isFinite(state.speed))el.style.setProperty('--speed',String(state.speed));if(Number.isInteger(state.digit))el.querySelector('.scene-part-physical')?.setAttribute('data-digit',String(state.digit));el.classList.toggle('fuse-blown',Boolean(state.blown));let readout=el.querySelector('.live-readout');if(state.display){if(!readout){readout=document.createElement('span');readout.className='live-readout';el.appendChild(readout);}readout.textContent=state.display;}else readout?.remove();}if(snap.domain==='mechanics'){for(const b of snap.state.bodies??[]){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(b.id)}"]`);if(el){const screen=worldToScreen(b.position);el.style.left=`${screen.x}px`;el.style.top=`${screen.y}px`;if(Number.isFinite(b.angle))el.style.rotate=`${b.angle*180/Math.PI}deg`;el.classList.toggle('running',runtime.status==='running');}}renderConnections();}}
 
 
 function toggleLogicInput(part){
   const value=Boolean(part.properties?.value??part.properties?.on??false);
-  doc.updateProperties(part.instanceId,{value:!value,on:!value});
-  syncRuntime(true); runtime?.step(1); renderRuntimeOverlay(); renderBottom();
+  const patch={value:!value,on:!value};
+  doc.updateProperties(part.instanceId,patch);
+  runtime?.setPartProperties(part.instanceId,patch); runtime?.step(1); renderRuntimeOverlay(); renderBottom();
   toast(!value?'ورودی منطقی ۱ شد.':'ورودی منطقی ۰ شد.');
 }
 

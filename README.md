@@ -181,3 +181,16 @@ Stage 12 یک موتور Net-based مستقل برای منطق دیجیتال �
 npm run test:stage12
 npm run ci
 ```
+
+## Stage 13 — مدارهای دیجیتال حالت‌دار
+
+Stage 13 منطق ترتیبی را به حالت اجرای دانش‌آموز اضافه می‌کند. فلیپ‌فلاپ‌های D/JK، لچ RS، شمارنده‌های 4017 و 4518، شمارنده/دیکودر 4026 و دیکودرهای 4511 و 4028 اکنون حافظه داخلی، لبه کلاک، Reset/Set و خروجی‌های واقعی Solver دارند. وضعیت حافظه هنگام لمس ورودی‌های منطقی در Runtime حفظ می‌شود و Reset آزمایش عمداً آن را پاک می‌کند.
+
+شش آزمایش اجرایی Stage 13 در `content/experiments/stage13/` قرار دارند و از Library آزمایشگاه قابل بارگذاری‌اند.
+
+```bash
+npm run test:stage13
+npm run ci
+```
+
+See `docs/architecture/STAGE13_STATEFUL_DIGITAL.md`.

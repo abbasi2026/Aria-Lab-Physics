@@ -20,6 +20,14 @@ export function executableCapability(partId='') {
     if(/logic-output/.test(id))return {supported:true,kind:'logic-output',labelFa:'خروجی منطقی'};
     if(/(?:7400|7402|7404|7408|7410|7414|7420|7432|7486)$/.test(id))return {supported:true,kind:'logic-gate',labelFa:'گیت منطقی'};
     if(/seven-segment-display/.test(id))return {supported:true,kind:'seven-segment',labelFa:'نمایشگر هفت‌قسمتی'};
+    if(/7474/.test(id))return {supported:true,kind:'d-flipflop',labelFa:'فلیپ‌فلاپ D'};
+    if(/7473|4027/.test(id))return {supported:true,kind:'jk-flipflop',labelFa:'فلیپ‌فلاپ JK'};
+    if(/4043/.test(id))return {supported:true,kind:'rs-latch',labelFa:'لچ RS'};
+    if(/4017/.test(id))return {supported:true,kind:'decade-counter',labelFa:'شمارنده ده‌دهی'};
+    if(/4518/.test(id))return {supported:true,kind:'bcd-counter',labelFa:'شمارنده BCD'};
+    if(/4026/.test(id))return {supported:true,kind:'counter-seven-segment',labelFa:'شمارنده/هفت‌قسمتی'};
+    if(/4511/.test(id))return {supported:true,kind:'bcd-seven-segment',labelFa:'دیکودر BCD به هفت‌قسمتی'};
+    if(/4028/.test(id))return {supported:true,kind:'bcd-decimal',labelFa:'دیکودر BCD به ده‌دهی'};
     if(/\.clock$/.test(id))return {supported:true,kind:'logic-clock',labelFa:'کلاک منطقی'};
     if(/battery|current$/.test(id))return {supported:true,kind:'source',labelFa:'منبع الکتریکی'};
     if(/vresistor|potentiometer/.test(id))return {supported:true,kind:'variable-resistor',labelFa:'مقاومت متغیر'};
@@ -69,7 +77,9 @@ export function buildExecutionFrame(scene, runtimeSnapshot){
       const value=digital.value??digital.output;
       if(typeof value==='boolean'){target.active=value;target.value=value?1:0;target.logic=value;target.display=value?'۱':'۰';}
       if(digital.kind==='gate'){target.inputs=digital.inputs;target.logic=digital.output;target.active=Boolean(digital.output);target.display=digital.output?'۱':'۰';}
-      if(digital.kind==='seven-segment'){target.segments=digital.segments;target.digit=digital.digit;target.active=Object.values(digital.segments??{}).some(Boolean);target.display=Number.isInteger(digital.digit)?String(digital.digit):'—';}
+      if(digital.kind==='seven-segment'||digital.kind==='bcd-seven-segment'||digital.kind==='counter-seven-segment'){target.segments=digital.segments;target.digit=digital.digit;target.active=Number.isInteger(digital.digit)?true:Object.values(digital.segments??{}).some(Boolean);target.display=Number.isInteger(digital.digit)?String(digital.digit):'—';}
+      if(['d-flipflop','jk-flipflop','rs-latch'].includes(digital.kind)){target.logic=Boolean(digital.q);target.active=Boolean(digital.q);target.value=digital.q?1:0;target.display=digital.q?'Q=۱':'Q=۰';}
+      if(['decade-counter','bcd-counter','bcd-decimal'].includes(digital.kind)){target.count=digital.count??digital.digit;target.digit=digital.digit;target.active=true;target.display=Number.isInteger(digital.count)?String(digital.count):(Number.isInteger(digital.digit)?String(digital.digit):'—');}
     }
     for(const conflict of state.conflicts??[])frame.warnings.push(`تعارض منطقی روی ${conflict.net}`);
   } else if(domain==='circuits'){

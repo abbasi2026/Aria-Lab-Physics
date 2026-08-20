@@ -1,0 +1,129 @@
+{
+  "project": "Aria Lab Physics",
+  "stage": 13,
+  "name": "Stateful Digital Execution",
+  "status": "final-working-snapshot",
+  "date": "2026-08-20",
+  "baselineCommit": "36daba2",
+  "capabilities": [
+    "D/JK flip-flops",
+    "RS latch",
+    "4017 decade counter",
+    "4518 BCD counter",
+    "4026 counter + seven-segment decoder",
+    "4511 BCD to seven-segment decoder",
+    "4028 BCD to decimal decoder",
+    "state memory persistence across editor runtime rebuild",
+    "tactile logic input updates without losing state"
+  ],
+  "experiments": 6,
+  "stage13Tests": 13,
+  "validation": {
+    "experimentFiles": 41,
+    "legacyExperiments": 12,
+    "v2Experiments": 29,
+    "canonicalParts": 203,
+    "paletteEntries": 206,
+    "properties": 7534,
+    "ports": 235,
+    "fullCi": "PASS",
+    "webSmoke": "PASS"
+  },
+  "knownLimits": [
+    "ideal digital timing; no propagation/setup/hold/metastability model",
+    "power-rail electrical behavior of IC packages is abstracted",
+    "some chip-specific enable/inhibit pins remain outside Stage 13 scope"
+  ],
+  "files": [
+    {
+      "path": "apps/web/src/main.js",
+      "bytes": 65762,
+      "sha256": "1909daa39f0d0ce177c23cefdf1dad13f03c2d1bfc01860548df367c18634bde"
+    },
+    {
+      "path": "apps/web/styles.css",
+      "bytes": 42572,
+      "sha256": "04f859cda93dd6a1f8e9e2ab15ec4677bb7caf5bbfef328ad680dd8c54eb51eb"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1888,
+      "sha256": "777f823defe22dba5380148d09114e34f85ba790f05d17d002ab0691f113e111"
+    },
+    {
+      "path": "packages/digital-engine/src/index.mjs",
+      "bytes": 10973,
+      "sha256": "360483d2d2e7e75ed9ad86fbead5ef5d411ea070cda8f1d6f7e7fafc5c13316a"
+    },
+    {
+      "path": "packages/execution-runtime/src/index.mjs",
+      "bytes": 10549,
+      "sha256": "93d755b7f23338c55d2904ffb73ec40629f08068aa17e03f739cb6b390a5028d"
+    },
+    {
+      "path": "packages/scene-runtime/src/index.mjs",
+      "bytes": 27347,
+      "sha256": "82f88c1cd8d997a10bf4e5fd4026fb4b5ef4a457b8e21ec9c49ad0976a96838a"
+    },
+    {
+      "path": "tests/smoke/run-web-smoke.mjs",
+      "bytes": 3848,
+      "sha256": "2682eedef4b1abfdec135ea635e4fbdb02aef96c2f5f3f7be770f3796e67fa70"
+    },
+    {
+      "path": "tests/physics/stage13/run-stage13-tests.mjs",
+      "bytes": 9269,
+      "sha256": "e3356abfe4700772a841090d287c48e2b72cc78f3a5f8f2ca701e586339f4bd5"
+    },
+    {
+      "path": "docs/architecture/STAGE13_STATEFUL_DIGITAL.md",
+      "bytes": 3662,
+      "sha256": "1c638502f92eee9437bbc59a345d42027663ba987c90b8095ee93219c5668905"
+    },
+    {
+      "path": "docs/testing/STAGE_13_TEST_REPORT_FA.md",
+      "bytes": 695,
+      "sha256": "aba715a5f16a453667b616cbe83356cc527aa5d088122bceed769092ae39f5ab"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8743,
+      "sha256": "578c127cb7c80e78e6fb9e31b8cd36e8b9c6f1626d4df58ad9d88412bef9c136"
+    },
+    {
+      "path": "content/experiments/stage13/4017-counter.json",
+      "bytes": 6534,
+      "sha256": "32e8b9c845ddb11f186a07fce6132c7006c4a119584e693df426643f5974f35f"
+    },
+    {
+      "path": "content/experiments/stage13/4028-decoder.json",
+      "bytes": 6564,
+      "sha256": "a32cff15cfdf99b58c0ce3e308d4903a5f43b3921a954f5ba2f54793d81d434a"
+    },
+    {
+      "path": "content/experiments/stage13/bcd-display.json",
+      "bytes": 8654,
+      "sha256": "2ca6f80208f6f53f7e8b7ad1bda048a2b5017f10ff1b2dbdb68196f3669b2b83"
+    },
+    {
+      "path": "content/experiments/stage13/d-flipflop.json",
+      "bytes": 6040,
+      "sha256": "67292a3ac48e76bb639fdaaf8a3ff948a583dcd1e5c64c42b64f5b993368fbb6"
+    },
+    {
+      "path": "content/experiments/stage13/index.json",
+      "bytes": 1595,
+      "sha256": "bfb34feb4b0c298f34cd7332b02304d91e55f0a9226758e40168960545cf1f23"
+    },
+    {
+      "path": "content/experiments/stage13/jk-toggle.json",
+      "bytes": 5989,
+      "sha256": "cee9e5c87f43c3962386aba4f08621a9422d0e2b914faa4adc1a3832e575d45d"
+    },
+    {
+      "path": "content/experiments/stage13/rs-latch.json",
+      "bytes": 5944,
+      "sha256": "49ff4b2741fa5bd5183e73fe1f28395429654c51e7db685e214eb6eb15eb931a"
+    }
+  ]
+}

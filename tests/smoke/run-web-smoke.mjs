@@ -56,7 +56,9 @@ try {
   assert.match(main, /attachInlineExecutionControl/);
   assert.match(main, /stage11Experiments/);
   assert.match(main, /stage12Experiments/);
+  assert.match(main, /stage13Experiments/);
   assert.match(main, /toggleLogicInput/);
+  await expectAsset('/content/experiments/stage13/index.json', /application\/json/, /stage13\.d-flipflop/);
   const parts = await expectAsset('/datasets/parts/canonical-parts.json', /application\/json/, /circuits\.battery/);
   assert.equal(JSON.parse(parts).length, 203);
   const taxonomy = await expectAsset('/datasets/navigation/crocodile-taxonomy.json', /application\/json/, /Crocodile Physics 605 clean-room taxonomy/);
@@ -71,7 +73,7 @@ try {
   await expectAsset('/content/experiments/stage6/rc-charge-guided.json', /application\/json/, /\"schemaVersion\": \"2.0.0\"/);
   const missing = await fetch(`${base}/definitely-missing.asset`);
   assert.equal(missing.status, 404);
-  console.log('Web smoke: Stage 12 digital logic + Stage 11 circuits + Stage 10 optics passed.');
+  console.log('Web smoke: Stage 13 stateful digital + Stage 12 logic + Stage 11 circuits + Stage 10 optics passed.');
 } finally {
   child.kill('SIGTERM');
   await new Promise(resolve => {

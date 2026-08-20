@@ -1,0 +1,56 @@
+[
+  {
+    "id": "stage13.d-flipflop",
+    "titleFa": "فلیپ‌فلاپ D و حافظه یک‌بیتی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage13/d-flipflop.json",
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  },
+  {
+    "id": "stage13.jk-toggle",
+    "titleFa": "فلیپ‌فلاپ JK در حالت Toggle",
+    "domain": "circuits",
+    "path": "/content/experiments/stage13/jk-toggle.json",
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  },
+  {
+    "id": "stage13.rs-latch",
+    "titleFa": "لچ RS؛ تنظیم، حفظ و بازنشانی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage13/rs-latch.json",
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  },
+  {
+    "id": "stage13.4017-counter",
+    "titleFa": "شمارنده ده‌دهی ۴۰۱۷",
+    "domain": "circuits",
+    "path": "/content/experiments/stage13/4017-counter.json",
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  },
+  {
+    "id": "stage13.bcd-display",
+    "titleFa": "شمارنده BCD و نمایشگر هفت‌قسمتی",
+    "domain": "circuits",
+    "path": "/content/experiments/stage13/bcd-display.json",
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  },
+  {
+    "id": "stage13.4028-decoder",
+    "titleFa": "دیکودر BCD به ده‌دهی ۴۰۲۸",
+    "domain": "circuits",
+    "path": "/content/experiments/stage13/4028-decoder.json",
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  }
+]

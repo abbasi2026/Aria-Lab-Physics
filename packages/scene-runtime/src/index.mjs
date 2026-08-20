@@ -39,6 +39,7 @@ export class SceneRuntime {
     this.emit('step'); return this.snapshot();
   }
   tick() { if (this.status === 'running') return this.step(1); return this.snapshot(); }
+  setPartProperties(instanceId, patch = {}) { const part=this.scene.parts?.find(x=>x.instanceId===instanceId); if(!part)return false; part.properties={...(part.properties??{}),...clone(patch)}; this.adapter.setPartProperties?.(instanceId,patch); return true; }
   reset(scene = this.original) {
     this.scene = clone(scene); this.original = clone(scene); this.clock = new SimulationClock({ dt: scene.simulation?.dt ?? 1 / 120 }); this.recorder.clear(); this.adapter = createDomainAdapter(this.scene, { partDefinitions: this.partDefinitions }); this.frame = null; this.status = 'paused'; this.emit('reset');
   }
@@ -105,7 +106,9 @@ function digitalAdapter(scene,{partDefinitions=[]}={}){
   return {
     step:dt=>{result=circuit.evaluate(dt);return result;},
     snapshot:()=>result,
-    measure:probe=>circuit.measure(probe)
+    measure:probe=>circuit.measure(probe),
+    restoreMemory:memory=>{circuit.restoreMemory(memory);result=circuit.snapshot();},
+    setPartProperties:(instanceId,patch)=>circuit.setPartProperties(instanceId,patch)
   };
 }
 

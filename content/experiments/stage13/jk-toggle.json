@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage13.jk-toggle",
+  "version": 1,
+  "title": "فلیپ‌فلاپ JK در حالت Toggle",
+  "titleFa": "فلیپ‌فلاپ JK در حالت Toggle",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "وقتی J و K هر دو ۱ باشند، هر لبه بالارونده کلاک مقدار Q را معکوس می‌کند.",
+  "learningObjectives": [
+    "مشاهده حالت Toggle در فلیپ‌فلاپ JK"
+  ],
+  "prerequisites": [
+    "آشنایی با منطق صفر و یک و لبه کلاک"
+  ],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage13.jk-toggle",
+    "title": "فلیپ‌فلاپ JK در حالت Toggle",
+    "titleFa": "فلیپ‌فلاپ JK در حالت Toggle",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.1,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      },
+      "circuitMode": "digital"
+    },
+    "parts": [
+      {
+        "instanceId": "j",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 1.5
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "k",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "clk",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -1.5
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": false
+        }
+      },
+      {
+        "instanceId": "ff",
+        "partId": "circuits.7473",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      },
+      {
+        "instanceId": "q",
+        "partId": "circuits.logic-output",
+        "transform": {
+          "position": {
+            "x": 5,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "connections": [
+      {
+        "id": "c1",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "j",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "ff",
+          "portId": "j"
+        }
+      },
+      {
+        "id": "c2",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "k",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "ff",
+          "portId": "k"
+        }
+      },
+      {
+        "id": "c3",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "clk",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "ff",
+          "portId": "clk"
+        }
+      },
+      {
+        "id": "c4",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "ff",
+          "portId": "q"
+        },
+        "to": {
+          "instanceId": "q",
+          "portId": "port-1"
+        }
+      }
+    ],
+    "probes": [
+      {
+        "id": "q-state",
+        "instanceId": "q",
+        "quantity": "logic",
+        "labelFa": "خروجی Q"
+      }
+    ],
+    "metadata": {
+      "stage": 13,
+      "executionMode": true,
+      "circuitMode": "digital",
+      "stateful": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "observe",
+        "titleFa": "وضعیت اولیه",
+        "instructionFa": "وضعیت اولیه ورودی‌ها و خروجی را روی برد بررسی کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "خروجی فقط از موتور منطقی آزمایشگاه خوانده می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "trigger",
+        "titleFa": "ایجاد تغییر حالت",
+        "instructionFa": "در حالت اجرای آزمایش، ورودی کلاک یا ورودی‌های منطقی را لمس کنید و تغییر حالت را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در قطعات ترتیبی، حالت قبلی تا رویداد منطقی بعدی حفظ می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "q-state",
+      "labelFa": "خروجی Q",
+      "unit": "logic",
+      "probe": {
+        "id": "q-state",
+        "instanceId": "q",
+        "quantity": "logic",
+        "labelFa": "خروجی Q"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "با J=K=1، خروجی Q در هر لبه بالارونده کلاک یک بار تغییر وضعیت می‌دهد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.5,
+    "rules": [
+      {
+        "id": "runtime",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "حالت فلیپ‌فلاپ یا شمارنده را فقط از Solver بخوان.",
+      "هیچ مقدار منطقی را حدس نزن."
+    ]
+  },
+  "metadata": {
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  }
+}

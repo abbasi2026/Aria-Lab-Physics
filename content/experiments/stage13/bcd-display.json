@@ -1,0 +1,384 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage13.bcd-display",
+  "version": 1,
+  "title": "شمارنده BCD و نمایشگر هفت‌قسمتی",
+  "titleFa": "شمارنده BCD و نمایشگر هفت‌قسمتی",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "۴۵۱۸ عدد BCD را می‌شمارد، ۴۵۱۱ آن را به هفت خط تبدیل می‌کند و نمایشگر همان رقم را نشان می‌دهد.",
+  "learningObjectives": [
+    "دنبال‌کردن مسیر BCD از شمارنده تا نمایشگر"
+  ],
+  "prerequisites": [
+    "آشنایی با منطق صفر و یک و لبه کلاک"
+  ],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage13.bcd-display",
+    "title": "شمارنده BCD و نمایشگر هفت‌قسمتی",
+    "titleFa": "شمارنده BCD و نمایشگر هفت‌قسمتی",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.1,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      },
+      "circuitMode": "digital"
+    },
+    "parts": [
+      {
+        "instanceId": "clk",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -7,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": false
+        }
+      },
+      {
+        "instanceId": "reset",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -7,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": false
+        }
+      },
+      {
+        "instanceId": "counter",
+        "partId": "circuits.4518",
+        "transform": {
+          "position": {
+            "x": -3,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      },
+      {
+        "instanceId": "decoder",
+        "partId": "circuits.4511",
+        "transform": {
+          "position": {
+            "x": 1,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      },
+      {
+        "instanceId": "display",
+        "partId": "circuits.seven-segment-display",
+        "transform": {
+          "position": {
+            "x": 6,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "connections": [
+      {
+        "id": "c1",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "clk",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "counter",
+          "portId": "clk"
+        }
+      },
+      {
+        "id": "c2",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "reset",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "counter",
+          "portId": "reset"
+        }
+      },
+      {
+        "id": "b0",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "counter",
+          "portId": "b0"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b0"
+        }
+      },
+      {
+        "id": "b1",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "counter",
+          "portId": "b1"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b1"
+        }
+      },
+      {
+        "id": "b2",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "counter",
+          "portId": "b2"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b2"
+        }
+      },
+      {
+        "id": "b3",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "counter",
+          "portId": "b3"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b3"
+        }
+      },
+      {
+        "id": "sa",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "a"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "a"
+        }
+      },
+      {
+        "id": "sb",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "b"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "b"
+        }
+      },
+      {
+        "id": "sc",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "c"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "c"
+        }
+      },
+      {
+        "id": "sd",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "d"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "d"
+        }
+      },
+      {
+        "id": "se",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "e"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "e"
+        }
+      },
+      {
+        "id": "sf",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "f"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "f"
+        }
+      },
+      {
+        "id": "sg",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "g"
+        },
+        "to": {
+          "instanceId": "display",
+          "portId": "g"
+        }
+      }
+    ],
+    "probes": [
+      {
+        "id": "count",
+        "instanceId": "counter",
+        "quantity": "count",
+        "labelFa": "مقدار BCD"
+      },
+      {
+        "id": "digit",
+        "instanceId": "display",
+        "quantity": "digit",
+        "labelFa": "رقم نمایشگر"
+      }
+    ],
+    "metadata": {
+      "stage": 13,
+      "executionMode": true,
+      "circuitMode": "digital",
+      "stateful": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "observe",
+        "titleFa": "وضعیت اولیه",
+        "instructionFa": "وضعیت اولیه ورودی‌ها و خروجی را روی برد بررسی کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "خروجی فقط از موتور منطقی آزمایشگاه خوانده می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "trigger",
+        "titleFa": "ایجاد تغییر حالت",
+        "instructionFa": "در حالت اجرای آزمایش، ورودی کلاک یا ورودی‌های منطقی را لمس کنید و تغییر حالت را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در قطعات ترتیبی، حالت قبلی تا رویداد منطقی بعدی حفظ می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "count",
+      "labelFa": "مقدار BCD",
+      "unit": "count",
+      "probe": {
+        "id": "count",
+        "instanceId": "counter",
+        "quantity": "count",
+        "labelFa": "مقدار BCD"
+      }
+    },
+    {
+      "id": "digit",
+      "labelFa": "رقم نمایشگر",
+      "unit": "count",
+      "probe": {
+        "id": "digit",
+        "instanceId": "display",
+        "quantity": "digit",
+        "labelFa": "رقم نمایشگر"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "رقم نمایشگر با شمارش 4518 از 0 تا 9 تغییر می‌کند."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.5,
+    "rules": [
+      {
+        "id": "runtime",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "حالت فلیپ‌فلاپ یا شمارنده را فقط از Solver بخوان.",
+      "هیچ مقدار منطقی را حدس نزن."
+    ]
+  },
+  "metadata": {
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  }
+}

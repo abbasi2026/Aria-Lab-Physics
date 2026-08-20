@@ -1,0 +1,291 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage13.4028-decoder",
+  "version": 1,
+  "title": "دیکودر BCD به ده‌دهی ۴۰۲۸",
+  "titleFa": "دیکودر BCD به ده‌دهی ۴۰۲۸",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "ورودی BCD عدد ۵ به خروجی یک‌ازده تبدیل می‌شود و Q5 فعال می‌گردد.",
+  "learningObjectives": [
+    "درک دیکود BCD به خروجی یک‌ازده"
+  ],
+  "prerequisites": [
+    "آشنایی با منطق صفر و یک و لبه کلاک"
+  ],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage13.4028-decoder",
+    "title": "دیکودر BCD به ده‌دهی ۴۰۲۸",
+    "titleFa": "دیکودر BCD به ده‌دهی ۴۰۲۸",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.1,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      },
+      "circuitMode": "digital"
+    },
+    "parts": [
+      {
+        "instanceId": "b0",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -6,
+            "y": 3
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "b1",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -6,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": false
+        }
+      },
+      {
+        "instanceId": "b2",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -6,
+            "y": -1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": true
+        }
+      },
+      {
+        "instanceId": "b3",
+        "partId": "circuits.latching-logic-input",
+        "transform": {
+          "position": {
+            "x": -6,
+            "y": -3
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "value": false
+        }
+      },
+      {
+        "instanceId": "decoder",
+        "partId": "circuits.4028",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      },
+      {
+        "instanceId": "q5",
+        "partId": "circuits.logic-output",
+        "transform": {
+          "position": {
+            "x": 6,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {}
+      }
+    ],
+    "connections": [
+      {
+        "id": "b0",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "b0",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b0"
+        }
+      },
+      {
+        "id": "b1",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "b1",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b1"
+        }
+      },
+      {
+        "id": "b2",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "b2",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b2"
+        }
+      },
+      {
+        "id": "b3",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "b3",
+          "portId": "port-1"
+        },
+        "to": {
+          "instanceId": "decoder",
+          "portId": "b3"
+        }
+      },
+      {
+        "id": "q5",
+        "kind": "electrical",
+        "from": {
+          "instanceId": "decoder",
+          "portId": "q5"
+        },
+        "to": {
+          "instanceId": "q5",
+          "portId": "port-1"
+        }
+      }
+    ],
+    "probes": [
+      {
+        "id": "decoded",
+        "instanceId": "q5",
+        "quantity": "logic",
+        "labelFa": "خروجی Q5"
+      }
+    ],
+    "metadata": {
+      "stage": 13,
+      "executionMode": true,
+      "circuitMode": "digital",
+      "stateful": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "observe",
+        "titleFa": "وضعیت اولیه",
+        "instructionFa": "وضعیت اولیه ورودی‌ها و خروجی را روی برد بررسی کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "خروجی فقط از موتور منطقی آزمایشگاه خوانده می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "trigger",
+        "titleFa": "ایجاد تغییر حالت",
+        "instructionFa": "در حالت اجرای آزمایش، ورودی کلاک یا ورودی‌های منطقی را لمس کنید و تغییر حالت را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در قطعات ترتیبی، حالت قبلی تا رویداد منطقی بعدی حفظ می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "decoded",
+      "labelFa": "خروجی Q5",
+      "unit": "logic",
+      "probe": {
+        "id": "decoded",
+        "instanceId": "q5",
+        "quantity": "logic",
+        "labelFa": "خروجی Q5"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "برای BCD=0101 فقط خروجی Q5 فعال می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.5,
+    "rules": [
+      {
+        "id": "runtime",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "حالت فلیپ‌فلاپ یا شمارنده را فقط از Solver بخوان.",
+      "هیچ مقدار منطقی را حدس نزن."
+    ]
+  },
+  "metadata": {
+    "stage": 13,
+    "executionMode": true,
+    "statefulDigital": true
+  }
+}
