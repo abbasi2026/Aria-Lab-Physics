@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage10.transparent-block",
+  "version": 1,
+  "title": "عبور نور از بلوک شفاف",
+  "titleFa": "عبور نور از بلوک شفاف",
+  "domain": [
+    "optics"
+  ],
+  "summaryFa": "بلوک شفاف دو شکست ایجاد می‌کند و جابه‌جایی جانبی پرتو قابل مشاهده است.",
+  "learningObjectives": [
+    "بلوک شفاف دو شکست ایجاد می‌کند و جابه‌جایی جانبی پرتو قابل مشاهده است."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage10.block",
+    "title": "عبور از بلوک شفاف",
+    "titleFa": "عبور از بلوک شفاف",
+    "domain": "optics",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "source",
+        "partId": "optics.raybox",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": -0.4
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "rayCount": 3,
+          "beamHeight": 0.6,
+          "angleDeg": 8
+        }
+      },
+      {
+        "instanceId": "block",
+        "partId": "optics.transparentblock",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "width": 1.8,
+          "height": 3,
+          "refractiveIndex": 1.5
+        }
+      },
+      {
+        "instanceId": "screen",
+        "partId": "optics.projection",
+        "transform": {
+          "position": {
+            "x": 4,
+            "y": 0
+          },
+          "rotation": 90,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "length": 5
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "hits",
+        "quantity": "screen-hits"
+      }
+    ],
+    "metadata": {
+      "stage": 10,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "شکست در بلوک",
+        "instructionFa": "اجرا کنید و شکست ورود و خروج از بلوک را ببینید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.01
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "پرتو داخل شیشه به نرمال نزدیک‌تر می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "screen",
+        "titleFa": "خروج نور",
+        "instructionFa": "پرتو خروجی را روی پرده مشاهده کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "hits",
+            "min": 1
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "پرتو پس از خروج تقریباً با جهت اولیه موازی است اما جابه‌جایی جانبی دارد."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "hits",
+      "labelFa": "پرتوهای رسیده به پرده",
+      "unit": "count",
+      "probe": {
+        "id": "hits",
+        "quantity": "screen-hits"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "بلوک شفاف دو شکست ایجاد می‌کند و جابه‌جایی جانبی پرتو قابل مشاهده است."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "hits",
+        "type": "measurement-range",
+        "measurementId": "hits",
+        "min": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "فقط از داده Runtime نتیجه‌گیری کن."
+    ]
+  },
+  "metadata": {
+    "stage": 10,
+    "executionMode": true
+  }
+}

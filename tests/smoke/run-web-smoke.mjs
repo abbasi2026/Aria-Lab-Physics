@@ -67,7 +67,7 @@ try {
   await expectAsset('/content/experiments/stage6/rc-charge-guided.json', /application\/json/, /\"schemaVersion\": \"2.0.0\"/);
   const missing = await fetch(`${base}/definitely-missing.asset`);
   assert.equal(missing.status, 404);
-  console.log('Web smoke: Stage 9 execution mode + taxonomy + editor + library + AI safeguards passed.');
+  console.log('Web smoke: Stage 10 executable optics + Stage 9 execution mode + editor safeguards passed.');
 } finally {
   child.kill('SIGTERM');
   await new Promise(resolve => {

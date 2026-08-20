@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage10.prism-refraction",
+  "version": 1,
+  "title": "شکست و بازتاب داخلی در منشور",
+  "titleFa": "شکست و بازتاب داخلی در منشور",
+  "domain": [
+    "optics"
+  ],
+  "summaryFa": "پرتو در سطوح منشور شکسته می‌شود و می‌تواند در زاویه مناسب بازتاب کلی داخلی داشته باشد.",
+  "learningObjectives": [
+    "پرتو در دو سطح منشور شکسته می‌شود و مسیر خروجی تغییر می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage10.prism",
+    "title": "شکست نور در منشور",
+    "titleFa": "شکست نور در منشور",
+    "domain": "optics",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "source",
+        "partId": "optics.raybox",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 0.25
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "rayCount": 3,
+          "beamHeight": 0.4
+        }
+      },
+      {
+        "instanceId": "prism",
+        "partId": "optics.prism",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "width": 2.4,
+          "height": 2.2,
+          "refractiveIndex": 1.6
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "interactions",
+        "quantity": "interaction-count"
+      }
+    ],
+    "metadata": {
+      "stage": 10,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "trace",
+        "titleFa": "عبور از منشور",
+        "instructionFa": "پرتوها را اجرا کنید و دو شکست ورود و خروج را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.01
+          },
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "مسیر در هر سطح طبق قانون اسنل تغییر می‌کند."
+          }
+        ]
+      },
+      {
+        "id": "interactions",
+        "titleFa": "بررسی مسیر",
+        "instructionFa": "ورود، بازتاب داخلی و خروج پرتو را روی مسیر مشاهده کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "interactions",
+            "min": 3
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در این چیدمان یک بازتاب کلی داخلی نیز رخ می‌دهد."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "interactions",
+      "labelFa": "تعداد برهم‌کنش‌ها",
+      "unit": "count",
+      "probe": {
+        "id": "interactions",
+        "quantity": "interaction-count"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "پرتو در منشور هم شکست و هم بازتاب کلی داخلی را تجربه می‌کند."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "events",
+        "type": "measurement-range",
+        "measurementId": "interactions",
+        "min": 3,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "فقط از داده Runtime نتیجه‌گیری کن."
+    ]
+  },
+  "metadata": {
+    "stage": 10,
+    "executionMode": true
+  }
+}

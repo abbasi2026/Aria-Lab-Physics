@@ -4,10 +4,15 @@ const finite = v => Number.isFinite(Number(v)) ? Number(v) : 0;
 export function executableCapability(partId='') {
   const id=String(partId).toLowerCase();
   if(id.startsWith('optics.')){
-    if(/raybox|torch|\.lamp$/.test(id))return {supported:true,kind:'light-source',labelFa:'منبع نور'};
+    if(/raybox|torch|\.lamp$|nearaxisobject|faraxisobject/.test(id))return {supported:true,kind:'light-source',labelFa:'منبع/جسم نوری'};
     if(/convexlens|concavelens/.test(id))return {supported:true,kind:'lens',labelFa:'عدسی'};
     if(/mirror/.test(id))return {supported:true,kind:'mirror',labelFa:'آینه'};
     if(/projection/.test(id))return {supported:true,kind:'screen',labelFa:'پرده'};
+    if(/adjustableslit/.test(id))return {supported:true,kind:'aperture',labelFa:'شکاف'};
+    if(/transparentblock|prism|semicircularblock/.test(id))return {supported:true,kind:'transparent',labelFa:'جسم شفاف'};
+    if(/opaqueball|opaqueblock|opaquetriangle/.test(id))return {supported:true,kind:'opaque',labelFa:'جسم کدر'};
+    if(/eye/.test(id))return {supported:true,kind:'eye',labelFa:'چشم'};
+    if(/opticalspace2/.test(id))return {supported:true,kind:'optical-medium',labelFa:'محیط اپتیکی'};
     return {supported:false,kind:'optics',labelFa:'اپتیک — در حال توسعه'};
   }
   if(id.startsWith('circuits.')){

@@ -164,24 +164,40 @@ function segmentFromPart(part, defaultLength = 4) {
 }
 function opticsAdapter(scene) {
   const rayScene = new RayScene(); const sources = []; let rays = [], focus = null;
+  const rotatePoint=(point,part)=>{const a=(part.transform.rotation??0)*Math.PI/180,c=Math.cos(a),si=Math.sin(a),x=point.x*c-point.y*si,y=point.x*si+point.y*c;return{x:x+part.transform.position.x,y:y+part.transform.position.y};};
+  const rectPoints=(part,w=2,h=3)=>[[-w/2,-h/2],[w/2,-h/2],[w/2,h/2],[-w/2,h/2]].map(([x,y])=>rotatePoint({x,y},part));
+  const trianglePoints=(part,w=2.4,h=2.2)=>[[ -w/2,-h/2],[ w/2,-h/2],[0,h/2]].map(([x,y])=>rotatePoint({x,y},part));
   for (const part of scene.parts) {
     const id = alias(part.partId); const p = part.properties ?? {};
-    if (isOpticalSourceId(id)) {
-      const angle = Number.isFinite(Number(p.angleDeg)) ? Number(p.angleDeg) * Math.PI / 180 : Math.atan2(Number(p.directionY ?? 0), Number(p.directionX ?? 1));
+    if (isOpticalSourceId(id) || id.includes('nearaxisobject') || id.includes('faraxisobject')) {
+      const angle = Number.isFinite(Number(p.angleDeg)) ? Number(p.angleDeg) * Math.PI / 180 : ((part.transform.rotation??0)*Math.PI/180 || Math.atan2(Number(p.directionY ?? 0), Number(p.directionX ?? 1)));
       const base = { x: Math.cos(angle), y: Math.sin(angle) };
-      const count = Math.max(1, Math.min( nineOr(p.rayCount, id.includes('raybox') || id.includes('torch') ? 5 : 3), 11));
-      const height = Number(p.beamHeight ?? 2);
-      const spread = Number(p.spreadDeg ?? (id.includes('lamp') ? 18 : 0)) * Math.PI / 180;
+      const isFar=id.includes('faraxisobject'), isNear=id.includes('nearaxisobject');
+      const count = Math.max(1, Math.min(nineOr(p.rayCount, id.includes('raybox') || id.includes('torch') || isFar ? 5 : 3), 11));
+      const height = Number(p.beamHeight ?? (isNear?0:2));
+      const spread = Number(p.spreadDeg ?? (id.includes('lamp')||isNear ? 24 : 0)) * Math.PI / 180;
       sources.push({ partId: part.instanceId, origin: { ...part.transform.position }, base, count, height, spread });
     }
+    else if (id.includes('concavemirror') || id.includes('convexmirror')) {
+      const f=Math.abs(Number(p.focalLength??p.flength??2)),radius=Math.max(.2,2*f),concave=id.includes('concave');const center={x:part.transform.position.x+(concave?-radius:radius),y:part.transform.position.y};rayScene.addSphericalMirrorArc(part.instanceId,{center,radius,axis:{x:concave?1:-1,y:0}});
+    }
+    else if (id.includes('parabolicmirror')) rayScene.addParabolicMirror(part.instanceId,{vertex:{...part.transform.position},focalLength:Number(p.focalLength??p.flength??2),height:Number(p.height??4),direction:1});
     else if (id.includes('spherical-mirror')) rayScene.addSphericalMirror(part.instanceId, { center: { ...part.transform.position }, radius: Number(p.radius ?? 1) });
     else if (id.includes('spherical-interface') || id.includes('glass-sphere')) rayScene.addSphericalInterface(part.instanceId, { center: { ...part.transform.position }, radius: Number(p.radius ?? 1), nInside: Number(p.nInside ?? p.refractiveIndex ?? 1.5), nOutside: Number(p.nOutside ?? 1) });
-    else if (id.includes('mirror')) { const [a, b] = segmentFromPart(part); rayScene.addMirror(part.instanceId, a, b); }
-    else if (isOpticalScreenId(id)) { const [a, b] = segmentFromPart(part); rayScene.addScreen(part.instanceId, a, b); }
-    else if (id.includes('interface') || id.includes('transparent')) { const [a, b] = segmentFromPart(part); rayScene.addInterface(part.instanceId, a, b, { nLeft: Number(p.nLeft ?? p.refractiveIndex1 ?? 1), nRight: Number(p.nRight ?? p.refractiveIndex ?? 1.5) }); }
+    else if (id.includes('planemirror') || (id.includes('mirror')&&!id.includes('parabolic'))) { const [a, b] = segmentFromPart(part); rayScene.addMirror(part.instanceId, a, b); }
+    else if (isOpticalScreenId(id)) { const [a, b] = segmentFromPart(part,Number(p.length??4)); rayScene.addScreen(part.instanceId, a, b); }
+    else if (id.includes('adjustableslit')) { const gap=Math.max(.05,Number(p.gap??p.slitWidth??.7)),height=Math.max(gap+.2,Number(p.height??4)),x=part.transform.position.x,y=part.transform.position.y;rayScene.addAbsorber(part.instanceId,{x,y:y-height/2},{x,y:y-gap/2});rayScene.addAbsorber(part.instanceId,{x,y:y+gap/2},{x,y:y+height/2}); }
+    else if (id.includes('opaqueball')) rayScene.addCircularAbsorber(part.instanceId,{center:{...part.transform.position},radius:Number(p.radius??.8)});
+    else if (id.includes('opaqueblock')) rayScene.addOpaquePolygon(part.instanceId,rectPoints(part,Number(p.width??1.5),Number(p.height??2.4)));
+    else if (id.includes('opaquetriangle')) rayScene.addOpaquePolygon(part.instanceId,trianglePoints(part,Number(p.width??2.2),Number(p.height??2.2)));
+    else if (id.includes('transparentblock')) rayScene.addPolygonInterface(part.instanceId,rectPoints(part,Number(p.width??1.7),Number(p.height??2.8)),{nInside:Number(p.refractiveIndex??p.refindex??1.5),nOutside:Number(p.nOutside??1)});
+    else if (id.includes('prism')) rayScene.addPolygonInterface(part.instanceId,trianglePoints(part,Number(p.width??2.4),Number(p.height??2.2)),{nInside:Number(p.refractiveIndex??p.refindex??1.6),nOutside:Number(p.nOutside??1)});
+    else if (id.includes('semicircularblock')) rayScene.addSemicircularInterface(part.instanceId,{center:{...part.transform.position},radius:Number(p.radius??1.5),axis:{x:Math.cos((part.transform.rotation??0)*Math.PI/180),y:Math.sin((part.transform.rotation??0)*Math.PI/180)},nInside:Number(p.refractiveIndex??p.refindex??1.5),nOutside:Number(p.nOutside??1)});
+    else if (id.includes('eye')) { const f=Number(p.focalLength??1.2),h=Number(p.height??2);rayScene.addThinLens(`${part.instanceId}:lens`,{x:part.transform.position.x,yMin:part.transform.position.y-h/2,yMax:part.transform.position.y+h/2,focalLength:f});rayScene.addScreen(`${part.instanceId}:retina`,{x:part.transform.position.x+f,y:part.transform.position.y-h/2},{x:part.transform.position.x+f,y:part.transform.position.y+h/2}); }
+    else if (id.includes('interface')) { const [a, b] = segmentFromPart(part); rayScene.addInterface(part.instanceId, a, b, { nLeft: Number(p.nLeft ?? p.refractiveIndex1 ?? 1), nRight: Number(p.nRight ?? p.refractiveIndex ?? 1.5) }); }
     else if (id.includes('lens')) {
       const fallbackF = id.includes('concave') ? -2 : 2;
-      rayScene.addThinLens(part.instanceId, { x: part.transform.position.x, yMin: part.transform.position.y - Number(p.height ?? 4) / 2, yMax: part.transform.position.y + Number(p.height ?? 4) / 2, focalLength: Number(p.focalLength ?? p['focal-length'] ?? fallbackF) });
+      rayScene.addThinLens(part.instanceId, { x: part.transform.position.x, yMin: part.transform.position.y - Number(p.height ?? 4) / 2, yMax: part.transform.position.y + Number(p.height ?? 4) / 2, focalLength: Number(p.focalLength ?? p.flength ?? p['focal-length'] ?? fallbackF) });
     }
   }
   const trace = () => {
@@ -210,6 +226,8 @@ function opticsAdapter(scene) {
       if (probe.quantity === 'interaction-count') return Math.max(0, (rays[0]?.path?.length ?? 1) - 1);
       if (probe.quantity === 'focus-x') return focus?.x ?? null;
       if (probe.quantity === 'focus-y') return focus?.y ?? null;
+      if (probe.quantity === 'screen-hits') return rays.reduce((n,r)=>n+(r.path?.some(p=>p.event==='screen')?1:0),0);
+      if (probe.quantity === 'absorbed-rays') return rays.reduce((n,r)=>n+(r.path?.some(p=>p.event==='absorber'||p.event==='circularAbsorber')?1:0),0);
       return null;
     }
   };

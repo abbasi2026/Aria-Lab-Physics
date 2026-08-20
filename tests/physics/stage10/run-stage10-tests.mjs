@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { SceneRuntime } from '../../../packages/scene-runtime/src/index.mjs';
+import { executableCapability } from '../../../packages/execution-runtime/src/index.mjs';
+const root=process.cwd(),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const defs=read('datasets/parts/canonical-parts.json');
+let count=0;const test=(n,f)=>{try{f();console.log(`PASS ${n}`);count++;}catch(e){console.error(`FAIL ${n}`);throw e;}};
+const run=path=>{const e=read(path),r=new SceneRuntime(e.scene,{partDefinitions:defs});return {e,r,s:r.step(1)};};
+
+test('all 21 Crocodile optics parts have executable mapping',()=>{const optics=defs.filter(x=>x.domain==='optics');assert.equal(optics.length,21);for(const p of optics)assert.equal(executableCapability(p.id).supported,true,p.id);});
+test('concave mirror focuses parallel ray bundle in front of mirror',()=>{const {s}=run('content/experiments/stage10/concave-mirror-focus.json');assert.ok(s.state.focus);assert.ok(Math.abs(s.state.focus.x+1)<.15,`focus=${s.state.focus.x}`);assert.ok(s.state.rays.every(r=>r.path.some(p=>p.event==='spherical-mirror')));});
+test('prism produces multiple refractive/internal-reflection interactions',()=>{const {s}=run('content/experiments/stage10/prism-refraction.json');assert.ok(s.state.path.filter(p=>p.event==='polygonInterface').length>=3);assert.ok(s.state.path.some(p=>p.totalInternalReflection===true));});
+test('transparent block has entry and exit refraction and reaches screen',()=>{const {s}=run('content/experiments/stage10/transparent-block.json');assert.ok(s.state.path.filter(p=>p.event==='polygonInterface').length>=2);assert.ok(s.state.rays.some(r=>r.path.some(p=>p.event==='screen')));});
+test('opaque block absorbs some diverging rays and leaves others to screen',()=>{const {s}=run('content/experiments/stage10/shadow.json');const absorbed=s.state.rays.filter(r=>r.path.some(p=>p.event==='absorber'||p.event==='circularAbsorber')).length;const screen=s.state.rays.filter(r=>r.path.some(p=>p.event==='screen')).length;assert.ok(absorbed>0);assert.ok(screen>0);});
+test('adjustable slit transmits central rays and blocks outer rays',()=>{const {s}=run('content/experiments/stage10/adjustable-slit.json');const absorbed=s.state.rays.filter(r=>r.path.some(p=>p.event==='absorber')).length;const screen=s.state.rays.filter(r=>r.path.some(p=>p.event==='screen')).length;assert.ok(absorbed>0&&screen>0);assert.equal(absorbed+screen,s.state.rays.length);});
+test('semicircular block has curved and flat refractive surfaces',()=>{const scene={schemaVersion:'1.0.0',id:'semi',titleFa:'نیم‌دایره',domain:'optics',simulation:{dt:.01,gravity:{x:0,y:0}},parts:[{instanceId:'src',partId:'optics.raybox',transform:{position:{x:-4,y:.4},rotation:0,scale:{x:1,y:1}},properties:{rayCount:1}},{instanceId:'semi',partId:'optics.semicircularblock',transform:{position:{x:0,y:0},rotation:0,scale:{x:1,y:1}},properties:{radius:1.5,refractiveIndex:1.5}}],connections:[],probes:[]};const r=new SceneRuntime(scene,{partDefinitions:defs});const s=r.step(1);const events=s.state.path.map(p=>p.event);assert.ok(events.includes('semicircleFlat')||events.includes('semicircleArc'));});
+test('parabolic mirror generates reflection event',()=>{const scene={schemaVersion:'1.0.0',id:'para',titleFa:'سهموی',domain:'optics',simulation:{dt:.01,gravity:{x:0,y:0}},parts:[{instanceId:'src',partId:'optics.raybox',transform:{position:{x:-4,y:0},rotation:0,scale:{x:1,y:1}},properties:{rayCount:3,beamHeight:1}},{instanceId:'m',partId:'optics.parabolicmirror',transform:{position:{x:1,y:0},rotation:0,scale:{x:1,y:1}},properties:{focalLength:2,height:4}}],connections:[],probes:[]};const r=new SceneRuntime(scene,{partDefinitions:defs});const s=r.step(1);assert.ok(s.state.rays.some(x=>x.path.some(p=>p.event==='mirror')));});
+test('Stage 10 ships five executable optics experiments',()=>{const idx=read('content/experiments/stage10/index.json');assert.equal(idx.length,5);assert.ok(idx.every(x=>x.executionMode));});
+console.log(`\nStage 10: ${count} tests passed.`);

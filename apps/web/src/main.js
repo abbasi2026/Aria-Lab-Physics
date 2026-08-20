@@ -45,16 +45,17 @@ const ICONS = {
 function iconSvg(key='folder', cls='') { return `<svg class="nav-icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[key] ?? ICONS.folder}</svg>`; }
 
 async function boot() {
-  const [canonical, palette, nav, stage6Experiments, stage9Experiments, legacy, status] = await Promise.all([
+  const [canonical, palette, nav, stage6Experiments, stage9Experiments, stage10Experiments, legacy, status] = await Promise.all([
     fetch('/datasets/parts/canonical-parts.json').then(r => r.json()),
     fetch('/datasets/parts/palette.json').then(r => r.json()),
     fetch('/datasets/navigation/crocodile-taxonomy.json').then(r => r.json()),
     fetch('/content/experiments/stage6/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/experiments/stage9/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch('/content/experiments/stage10/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/library/crocodile-605-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/api/ai/status').then(r => r.ok ? r.json() : ({ enabled:false, provider:'gemini', model:null })).catch(() => ({ enabled:false, provider:'gemini', model:null })),
   ]);
-  const experiments = [...stage9Experiments, ...stage6Experiments];
+  const experiments = [...stage10Experiments, ...stage9Experiments, ...stage6Experiments];
   canonicalParts = canonical; paletteEntries = palette.entries ?? []; taxonomy = nav; catalog = new ComponentCatalog(canonical);
   partIconById = new Map(); (function collect(nodes){for(const n of nodes){for(const e of n.entries??[])if(!partIconById.has(e.canonicalPartId))partIconById.set(e.canonicalPartId,e.iconKey);collect(n.children??[]);}})(taxonomy.parts.roots); experimentLibrary = experiments; legacyLibrary = legacy; aiStatus = status;
   const guidedEntries = experiments.map(item => ({ ...item, source:'aria', status:'ready', version:1, tags:['guided'] }));

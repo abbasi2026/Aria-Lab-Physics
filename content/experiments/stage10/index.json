@@ -1,0 +1,42 @@
+[
+  {
+    "id": "stage10.concave-mirror-focus",
+    "titleFa": "کانون آینه مقعر",
+    "domain": "optics",
+    "path": "/content/experiments/stage10/concave-mirror-focus.json",
+    "stage": 10,
+    "executionMode": true
+  },
+  {
+    "id": "stage10.prism-refraction",
+    "titleFa": "شکست و بازتاب داخلی در منشور",
+    "domain": "optics",
+    "path": "/content/experiments/stage10/prism-refraction.json",
+    "stage": 10,
+    "executionMode": true
+  },
+  {
+    "id": "stage10.transparent-block",
+    "titleFa": "عبور نور از بلوک شفاف",
+    "domain": "optics",
+    "path": "/content/experiments/stage10/transparent-block.json",
+    "stage": 10,
+    "executionMode": true
+  },
+  {
+    "id": "stage10.shadow",
+    "titleFa": "تشکیل سایه با جسم کدر",
+    "domain": "optics",
+    "path": "/content/experiments/stage10/shadow.json",
+    "stage": 10,
+    "executionMode": true
+  },
+  {
+    "id": "stage10.adjustable-slit",
+    "titleFa": "شکاف قابل تنظیم",
+    "domain": "optics",
+    "path": "/content/experiments/stage10/adjustable-slit.json",
+    "stage": 10,
+    "executionMode": true
+  }
+]

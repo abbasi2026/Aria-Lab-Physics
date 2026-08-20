@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage10.shadow",
+  "version": 1,
+  "title": "تشکیل سایه با جسم کدر",
+  "titleFa": "تشکیل سایه با جسم کدر",
+  "domain": [
+    "optics"
+  ],
+  "summaryFa": "جسم کدر بخشی از پرتوها را متوقف می‌کند و سایه واقعی ایجاد می‌شود.",
+  "learningObjectives": [
+    "جسم کدر بخشی از پرتوها را متوقف می‌کند و سایه واقعی ایجاد می‌شود."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage10.shadow",
+    "title": "تشکیل سایه",
+    "titleFa": "تشکیل سایه",
+    "domain": "optics",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "source",
+        "partId": "optics.lamp",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "rayCount": 9,
+          "beamHeight": 0,
+          "spreadDeg": 45
+        }
+      },
+      {
+        "instanceId": "opaque",
+        "partId": "optics.opaqueblock",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "width": 1.2,
+          "height": 2
+        }
+      },
+      {
+        "instanceId": "screen",
+        "partId": "optics.projection",
+        "transform": {
+          "position": {
+            "x": 4,
+            "y": 0
+          },
+          "rotation": 90,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "length": 7
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "absorbed",
+        "quantity": "absorbed-rays"
+      },
+      {
+        "id": "hits",
+        "quantity": "screen-hits"
+      }
+    ],
+    "metadata": {
+      "stage": 10,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "تابش نور",
+        "instructionFa": "نور واگرا را اجرا کنید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.01
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "برخی پرتوها به جسم کدر برخورد می‌کنند."
+          }
+        ]
+      },
+      {
+        "id": "shadow",
+        "titleFa": "سایه روی پرده",
+        "instructionFa": "هم جذب پرتو و هم رسیدن پرتوهای کناری به پرده را بررسی کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "absorbed",
+            "min": 1
+          },
+          {
+            "type": "measurement-range",
+            "measurementId": "hits",
+            "min": 1
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "ناحیه‌ای که پرتو مستقیم ندارد سایه است."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "absorbed",
+      "labelFa": "پرتوهای جذب‌شده",
+      "unit": "count",
+      "probe": {
+        "id": "absorbed",
+        "quantity": "absorbed-rays"
+      }
+    },
+    {
+      "id": "hits",
+      "labelFa": "پرتوهای رسیده به پرده",
+      "unit": "count",
+      "probe": {
+        "id": "hits",
+        "quantity": "screen-hits"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "جسم کدر بخشی از پرتوها را متوقف می‌کند و سایه واقعی ایجاد می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "abs",
+        "type": "measurement-range",
+        "measurementId": "absorbed",
+        "min": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "فقط از داده Runtime نتیجه‌گیری کن."
+    ]
+  },
+  "metadata": {
+    "stage": 10,
+    "executionMode": true
+  }
+}

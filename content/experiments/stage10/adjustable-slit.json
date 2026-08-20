@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage10.adjustable-slit",
+  "version": 1,
+  "title": "شکاف قابل تنظیم",
+  "titleFa": "شکاف قابل تنظیم",
+  "domain": [
+    "optics"
+  ],
+  "summaryFa": "شکاف هندسی فقط پرتوهای واقع در دهانه را عبور می‌دهد.",
+  "learningObjectives": [
+    "شکاف هندسی فقط پرتوهای واقع در دهانه را عبور می‌دهد."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage10.slit",
+    "title": "عبور نور از شکاف",
+    "titleFa": "عبور نور از شکاف",
+    "domain": "optics",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "source",
+        "partId": "optics.torch",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "rayCount": 7,
+          "beamHeight": 3,
+          "spreadDeg": 0
+        }
+      },
+      {
+        "instanceId": "slit",
+        "partId": "optics.adjustableslit",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "gap": 0.7,
+          "height": 4
+        }
+      },
+      {
+        "instanceId": "screen",
+        "partId": "optics.projection",
+        "transform": {
+          "position": {
+            "x": 4,
+            "y": 0
+          },
+          "rotation": 90,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "length": 5
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "absorbed",
+        "quantity": "absorbed-rays"
+      },
+      {
+        "id": "hits",
+        "quantity": "screen-hits"
+      }
+    ],
+    "metadata": {
+      "stage": 10,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "عبور از شکاف",
+        "instructionFa": "آزمایش را اجرا کنید؛ فقط پرتوهای داخل دهانه باید عبور کنند.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.01
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "دو تیغه بالا و پایین پرتوهای خارج از دهانه را جذب می‌کنند."
+          }
+        ]
+      },
+      {
+        "id": "compare",
+        "titleFa": "مقایسه عبور و جذب",
+        "instructionFa": "هم پرتو عبوری و هم پرتو جذب‌شده باید وجود داشته باشد.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "absorbed",
+            "min": 1
+          },
+          {
+            "type": "measurement-range",
+            "measurementId": "hits",
+            "min": 1
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "عرض دهانه تعیین می‌کند چند پرتو عبور کنند."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "absorbed",
+      "labelFa": "پرتوهای جذب‌شده",
+      "unit": "count",
+      "probe": {
+        "id": "absorbed",
+        "quantity": "absorbed-rays"
+      }
+    },
+    {
+      "id": "hits",
+      "labelFa": "پرتوهای عبوری",
+      "unit": "count",
+      "probe": {
+        "id": "hits",
+        "quantity": "screen-hits"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "شکاف هندسی فقط پرتوهای واقع در دهانه را عبور می‌دهد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "both",
+        "type": "measurement-range",
+        "measurementId": "hits",
+        "min": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "فقط از داده Runtime نتیجه‌گیری کن."
+    ]
+  },
+  "metadata": {
+    "stage": 10,
+    "executionMode": true
+  }
+}

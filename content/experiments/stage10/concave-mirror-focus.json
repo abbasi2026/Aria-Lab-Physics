@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage10.concave-mirror-focus",
+  "version": 1,
+  "title": "کانون آینه مقعر",
+  "titleFa": "کانون آینه مقعر",
+  "domain": [
+    "optics"
+  ],
+  "summaryFa": "پرتوهای موازی در آینه مقعر در کانون واقعی همگرا می‌شوند.",
+  "learningObjectives": [
+    "پرتوهای موازی در آینه مقعر در کانون واقعی همگرا می‌شوند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage10.concave-focus",
+    "title": "کانون آینه مقعر",
+    "titleFa": "کانون آینه مقعر",
+    "domain": "optics",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "source",
+        "partId": "optics.torch",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "rayCount": 5,
+          "beamHeight": 2,
+          "spreadDeg": 0
+        }
+      },
+      {
+        "instanceId": "mirror",
+        "partId": "optics.concavemirror",
+        "transform": {
+          "position": {
+            "x": 1,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "focalLength": 2,
+          "height": 4
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "focus-x",
+        "quantity": "focus-x"
+      }
+    ],
+    "metadata": {
+      "stage": 10,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "بازتاب پرتوها",
+        "instructionFa": "آزمایش را اجرا کنید و همگرایی پرتوهای بازتابی را ببینید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.01
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "کانون در جلوی آینه تشکیل می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "focus",
+        "titleFa": "اندازه‌گیری کانون",
+        "instructionFa": "مکان کانون را اندازه‌گیری کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "focus-x",
+            "min": -1.2,
+            "max": -0.8
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "برای R=2f، کانون حدود دو متر جلوی رأس آینه است."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "focus-x",
+      "labelFa": "مکان کانون",
+      "unit": "m",
+      "probe": {
+        "id": "focus-x",
+        "quantity": "focus-x"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "پرتوهای موازی در آینه مقعر در کانون واقعی همگرا می‌شوند."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "f",
+        "type": "measurement-range",
+        "measurementId": "focus-x",
+        "min": -1.2,
+        "max": -0.8,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "guardrails": [
+      "فقط از داده Runtime نتیجه‌گیری کن."
+    ]
+  },
+  "metadata": {
+    "stage": 10,
+    "executionMode": true
+  }
+}
