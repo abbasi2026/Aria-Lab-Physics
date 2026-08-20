@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage9.ball-collision",
+  "version": 1,
+  "title": "برخورد دو توپ",
+  "titleFa": "برخورد دو توپ",
+  "domain": [
+    "mechanics"
+  ],
+  "summaryFa": "در برخورد کشسان، تکانه و انرژی جنبشی تقریباً پایسته‌اند.",
+  "learningObjectives": [
+    "در برخورد کشسان، تکانه و انرژی جنبشی تقریباً پایسته‌اند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage9.collision",
+    "title": "برخورد دو توپ",
+    "titleFa": "برخورد دو توپ",
+    "domain": "mechanics",
+    "simulation": {
+      "dt": 0.008333333333333333,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "ball-a",
+        "partId": "mechanics.billiard-ball",
+        "transform": {
+          "position": {
+            "x": -2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "mass": 1,
+          "radius": 0.45,
+          "velocityX": 2,
+          "velocityY": 0,
+          "restitution": 1
+        }
+      },
+      {
+        "instanceId": "ball-b",
+        "partId": "mechanics.billiard-ball",
+        "transform": {
+          "position": {
+            "x": 1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "mass": 1,
+          "radius": 0.45,
+          "velocityX": 0,
+          "velocityY": 0,
+          "restitution": 1
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "speed-b",
+        "quantity": "speed",
+        "instanceId": "ball-b"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage9",
+      "stage": 9,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "اجرای برخورد",
+        "instructionFa": "اجرا را بزنید و حرکت توپ سمت چپ را دنبال کنید.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 0.2
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "توپ نخست با سرعت اولیه به سمت توپ دوم حرکت می‌کند."
+          }
+        ]
+      },
+      {
+        "id": "transfer",
+        "titleFa": "انتقال حرکت",
+        "instructionFa": "بعد از برخورد، سرعت توپ دوم را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "speed-b",
+            "min": 1.5
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "در برخورد کشسان جرم‌های برابر، سرعت تقریباً منتقل می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "speed-b",
+      "labelFa": "سرعت توپ دوم",
+      "unit": "m/s",
+      "probe": {
+        "id": "speed-b",
+        "quantity": "speed",
+        "instanceId": "ball-b"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "p_before=p_after",
+      "statementFa": "در برخورد کشسان، تکانه و انرژی جنبشی تقریباً پایسته‌اند."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "speed",
+        "type": "measurement-range",
+        "measurementId": "speed-b",
+        "min": 1.5,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "از داده اندازه‌گیری‌نشده نتیجه نساز."
+    ]
+  },
+  "metadata": {
+    "stage": 9,
+    "executionMode": true
+  }
+}

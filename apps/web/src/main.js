@@ -6,12 +6,13 @@ import { ExperimentAuthoringDocument, GuidedExperimentSession, ExperimentCoach, 
 import { GroundedAIClient } from '../../../packages/ai-coach/src/index.mjs';
 import { ExperimentLibrary } from '../../../packages/experiment-library/src/index.mjs';
 import { importLegacyMetadata } from '../../../packages/crocodile-importer/src/index.mjs';
+import { buildExecutionFrame, executableCapability, isInteractiveSwitch } from '../../../packages/execution-runtime/src/index.mjs';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 const fa = value => new Intl.NumberFormat('fa-IR', { maximumFractionDigits: 3 }).format(value);
 const domainIcons = { mechanics: 'motion', circuits: 'circuit', optics: 'optics', waves: 'waves', presentation: 'presentation' };
-let catalog, canonicalParts = [], taxonomy = null, paletteEntries = [], partIconById = new Map(), doc, runtime = null, mode = 'select', pendingPort = null, activeBottomTab = 'measure', raf = 0;
+let catalog, canonicalParts = [], taxonomy = null, paletteEntries = [], partIconById = new Map(), doc, runtime = null, mode = 'execute', pendingPort = null, activeBottomTab = 'measure', raf = 0;
 let experimentLibrary = [], legacyLibrary = [], libraryManager = null, activeExperiment = null, experimentAuthor = null, experimentSession = null;
 let aiStatus = { enabled: false, provider: 'gemini', model: null }, lastAIAnswer = null;
 const aiClient = new GroundedAIClient();
@@ -44,20 +45,22 @@ const ICONS = {
 function iconSvg(key='folder', cls='') { return `<svg class="nav-icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[key] ?? ICONS.folder}</svg>`; }
 
 async function boot() {
-  const [canonical, palette, nav, experiments, legacy, status] = await Promise.all([
+  const [canonical, palette, nav, stage6Experiments, stage9Experiments, legacy, status] = await Promise.all([
     fetch('/datasets/parts/canonical-parts.json').then(r => r.json()),
     fetch('/datasets/parts/palette.json').then(r => r.json()),
     fetch('/datasets/navigation/crocodile-taxonomy.json').then(r => r.json()),
     fetch('/content/experiments/stage6/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch('/content/experiments/stage9/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/library/crocodile-605-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/api/ai/status').then(r => r.ok ? r.json() : ({ enabled:false, provider:'gemini', model:null })).catch(() => ({ enabled:false, provider:'gemini', model:null })),
   ]);
+  const experiments = [...stage9Experiments, ...stage6Experiments];
   canonicalParts = canonical; paletteEntries = palette.entries ?? []; taxonomy = nav; catalog = new ComponentCatalog(canonical);
   partIconById = new Map(); (function collect(nodes){for(const n of nodes){for(const e of n.entries??[])if(!partIconById.has(e.canonicalPartId))partIconById.set(e.canonicalPartId,e.iconKey);collect(n.children??[]);}})(taxonomy.parts.roots); experimentLibrary = experiments; legacyLibrary = legacy; aiStatus = status;
   const guidedEntries = experiments.map(item => ({ ...item, source:'aria', status:'ready', version:1, tags:['guided'] }));
   const localEntries = loadStoredLibrary();
   libraryManager = new ExperimentLibrary([...guidedEntries, ...legacy, ...localEntries]);
-  const initial = createBlankScene({ id: 'aria.scene.stage8', title: 'New Scene', titleFa: 'صحنه جدید', domain: 'mixed' });
+  const initial = createBlankScene({ id: 'aria.scene.stage9', title: 'New Scene', titleFa: 'صحنه جدید', domain: 'mixed' });
   doc = new SceneDocument(initial); doc.subscribe(() => { renderScene(); renderInspector(); renderBottom(); syncRuntime(false); });
   bindUI(); renderAIStatus(); renderExperimentSelector(); renderBrowser(); renderScene(); renderInspector(); renderBottom(); syncRuntime(true); animate();
 }
@@ -84,7 +87,7 @@ function bindUI() {
   $('#undo').onclick = () => doc.undo(); $('#redo').onclick = () => doc.redo();
   $('#new-scene').onclick = () => { if (confirm('صحنه فعلی پاک شود؟')) doc.replaceScene(createBlankScene({ id: `aria.scene.${Date.now()}`, titleFa: 'صحنه جدید', domain: 'mixed' })); };
   $('#scene-title').addEventListener('change', e => { const scene = doc.snapshot(); scene.titleFa = e.target.value; doc.replaceScene(scene, { clearHistory: false }); });
-  $('#select-mode').onclick = () => setMode('select'); $('#wire-mode').onclick = () => setMode('wire');
+  $('#execute-mode').onclick = () => setMode('execute'); $('#select-mode').onclick = () => setMode('select'); $('#wire-mode').onclick = () => setMode('wire');
   $('#delete-selected').onclick = removeSelected;
   $('#run-toggle').onclick = () => { runtime?.toggle(); updateRunUI(); };
   $('#step').onclick = () => { runtime?.step(1); renderRuntimeOverlay(); renderBottom(); };
@@ -110,7 +113,7 @@ function renderBrowser(){
   $('#part-search').placeholder=browserPlaceholder();
   const count = browserState.mode==='parts' ? `${fa(taxonomy.stats.canonicalParts)} قطعه · ${fa(taxonomy.stats.partLeafPaths)} زیرشاخه` : browserState.mode==='experiments' ? `${fa(taxonomy.stats.legacyExperiments + experimentLibrary.length)} آزمایش` : `${fa(taxonomy.stats.experimentCategories)} مبحث اصلی`;
   $('#catalog-count').textContent=count;
-  $('#browser-breadcrumb').textContent=browserState.mode==='parts'?'Crocodile Parts Library':browserState.mode==='experiments'?'Crocodile Experiments':'Crocodile Physics Topics';
+  $('#browser-breadcrumb').textContent=browserState.mode==='parts'?'کتابخانه قطعات کروکودایل':browserState.mode==='experiments'?'آزمایش‌های کروکودایل':'مباحث فیزیک کروکودایل';
   if(browserState.mode==='parts') renderPartTree(); else if(browserState.mode==='experiments') renderExperimentTree(); else renderTopicTree();
 }
 function normalized(value){return String(value??'').toLocaleLowerCase('fa');}
@@ -125,8 +128,8 @@ function filterPartNode(node,q){
 function renderPartNode(node,depth=0){
   const q=normalized(browserState.query.trim()), open=q||browserState.expanded.has(node.id);
   const childrenHtml=open?node.children.map(x=>renderPartNode(x,depth+1)).join(''):'';
-  const entriesHtml=open?node.entries.map(entry=>`<button class="tree-leaf part-leaf" draggable="true" data-part-id="${escapeAttr(entry.canonicalPartId)}" title="${escapeAttr(entry.name)} · ${escapeAttr(entry.legacyClass)}"><span class="leaf-icon">${iconSvg(entry.iconKey)}</span><span class="leaf-copy"><strong>${escapeHtml(entry.nameFa||entry.name)}</strong><small>${escapeHtml(entry.name)}</small></span><span class="leaf-add" aria-hidden="true">＋</span></button>`).join(''):'';
-  return `<div class="tree-node depth-${depth}"><button class="tree-branch ${open?'open':''}" data-branch-id="${escapeAttr(node.id)}" data-path="${escapeAttr(node.path)}"><span class="branch-chevron">‹</span><span class="branch-icon">${iconSvg(node.iconKey)}</span><span class="branch-copy"><strong>${escapeHtml(node.titleFa)}</strong><small>${escapeHtml(node.title)}</small></span><span class="branch-count">${fa(node.count)}</span></button>${open?`<div class="tree-children">${childrenHtml}${entriesHtml}</div>`:''}</div>`;
+  const entriesHtml=open?node.entries.map(entry=>`<button class="tree-leaf part-leaf" draggable="true" data-part-id="${escapeAttr(entry.canonicalPartId)}" title="${escapeAttr(entry.name)} · ${escapeAttr(entry.legacyClass)}"><span class="leaf-icon">${iconSvg(entry.iconKey)}</span><span class="leaf-copy"><strong>${escapeHtml(entry.nameFa||entry.name)}</strong></span><span class="leaf-add" aria-hidden="true">＋</span></button>`).join(''):'';
+  return `<div class="tree-node depth-${depth}"><button class="tree-branch ${open?'open':''}" data-branch-id="${escapeAttr(node.id)}" data-path="${escapeAttr(node.path)}"><span class="branch-chevron">‹</span><span class="branch-icon">${iconSvg(node.iconKey)}</span><span class="branch-copy"><strong>${escapeHtml(node.titleFa)}</strong></span><span class="branch-count">${fa(node.count)}</span></button>${open?`<div class="tree-children">${childrenHtml}${entriesHtml}</div>`:''}</div>`;
 }
 function renderPartTree(){
   const q=normalized(browserState.query.trim()); const nodes=taxonomy.parts.roots.map(n=>filterPartNode(n,q)).filter(Boolean);
@@ -142,7 +145,7 @@ function renderExperimentTree(){
     const legacy=cat.items.filter(x=>!q||normalized(`${x.title} ${x.titleFa}`).includes(q)); const guided=(guidedBy.get(cat.title)??[]).filter(x=>!q||normalized(`${x.titleFa} ${x.id}`).includes(q));
     if(q&&!legacy.length&&!guided.length&&!normalized(`${cat.title} ${cat.titleFa}`).includes(q))return '';
     const id=`expbranch:${cat.title}`,open=q||browserState.expanded.has(id);
-    return `<div class="tree-node"><button class="tree-branch ${open?'open':''}" data-exp-branch="${escapeAttr(id)}"><span class="branch-chevron">‹</span><span class="branch-icon">${iconSvg(cat.iconKey)}</span><span class="branch-copy"><strong>${escapeHtml(cat.titleFa)}</strong><small>${escapeHtml(cat.title)}</small></span><span class="branch-count">${fa(cat.count+guided.length)}</span></button>${open?`<div class="tree-children">${guided.map(x=>`<button class="tree-leaf experiment-leaf ready" data-path="${escapeAttr(x.path)}"><span class="leaf-icon">${iconSvg(cat.iconKey)}</span><span class="leaf-copy"><strong>${escapeHtml(x.titleFa)}</strong><small>آزمایش راهنمای آریا</small></span><span class="status-dot ready"></span></button>`).join('')}${legacy.map(x=>`<button class="tree-leaf experiment-leaf legacy" data-id="${escapeAttr(x.id)}"><span class="leaf-icon">${iconSvg(cat.iconKey)}</span><span class="leaf-copy"><strong>${escapeHtml(x.titleFa||x.title)}</strong><small>${escapeHtml(x.title)}</small></span><span class="status-dot migration" title="Migration Draft"></span></button>`).join('')}</div>`:''}</div>`;
+    return `<div class="tree-node"><button class="tree-branch ${open?'open':''}" data-exp-branch="${escapeAttr(id)}"><span class="branch-chevron">‹</span><span class="branch-icon">${iconSvg(cat.iconKey)}</span><span class="branch-copy"><strong>${escapeHtml(cat.titleFa)}</strong></span><span class="branch-count">${fa(cat.count+guided.length)}</span></button>${open?`<div class="tree-children">${guided.map(x=>`<button class="tree-leaf experiment-leaf ready" data-path="${escapeAttr(x.path)}"><span class="leaf-icon">${iconSvg(cat.iconKey)}</span><span class="leaf-copy"><strong>${escapeHtml(x.titleFa)}</strong><small>آزمایش راهنمای آریا</small></span><span class="status-dot ready"></span></button>`).join('')}${legacy.map(x=>`<button class="tree-leaf experiment-leaf legacy" data-id="${escapeAttr(x.id)}"><span class="leaf-icon">${iconSvg(cat.iconKey)}</span><span class="leaf-copy"><strong>${escapeHtml(x.titleFa||x.title)}</strong><small>آزمایش مرجع کروکودایل</small></span><span class="status-dot migration" title="Migration Draft"></span></button>`).join('')}</div>`:''}</div>`;
   }).join('');
   $('#part-list').innerHTML=`<div class="taxonomy-note"><span>${iconSvg('book')}</span><div><strong>آزمایش‌های Crocodile 605</strong><small>۸ شاخه اصلی · آزمایش‌های آریا در همان شاخه موضوعی نمایش داده می‌شوند.</small></div></div>${html||'<div class="browser-empty">آزمایشی پیدا نشد.</div>'}`;
   $$('[data-exp-branch]').forEach(btn=>btn.onclick=()=>{const id=btn.dataset.expBranch;browserState.expanded.has(id)?browserState.expanded.delete(id):browserState.expanded.add(id);renderBrowser();});
@@ -158,7 +161,7 @@ const TOPIC_DESCRIPTIONS={
 function renderTopicTree(){
   const q=normalized(browserState.query.trim());
   const cats=taxonomy.topics.categories.filter(c=>!q||normalized(`${c.title} ${c.titleFa} ${TOPIC_DESCRIPTIONS[c.title]}`).includes(q));
-  $('#part-list').innerHTML=`<div class="topic-grid">${cats.map(cat=>`<article class="topic-card" data-topic="${escapeAttr(cat.title)}"><div class="topic-icon">${iconSvg(cat.iconKey)}</div><div class="topic-copy"><strong>${escapeHtml(cat.titleFa)}</strong><span>${escapeHtml(cat.title)}</span><p>${escapeHtml(TOPIC_DESCRIPTIONS[cat.title]??'')}</p></div><footer><span>${fa(cat.experimentCount)} آزمایش مرجع</span><button>مشاهده آزمایش‌ها</button></footer></article>`).join('')||'<div class="browser-empty">مبحثی پیدا نشد.</div>'}</div>`;
+  $('#part-list').innerHTML=`<div class="topic-grid">${cats.map(cat=>`<article class="topic-card" data-topic="${escapeAttr(cat.title)}"><div class="topic-icon">${iconSvg(cat.iconKey)}</div><div class="topic-copy"><strong>${escapeHtml(cat.titleFa)}</strong><p>${escapeHtml(TOPIC_DESCRIPTIONS[cat.title]??'')}</p></div><footer><span>${fa(cat.experimentCount)} آزمایش مرجع</span><button>مشاهده آزمایش‌ها</button></footer></article>`).join('')||'<div class="browser-empty">مبحثی پیدا نشد.</div>'}</div>`;
   $$('.topic-card').forEach(card=>card.onclick=()=>{browserState.mode='experiments';browserState.query='';$('#part-search').value='';const id=`expbranch:${card.dataset.topic}`;browserState.expanded.add(id);renderBrowser();requestAnimationFrame(()=>document.querySelector(`[data-exp-branch="${CSS.escape(id)}"]`)?.scrollIntoView({block:'center'}));});
 }
 function onPaletteDrop(e) {
@@ -182,8 +185,8 @@ function renderScene() {
 
 function createPartElement(part) {
   const definition = catalog.get(part.partId); const screen = worldToScreen(part.transform.position); const el = document.createElement('div'); el.className = `scene-part ${doc.selection.type === 'part' && doc.selection.id === part.instanceId ? 'selected' : ''}`; el.dataset.instanceId = part.instanceId; el.style.left = `${screen.x}px`; el.style.top = `${screen.y}px`; el.style.rotate = `${part.transform.rotation ?? 0}deg`; 
-  el.innerHTML = `<div class="scene-part-icon">${iconSvg(partIconById.get(part.partId) ?? domainIcons[definition?.domain] ?? 'folder')}</div><div class="scene-part-name">${escapeHtml(definition?.nameFa ?? part.partId)}</div>`;
-  el.onclick = e => { e.stopPropagation(); if (mode === 'select') doc.selectPart(part.instanceId); };
+  const capability=executableCapability(part.partId); el.dataset.executable=capability.supported?'true':'false'; el.innerHTML = `<div class="scene-part-physical physical-${escapeAttr(capability.kind)}"><div class="scene-part-icon">${iconSvg(partIconById.get(part.partId) ?? domainIcons[definition?.domain] ?? 'folder')}</div></div><div class="scene-part-name">${escapeHtml(definition?.nameFa ?? part.partId)}</div>${capability.supported?'':'<span class="dev-badge">در حال توسعه</span>'}`;
+  el.onclick = e => { e.stopPropagation(); if (mode === 'execute' && isInteractiveSwitch(part.partId)) { toggleInteractivePart(part); return; } if (mode === 'select' || mode === 'execute') doc.selectPart(part.instanceId); };
   bindPartDrag(el, part);
   const ports = definition ? catalog.displayPorts(definition.id) : []; ports.forEach((port, i) => { const dot = document.createElement('span'); dot.className = 'port'; dot.dataset.instanceId = part.instanceId; dot.dataset.portId = port.id; dot.dataset.side = i % 2 ? 'right' : 'left'; dot.style.top = `${20 + (i % Math.max(1,Math.ceil(ports.length/2))) * 18}px`; dot.title = port.id; dot.onclick = e => { e.stopPropagation(); onPortClick(dot, definition, port); }; el.appendChild(dot); });
   return el;
@@ -191,7 +194,7 @@ function createPartElement(part) {
 
 function bindPartDrag(el, part) {
   let start = null, originScreen = null;
-  el.addEventListener('pointerdown', e => { if (mode !== 'select' || e.target.classList.contains('port')) return; e.preventDefault(); el.setPointerCapture(e.pointerId); start = { x:e.clientX,y:e.clientY }; originScreen = worldToScreen(part.transform.position); doc.selectPart(part.instanceId); });
+  el.addEventListener('pointerdown', e => { if ((mode !== 'select' && mode !== 'execute') || e.target.classList.contains('port') || (mode==='execute' && isInteractiveSwitch(part.partId))) return; e.preventDefault(); el.setPointerCapture(e.pointerId); start = { x:e.clientX,y:e.clientY }; originScreen = worldToScreen(part.transform.position); doc.selectPart(part.instanceId); });
   el.addEventListener('pointermove', e => { if (!start) return; const screen = { x: originScreen.x + e.clientX-start.x, y: originScreen.y + e.clientY-start.y }; el.style.left = `${screen.x}px`; el.style.top = `${screen.y}px`; renderConnectionsLive(part.instanceId, screen); });
   el.addEventListener('pointerup', e => { if (!start) return; const screen = { x: originScreen.x + e.clientX-start.x, y: originScreen.y + e.clientY-start.y }; start = null; doc.updateTransform(part.instanceId, { position: screenToWorld(screen) }); });
 }
@@ -205,7 +208,7 @@ function onPortClick(dot, definition, port) {
 }
 function clearPendingPort() { pendingPort?.dot?.classList.remove('pending'); pendingPort = null; }
 function portKindToConnection(kind='') { if (kind.startsWith('electrical')) return 'electrical'; if (kind.startsWith('mechanical')) return 'mechanical'; if (kind.startsWith('optical')) return 'optical'; if (kind.startsWith('wave')) return 'wave'; return 'binding'; }
-function setMode(next) { mode = next; clearPendingPort(); $('#select-mode').classList.toggle('active', mode==='select'); $('#wire-mode').classList.toggle('active', mode==='wire'); }
+function setMode(next) { mode = next; clearPendingPort(); $('#execute-mode')?.classList.toggle('active', mode==='execute'); $('#select-mode').classList.toggle('active', mode==='select'); $('#wire-mode').classList.toggle('active', mode==='wire'); document.body.classList.toggle('execution-mode',mode==='execute'); }
 
 function endpointPosition(endpoint) { const partEl = document.querySelector(`.scene-part[data-instance-id="${CSS.escape(endpoint.instanceId)}"]`); if (!partEl) return null; const portEl = partEl.querySelector(`.port[data-port-id="${CSS.escape(endpoint.portId ?? '')}"]`); const w = $('#workspace').getBoundingClientRect(); const r = (portEl ?? partEl).getBoundingClientRect(); return { x: r.left + r.width/2 - w.left, y:r.top+r.height/2-w.top }; }
 function renderConnections() { const svg = $('#connection-layer'); const scene=doc.snapshot(); svg.innerHTML = scene.connections.map(c => { const a=endpointPosition(c.from),b=endpointPosition(c.to); if(!a||!b)return ''; const dx=Math.max(40,Math.abs(b.x-a.x)*.45); return `<path class="connection-line ${doc.selection.type==='connection'&&doc.selection.id===c.id?'selected':''}" data-id="${c.id}" d="M ${a.x} ${a.y} C ${a.x+dx} ${a.y}, ${b.x-dx} ${b.y}, ${b.x} ${b.y}"/>`; }).join(''); }
@@ -236,7 +239,25 @@ function propertyField(prop,value){const val=value??prop.default??'';const meta=
 function syncRuntime(force=false){if(!force&&runtime?.status==='running')return;runtime=new SceneRuntime(doc.snapshot(), { partDefinitions: canonicalParts });updateRunUI();}
 function animate(){cancelAnimationFrame(raf);const loop=()=>{if(runtime?.status==='running'){runtime.step(1);renderRuntimeOverlay();renderBottom(false);}updateRunUI();raf=requestAnimationFrame(loop);};raf=requestAnimationFrame(loop);}
 function updateRunUI(){const running=runtime?.status==='running';$('#run-icon').textContent=running?'Ⅱ':'▶';$('#run-label').textContent=running?'توقف':'اجرا';$('#runtime-time').textContent=`t = ${(runtime?.clock.time??0).toFixed(3)} s`;}
-function renderRuntimeOverlay(){const snap=runtime?.snapshot();if(!snap)return;$('#runtime-time').textContent=`t = ${snap.time.toFixed(3)} s`;if(snap.domain==='mechanics'){for(const b of snap.state.bodies??[]){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(b.id)}"]`);if(el){const screen=worldToScreen(b.position);el.style.left=`${screen.x}px`;el.style.top=`${screen.y}px`;if(Number.isFinite(b.angle))el.style.rotate=`${b.angle*180/Math.PI}deg`;el.classList.toggle('running',runtime.status==='running');}}renderConnections();}}
+function renderRuntimeOverlay(){const snap=runtime?.snapshot();if(!snap)return;$('#runtime-time').textContent=`t = ${snap.time.toFixed(3)} s`;const frame=buildExecutionFrame(doc.snapshot(),snap);renderPhysicsLayer(frame);for(const [id,state] of Object.entries(frame.parts)){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(id)}"]`);if(!el)continue;el.classList.toggle('physics-active',Boolean(state.active));el.classList.toggle('unsupported-part',!state.supported);if(Number.isFinite(state.intensity))el.style.setProperty('--intensity',String(state.intensity));}if(snap.domain==='mechanics'){for(const b of snap.state.bodies??[]){const el=document.querySelector(`.scene-part[data-instance-id="${CSS.escape(b.id)}"]`);if(el){const screen=worldToScreen(b.position);el.style.left=`${screen.x}px`;el.style.top=`${screen.y}px`;if(Number.isFinite(b.angle))el.style.rotate=`${b.angle*180/Math.PI}deg`;el.classList.toggle('running',runtime.status==='running');}}renderConnections();}}
+
+
+function toggleInteractivePart(part){
+  const closed=Boolean(part.properties?.closed??part.properties?.on??false);
+  doc.updateProperties(part.instanceId,{closed:!closed,on:!closed});
+  syncRuntime(true); runtime?.step(1); renderRuntimeOverlay(); renderBottom();
+  toast(!closed?'کلید بسته شد؛ مدار برقرار است.':'کلید باز شد؛ مسیر جریان قطع است.');
+}
+function renderPhysicsLayer(frame){
+  const svg=$('#physics-layer'), canvas=$('#wave-layer'); if(!svg||!canvas)return; svg.innerHTML=''; canvas.style.display='none';
+  if(frame.domain==='optics'){
+    const paths=frame.overlays.rays.map(ray=>{const points=ray.path.map(p=>worldToScreen(p));return points.length>1?`<polyline class="physics-ray" points="${points.map(p=>`${p.x},${p.y}`).join(' ')}"/>`:'';}).join('');
+    let focus=''; if(frame.overlays.focus){const f=worldToScreen(frame.overlays.focus);focus=`<g class="focus-marker"><circle cx="${f.x}" cy="${f.y}" r="8"/><circle cx="${f.x}" cy="${f.y}" r="3"/><text x="${f.x+12}" y="${f.y-10}">کانون</text></g>`;}
+    svg.innerHTML=paths+focus;
+  }
+  if(frame.domain==='waves'&&frame.overlays.wave){
+    const w=frame.overlays.wave, rect=$('#workspace').getBoundingClientRect(), dpr=Math.max(1,devicePixelRatio||1);canvas.style.display='block';canvas.width=Math.max(1,Math.floor(rect.width*dpr));canvas.height=Math.max(1,Math.floor(rect.height*dpr));canvas.style.width=`${rect.width}px`;canvas.style.height=`${rect.height}px`;const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,rect.width,rect.height);const cellW=rect.width/w.width,cellH=rect.height/w.height;for(let y=0;y<w.height;y++)for(let x=0;x<w.width;x++){const v=Number(w.values[y*w.width+x]??0),a=Math.min(1,Math.abs(v));ctx.fillStyle=v>=0?`rgba(54,192,255,${.06+.42*a})`:`rgba(132,92,255,${.06+.42*a})`;ctx.fillRect(x*cellW,y*cellH,Math.ceil(cellW)+.5,Math.ceil(cellH)+.5);}}
+}
 
 function renderBottom(){
   const root=$('#bottom-content');

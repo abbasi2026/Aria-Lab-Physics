@@ -8,6 +8,9 @@ import { ProbeRecorder } from '../../measurement-engine/src/index.mjs';
 
 const clone = value => structuredClone(value);
 const alias = id => String(id).toLowerCase();
+const isCircuitSwitchId = id => /spst|spdt|dpst|dpdt|pushmake|pushbreak|floatswitch|microswitch|switch/i.test(id);
+const isOpticalSourceId = id => /(?:raybox|ray-box|ray-source|torch|optics\.lamp)$/i.test(id);
+const isOpticalScreenId = id => /(?:screen|projection)$/i.test(id);
 
 export class SceneRuntime {
   constructor(scene, { maxSamples = 5000, partDefinitions = [] } = {}) {
@@ -125,7 +128,7 @@ function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
       else if (id.includes('capacitor')) { const capacitance=Number(p.capacitance ?? 1e-6); const initialVoltage=Number(p.initialVoltage ?? (Number.isFinite(Number(p.charge)) ? Number(p.charge)/capacitance : 0)); transient.capacitor(part.instanceId, a, b, capacitance, { initialVoltage }); }
       else if (id.includes('inductor')) transient.inductor(part.instanceId, a, b, Number(p.inductance ?? 1e-3), { initialCurrent: Number(p.initialCurrent ?? 0) });
       else if (id.includes('diode')) transient.diode(part.instanceId, a, b, { saturationCurrent: Number(p.saturationCurrent ?? 1e-12), ideality: Number(p.ideality ?? 1), thermalVoltage: Number(p.thermalVoltage ?? 0.02585) });
-      else if (id.includes('switch') || id.includes('pushmake') || id.includes('pushbreak')) transient.resistor(part.instanceId, a, b, (p.closed ?? p.on ?? !id.includes('pushbreak')) ? 1e-9 : 1e15);
+      else if (isCircuitSwitchId(id)) transient.resistor(part.instanceId, a, b, (p.closed ?? p.on ?? !id.includes('pushbreak')) ? 1e-9 : 1e15);
       else if (id.includes('lamp')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 100));
       else if (id.includes('ammeter')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e-6));
       else if (id.includes('voltmeter')) transient.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e9));
@@ -144,7 +147,7 @@ function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
       if (id.includes('resistor')) net.resistor(part.instanceId, a, b, Number(p.resistance ?? 1000));
       else if (id.includes('battery') || id.includes('voltage-source')) net.voltageSource(part.instanceId, a, b, Number(p.voltage ?? 9));
       else if (id.includes('current-source')) net.currentSource(part.instanceId, a, b, Number(p.current ?? 0.001));
-      else if (id.includes('switch') || id.includes('pushmake') || id.includes('pushbreak')) net.switch(part.instanceId, a, b, p.closed ?? p.on ?? !id.includes('pushbreak'));
+      else if (isCircuitSwitchId(id)) net.switch(part.instanceId, a, b, p.closed ?? p.on ?? !id.includes('pushbreak'));
       else if (id.includes('lamp')) net.lamp(part.instanceId, a, b, { resistance: Number(p.resistance ?? 100) });
       else if (id.includes('ammeter')) net.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e-6));
       else if (id.includes('voltmeter')) net.resistor(part.instanceId, a, b, Number(p.resistance ?? 1e9));
@@ -160,20 +163,74 @@ function segmentFromPart(part, defaultLength = 4) {
   return [{ x: c.x - dx, y: c.y - dy }, { x: c.x + dx, y: c.y + dy }];
 }
 function opticsAdapter(scene) {
-  const rayScene = new RayScene(); let source = null; let path = [];
+  const rayScene = new RayScene(); const sources = []; let rays = [], focus = null;
   for (const part of scene.parts) {
     const id = alias(part.partId); const p = part.properties ?? {};
-    if (id.includes('ray-source') || id.endsWith('.ray') || id.includes('ray-box')) source = { origin: { ...part.transform.position }, direction: { x: Number(p.directionX ?? 1), y: Number(p.directionY ?? 0) } };
+    if (isOpticalSourceId(id)) {
+      const angle = Number.isFinite(Number(p.angleDeg)) ? Number(p.angleDeg) * Math.PI / 180 : Math.atan2(Number(p.directionY ?? 0), Number(p.directionX ?? 1));
+      const base = { x: Math.cos(angle), y: Math.sin(angle) };
+      const count = Math.max(1, Math.min( nineOr(p.rayCount, id.includes('raybox') || id.includes('torch') ? 5 : 3), 11));
+      const height = Number(p.beamHeight ?? 2);
+      const spread = Number(p.spreadDeg ?? (id.includes('lamp') ? 18 : 0)) * Math.PI / 180;
+      sources.push({ partId: part.instanceId, origin: { ...part.transform.position }, base, count, height, spread });
+    }
     else if (id.includes('spherical-mirror')) rayScene.addSphericalMirror(part.instanceId, { center: { ...part.transform.position }, radius: Number(p.radius ?? 1) });
     else if (id.includes('spherical-interface') || id.includes('glass-sphere')) rayScene.addSphericalInterface(part.instanceId, { center: { ...part.transform.position }, radius: Number(p.radius ?? 1), nInside: Number(p.nInside ?? p.refractiveIndex ?? 1.5), nOutside: Number(p.nOutside ?? 1) });
     else if (id.includes('mirror')) { const [a, b] = segmentFromPart(part); rayScene.addMirror(part.instanceId, a, b); }
-    else if (id.includes('screen')) { const [a, b] = segmentFromPart(part); rayScene.addScreen(part.instanceId, a, b); }
+    else if (isOpticalScreenId(id)) { const [a, b] = segmentFromPart(part); rayScene.addScreen(part.instanceId, a, b); }
     else if (id.includes('interface') || id.includes('transparent')) { const [a, b] = segmentFromPart(part); rayScene.addInterface(part.instanceId, a, b, { nLeft: Number(p.nLeft ?? p.refractiveIndex1 ?? 1), nRight: Number(p.nRight ?? p.refractiveIndex ?? 1.5) }); }
-    else if (id.includes('lens')) rayScene.addThinLens(part.instanceId, { x: part.transform.position.x, yMin: part.transform.position.y - Number(p.height ?? 4) / 2, yMax: part.transform.position.y + Number(p.height ?? 4) / 2, focalLength: Number(p.focalLength ?? p['focal-length'] ?? 2) });
+    else if (id.includes('lens')) {
+      const fallbackF = id.includes('concave') ? -2 : 2;
+      rayScene.addThinLens(part.instanceId, { x: part.transform.position.x, yMin: part.transform.position.y - Number(p.height ?? 4) / 2, yMax: part.transform.position.y + Number(p.height ?? 4) / 2, focalLength: Number(p.focalLength ?? p['focal-length'] ?? fallbackF) });
+    }
   }
-  const trace = () => { path = source ? rayScene.trace(source, { maxInteractions: 30 }).path : []; return { path }; };
+  const trace = () => {
+    rays = [];
+    for (const source of sources) {
+      for (let i = 0; i < source.count; i++) {
+        const t = source.count === 1 ? 0 : i / (source.count - 1) - 0.5;
+        const offset = t * source.height;
+        const normal = { x: -source.base.y, y: source.base.x };
+        const theta = t * source.spread;
+        const ca = Math.cos(theta), sa = Math.sin(theta);
+        const direction = { x: source.base.x * ca - source.base.y * sa, y: source.base.x * sa + source.base.y * ca };
+        const origin = { x: source.origin.x + normal.x * offset, y: source.origin.y + normal.y * offset };
+        const traced = rayScene.trace({ origin, direction }, { maxInteractions: 30 });
+        rays.push({ sourceId: source.partId, path: traced.path, finalRay: traced.finalRay });
+      }
+    }
+    focus = estimateRayFocus(rays);
+    return { path: rays[0]?.path ?? [], rays, focus };
+  };
   trace();
-  return { step: trace, snapshot: () => ({ path }), measure(probe) { if (probe.quantity === 'interaction-count') return Math.max(0, path.length - 1); return null; } };
+  return {
+    step: trace,
+    snapshot: () => ({ path: rays[0]?.path ?? [], rays, focus }),
+    measure(probe) {
+      if (probe.quantity === 'interaction-count') return Math.max(0, (rays[0]?.path?.length ?? 1) - 1);
+      if (probe.quantity === 'focus-x') return focus?.x ?? null;
+      if (probe.quantity === 'focus-y') return focus?.y ?? null;
+      return null;
+    }
+  };
+}
+function nineOr(value, fallback){ const n=Number(value); return Number.isFinite(n)?Math.round(n):fallback; }
+function estimateRayFocus(rays){
+  const valid = rays.map(r=>r.finalRay).filter(r=>r?.origin&&r?.direction&&Math.abs(r.direction.x)>1e-9);
+  if(valid.length<2)return null;
+  const points=[];
+  for(let i=0;i<valid.length;i++) for(let j=i+1;j<valid.length;j++){
+    const a=valid[i],b=valid[j]; const det=a.direction.x*b.direction.y-a.direction.y*b.direction.x;
+    if(Math.abs(det)<1e-8)continue;
+    const dx=b.origin.x-a.origin.x,dy=b.origin.y-a.origin.y;
+    const t=(dx*b.direction.y-dy*b.direction.x)/det;
+    if(t<=1e-6)continue;
+    const x=a.origin.x+t*a.direction.x,y=a.origin.y+t*a.direction.y;
+    if(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x)<1e4&&Math.abs(y)<1e4)points.push({x,y});
+  }
+  if(!points.length)return null;
+  points.sort((a,b)=>a.x-b.x); const mid=points[Math.floor(points.length/2)];
+  return {x:mid.x,y:mid.y,samples:points.length};
 }
 
 function wavesAdapter(scene) {

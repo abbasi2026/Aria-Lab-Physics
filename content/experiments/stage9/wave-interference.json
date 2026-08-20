@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage9.wave-interference",
+  "version": 1,
+  "title": "تداخل دو منبع موج",
+  "titleFa": "تداخل دو منبع موج",
+  "domain": [
+    "waves"
+  ],
+  "summaryFa": "جمع دامنه دو موج، نواحی تداخل سازنده و ویرانگر ایجاد می‌کند.",
+  "learningObjectives": [
+    "جمع دامنه دو موج، نواحی تداخل سازنده و ویرانگر ایجاد می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage9.interference",
+    "title": "تداخل دو منبع موج",
+    "titleFa": "تداخل دو منبع موج",
+    "domain": "waves",
+    "simulation": {
+      "dt": 0.25,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "space",
+        "partId": "waves.water-wavespace2-holder",
+        "transform": {
+          "position": {
+            "x": 20,
+            "y": 15
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "width": 41,
+          "height": 31,
+          "dx": 1,
+          "damping": 0.003,
+          "absorbingLayers": 4,
+          "absorbingStrength": 0.15
+        }
+      },
+      {
+        "instanceId": "source-a",
+        "partId": "waves.point-source",
+        "transform": {
+          "position": {
+            "x": 14,
+            "y": 15
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "amplitude": 1,
+          "frequency": 0.08
+        }
+      },
+      {
+        "instanceId": "source-b",
+        "partId": "waves.point-source",
+        "transform": {
+          "position": {
+            "x": 26,
+            "y": 15
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "amplitude": 1,
+          "frequency": 0.08
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "energy",
+        "quantity": "energy"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage9",
+      "stage": 9,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "ایجاد موج",
+        "instructionFa": "اجرا را بزنید تا دو منبع هم‌فرکانس موج ایجاد کنند.",
+        "checks": [
+          {
+            "type": "simulation-time",
+            "min": 2
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "حلقه‌های موج از هر دو منبع پخش می‌شوند."
+          }
+        ]
+      },
+      {
+        "id": "field",
+        "titleFa": "مشاهده تداخل",
+        "instructionFa": "نوارهای تقویت و تضعیف را در میدان رنگی مشاهده کنید.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "energy",
+            "min": 0.001
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "برهم‌نهی دو موج الگوی تداخل می‌سازد."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "energy",
+      "labelFa": "انرژی میدان موج",
+      "unit": "a.u.",
+      "probe": {
+        "id": "energy",
+        "quantity": "energy"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "u=u1+u2",
+      "statementFa": "جمع دامنه دو موج، نواحی تداخل سازنده و ویرانگر ایجاد می‌کند."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "energy",
+        "type": "measurement-range",
+        "measurementId": "energy",
+        "min": 0.001,
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "از داده اندازه‌گیری‌نشده نتیجه نساز."
+    ]
+  },
+  "metadata": {
+    "stage": 9,
+    "executionMode": true
+  }
+}

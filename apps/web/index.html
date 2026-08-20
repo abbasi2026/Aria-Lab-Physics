@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#07111f" />
   <meta name="color-scheme" content="dark" />
-  <title>آزمایشگاه فیزیک آریا — Stage 8</title>
+  <title>آزمایشگاه فیزیک آریا — Stage 9</title>
   <link rel="stylesheet" href="/apps/web/styles.css" />
 </head>
 <body>
@@ -13,7 +13,7 @@
     <header class="topbar">
       <div class="brand">
         <span class="brand-mark" aria-hidden="true">A</span>
-        <div><strong>آزمایشگاه فیزیک آریا</strong><small>Physics Studio · Stage 8</small></div>
+        <div><strong>آزمایشگاه فیزیک آریا</strong><small>آزمایشگاه تعاملی · مرحله ۹</small></div>
       </div>
 
       <div class="toolbar" aria-label="کنترل‌های آزمایش">
@@ -57,7 +57,7 @@
           <button class="browser-mode" data-browser="topics"><span>◉</span><strong>مباحث</strong></button>
         </nav>
         <div class="search-wrap"><span class="search-icon">⌕</span><input id="part-search" type="search" placeholder="جست‌وجوی قطعه یا شاخه…" autocomplete="off" /></div>
-        <div class="browser-context"><span id="browser-breadcrumb">Crocodile Parts Library</span><span class="source-badge">۶۰۵</span></div>
+        <div class="browser-context"><span id="browser-breadcrumb">کتابخانه قطعات کروکودایل</span><span class="source-badge">۶۰۵</span></div>
         <div id="part-list" class="part-list hierarchy-browser" aria-live="polite"></div>
       </aside>
 
@@ -69,13 +69,16 @@
             <span id="scene-domain-badge">ترکیبی</span>
           </div>
           <div class="workspace-tools" role="toolbar" aria-label="ابزارهای صحنه">
-            <button id="select-mode" class="mode-btn active"><span>⌖</span> انتخاب</button>
+            <button id="execute-mode" class="mode-btn active"><span>▶</span> اجرای آزمایش</button>
+            <button id="select-mode" class="mode-btn"><span>⌖</span> انتخاب</button>
             <button id="wire-mode" class="mode-btn"><span>⌁</span> اتصال</button>
             <button id="delete-selected" class="mode-btn danger"><span>⌫</span> حذف</button>
           </div>
         </div>
 
         <div id="workspace" class="workspace" tabindex="0" aria-label="فضای آزمایش">
+          <svg id="physics-layer" class="physics-layer" aria-hidden="true"></svg>
+          <canvas id="wave-layer" class="wave-layer" aria-hidden="true"></canvas>
           <svg id="connection-layer" class="connection-layer" aria-hidden="true"></svg>
           <div class="workspace-grid"></div>
           <div id="part-layer" class="part-layer"></div>
@@ -116,7 +119,7 @@
     <footer class="status-strip">
       <span><i class="status-led ok"></i> موتور شبیه‌سازی آماده</span>
       <span>Ctrl + Wheel: زوم</span>
-      <span>Space: اجرا/توقف</span>
+      <span>Space: اجرا/توقف</span><span>حالت پیش‌فرض: اجرای لمسی</span>
       <span>B: کتابخانه · I: ویژگی‌ها</span>
     </footer>
     <div id="toast" class="toast" role="status"></div>

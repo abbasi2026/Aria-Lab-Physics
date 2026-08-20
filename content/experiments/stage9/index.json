@@ -1,0 +1,34 @@
+[
+  {
+    "id": "stage9.lens-focus",
+    "titleFa": "کانون عدسی محدب",
+    "domain": "optics",
+    "path": "/content/experiments/stage9/lens-focus.json",
+    "stage": 9,
+    "executionMode": true
+  },
+  {
+    "id": "stage9.switch-lamp",
+    "titleFa": "مدار کلید و لامپ",
+    "domain": "circuits",
+    "path": "/content/experiments/stage9/switch-lamp.json",
+    "stage": 9,
+    "executionMode": true
+  },
+  {
+    "id": "stage9.ball-collision",
+    "titleFa": "برخورد دو توپ",
+    "domain": "mechanics",
+    "path": "/content/experiments/stage9/ball-collision.json",
+    "stage": 9,
+    "executionMode": true
+  },
+  {
+    "id": "stage9.wave-interference",
+    "titleFa": "تداخل دو منبع موج",
+    "domain": "waves",
+    "path": "/content/experiments/stage9/wave-interference.json",
+    "stage": 9,
+    "executionMode": true
+  }
+]

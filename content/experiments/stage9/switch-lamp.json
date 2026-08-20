@@ -1,0 +1,213 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage9.switch-lamp",
+  "version": 1,
+  "title": "مدار کلید و لامپ",
+  "titleFa": "مدار کلید و لامپ",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "با بسته شدن کلید، جریان واقعی مدار لامپ را روشن می‌کند.",
+  "learningObjectives": [
+    "با بسته شدن کلید، جریان واقعی مدار لامپ را روشن می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage9.switch-lamp",
+    "title": "مدار کلید و لامپ",
+    "titleFa": "مدار کلید و لامپ",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.01,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "battery",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -3,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "0",
+          "voltage": 6
+        }
+      },
+      {
+        "instanceId": "switch",
+        "partId": "circuits.pictorial-spst",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n1",
+          "nodeB": "n2",
+          "closed": false
+        }
+      },
+      {
+        "instanceId": "lamp",
+        "partId": "circuits.pictorial-filament-lamp",
+        "transform": {
+          "position": {
+            "x": 3,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "n2",
+          "nodeB": "0",
+          "resistance": 30,
+          "nominalCurrent": 0.2
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "lamp-current",
+        "quantity": "current",
+        "instanceId": "lamp"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage9",
+      "stage": 9,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "open",
+        "titleFa": "مدار باز",
+        "instructionFa": "در حالت اجرا روی کلید بزنید و خاموش بودن لامپ را مشاهده کنید.",
+        "checks": [
+          {
+            "type": "property-range",
+            "instanceId": "switch",
+            "property": "closed",
+            "min": 0,
+            "max": 0
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "کلید باز مسیر جریان را قطع می‌کند."
+          }
+        ]
+      },
+      {
+        "id": "close",
+        "titleFa": "بستن کلید",
+        "instructionFa": "روی کلید لمس/کلیک کنید تا بسته شود؛ سپس یک‌گام اجرا کنید.",
+        "checks": [
+          {
+            "type": "property-range",
+            "instanceId": "switch",
+            "property": "closed",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "پس از بستن کلید حلقه مدار کامل می‌شود."
+          }
+        ]
+      },
+      {
+        "id": "current",
+        "titleFa": "مشاهده روشنایی",
+        "instructionFa": "جریان لامپ را اندازه بگیرید؛ باید نزدیک ۰٫۲ آمپر باشد.",
+        "checks": [
+          {
+            "type": "measurement-range",
+            "measurementId": "lamp-current",
+            "min": 0.19,
+            "max": 0.21
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "روشنایی از جریان واقعی Solver محاسبه می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "lamp-current",
+      "labelFa": "جریان لامپ",
+      "unit": "A",
+      "probe": {
+        "id": "lamp-current",
+        "quantity": "current",
+        "instanceId": "lamp"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "equation": "I=V/R=6/30=0.2 A",
+      "statementFa": "با بسته شدن کلید، جریان واقعی مدار لامپ را روشن می‌کند."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "current",
+        "type": "measurement-range",
+        "measurementId": "lamp-current",
+        "min": 0.19,
+        "max": 0.21,
+        "weight": 2
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "از داده اندازه‌گیری‌نشده نتیجه نساز."
+    ]
+  },
+  "metadata": {
+    "stage": 9,
+    "executionMode": true
+  }
+}
