@@ -55,3 +55,34 @@ tools/                 ابزارهای مهاجرت و اعتبارسنجی
 ```bash
 npm test
 ```
+
+
+## Stage 4 — Scene Editor & Runtime
+
+Stage 4 adds the first interactive editor on top of the scientific engines:
+
+- 203-part searchable palette
+- drag/drop in world coordinates (camera pixels stay outside scene data)
+- canonical Property Inspector
+- logical ports and wiring
+- circuit MNA derived from editor topology
+- Mechanics / Circuits / Optics / Waves scene runtime
+- Run / Pause / Step / Reset
+- Probe recording and lightweight graphing
+- Scene JSON import/export and undo/redo
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+Then open `http://127.0.0.1:4173/`.
+
+Validate all stages:
+
+```bash
+npm test
+```
+
+See `docs/architecture/STAGE4_EDITOR_RUNTIME.md` for contracts and limitations.
