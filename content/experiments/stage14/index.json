@@ -1,0 +1,50 @@
+[
+  {
+    "id": "stage14.npn-switch",
+    "titleFa": "ترانزیستور NPN — کنترل جریان کلکتور",
+    "domain": "circuits",
+    "path": "/content/experiments/stage14/npn-switch.json",
+    "stage": 14,
+    "executionMode": true
+  },
+  {
+    "id": "stage14.pnp-high-side",
+    "titleFa": "ترانزیستور PNP — کلید سمت مثبت",
+    "domain": "circuits",
+    "path": "/content/experiments/stage14/pnp-high-side.json",
+    "stage": 14,
+    "executionMode": true
+  },
+  {
+    "id": "stage14.nmos-gate",
+    "titleFa": "MOSFET کانال N — کنترل با ولتاژ گیت",
+    "domain": "circuits",
+    "path": "/content/experiments/stage14/nmos-gate.json",
+    "stage": 14,
+    "executionMode": true
+  },
+  {
+    "id": "stage14.opamp-noninverting",
+    "titleFa": "اپ‌امپ ۷۴۱ — تقویت‌کننده غیرمعکوس",
+    "domain": "circuits",
+    "path": "/content/experiments/stage14/opamp-noninverting.json",
+    "stage": 14,
+    "executionMode": true
+  },
+  {
+    "id": "stage14.relay-spdt",
+    "titleFa": "رله SPDT — کنترل ایزوله بار",
+    "domain": "circuits",
+    "path": "/content/experiments/stage14/relay-spdt.json",
+    "stage": 14,
+    "executionMode": true
+  },
+  {
+    "id": "stage14.thyristor-latch",
+    "titleFa": "تریستور — قفل‌شدن با پالس گیت",
+    "domain": "circuits",
+    "path": "/content/experiments/stage14/thyristor-latch.json",
+    "stage": 14,
+    "executionMode": true
+  }
+]

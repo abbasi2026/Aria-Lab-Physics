@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage14.pnp-high-side",
+  "version": 1,
+  "title": "ترانزیستور PNP — کلید سمت مثبت",
+  "titleFa": "ترانزیستور PNP — کلید سمت مثبت",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "کاهش ولتاژ پایه نسبت به امیتر، مسیر تغذیه بار را فعال می‌کند.",
+  "learningObjectives": [
+    "کاهش ولتاژ پایه نسبت به امیتر، مسیر تغذیه بار را فعال می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage14.pnp-high-side",
+    "title": "ترانزیستور PNP — کلید سمت مثبت",
+    "titleFa": "ترانزیستور PNP — کلید سمت مثبت",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "vcc",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "e",
+          "nodeB": "0",
+          "voltage": 5
+        }
+      },
+      {
+        "instanceId": "base",
+        "partId": "circuits.vslide",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "b",
+          "nodeB": "0",
+          "voltage": 4,
+          "minVoltage": 3.5,
+          "maxVoltage": 5
+        }
+      },
+      {
+        "instanceId": "load",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "c",
+          "nodeB": "0",
+          "resistance": 100
+        }
+      },
+      {
+        "instanceId": "q",
+        "partId": "circuits.pnp",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodes": {
+            "collector": "c",
+            "base": "b",
+            "emitter": "e"
+          },
+          "beta": 100,
+          "baseResistance": 10000
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "ic",
+        "labelFa": "جریان PNP",
+        "quantity": "current",
+        "instanceId": "q",
+        "unit": "A"
+      },
+      {
+        "id": "vc",
+        "labelFa": "ولتاژ بار",
+        "quantity": "voltage",
+        "node": "c",
+        "unit": "V"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage14",
+      "stage": 14,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "کنترل پایه",
+        "instructionFa": "Slider پایه را بین ۵ و ۳٫۵ ولت جابه‌جا کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "PNP وقتی پایه از امیتر پایین‌تر باشد روشن می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "ic",
+      "labelFa": "جریان PNP",
+      "unit": "A",
+      "probe": {
+        "id": "ic",
+        "quantity": "current",
+        "instanceId": "q"
+      }
+    },
+    {
+      "id": "vc",
+      "labelFa": "ولتاژ بار",
+      "unit": "V",
+      "probe": {
+        "id": "vc",
+        "quantity": "voltage",
+        "node": "c"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "با Vb≈4V ترانزیستور PNP روشن و بار تغذیه می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "ok",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از وضعیت واقعی Solver و اندازه‌گیری‌ها استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 14,
+    "executionMode": true
+  }
+}

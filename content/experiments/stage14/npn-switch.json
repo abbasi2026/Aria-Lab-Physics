@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage14.npn-switch",
+  "version": 1,
+  "title": "ترانزیستور NPN — کنترل جریان کلکتور",
+  "titleFa": "ترانزیستور NPN — کنترل جریان کلکتور",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "با تغییر ولتاژ پایه، جریان کلکتور و ولتاژ خروجی ترانزیستور را مشاهده کنید.",
+  "learningObjectives": [
+    "با تغییر ولتاژ پایه، جریان کلکتور و ولتاژ خروجی ترانزیستور را مشاهده کنید."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage14.npn-switch",
+    "title": "ترانزیستور NPN — کنترل جریان کلکتور",
+    "titleFa": "ترانزیستور NPN — کنترل جریان کلکتور",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "vcc",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vcc",
+          "nodeB": "0",
+          "voltage": 5
+        }
+      },
+      {
+        "instanceId": "base",
+        "partId": "circuits.vslide",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "b",
+          "nodeB": "0",
+          "voltage": 0.8,
+          "minVoltage": 0,
+          "maxVoltage": 1.2
+        }
+      },
+      {
+        "instanceId": "rc",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vcc",
+          "nodeB": "c",
+          "resistance": 1000
+        }
+      },
+      {
+        "instanceId": "q",
+        "partId": "circuits.npn",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodes": {
+            "collector": "c",
+            "base": "b",
+            "emitter": "0"
+          },
+          "beta": 100,
+          "baseResistance": 10000
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "ic",
+        "labelFa": "جریان کلکتور",
+        "quantity": "current",
+        "instanceId": "q",
+        "unit": "A"
+      },
+      {
+        "id": "vc",
+        "labelFa": "ولتاژ کلکتور",
+        "quantity": "voltage",
+        "node": "c",
+        "unit": "V"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage14",
+      "stage": 14,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "run",
+        "titleFa": "اجرای ترانزیستور",
+        "instructionFa": "مدار را اجرا کنید و Slider ولتاژ پایه را تغییر دهید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "زیر آستانه VBE جریان کلکتور بسیار کم است."
+          }
+        ]
+      },
+      {
+        "id": "observe",
+        "titleFa": "مشاهده بهره جریان",
+        "instructionFa": "جریان کلکتور و ولتاژ کلکتور را مقایسه کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "افزایش جریان پایه باعث افزایش جریان کلکتور می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "ic",
+      "labelFa": "جریان کلکتور",
+      "unit": "A",
+      "probe": {
+        "id": "ic",
+        "quantity": "current",
+        "instanceId": "q"
+      }
+    },
+    {
+      "id": "vc",
+      "labelFa": "ولتاژ کلکتور",
+      "unit": "V",
+      "probe": {
+        "id": "vc",
+        "quantity": "voltage",
+        "node": "c"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "در Vb≈0.8V جریان کلکتور در حدود 1.5mA قرار می‌گیرد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "ok",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از وضعیت واقعی Solver و اندازه‌گیری‌ها استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 14,
+    "executionMode": true
+  }
+}

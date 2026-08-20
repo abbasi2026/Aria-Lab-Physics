@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage14.relay-spdt",
+  "version": 1,
+  "title": "رله SPDT — کنترل ایزوله بار",
+  "titleFa": "رله SPDT — کنترل ایزوله بار",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "بوبین رله با جریان کافی، کنتاکت NO را وصل و لامپ را تغذیه می‌کند.",
+  "learningObjectives": [
+    "بوبین رله با جریان کافی، کنتاکت NO را وصل و لامپ را تغذیه می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage14.relay-spdt",
+    "title": "رله SPDT — کنترل ایزوله بار",
+    "titleFa": "رله SPDT — کنترل ایزوله بار",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "coil",
+        "partId": "circuits.vslide",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "cp",
+          "nodeB": "0",
+          "voltage": 6,
+          "minVoltage": 0,
+          "maxVoltage": 6
+        }
+      },
+      {
+        "instanceId": "vcc",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vcc",
+          "nodeB": "0",
+          "voltage": 5
+        }
+      },
+      {
+        "instanceId": "relay",
+        "partId": "circuits.spdt-relay",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodes": {
+            "com": "vcc",
+            "no": "load",
+            "nc": "idle",
+            "coil-1": "cp",
+            "coil-2": "0"
+          },
+          "coilResistance": 120,
+          "pickupCurrent": 0.03
+        }
+      },
+      {
+        "instanceId": "lamp",
+        "partId": "circuits.lamp",
+        "transform": {
+          "position": {
+            "x": 3,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "load",
+          "nodeB": "0",
+          "resistance": 50,
+          "nominalCurrent": 0.1
+        }
+      },
+      {
+        "instanceId": "idle",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": 3,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "idle",
+          "nodeB": "0",
+          "resistance": 1000000
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "coil-i",
+        "labelFa": "جریان بوبین",
+        "quantity": "current",
+        "instanceId": "relay",
+        "unit": "A"
+      },
+      {
+        "id": "lamp-i",
+        "labelFa": "جریان لامپ",
+        "quantity": "current",
+        "instanceId": "lamp",
+        "unit": "A"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage14",
+      "stage": 14,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "relay",
+        "titleFa": "کنترل بوبین",
+        "instructionFa": "ولتاژ بوبین را کم و زیاد کنید و وضعیت کنتاکت را ببینید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "رله در جریان بالاتر از Pickup فعال می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "coil-i",
+      "labelFa": "جریان بوبین",
+      "unit": "A",
+      "probe": {
+        "id": "coil-i",
+        "quantity": "current",
+        "instanceId": "relay"
+      }
+    },
+    {
+      "id": "lamp-i",
+      "labelFa": "جریان لامپ",
+      "unit": "A",
+      "probe": {
+        "id": "lamp-i",
+        "quantity": "current",
+        "instanceId": "lamp"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "در ۶ ولت بوبین حدود 50mA می‌کشد و کنتاکت NO وصل می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "ok",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از وضعیت واقعی Solver و اندازه‌گیری‌ها استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 14,
+    "executionMode": true
+  }
+}

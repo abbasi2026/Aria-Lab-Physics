@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage14.thyristor-latch",
+  "version": 1,
+  "title": "تریستور — قفل‌شدن با پالس گیت",
+  "titleFa": "تریستور — قفل‌شدن با پالس گیت",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "یک پالس گیت تریستور را روشن می‌کند و تا قطع جریان آند روشن می‌ماند.",
+  "learningObjectives": [
+    "یک پالس گیت تریستور را روشن می‌کند و تا قطع جریان آند روشن می‌ماند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage14.thyristor-latch",
+    "title": "تریستور — قفل‌شدن با پالس گیت",
+    "titleFa": "تریستور — قفل‌شدن با پالس گیت",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "vcc",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vcc",
+          "nodeB": "0",
+          "voltage": 6
+        }
+      },
+      {
+        "instanceId": "sw",
+        "partId": "circuits.pictorial-spst",
+        "transform": {
+          "position": {
+            "x": -2,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vcc",
+          "nodeB": "supply",
+          "closed": true
+        }
+      },
+      {
+        "instanceId": "load",
+        "partId": "circuits.lamp",
+        "transform": {
+          "position": {
+            "x": 1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "supply",
+          "nodeB": "a",
+          "resistance": 100,
+          "nominalCurrent": 0.06
+        }
+      },
+      {
+        "instanceId": "gate",
+        "partId": "circuits.vslide",
+        "transform": {
+          "position": {
+            "x": -4,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "g",
+          "nodeB": "0",
+          "voltage": 1,
+          "minVoltage": 0,
+          "maxVoltage": 1
+        }
+      },
+      {
+        "instanceId": "scr",
+        "partId": "circuits.thyristor",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": -1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodes": {
+            "anode": "a",
+            "signal": "g",
+            "cathode": "0"
+          },
+          "gateThreshold": 0.7,
+          "holdingCurrent": 0.01,
+          "onResistance": 0.8
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "ia",
+        "labelFa": "جریان آند",
+        "quantity": "current",
+        "instanceId": "scr",
+        "unit": "A"
+      },
+      {
+        "id": "load-i",
+        "labelFa": "جریان بار",
+        "quantity": "current",
+        "instanceId": "load",
+        "unit": "A"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage14",
+      "stage": 14,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "trigger",
+        "titleFa": "تحریک گیت",
+        "instructionFa": "مدار را اجرا کنید؛ سپس Slider گیت را صفر کنید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "Latch باید تا وقتی جریان آند برقرار است روشن بماند."
+          }
+        ]
+      },
+      {
+        "id": "reset",
+        "titleFa": "قطع جریان آند",
+        "instructionFa": "کلید مسیر بار را باز و دوباره ببندید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "با افت جریان زیر Holding Current تریستور آزاد می‌شود."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "ia",
+      "labelFa": "جریان آند",
+      "unit": "A",
+      "probe": {
+        "id": "ia",
+        "quantity": "current",
+        "instanceId": "scr"
+      }
+    },
+    {
+      "id": "load-i",
+      "labelFa": "جریان بار",
+      "unit": "A",
+      "probe": {
+        "id": "load-i",
+        "quantity": "current",
+        "instanceId": "load"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "پس از تحریک گیت، کاهش ولتاژ گیت به صفر تریستور را خاموش نمی‌کند؛ باز کردن کلید آند آن را Reset می‌کند."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "ok",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از وضعیت واقعی Solver و اندازه‌گیری‌ها استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 14,
+    "executionMode": true
+  }
+}

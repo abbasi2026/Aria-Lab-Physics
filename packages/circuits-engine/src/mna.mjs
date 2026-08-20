@@ -42,6 +42,10 @@ export class CircuitNetwork {
     if (!Number.isFinite(current)) throw new Error('current must be finite');
     this.components.push({ id, type: 'currentSource', from: normalizeNode(from), to: normalizeNode(to), current }); return this;
   }
+  vcvs(id, from, to, controlFrom, controlTo, gain, offset = 0) {
+    if (!Number.isFinite(gain) || !Number.isFinite(offset)) throw new Error('VCVS gain/offset must be finite');
+    this.components.push({ id, type: 'vcvs', from: normalizeNode(from), to: normalizeNode(to), controlFrom: normalizeNode(controlFrom), controlTo: normalizeNode(controlTo), gain, offset }); return this;
+  }
   switch(id, from, to, closed, { onResistance = CLOSED_RESISTANCE, offResistance = OPEN_RESISTANCE } = {}) {
     return this.resistor(id, from, to, closed ? onResistance : offResistance);
   }
@@ -54,7 +58,7 @@ export function solveDCNetwork(components) {
   for (const c of components) { nodes.add(normalizeNode(c.from)); nodes.add(normalizeNode(c.to)); }
   const nonGround = [...nodes].filter(n => n !== '0').sort();
   const nodeIndex = new Map(nonGround.map((n, i) => [n, i]));
-  const voltageSources = components.filter(c => c.type === 'voltageSource');
+  const voltageSources = components.filter(c => c.type === 'voltageSource' || c.type === 'vcvs');
   const n = nonGround.length;
   const m = voltageSources.length;
   const size = n + m;
@@ -85,7 +89,13 @@ export function solveDCNetwork(components) {
     const b = idx(normalizeNode(c.to));
     if (a !== null) { A[a][row] += 1; A[row][a] += 1; }
     if (b !== null) { A[b][row] -= 1; A[row][b] -= 1; }
-    z[row] = c.voltage;
+    if (c.type === 'vcvs') {
+      const cp = idx(normalizeNode(c.controlFrom));
+      const cn = idx(normalizeNode(c.controlTo));
+      if (cp !== null) A[row][cp] -= c.gain;
+      if (cn !== null) A[row][cn] += c.gain;
+      z[row] = c.offset ?? 0;
+    } else z[row] = c.voltage;
   });
 
   const x = gaussianSolve(A, z);
@@ -98,7 +108,7 @@ export function solveDCNetwork(components) {
   for (const c of components) {
     if (c.type === 'resistor') branchCurrents[c.id] = (v(c.from) - v(c.to)) / c.resistance;
     else if (c.type === 'currentSource') branchCurrents[c.id] = c.current;
-    else if (c.type === 'voltageSource') branchCurrents[c.id] = voltageSourceCurrents[c.id];
+    else if (c.type === 'voltageSource' || c.type === 'vcvs') branchCurrents[c.id] = voltageSourceCurrents[c.id];
   }
   return { nodeVoltages, branchCurrents, voltageSourceCurrents, matrix: A, rhs: z };
 }

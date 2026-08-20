@@ -2,6 +2,7 @@ import { SimulationClock } from '../../physics-core/src/clock.mjs';
 import { World2D } from '../../mechanics-engine/src/world2d.mjs';
 import { CircuitNetwork } from '../../circuits-engine/src/mna.mjs';
 import { TransientCircuit } from '../../circuits-engine/src/transient.mjs';
+import { ActiveCircuitNetwork } from '../../active-circuits-engine/src/index.mjs';
 import { RayScene } from '../../optics-engine/src/ray-scene.mjs';
 import { WaveGrid2D } from '../../waves-engine/src/wave-grid.mjs';
 import { ProbeRecorder } from '../../measurement-engine/src/index.mjs';
@@ -132,8 +133,18 @@ function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
   const nodeNames = new Map(); let nodeCounter = 1; if (groundRoot) nodeNames.set(groundRoot, '0');
   for (const root of roots) if (!nodeNames.has(root)) nodeNames.set(root, `n${nodeCounter++}`);
   const nodeFor = (part, index, fallback) => { const explicit = part.properties?.[fallback]; if (explicit !== undefined && explicit !== null && explicit !== '') return String(explicit); const ports = logicalPorts(defs.get(part.partId)); const port = ports[index]; return port ? nodeNames.get(find(key(part.instanceId, port.id))) : null; };
+  const partPortNodes = {};
+  for (const part of scene.parts) {
+    const ports=logicalPorts(defs.get(part.partId)); const map={};
+    for(const port of ports){
+      const explicit=part.properties?.nodes?.[port.id] ?? part.properties?.portNodes?.[port.id] ?? part.properties?.[`node:${port.id}`];
+      map[port.id]=(explicit!==undefined&&explicit!==null&&explicit!=='')?String(explicit):nodeNames.get(find(key(part.instanceId,port.id)));
+    }
+    partPortNodes[part.instanceId]=map;
+  }
   const partNodes = {};
-  for (const part of scene.parts) { const p=part.properties??{}; partNodes[part.instanceId]={ a:nodeFor(part,0,'nodeA')??p.from??'0', b:nodeFor(part,1,'nodeB')??p.to??part.instanceId }; }
+  for (const part of scene.parts) { const p=part.properties??{}, ports=logicalPorts(defs.get(part.partId)), map=partPortNodes[part.instanceId]??{}; partNodes[part.instanceId]={ a:p.nodeA??p.from??map[ports[0]?.id]??'0', b:p.nodeB??p.to??map[ports[1]?.id]??part.instanceId }; }
+  const portNode=(part,portId,fallback='0')=>partPortNodes[part.instanceId]?.[portId] ?? part.properties?.nodes?.[portId] ?? fallback;
   const isLed=id=>/(?:^|[-.])(red|green|yellow)?-?led(?:$|-)/i.test(id)||/\.led$/i.test(id);
   const isVariableResistor=id=>/vresistor|potentiometer|ldr|thermistor/i.test(id);
   const isLoad=id=>/motor|buzzer|loudspeaker/i.test(id);
@@ -152,7 +163,38 @@ function circuitsAdapter(scene, { partDefinitions = [] } = {}) {
   const dynamic = scene.parts.some(part => /capacitor|inductor|diode|led|zener/i.test(part.partId));
   const fuseRatings=new Map(scene.parts.filter(p=>isFuse(alias(p.partId))).map(p=>[p.instanceId,Number(p.properties?.rating??p.properties?.maxCurrent??1)]));
   const blownFuses=new Set();
-  const decorate=r=>({ ...r, partNodes, blownFuses:[...blownFuses] });
+  const decorate=r=>({ ...r, partNodes, partPortNodes, blownFuses:[...blownFuses] });
+
+  const isActiveAnalogId=id=>/circuits\.(?:npn|pnp|mosfetn|mosfetp|opamp-741|opamp-324|spdt-relay|dpdt-relay|thyristor)$/.test(id);
+  const hasActiveAnalog=scene.parts.some(part=>isActiveAnalogId(alias(part.partId)));
+  if(hasActiveAnalog){
+    if(scene.parts.some(part=>/capacitor|inductor/i.test(part.partId))){
+      result=decorate({error:'Active analog + capacitor/inductor transient coupling is scheduled for a later solver stage.',nodeVoltages:{0:0},branchCurrents:{},activeStates:{}});
+      return {step:()=>result,snapshot:()=>result,measure:probe=>measureCircuitProbe(probe,result,partNodes)};
+    }
+    let activeNet=null;
+    const buildActive=(preservedState=null)=>{
+      const net=new ActiveCircuitNetwork(); if(preservedState?.thyristors)net.state.thyristors={...preservedState.thyristors};
+      for(const part of scene.parts){
+        const id=alias(part.partId),p=part.properties??{}, {a,b}=partNodes[part.instanceId];
+        if(id.includes('resistor')||isVariableResistor(id)||isLoad(id)||isFuse(id)||/lamp|ammeter|voltmeter/.test(id))net.resistor(part.instanceId,a,b,blownFuses.has(part.instanceId)?1e15:resistanceFor(id,p));
+        else if(id.includes('battery')||id.includes('voltage-source')||id.includes('vslide')||id.includes('vpulse')||id.endsWith('.clock'))net.voltageSource(part.instanceId,a,b,sourceVoltage(id,p,0));
+        else if(id.includes('current-source')||id.endsWith('.current'))net.currentSource(part.instanceId,a,b,Number(p.current??.001));
+        else if(isCircuitSwitchId(id)&&!id.includes('relay'))net.switch(part.instanceId,a,b,p.closed??p.on??!id.includes('pushbreak'));
+        else if(id==='circuits.npn'||id==='circuits.pnp')net.bjt(part.instanceId,{collector:portNode(part,'collector'),base:portNode(part,'base'),emitter:portNode(part,'emitter'),type:id.endsWith('.pnp')?'pnp':'npn',beta:Number(p.beta??p.currentGain??100),vbeOn:Number(p.vbeOn??.65),baseResistance:Number(p.baseResistance??10000),saturationResistance:Number(p.saturationResistance??5)});
+        else if(id==='circuits.mosfetn'||id==='circuits.mosfetp')net.mosfet(part.instanceId,{drain:portNode(part,'drain'),gate:portNode(part,'gate'),source:portNode(part,'source'),type:id.endsWith('p')?'p':'n',threshold:Number(p.threshold??p.thresholdVoltage??2.5),onResistance:Number(p.onResistance??.5),offResistance:Number(p.offResistance??1e9)});
+        else if(id==='circuits.opamp-741'||id==='circuits.opamp-324')net.opamp(part.instanceId,{output:portNode(part,'output'),inverting:portNode(part,'inverting'),noninverting:portNode(part,'noninverting'),reference:String(p.referenceNode??'0'),gain:Number(p.openLoopGain??1e5)});
+        else if(id==='circuits.spdt-relay')net.relaySPDT(part.instanceId,{com:portNode(part,'com'),no:portNode(part,'no'),nc:portNode(part,'nc'),coil1:portNode(part,'coil-1'),coil2:portNode(part,'coil-2'),coilResistance:Number(p.coilResistance??120),pickupCurrent:Number(p.pickupCurrent??.03)});
+        else if(id==='circuits.dpdt-relay')net.relayDPDT(part.instanceId,{coil1:portNode(part,'relay-t1'),coil2:portNode(part,'relay-t2'),coilResistance:Number(p.coilResistance??120),pickupCurrent:Number(p.pickupCurrent??.03),poles:[{com:portNode(part,'pole1-t2'),nc:portNode(part,'pole1-t1'),no:portNode(part,'pole1-t3')},{com:portNode(part,'pole2-t2'),nc:portNode(part,'pole2-t1'),no:portNode(part,'pole2-t3')}]});
+        else if(id==='circuits.thyristor')net.thyristor(part.instanceId,{anode:portNode(part,'anode'),gate:portNode(part,'signal'),cathode:portNode(part,'cathode'),gateThreshold:Number(p.gateThreshold??.7),holdingCurrent:Number(p.holdingCurrent??.01),onResistance:Number(p.onResistance??.8)});
+      }
+      return net;
+    };
+    activeNet=buildActive();
+    const solveActive=()=>{try{result=decorate(activeNet.solve());return result;}catch(error){result=decorate({error:error.message,nodeVoltages:{0:0},branchCurrents:{},activeStates:{}});return result;}};
+    solveActive();
+    return {step:()=>solveActive(),snapshot:()=>decorate(result),measure:probe=>measureCircuitProbe(probe,result,partNodes),setPartProperties:()=>{const state=activeNet.state;activeNet=buildActive(state);solveActive();}};
+  }
 
   if (dynamic) {
     const transient = new TransientCircuit({ dt: scene.simulation?.dt ?? 1e-4 });

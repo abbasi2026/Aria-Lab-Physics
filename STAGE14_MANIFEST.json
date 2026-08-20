@@ -1,0 +1,92 @@
+{
+  "project": "Aria Lab Physics",
+  "stage": 14,
+  "name": "Active Analog & Multi-terminal Execution",
+  "status": "final",
+  "date": "2026-08-20",
+  "capabilities": [
+    "MNA VCVS",
+    "NPN/PNP BJT active model",
+    "N/P MOSFET threshold model",
+    "741/324 op-amp feedback",
+    "SPDT/DPDT relay contacts",
+    "stateful thyristor latch",
+    "explicit multi-terminal node mapping",
+    "touch voltage slider"
+  ],
+  "inventory": {
+    "canonicalParts": 203,
+    "paletteEntries": 206,
+    "normalizedProperties": 7534,
+    "ports": 235,
+    "stage14Experiments": 6,
+    "validatedExperiments": 47
+  },
+  "tests": {
+    "stage14": 12,
+    "fullCi": "PASS",
+    "webSmoke": "PASS"
+  },
+  "limitations": [
+    "Stage 14 active analog solver is DC-focused.",
+    "Active devices mixed with capacitor/inductor transient networks are explicitly rejected.",
+    "Full SPICE transistor models, op-amp saturation/slew and relay bounce are future work."
+  ],
+  "files": [
+    {
+      "path": "packages/active-circuits-engine/src/index.mjs",
+      "bytes": 7153,
+      "sha256": "f50933a7db8859b76f95b52dc726bec3e28de6ef496b7c25bde523c7c7ed96c8"
+    },
+    {
+      "path": "packages/circuits-engine/src/mna.mjs",
+      "bytes": 5168,
+      "sha256": "45420efd870036550315126c35398904a6584ede6a4615e39a6599ec2825f1be"
+    },
+    {
+      "path": "packages/scene-runtime/src/index.mjs",
+      "bytes": 32321,
+      "sha256": "f5b78b73097e80342bd6e3eb634edc1545d83a835c390a2f26a130bcd4f50e87"
+    },
+    {
+      "path": "packages/execution-runtime/src/index.mjs",
+      "bytes": 12361,
+      "sha256": "fbf8e33c7ad87fe7dbc9d7aab2996c10d7cd12254a8adf212a960b48d2f3a3f7"
+    },
+    {
+      "path": "apps/web/src/main.js",
+      "bytes": 66341,
+      "sha256": "8094d2aa7b7d27ebf1cdb32e519c4faf7cdaece0b2cfa44057ba631b4b42318f"
+    },
+    {
+      "path": "apps/web/styles.css",
+      "bytes": 44343,
+      "sha256": "06a5b5a295e92763df48fe3881a44c420bd470e4654eb69b33dbc7d8be2fad05"
+    },
+    {
+      "path": "tests/physics/stage14/run-stage14-tests.mjs",
+      "bytes": 5241,
+      "sha256": "9bc47bef5ac3c2aa8aef5a3a421b0767b93b53a3ba27d35ac503e1aab7cbc840"
+    },
+    {
+      "path": "content/experiments/stage14/index.json",
+      "bytes": 1505,
+      "sha256": "4a93925ed0816b850238b6d437b108f3e1d578d5150eaca8ac094bdf5c940b95"
+    },
+    {
+      "path": "docs/architecture/STAGE14_ACTIVE_ANALOG_EXECUTION.md",
+      "bytes": 1411,
+      "sha256": "04481576c0619dd0c042aaa432a44f0837877b094cbe8c8ded399e6bdb37ebcf"
+    },
+    {
+      "path": "docs/testing/STAGE_14_TEST_REPORT_FA.md",
+      "bytes": 687,
+      "sha256": "f49f85ee369ce7db49bf89f0738c6c0a8fd5fa1662b96477d7834c68e760b26a"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1984,
+      "sha256": "ae4218aad4023c505f1601f44a1718032d3544329a8ca93ac9162129c7459bff"
+    }
+  ]
+}

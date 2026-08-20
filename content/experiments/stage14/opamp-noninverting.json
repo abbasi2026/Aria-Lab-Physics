@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage14.opamp-noninverting",
+  "version": 1,
+  "title": "اپ‌امپ ۷۴۱ — تقویت‌کننده غیرمعکوس",
+  "titleFa": "اپ‌امپ ۷۴۱ — تقویت‌کننده غیرمعکوس",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "فیدبک مقاومتی بهره حلقه‌بسته را به حدود ۲ تنظیم می‌کند.",
+  "learningObjectives": [
+    "فیدبک مقاومتی بهره حلقه‌بسته را به حدود ۲ تنظیم می‌کند."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage14.opamp-noninverting",
+    "title": "اپ‌امپ ۷۴۱ — تقویت‌کننده غیرمعکوس",
+    "titleFa": "اپ‌امپ ۷۴۱ — تقویت‌کننده غیرمعکوس",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "vin",
+        "partId": "circuits.vslide",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 0
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vp",
+          "nodeB": "0",
+          "voltage": 1,
+          "minVoltage": 0,
+          "maxVoltage": 2
+        }
+      },
+      {
+        "instanceId": "rg",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": -1,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vm",
+          "nodeB": "0",
+          "resistance": 1000
+        }
+      },
+      {
+        "instanceId": "rf",
+        "partId": "circuits.resistor",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "out",
+          "nodeB": "vm",
+          "resistance": 1000
+        }
+      },
+      {
+        "instanceId": "op",
+        "partId": "circuits.opamp-741",
+        "transform": {
+          "position": {
+            "x": 1,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodes": {
+            "output": "out",
+            "inverting": "vm",
+            "noninverting": "vp"
+          },
+          "openLoopGain": 100000
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "vinp",
+        "labelFa": "ولتاژ ورودی",
+        "quantity": "voltage",
+        "node": "vp",
+        "unit": "V"
+      },
+      {
+        "id": "vout",
+        "labelFa": "ولتاژ خروجی",
+        "quantity": "voltage",
+        "node": "out",
+        "unit": "V"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage14",
+      "stage": 14,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "gain",
+        "titleFa": "تغییر ورودی",
+        "instructionFa": "Slider ورودی را تغییر دهید و خروجی را بخوانید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "با Rf=Rg بهره غیرمعکوس تقریباً ۲ است."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "vinp",
+      "labelFa": "ولتاژ ورودی",
+      "unit": "V",
+      "probe": {
+        "id": "vinp",
+        "quantity": "voltage",
+        "node": "vp"
+      }
+    },
+    {
+      "id": "vout",
+      "labelFa": "ولتاژ خروجی",
+      "unit": "V",
+      "probe": {
+        "id": "vout",
+        "quantity": "voltage",
+        "node": "out"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "برای Vin=1V خروجی باید نزدیک 2V باشد."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "ok",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از وضعیت واقعی Solver و اندازه‌گیری‌ها استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 14,
+    "executionMode": true
+  }
+}

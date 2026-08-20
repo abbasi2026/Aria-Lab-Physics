@@ -46,7 +46,7 @@ const ICONS = {
 function iconSvg(key='folder', cls='') { return `<svg class="nav-icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[key] ?? ICONS.folder}</svg>`; }
 
 async function boot() {
-  const [canonical, palette, nav, stage6Experiments, stage9Experiments, stage10Experiments, stage11Experiments, stage12Experiments, stage13Experiments, legacy, status] = await Promise.all([
+  const [canonical, palette, nav, stage6Experiments, stage9Experiments, stage10Experiments, stage11Experiments, stage12Experiments, stage13Experiments, stage14Experiments, legacy, status] = await Promise.all([
     fetch('/datasets/parts/canonical-parts.json').then(r => r.json()),
     fetch('/datasets/parts/palette.json').then(r => r.json()),
     fetch('/datasets/navigation/crocodile-taxonomy.json').then(r => r.json()),
@@ -56,10 +56,11 @@ async function boot() {
     fetch('/content/experiments/stage11/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/experiments/stage12/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/experiments/stage13/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch('/content/experiments/stage14/index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/content/library/crocodile-605-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
     fetch('/api/ai/status').then(r => r.ok ? r.json() : ({ enabled:false, provider:'gemini', model:null })).catch(() => ({ enabled:false, provider:'gemini', model:null })),
   ]);
-  const experiments = [...stage13Experiments, ...stage12Experiments, ...stage11Experiments, ...stage10Experiments, ...stage9Experiments, ...stage6Experiments];
+  const experiments = [...stage14Experiments, ...stage13Experiments, ...stage12Experiments, ...stage11Experiments, ...stage10Experiments, ...stage9Experiments, ...stage6Experiments];
   canonicalParts = canonical; paletteEntries = palette.entries ?? []; taxonomy = nav; catalog = new ComponentCatalog(canonical);
   partIconById = new Map(); (function collect(nodes){for(const n of nodes){for(const e of n.entries??[])if(!partIconById.has(e.canonicalPartId))partIconById.set(e.canonicalPartId,e.iconKey);collect(n.children??[]);}})(taxonomy.parts.roots); experimentLibrary = experiments; legacyLibrary = legacy; aiStatus = status;
   const guidedEntries = experiments.map(item => ({ ...item, source:'aria', status:'ready', version:1, tags:['guided'] }));
@@ -205,9 +206,10 @@ function attachInlineExecutionControl(el,part){
   if(/vresistor|potentiometer/.test(id))spec={key:'resistance',min:1,max:Number(p.maxResistance??5000),step:1,value:Number(p.resistance??p.value??1000),label:'R'};
   else if(/ldr/.test(id))spec={key:'lightLevel',min:0,max:1,step:.01,value:Number(p.lightLevel??.5),label:'نور'};
   else if(/thermistor/.test(id))spec={key:'temperature',min:-10,max:100,step:1,value:Number(p.temperature??25),label:'دما'};
+  else if(/vslide/.test(id))spec={key:'voltage',min:Number(p.minVoltage??0),max:Number(p.maxVoltage??12),step:.05,value:Number(p.voltage??0),label:'V'};
   if(!spec)return;
   const wrap=document.createElement('label');wrap.className='inline-control';wrap.innerHTML=`<span>${spec.label}</span><input type="range" min="${spec.min}" max="${spec.max}" step="${spec.step}" value="${spec.value}">`;
-  const input=wrap.querySelector('input');input.addEventListener('pointerdown',e=>e.stopPropagation());input.addEventListener('click',e=>e.stopPropagation());input.addEventListener('change',e=>{e.stopPropagation();doc.updateProperties(part.instanceId,{[spec.key]:Number(e.target.value)});syncRuntime(true);runtime?.step(1);renderRuntimeOverlay();});el.appendChild(wrap);
+  const input=wrap.querySelector('input');input.addEventListener('pointerdown',e=>e.stopPropagation());input.addEventListener('click',e=>e.stopPropagation());input.addEventListener('change',e=>{e.stopPropagation();const patch={[spec.key]:Number(e.target.value)};doc.updateProperties(part.instanceId,patch);const hasActive=doc.snapshot().parts.some(x=>/circuits\.(?:npn|pnp|mosfetn|mosfetp|opamp-741|opamp-324|spdt-relay|dpdt-relay|thyristor)$/i.test(x.partId));if(hasActive){runtime?.setPartProperties(part.instanceId,patch);runtime?.step(1);}else{syncRuntime(true);runtime?.step(1);}renderRuntimeOverlay();renderBottom(false);});el.appendChild(wrap);
 }
 
 function bindPartDrag(el, part) {

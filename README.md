@@ -194,3 +194,14 @@ npm run ci
 ```
 
 See `docs/architecture/STAGE13_STATEFUL_DIGITAL.md`.
+
+## Stage 14 — قطعات آنالوگ فعال و چندپایه
+
+Stage 14 ترانزیستورهای NPN/PNP، MOSFETهای N/P، اپ‌امپ‌های 741/324، رله‌های SPDT/DPDT و تریستور را وارد حالت اجرای واقعی مدار می‌کند. منبع ولتاژ قابل تنظیم نیز در حالت اجرا Slider لمسی روی برد دارد.
+
+```bash
+npm run test:stage14
+npm run ci
+```
+
+شش آزمایش اجرایی Stage 14 در `content/experiments/stage14/` قرار دارند.

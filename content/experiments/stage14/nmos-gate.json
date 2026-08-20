@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "stage14.nmos-gate",
+  "version": 1,
+  "title": "MOSFET کانال N — کنترل با ولتاژ گیت",
+  "titleFa": "MOSFET کانال N — کنترل با ولتاژ گیت",
+  "domain": [
+    "circuits"
+  ],
+  "summaryFa": "با عبور ولتاژ گیت از آستانه، کانال هدایت و لامپ روشن می‌شود.",
+  "learningObjectives": [
+    "با عبور ولتاژ گیت از آستانه، کانال هدایت و لامپ روشن می‌شود."
+  ],
+  "prerequisites": [],
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "id": "aria.stage14.nmos-gate",
+    "title": "MOSFET کانال N — کنترل با ولتاژ گیت",
+    "titleFa": "MOSFET کانال N — کنترل با ولتاژ گیت",
+    "domain": "circuits",
+    "simulation": {
+      "dt": 0.0001,
+      "timeScale": 1,
+      "gravity": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parts": [
+      {
+        "instanceId": "vcc",
+        "partId": "circuits.battery",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vcc",
+          "nodeB": "0",
+          "voltage": 5
+        }
+      },
+      {
+        "instanceId": "gate",
+        "partId": "circuits.vslide",
+        "transform": {
+          "position": {
+            "x": -5,
+            "y": -2
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "g",
+          "nodeB": "0",
+          "voltage": 0,
+          "minVoltage": 0,
+          "maxVoltage": 5
+        }
+      },
+      {
+        "instanceId": "load",
+        "partId": "circuits.lamp",
+        "transform": {
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodeA": "vcc",
+          "nodeB": "d",
+          "resistance": 100,
+          "nominalCurrent": 0.05
+        }
+      },
+      {
+        "instanceId": "m",
+        "partId": "circuits.mosfetn",
+        "transform": {
+          "position": {
+            "x": 2,
+            "y": -1
+          },
+          "rotation": 0,
+          "scale": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "properties": {
+          "nodes": {
+            "drain": "d",
+            "gate": "g",
+            "source": "0"
+          },
+          "threshold": 2.5,
+          "onResistance": 0.5
+        }
+      }
+    ],
+    "connections": [],
+    "probes": [
+      {
+        "id": "id",
+        "labelFa": "جریان درین",
+        "quantity": "current",
+        "instanceId": "m",
+        "unit": "A"
+      },
+      {
+        "id": "vd",
+        "labelFa": "ولتاژ درین",
+        "quantity": "voltage",
+        "node": "d",
+        "unit": "V"
+      }
+    ],
+    "metadata": {
+      "editorVersion": "stage14",
+      "stage": 14,
+      "executionMode": true
+    }
+  },
+  "guide": {
+    "mode": "guided",
+    "steps": [
+      {
+        "id": "gate",
+        "titleFa": "لمس گیت",
+        "instructionFa": "ولتاژ گیت را با Slider از صفر تا ۵ ولت تغییر دهید.",
+        "checks": [
+          {
+            "type": "runtime-no-error"
+          }
+        ],
+        "hints": [
+          {
+            "textFa": "گیت تقریباً جریان DC نمی‌کشد ولی هدایت درین را کنترل می‌کند."
+          }
+        ]
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "id",
+      "labelFa": "جریان درین",
+      "unit": "A",
+      "probe": {
+        "id": "id",
+        "quantity": "current",
+        "instanceId": "m"
+      }
+    },
+    {
+      "id": "vd",
+      "labelFa": "ولتاژ درین",
+      "unit": "V",
+      "probe": {
+        "id": "vd",
+        "quantity": "voltage",
+        "node": "d"
+      }
+    }
+  ],
+  "expectedResults": [
+    {
+      "statementFa": "در Vg بالاتر از 2.5V جریان درین تقریباً 50mA می‌شود."
+    }
+  ],
+  "assessment": {
+    "passThreshold": 0.7,
+    "rules": [
+      {
+        "id": "ok",
+        "type": "runtime-no-error",
+        "weight": 1
+      }
+    ]
+  },
+  "assistant": {
+    "enabled": true,
+    "mode": "grounded-coach",
+    "conceptNotes": [],
+    "guardrails": [
+      "فقط از وضعیت واقعی Solver و اندازه‌گیری‌ها استفاده کن."
+    ]
+  },
+  "metadata": {
+    "stage": 14,
+    "executionMode": true
+  }
+}

@@ -41,6 +41,11 @@ export function executableCapability(partId='') {
     if(/fuse/.test(id))return {supported:true,kind:'fuse',labelFa:'فیوز'};
     if(/ammeter/.test(id))return {supported:true,kind:'ammeter',labelFa:'آمپرمتر'};
     if(/voltmeter/.test(id))return {supported:true,kind:'voltmeter',labelFa:'ولت‌متر'};
+    if(/(?:^|\.)npn$|(?:^|\.)pnp$/.test(id))return {supported:true,kind:'bjt',labelFa:'ترانزیستور دوقطبی'};
+    if(/mosfetn|mosfetp/.test(id))return {supported:true,kind:'mosfet',labelFa:'ماسفت'};
+    if(/opamp-741|opamp-324/.test(id))return {supported:true,kind:'opamp',labelFa:'تقویت‌کننده عملیاتی'};
+    if(/spdt-relay|dpdt-relay/.test(id))return {supported:true,kind:'relay',labelFa:'رله'};
+    if(/thyristor/.test(id))return {supported:true,kind:'thyristor',labelFa:'تریستور'};
     if(/capacitor|inductor|diode|zener/.test(id))return {supported:true,kind:'dynamic-circuit',labelFa:'قطعه مدار گذرا'};
     if(/vslide|vpulse|\.clock$/.test(id))return {supported:true,kind:'source',labelFa:'منبع سیگنال/ولتاژ'};
     return {supported:false,kind:'circuit',labelFa:'مدار — در حال توسعه'};
@@ -93,6 +98,12 @@ export function buildExecutionFrame(scene, runtimeSnapshot){
       if(/fuse/.test(id))frame.parts[part.instanceId].blown=(state.blownFuses??[]).includes(part.instanceId);
       if(/ammeter/.test(id))frame.parts[part.instanceId].display=`${Math.abs(finite(current)).toFixed(3)} A`;
       if(/voltmeter/.test(id)){const nodes=state.partNodes?.[part.instanceId],v=nodes?(finite(state.nodeVoltages?.[nodes.a])-finite(state.nodeVoltages?.[nodes.b])):0;frame.parts[part.instanceId].display=`${v.toFixed(3)} V`;frame.parts[part.instanceId].value=v;}
+      const active=state.activeStates?.[part.instanceId];
+      if(active?.kind==='bjt'){frame.parts[part.instanceId].active=Boolean(active.on);frame.parts[part.instanceId].value=active.collectorCurrent;frame.parts[part.instanceId].display=`Ic=${(Math.abs(finite(active.collectorCurrent))*1000).toFixed(1)} mA`;frame.parts[part.instanceId].baseCurrent=active.baseCurrent;}
+      if(active?.kind==='mosfet'){frame.parts[part.instanceId].active=Boolean(active.on);frame.parts[part.instanceId].display=`Vg=${finite(active.gateDrive).toFixed(2)} V`;}
+      if(active?.kind==='opamp'){const out=state.partPortNodes?.[part.instanceId]?.output,v=out?finite(state.nodeVoltages?.[out]):0;frame.parts[part.instanceId].active=true;frame.parts[part.instanceId].value=v;frame.parts[part.instanceId].display=`Vo=${v.toFixed(3)} V`;}
+      if(active?.kind==='relay-spdt'||active?.kind==='relay-dpdt'){frame.parts[part.instanceId].active=Boolean(active.energized);frame.parts[part.instanceId].display=active.energized?'رله وصل':'رله آزاد';frame.parts[part.instanceId].coilCurrent=active.coilCurrent;}
+      if(active?.kind==='thyristor'){frame.parts[part.instanceId].active=Boolean(active.latched);frame.parts[part.instanceId].display=active.latched?'Latch روشن':'خاموش';}
       if(/spst|spdt|dpst|dpdt|pushmake|pushbreak|switch/.test(id))frame.parts[part.instanceId].closed=Boolean(part.properties?.closed??part.properties?.on??!id.includes('pushbreak'));
     }
     if(state.error)frame.warnings.push(state.error);
